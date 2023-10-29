@@ -17,7 +17,7 @@ jobs:
          with:
             all_but_latest: true
             access_token: ${{ github.token }}
-       - name: initialization RepthonArabic
+       - name: initialization rogerpq
          continue-on-error: true
          run: |
            git config --global user.name ${{ secrets.GIT_NAME }}
@@ -27,20 +27,20 @@ jobs:
        - name: cloning repository
          continue-on-error: true
          run: |
-           git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@${{ secrets.BOT_REPO }} RepthonArabic
-       - name: running RepthonArabic server
+           git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@${{ secrets.BOT_REPO }} rogerpq
+       - name: running rogerpq server
          timeout-minutes: 350
          continue-on-error: true
          run: |
-           cd RepthonArabic 
-           docker build . -t RepthonArabic
-           docker run RepthonArabic
-       - name: loop RepthonArabic server
+           cd rogerpq
+           docker build . -t rogerpq
+           docker run rogerpq
+       - name: loop rogerpq server
          continue-on-error: true
          run: |
               git clone https://github.com/${GITHUB_REPOSITORY} loop
               cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
-              git commit -m "RepthonArabic : Loop $(date -u +%D-%T%P)"
-              git push -q https://${{ secrets.GIT_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:RepthonArabic
+              git commit -m "rogerpq : Loop $(date -u +%D-%T%P)"
+              git push -q https://${{ secrets.GIT_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:rogerpq
