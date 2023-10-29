@@ -4,7 +4,7 @@ import time
 import heroku3
 from .Config import Config
 from .core.logger import logging
-from .core.session import zedub
+from .core.session import zq_lo
 from .helpers.utils.utils import runasync
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
@@ -13,10 +13,10 @@ __license__ = "GNU Affero General Public License v3.0"
 __author__ = "Repthon <https://github.com/RepthonArabic/RepthonAr>"
 __copyright__ = f"Repthon Copyright (C) 2020 - 2021  {__author__}"
 
-zedub.version = __version__
-zedub.tgbot.version = __version__
+zq_lo.version = __version__
+zq_lo.tgbot.version = __version__
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
-bot = zedub
+bot = zq_lo
 
 StartTime = time.time()
 repversion = "3.1.3"
