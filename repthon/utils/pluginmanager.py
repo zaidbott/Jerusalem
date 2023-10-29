@@ -2,13 +2,13 @@ import importlib
 import sys
 from pathlib import Path
 
-from zthon import CMD_HELP, LOAD_PLUG
+from repthon import CMD_HELP, LOAD_PLUG
 
 from ..Config import Config
 from ..core import LOADED_CMDS, PLG_INFO
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from ..core.session import zedub
+from ..core.session import zq_lo
 from ..helpers.tools import media_type
 from ..helpers.utils import _zedtools, _zedutils, _format, install_pip, reply_id
 from .decorators import admin_cmd, sudo_cmd
@@ -20,44 +20,44 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"zthon/plugins/{shortname}.py")
+        path = Path(f"repthon/plugins/{shortname}.py")
         checkplugins(path)
-        name = "zthon.plugins.{}".format(shortname)
+        name = "repthon.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info(f"تـم تثبيت ملـف {shortname}")
     else:
         if plugin_path is None:
-            path = Path(f"zthon/plugins/{shortname}.py")
-            name = f"zthon.plugins.{shortname}"
+            path = Path(f"repthon/plugins/{shortname}.py")
+            name = f"repthon.plugins.{shortname}"
         else:
             path = Path((f"{plugin_path}/{shortname}.py"))
             name = f"{plugin_path}/{shortname}".replace("/", ".")
         checkplugins(path)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.bot = zedub
+        mod.bot = zq_lo
         mod.LOGS = LOGS
         mod.Config = Config
         mod._format = _format
-        mod.tgbot = zedub.tgbot
+        mod.tgbot = zq_lo.tgbot
         mod.sudo_cmd = sudo_cmd
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
         mod.admin_cmd = admin_cmd
-        mod._zedutils = _zedutils
-        mod._zedtools = _zedtools
+        mod._reputils = _reputils
+        mod._reptools = _reptools
         mod.media_type = media_type
         mod.edit_delete = edit_delete
         mod.install_pip = install_pip
         mod.parse_pre = _format.parse_pre
         mod.edit_or_reply = edit_or_reply
         mod.logger = logging.getLogger(shortname)
-        mod.borg = zedub
+        mod.borg = zq_lo
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules[f"zthon.plugins.{shortname}"] = mod
+        sys.modules[f"repthon.plugins.{shortname}"] = mod
         LOGS.info(f"تـم تثبيت ملـف {shortname}")
 
 
@@ -71,23 +71,23 @@ def remove_plugin(shortname):
         for cmdname in cmd:
             if cmdname in LOADED_CMDS:
                 for i in LOADED_CMDS[cmdname]:
-                    zedub.remove_event_handler(i)
+                    zq_lo.remove_event_handler(i)
                 del LOADED_CMDS[cmdname]
         return True
     except Exception as e:
         LOGS.error(e)
     try:
         for i in LOAD_PLUG[shortname]:
-            zedub.remove_event_handler(i)
+            zq_lo.remove_event_handler(i)
         del LOAD_PLUG[shortname]
     except BaseException:
         pass
     try:
-        name = f"zthon.plugins.{shortname}"
+        name = f"repthon.plugins.{shortname}"
         for i in reversed(range(len(zedub._event_builders))):
-            ev, cb = zedub._event_builders[i]
+            ev, cb = zq_lo._event_builders[i]
             if cb.__module__ == name:
-                del zedub._event_builders[i]
+                del zq_lo._event_builders[i]
     except BaseException as exc:
         raise ValueError from exc
 
