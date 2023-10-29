@@ -1,9 +1,9 @@
 import sys
 import zthon
-from zthon import BOTLOG_CHATID, PM_LOGGER_GROUP_ID
+from repthon import BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 from .Config import Config
 from .core.logger import logging
-from .core.session import zedub
+from .core.session import zq_lo
 from .utils import mybot
 from .utils import (
     add_bot_to_logger_group,
@@ -16,14 +16,14 @@ from .utils import (
 
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
 
-print(zthon.__copyright__)
+print(zq_lo.__copyright__)
 print(f"المرخصة بموجب شروط  {zthon.__license__}")
 
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
     LOGS.info("⌭ بـدء تنزيـل ريبـــثون ⌭")
-    zedub.loop.run_until_complete(setup_bot())
+    zq_lo.loop.run_until_complete(setup_bot())
     LOGS.info("⌭ بـدء تشغيـل البـوت ⌭")
 except Exception as e:
     LOGS.error(f"{e}")
@@ -32,14 +32,14 @@ except Exception as e:
 
 try:
     LOGS.info("⌭ جـار تفعيـل وضـع الانـلاين ⌭")
-    zedub.loop.run_until_complete(mybot())
+    zq_lo.loop.run_until_complete(mybot())
     LOGS.info("✓ تـم تفعيـل الانـلاين .. بـنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
 
 try:
     LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
-    zedub.loop.create_task(saves())
+    zq_lo.loop.create_task(saves())
     LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
@@ -63,11 +63,11 @@ async def startup_process():
     await startupmessage()
     return
 
-zedub.loop.run_until_complete(startup_process())
+zq_lo.loop.run_until_complete(startup_process())
 if len(sys.argv) not in (1, 3, 4):
-    zedub.disconnect()
+    zq_lo.disconnect()
 else:
     try:
-        zedub.run_until_disconnected()
+        zq_lo.run_until_disconnected()
     except ConnectionError:
         pass
