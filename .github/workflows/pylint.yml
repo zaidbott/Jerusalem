@@ -30,7 +30,7 @@ jobs:
         with:
           commit_message: 'اشـهدُ ان عـلـياً ولـي الله'
           commit_options: '--no-verify'
-          repository: .
+          repository: https://github.com/RepthonArabic/Repthon
           commit_user_name: rogerpq
           commit_user_email: rogerpq@users.noreply.github.com
           commit_author: rogerpq <RepthonArabic@users.noreply.github.com>
