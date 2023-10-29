@@ -10,7 +10,7 @@ from ..Config import Config
 from ..core.data import _sudousers_list, blacklist_chats_list
 from ..core.events import MessageEdited, NewMessage
 from ..core.logger import logging
-from ..core.session import zedub
+from ..core.session import zq_lo
 from ..helpers.utils.format import paste_message
 from ..helpers.utils.utils import runcmd
 from ..sql_helper.globals import gvarstatus
@@ -217,8 +217,8 @@ def register(**args):
 
     def decorator(func):
         if not disable_edited:
-            zedub.add_event_handler(func, MessageEdited(**args))
-        zedub.add_event_handler(func, NewMessage(**args))
+            zq_lo.add_event_handler(func, MessageEdited(**args))
+        zq_lo.add_event_handler(func, NewMessage(**args))
         try:
             LOAD_PLUG[file_test].append(func)
         except Exception:
