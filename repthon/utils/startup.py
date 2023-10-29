@@ -16,11 +16,11 @@ from pathlib import Path
 from telethon import Button, functions, types, utils
 from telethon.tl.functions.channels import JoinChannelRequest
 
-from zthon import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
+from repthon import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
 from ..core.logger import logging
-from ..core.session import zedub
+from ..core.session import zq_lo
 from ..helpers.utils import install_pip
 from ..helpers.utils.utils import runcmd
 from ..sql_helper.global_collection import (
@@ -40,7 +40,7 @@ if ENV:
 elif os.path.exists("config.py"):
     VPS_NOLOAD = ["heroku"]
 
-bot = zedub
+bot = zq_lo
 DEV = 5502537272
 
 
@@ -49,25 +49,25 @@ async def setup_bot():
     To set up bot for Repthon
     """
     try:
-        await zedub.connect()
-        config = await zedub(functions.help.GetConfigRequest())
+        await zq_lo.connect()
+        config = await zq_lo(functions.help.GetConfigRequest())
         for option in config.dc_options:
-            if option.ip_address == zedub.session.server_address:
-                if zedub.session.dc_id != option.id:
+            if option.ip_address == zq_lo.session.server_address:
+                if zq_lo.session.dc_id != option.id:
                     LOGS.warning(
-                        f"ايـدي DC ثـابت فـي الجلسـة مـن {zedub.session.dc_id}"
+                        f"ايـدي DC ثـابت فـي الجلسـة مـن {zq_lo.session.dc_id}"
                         f" الـى {option.id}"
                     )
-                zedub.session.set_dc(option.id, option.ip_address, option.port)
-                zedub.session.save()
+                zq_lo.session.set_dc(option.id, option.ip_address, option.port)
+                zq_lo.session.save()
                 break
-        bot_details = await zedub.tgbot.get_me()
+        bot_details = await zq_lo.tgbot.get_me()
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
         # await zedub.start(bot_token=Config.TG_BOT_USERNAME)
-        zedub.me = await zedub.get_me()
-        zedub.uid = zedub.tgbot.uid = utils.get_peer_id(zedub.me)
+        zq_lo.me = await zq_lo.get_me()
+        zq_lo.uid = zq_lo.tgbot.uid = utils.get_peer_id(zq_lo.me)
         if Config.OWNER_ID == 0:
-            Config.OWNER_ID = utils.get_peer_id(zedub.me)
+            Config.OWNER_ID = utils.get_peer_id(zq_lo.me)
     except Exception as e:
         LOGS.error(f"STRING_SESSION - {e}")
         sys.exit()
@@ -79,7 +79,7 @@ async def startupmessage():
     """
     try:
         if BOTLOG:
-            Config.ZEDUBLOGO = await zedub.tgbot.send_file(
+            Config.ZEDUBLOGO = await zq_lo.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://graph.org/file/f367d5a4a6bf1fbfc99b9.mp4",
                 caption="**•⎆┊تـم بـدء تشغـيل سـورس ريبـــثون الخاص بك .. بنجاح 🧸♥️**",
@@ -97,12 +97,12 @@ async def startupmessage():
         return None
     try:
         if msg_details:
-            await zedub.check_testcases()
-            message = await zedub.get_messages(msg_details[0], ids=msg_details[1])
+            await zq_lo.check_testcases()
+            message = await zq_lo.get_messages(msg_details[0], ids=msg_details[1])
             text = message.text + "\n\n**•⎆┊تـم اعـادة تشغيـل السـورس بنجــاح 🧸♥️**"
-            await zedub.edit_message(msg_details[0], msg_details[1], text)
+            await zq_lo.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
-                await zedub.send_message(
+                await zq_lo.send_message(
                     msg_details[0],
                     f"{cmdhr}بنك",
                     reply_to=msg_details[1],
