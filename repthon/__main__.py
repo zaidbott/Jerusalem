@@ -1,5 +1,5 @@
 import sys
-import zthon
+import repthon
 from repthon import BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 from .Config import Config
 from .core.logger import logging
