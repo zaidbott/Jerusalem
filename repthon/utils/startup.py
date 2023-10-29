@@ -165,9 +165,9 @@ async def add_bot_to_logger_group(chat_id):
     """
     To add bot to logger groups
     """
-    bot_details = await zedub.tgbot.get_me()
+    bot_details = await zq_lo.tgbot.get_me()
     try:
-        await zedub(
+        await zq_lo(
             functions.messages.AddChatUserRequest(
                 chat_id=chat_id,
                 user_id=bot_details.username,
@@ -176,7 +176,7 @@ async def add_bot_to_logger_group(chat_id):
         )
     except BaseException:
         try:
-            await zedub(
+            await zq_lo(
                 functions.channels.InviteToChannelRequest(
                     channel=chat_id,
                     users=[bot_details.username],
@@ -240,7 +240,7 @@ async def load_plugins(folder, extfolder=None):
     if extfolder:
         if not failure:
             failure.append("None")
-        await zedub.tgbot.send_message(
+        await zq_lo.tgbot.send_message(
             BOTLOG_CHATID,
             f'Your external repo plugins have imported \n**No of imported plugins :** `{success}`\n**Failed plugins to import :** `{", ".join(failure)}`',
         )
@@ -254,51 +254,51 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await zedub(JoinChannelRequest("@Repthon"))
+        await zq_lo(JoinChannelRequest("@Repthon"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@roger21v"))
+        await zq_lo(JoinChannelRequest("@roger21v"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@Repthonn"))
+        await zq_lo(JoinChannelRequest("@Repthonn"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@Repthon_up"))
+        await zq_lo(JoinChannelRequest("@Repthon_up"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@Repthon_vars"))
+        await zq_lo(JoinChannelRequest("@Repthon_vars"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@Repthon_cklaish"))
+        await zq_lo(JoinChannelRequest("@Repthon_cklaish"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@ZQ_LO"))
+        await zq_lo(JoinChannelRequest("@ZQ_LO"))
     except BaseException:
         pass 
     try:
-        await zedub(JoinChannelRequest("@Test_Repthon"))
+        await zq_lo(JoinChannelRequest("@Test_Repthon"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@Repthon_help"))
+        await zq_lo(JoinChannelRequest("@Repthon_help"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@Repthon_support"))
+        await zq_lo(JoinChannelRequest("@Repthon_support"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@f3ytr"))
+        await zq_lo(JoinChannelRequest("@f3ytr"))
     except BaseException:
         pass
     try:
-        await zedub(JoinChannelRequest("@xxfir"))
+        await zq_lo(JoinChannelRequest("@xxfir"))
     except BaseException:
         pass
 
@@ -312,7 +312,7 @@ async def verifyLoggerGroup():
     flag = False
     if BOTLOG:
         try:
-            entity = await zedub.get_entity(BOTLOG_CHATID)
+            entity = await zq_lo.get_entity(BOTLOG_CHATID)
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
@@ -337,9 +337,9 @@ async def verifyLoggerGroup():
             )
     else:
         descript = "لا تقم بحذف هذه المجموعة أو التغيير إلى مجموعة عامه (وظيفتهـا تخزيـن كـل سجـلات وعمليـات البـوت.)"
-        photozed = await zedub.upload_file(file="zedthon/malath/IMG_20220821_230957_726.jpg")
+        photozed = await zq_lo.upload_file(file="baqir/taiba/IMG_20220821_230957_726.jpg")
         _, groupid = await create_supergroup(
-            "كـروب السجـل ريبـــثون", zedub, Config.TG_BOT_USERNAME, descript, photozed
+            "كـروب السجـل ريبـــثون", zq_lo, Config.TG_BOT_USERNAME, descript, photozed
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print(
@@ -348,7 +348,7 @@ async def verifyLoggerGroup():
         flag = True
     if PM_LOGGER_GROUP_ID != -100:
         try:
-            entity = await zedub.get_entity(PM_LOGGER_GROUP_ID)
+            entity = await zq_lo.get_entity(PM_LOGGER_GROUP_ID)
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
@@ -366,44 +366,44 @@ async def verifyLoggerGroup():
             LOGS.error("حدث خطأ اثناء التعرف على فار PM_LOGGER_GROUP_ID.\n" + str(e))
     else:
         descript = "لا تقم بحذف هذه المجموعة أو التغيير إلى مجموعة عامه (وظيفتهـا تخزيـن رسـائل الخـاص.)"
-        photozed = await zedub.upload_file(file="zedthon/malath/IMG_20220821_170831_450.jpg")
+        photozed = await zq_lo.upload_file(file="baqir/taiba/IMG_20220821_170831_450.jpg")
         _, groupid = await create_supergroup(
-            "كـروب التخـزين", zedub, Config.TG_BOT_USERNAME, descript, photozed
+            "كـروب التخـزين", zq_lo, Config.TG_BOT_USERNAME, descript, photozed
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
         print("تم عمل الكروب التخزين بنجاح واضافة الفارات اليه.")
         flag = True
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "zthon"]
+        args = [executable, "-m", "repthon"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
 
 
 async def install_externalrepo(repo, branch, cfolder):
-    ZEDREPO = repo
-    if ZEDBRANCH := branch:
-        repourl = os.path.join(ZEDREPO, f"tree/{ZEDBRANCH}")
-        gcmd = f"git clone -b {ZEDBRANCH} {ZEDREPO} {cfolder}"
-        errtext = f"There is no branch with name `{ZEDBRANCH}` in your external repo {ZEDREPO}. Recheck branch name and correct it in vars(`EXTERNAL_REPO_BRANCH`)"
+    REPREPO = repo
+    if REPBRANCH := branch:
+        repourl = os.path.join(REPREPO, f"tree/{REPBRANCH}")
+        gcmd = f"git clone -b {REPBRANCH} {REPREPO} {cfolder}"
+        errtext = f"There is no branch with name `{REPBRANCH}` in your external repo {ZEDREPO}. Recheck branch name and correct it in vars(`EXTERNAL_REPO_BRANCH`)"
     else:
-        repourl = ZEDREPO
-        gcmd = f"git clone {ZEDREPO} {cfolder}"
-        errtext = f"The link({ZEDREPO}) you provided for `EXTERNAL_REPO` in vars is invalid. please recheck that link"
+        repourl = REPREPO
+        gcmd = f"git clone {REPREPO} {cfolder}"
+        errtext = f"The link({REPREPO}) you provided for `EXTERNAL_REPO` in vars is invalid. please recheck that link"
     response = urllib.request.urlopen(repourl)
     if response.code != 200:
         LOGS.error(errtext)
-        return await zedub.tgbot.send_message(BOTLOG_CHATID, errtext)
+        return await zq_lo.tgbot.send_message(BOTLOG_CHATID, errtext)
     await runcmd(gcmd)
     if not os.path.exists(cfolder):
         LOGS.error(
             "There was a problem in cloning the external repo. please recheck external repo link"
         )
-        return await zedub.tgbot.send_message(
+        return await zq_lo.tgbot.send_message(
             BOTLOG_CHATID,
             "There was a problem in cloning the external repo. please recheck external repo link",
         )
     if os.path.exists(os.path.join(cfolder, "requirements.txt")):
         rpath = os.path.join(cfolder, "requirements.txt")
         await runcmd(f"pip3 install --no-cache-dir {rpath}")
-    await load_plugins(folder="zthon", extfolder=cfolder)
+    await load_plugins(folder="repthon", extfolder=cfolder)
