@@ -26,7 +26,7 @@ from youtubesearchpython import VideosSearch
 
 
 
-from . import zedub
+from . import zq_lo
 
 
 
@@ -100,7 +100,7 @@ def ibuild_keyboard(buttons):
 
 
 
-@zedub.tgbot.on(InlineQuery)
+@zq_lo.tgbot.on(InlineQuery)
 
 async def inline_handler(event):  # sourcery no-metrics
 
@@ -330,13 +330,13 @@ async def inline_handler(event):  # sourcery no-metrics
 
             (
 
-                Button.url("قنـاة السـورس", "https://t.me/ZedThon"),
+                Button.url("قنـاة السـورس", "https://t.me/Repthon"),
 
                 Button.url(
 
                     "مطـور السـورس",
 
-                    "https://t.me/zzzzl1l",
+                    "https://t.me/E_7_V",
 
                 ),
 
@@ -354,7 +354,7 @@ async def inline_handler(event):  # sourcery no-metrics
 
         text, msg_entities = await event.client._parse_message_text(
 
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗭𝗧𝗵𝗼𝗻.", "md"
+            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗥𝗲𝗽𝘁𝗵𝗼𝗻.", "md"
 
         )
 
@@ -364,11 +364,11 @@ async def inline_handler(event):  # sourcery no-metrics
 
             type="photo",
 
-            title="𝗭𝗧𝗵𝗼𝗻 𓅛",
+            title="𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𓅛",
 
             description="روابـط التنصـيب",
 
-            url="https://t.me/ZedThon/105",
+            url="https://t.me/Repthon/117",
 
             thumb=photo,
 
