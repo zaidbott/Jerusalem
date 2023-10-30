@@ -10,9 +10,9 @@ from telethon import Button, types, version
 from telethon.errors import QueryIdInvalidError
 from telethon.events import CallbackQuery, InlineQuery
 from youtubesearchpython import VideosSearch
-from zthon import zedub, repversion, StartTime
+from repthon import zq_lo, repversion, StartTime
 from ..Config import Config
-from ..helpers.functions import rand_key, zedalive, check_data_base_heal_th, get_readable_time
+from ..helpers.functions import rand_key, repalive, check_data_base_heal_th, get_readable_time
 from ..helpers.functions.utube import download_button, get_yt_video_id, get_ytthumb, result_formatter, ytsearch_data
 from ..plugins import mention
 from ..sql_helper.globals import gvarstatus
@@ -45,7 +45,7 @@ def ibuild_keyboard(buttons):
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
 
-@zedub.tgbot.on(InlineQuery)
+@zq_lo.tgbot.on(InlineQuery)
 async def inline_handler(event):  # sourcery no-metrics
     builder = event.builder
     result = None
@@ -95,7 +95,7 @@ async def inline_handler(event):  # sourcery no-metrics
                     user_list.append(u.id)
                     sandy += " "
                 sandy = sandy[:-1]
-            old_msg = os.path.join("./Zara", f"{info_type[0]}.txt")
+            old_msg = os.path.join("./repthon", f"{info_type[0]}.txt")
             try:
                 jsondata = json.load(open(old_msg))
             except Exception:
