@@ -5,7 +5,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 
 from ..Config import Config
-from .client import ZedUserBotClient
+from .client import RepUserBotClient
 
 __version__ = "2.10.6"
 
@@ -14,10 +14,10 @@ loop = None
 if Config.STRING_SESSION:
     session = StringSession(str(Config.STRING_SESSION))
 else:
-    session = "zelzal"
+    session = "repthon"
 
 try:
-    zedub = ZedUserBotClient(
+    zq_lo = RepUserBotClient(
         session=session,
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
@@ -32,8 +32,8 @@ except Exception as e:
     sys.exit()
 
 
-zedub.tgbot = tgbot = ZedUserBotClient(
-    session="ZedTgbot",
+zq_lo.tgbot = tgbot = RepUserBotClient(
+    session="RepTgbot",
     api_id=Config.APP_ID,
     api_hash=Config.API_HASH,
     loop=loop,
