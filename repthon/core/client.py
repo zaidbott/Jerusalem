@@ -49,7 +49,7 @@ sudo_enabledcmds = sudo_enabled_cmds()
 
 
 class ZedUserBotClient(TelegramClient):
-    def zed_cmd(
+    def rep_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
         info: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
@@ -193,7 +193,7 @@ class ZedUserBotClient(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import zedub
+            from .session import zq_lo
 
             if not func.__doc__ is None:
                 CMD_INFO[command[0]].append((func.__doc__).strip())
@@ -206,18 +206,18 @@ class ZedUserBotClient(TelegramClient):
                     except BaseException:
                         LOADED_CMDS.update({command[0]: [wrapper]})
                 if edited:
-                    zedub.add_event_handler(
+                    zq_lo.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                zedub.add_event_handler(
+                zq_lo.add_event_handler(
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
                 if allow_sudo and gvarstatus("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
-                            zedub.add_event_handler(
+                            zq_lo.add_event_handler(
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
@@ -225,7 +225,7 @@ class ZedUserBotClient(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        zedub.add_event_handler(
+                        zq_lo.add_event_handler(
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
@@ -241,8 +241,8 @@ class ZedUserBotClient(TelegramClient):
                 except BaseException:
                     LOADED_CMDS.update({file_test: [func]})
                 if edited:
-                    zedub.add_event_handler(func, events.MessageEdited(**kwargs))
-                zedub.add_event_handler(func, events.NewMessage(**kwargs))
+                    zq_lo.add_event_handler(func, events.MessageEdited(**kwargs))
+                zq_lo.add_event_handler(func, events.NewMessage(**kwargs))
             return wrapper
 
         return decorator
@@ -312,12 +312,12 @@ class ZedUserBotClient(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import zedub
+            from .session import zq_lo
 
             if edited is True:
-                zedub.tgbot.add_event_handler(func, events.MessageEdited(**kwargs))
+                zq_lo.tgbot.add_event_handler(func, events.MessageEdited(**kwargs))
             else:
-                zedub.tgbot.add_event_handler(func, events.NewMessage(**kwargs))
+                zq_lo.tgbot.add_event_handler(func, events.NewMessage(**kwargs))
 
             return wrapper
 
