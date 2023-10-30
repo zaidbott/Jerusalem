@@ -3,7 +3,7 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -34,7 +34,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@zedub.zed_cmd(outgoing=True, edited=False)
+@zq_lo.zed_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -80,7 +80,7 @@ async def set_not_afk(event):
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.zed_cmd(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):
