@@ -3,7 +3,7 @@ from datetime import datetime
 
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -28,7 +28,7 @@ botusername = Config.TG_BOT_USERNAME
 cmhd = Config.COMMAND_HAND_LER
 
 
-@zedub.bot_cmd(pattern="^/help$", from_users=Config.OWNER_ID)
+@zq_lo.bot_cmd(pattern="^/help$", from_users=Config.OWNER_ID)
 async def bot_help(event):
     await event.reply(
         f"""**- اوامـر البـوت المسـاعـد 🤖♥️**:
@@ -53,7 +53,7 @@ async def bot_help(event):
     )
 
 
-@zedub.bot_cmd(pattern="^/broadcast$", from_users=Config.OWNER_ID)
+@zq_lo.bot_cmd(pattern="^/broadcast$", from_users=Config.OWNER_ID)
 async def bot_broadcast(event):
     replied = await event.get_reply_message()
     if not replied:
@@ -112,7 +112,7 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المشتركين$",
     command=("المشتركين", plugin_category),
     info={
@@ -132,7 +132,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@zedub.bot_cmd(pattern="^/ban\\s+([\\s\\S]*)", from_users=Config.OWNER_ID)
+@zq_lo.bot_cmd(pattern="^/ban\\s+([\\s\\S]*)", from_users=Config.OWNER_ID)
 async def ban_botpms(event):
     user_id, reason = await get_user_and_reason(event)
     reply_to = await reply_id(event)
@@ -163,7 +163,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@zedub.bot_cmd(pattern="^/unban(?:\\s|$)([\\s\\S]*)", from_users=Config.OWNER_ID)
+@zq_lo.bot_cmd(pattern="^/unban(?:\\s|$)([\\s\\S]*)", from_users=Config.OWNER_ID)
 async def ban_botpms(event):
     user_id, reason = await get_user_and_reason(event)
     reply_to = await reply_id(event)
@@ -187,7 +187,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المحظورين$",
     command=("المحظورين", plugin_category),
     info={
@@ -207,7 +207,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="عدم التكرار (تفعيل|تعطيل)$",
     command=("bot_antif", plugin_category),
     info={
