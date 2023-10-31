@@ -13,11 +13,11 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.events import CallbackQuery
 
-from zthon import StartTime, zedub, repversion
+from repthon import StartTime, zq_lo, repversion
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
-from ..helpers.functions import zedalive, check_data_base_heal_th, get_readable_time
+from ..helpers.functions import repalive, check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
 from . import mention
@@ -26,7 +26,7 @@ plugin_category = "العروض"
 ALIVE = gvarstatus("R_ALIVE") or "فحص"
 
 
-@zedub.zed_cmd(pattern=f"{ALIVE}$")
+@zq_lo.rep_cmd(pattern=f"{ALIVE}$")
 async def alive(event):
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
@@ -37,9 +37,9 @@ async def alive(event):
     _, check_sgnirts = check_data_base_heal_th()
     R_EMOJI = gvarstatus("ALIVE_EMOJI") or "**𓃰┊**"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **"
-    ZED_IMG = gvarstatus("ALIVE_PIC") or "https://graph.org/file/f701e179b634b5a873e8c.mp4"
-    zed_caption = gvarstatus("ALIVE_TEMPLATE") or zed_temp
-    caption = zed_caption.format(
+    REP_IMG = gvarstatus("ALIVE_PIC") or "https://graph.org/file/f701e179b634b5a873e8c.mp4"
+    rep_caption = gvarstatus("ALIVE_TEMPLATE") or rep_temp
+    caption = rep_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
         R_EMOJI=R_EMOJI,
         mention=mention,
@@ -50,27 +50,27 @@ async def alive(event):
         dbhealth=check_sgnirts,
         ping=ms,
     )
-    if ZED_IMG:
-        ZED = [x for x in ZED_IMG.split()]
-        PIC = random.choice(ZED)
+    if REP_IMG:
+        REP = [x for x in REP_IMG.split()]
+        PIC = random.choice(REP)
         try:
             await event.client.send_file(
                 event.chat_id, PIC, caption=caption, reply_to=reply_to_id
             )
-            await zedevent.delete()
+            await repevent.delete()
         except (WebpageMediaEmptyError, MediaEmptyError, WebpageCurlFailedError):
             return await edit_or_reply(
-                zedevent,
+                repevent,
                 f"**⌔∮ عـذراً عليـك الـرد ع صـوره او ميـديـا  ⪼  `.اضف صورة الفحص` <بالرد ع الصـوره او الميـديـا> ",
             )
     else:
         await edit_or_reply(
-            zedevent,
+            repevent,
             caption,
         )
 
 
-zed_temp = """{ALIVE_TEXT}
+rep_temp = """{ALIVE_TEXT}
 
 **{R_EMOJI} قاعدۿ البيانات :** تعمل بنـجاح
 **{R_EMOJI} إصـدار التـيليثون :** `{telever}`
@@ -81,7 +81,7 @@ zed_temp = """{ALIVE_TEXT}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الفحص$",
     command=("الفحص", plugin_category),
     info={
@@ -95,17 +95,17 @@ async def amireallyialive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
     R_EMOJI = gvarstatus("ALIVE_EMOJI") or "𓅓┊"
-    zed_caption = "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **\n"
-    zed_caption += f"**{R_EMOJI} إصـدار التـيليثون :** `{version.__version__}\n`"
-    zed_caption += f"**{R_EMOJI} إصـدار ريبـــثون :** `{repversion}`\n"
-    zed_caption += f"**{R_EMOJI} إصـدار البـايثون :** `{python_version()}\n`"
-    zed_caption += f"**{R_EMOJI} المسـتخدم :** {mention}\n"
-    results = await event.client.inline_query(Config.TG_BOT_USERNAME, zed_caption)
+    rep_caption = "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **\n"
+    rep_caption += f"**{R_EMOJI} إصـدار التـيليثون :** `{version.__version__}\n`"
+    rep_caption += f"**{R_EMOJI} إصـدار ريبـــثون :** `{repversion}`\n"
+    rep_caption += f"**{R_EMOJI} إصـدار البـايثون :** `{python_version()}\n`"
+    rep_caption += f"**{R_EMOJI} المسـتخدم :** {mention}\n"
+    results = await event.client.inline_query(Config.TG_BOT_USERNAME, rep_caption)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"stats")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(b"stats")))
 async def on_plug_in_callback_query_handler(event):
-    statstext = await zedalive(StartTime)
+    statstext = await repalive(StartTime)
     await event.answer(statstext, cache_time=0, alert=True)
