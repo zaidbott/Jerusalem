@@ -19,7 +19,7 @@ from yt_dlp import YoutubeDL
 from .stream_helper import Stream, check_url, video_dl, yt_regex
 
 
-class ZedVC:
+class RepVC:
     def __init__(self, client) -> None:
         self.app = PyTgCalls(client, overload_quiet_mode=True)
         self.client = client
@@ -56,7 +56,7 @@ class ZedVC:
         try:
             await self.app.join_group_call(
                 chat_id=chat.id,
-                stream=AudioPiped("zedthon/ahmed/Silence01s.mp3"),
+                stream=AudioPiped("baqir/baqir/Silence01s.mp3"),
                 join_as=join_as_chat,
                 stream_type=StreamType().pulse_stream,
             )
@@ -65,7 +65,7 @@ class ZedVC:
                 await self.client(
                     functions.phone.CreateGroupCallRequest(
                         peer=chat,
-                        title="ZedVC",
+                        title="RepVC",
                     )
                 )
                 await self.join_vc(chat=chat, join_as=join_as)
