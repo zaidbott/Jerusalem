@@ -21,7 +21,7 @@ BASE_YT_URL = "https://www.youtube.com/watch?v="
 YOUTUBE_REGEX = re.compile(
     r"(?:youtube\.com|youtu\.be)/(?:[\w-]+\?v=|embed/|v/|shorts/)?([\w-]{11})"
 )
-PATH = "./zthon/cache/ytsearch.json"
+PATH = "./repthon/cache/ytsearch.json"
 
 song_dl = "youtube-dl --force-ipv4 --write-thumbnail --add-metadata --embed-thumbnail -o './temp/%(title)s.%(ext)s' --extract-audio --audio-format mp3 --audio-quality {QUALITY} {video_link}"
 thumb_dl = "youtube-dl --force-ipv4 -o './temp/%(title)s.%(ext)s' --write-thumbnail --skip-download {video_link}"
@@ -33,9 +33,9 @@ name_dl = (
 
 async def yt_search(zed):
     try:
-        zed = urllib.parse.quote(zed)
+        rep = urllib.parse.quote(rep)
         html = urllib.request.urlopen(
-            f"https://www.youtube.com/results?search_query={zed}"
+            f"https://www.youtube.com/results?search_query={rep}"
         )
 
         user_data = re.findall(r"watch\?v=(\S{11})", html.read().decode())
@@ -87,7 +87,7 @@ class YT_Search_X:
 
 ytsearch_data = YT_Search_X()
 
-async def yt_data(zed):
+async def yt_data(rep):
     params = {"format": "json", "url": zed}
     url = "https://www.youtube.com/oembed"  # https://stackoverflow.com/questions/29069444/returning-the-urls-as-a-list-from-a-youtube-search-query
     query_string = urllib.parse.urlencode(params)
