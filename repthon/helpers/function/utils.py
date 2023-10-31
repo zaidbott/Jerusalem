@@ -47,28 +47,28 @@ async def get_readable_time(seconds: int) -> str:
 # gban
 
 
-async def admin_groups(zedub):
-    zedgroups = []
-    async for dialog in zedub.iter_dialogs():
+async def admin_groups(zq_lo):
+    repgroups = []
+    async for dialog in zq_lo.iter_dialogs():
         entity = dialog.entity
         if (
             isinstance(entity, Channel)
             and entity.megagroup
             and (entity.creator or entity.admin_rights)
         ):
-            zedgroups.append(entity.id)
-    return zedgroups
+            repgroups.append(entity.id)
+    return repgroups
 
 
 # https://github.com/pokurt/LyndaRobot/blob/7556ca0efafd357008131fa88401a8bb8057006f/lynda/modules/helper_funcs/string_handling.py#L238
 
 
-async def extract_time(zed, time_val):
+async def extract_time(rep, time_val):
     if any(time_val.endswith(unit) for unit in ("s", "m", "h", "d", "w")):
         unit = time_val[-1]
         time_num = time_val[:-1]  # type: str
         if not time_num.isdigit():
-            await zed.edit("Invalid time amount specified.")
+            await rep.edit("Invalid time amount specified.")
             return None
         if unit == "s":
             bantime = int(time.time() + int(time_num) * 1)
@@ -82,12 +82,12 @@ async def extract_time(zed, time_val):
             bantime = int(time.time() + int(time_num) * 7 * 24 * 60 * 60)
         else:
             # how even...?
-            await zed.edit(
+            await rep.edit(
                 f"__Invalid time type specified. Expected s,  m , h , d or w but got:__ {time_val[-1]}"
             )
             return None
         return bantime
-    await zed.edit(
+    await rep.edit(
         f"__Invalid time type specified. Expected s,  m , h , d or w but got: __{time_val[-1]}"
     )
     return None
