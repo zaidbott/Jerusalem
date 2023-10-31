@@ -31,7 +31,7 @@ async def alive(event):
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    zedevent = await edit_or_reply(event, "**𓅓┊جـاري .. فحـص البـوت الخـاص بك**")
+    repevent = await edit_or_reply(event, "**𓅓┊جـاري .. فحـص البـوت الخـاص بك**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
