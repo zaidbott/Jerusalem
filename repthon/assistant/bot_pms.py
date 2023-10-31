@@ -8,7 +8,7 @@ from telethon.errors import UserIsBlockedError
 from telethon.events import CallbackQuery, StopPropagation
 from telethon.utils import get_display_name
 
-from zthon import Config, zedub
+from repthon import Config, zq_lo
 
 from ..core import check_owner, pool
 from ..core.logger import logging
@@ -64,7 +64,7 @@ async def check_bot_started_users(user, event):
         await event.client.send_message(BOTLOG_CHATID, notification)
 
 
-@zedub.bot_cmd(
+@zq_lo.bot_cmd(
     pattern=f"^/start({botusername})?([\s]+)?$",
     incoming=True,
     func=lambda e: e.is_private,
@@ -107,13 +107,13 @@ async def bot_start(event):
             start_msg = f"**❈╎مـرحباً بـك عزيـزي  {mention} **\
                         \n**❈╎البـوت المسـاعد {my_mention}' انـا**\
                         \n**❈╎ يمكنك التواصل مع مالك البوت فقط قم بـ ارسال رسالتك .**\
-                        \n\n**❈╎البـوت خـاص بسـورس :** [𝑹𝑬𝑷𝑻𝑯𝑶𝑵🜑 𓅛](https://t.me/Repthon)"
+                        \n\n**❈╎البـوت خـاص بسـورس :** [𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𓅛](https://t.me/Repthon)"
         buttons = [
             (
                 Button.url("قنـاة السـورس", "https://t.me/Repthon"),
                 Button.url(
                     "مطـور السـورس",
-                    "https://t.me/ZQ_LO",
+                    "https://t.me/E_7_V",
                 ),
             )
         ]
@@ -150,7 +150,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@zedub.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@zq_lo.bot_cmd(incoming=True, func=lambda e: e.is_private)
 async def bot_pms(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -207,7 +207,7 @@ async def bot_pms(event):  # sourcery no-metrics
                     )
 
 
-@zedub.bot_cmd(edited=True)
+@zq_lo.bot_cmd(edited=True)
 async def bot_pms_edit(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -303,7 +303,7 @@ async def handler(event):
                 LOGS.error(str(e))
 
 
-@zedub.bot_cmd(pattern="^/uinfo$", from_users=Config.OWNER_ID)
+@zq_lo.bot_cmd(pattern="^/uinfo$", from_users=Config.OWNER_ID)
 async def bot_start(event):
     reply_to = await reply_id(event)
     if not reply_to:
@@ -353,7 +353,7 @@ async def send_flood_alert(user_) -> None:
             FloodConfig.ALERT[user_.id]["count"] = 1
         except Exception as e:
             if BOTLOG:
-                await zedub.tgbot.send_message(
+                await zq_lo.tgbot.send_message(
                     BOTLOG_CHATID,
                     f"**Error:**\nWhile updating flood count\n`{e}`",
                 )
@@ -380,7 +380,7 @@ async def send_flood_alert(user_) -> None:
                     "Is Flooding your bot !, Check `.help delsudo` to remove the user from Sudo."
                 )
                 if BOTLOG:
-                    await zedub.tgbot.send_message(BOTLOG_CHATID, sudo_spam)
+                    await zq_lo.tgbot.send_message(BOTLOG_CHATID, sudo_spam)
             else:
                 await ban_user_from_bot(
                     user_,
@@ -394,7 +394,7 @@ async def send_flood_alert(user_) -> None:
         if not fa_id:
             return
         try:
-            msg_ = await zedub.tgbot.get_messages(BOTLOG_CHATID, fa_id)
+            msg_ = await zq_lo.tgbot.get_messages(BOTLOG_CHATID, fa_id)
             if msg_.text != flood_msg:
                 await msg_.edit(flood_msg, buttons=buttons)
         except Exception as fa_id_err:
@@ -402,30 +402,30 @@ async def send_flood_alert(user_) -> None:
             return
     else:
         if BOTLOG:
-            fa_msg = await zedub.tgbot.send_message(
+            fa_msg = await zq_lo.tgbot.send_message(
                 BOTLOG_CHATID,
                 flood_msg,
                 buttons=buttons,
             )
         try:
-            chat = await zedub.tgbot.get_entity(BOTLOG_CHATID)
-            await zedub.tgbot.send_message(
+            chat = await zq_lo.tgbot.get_entity(BOTLOG_CHATID)
+            await zq_lo.tgbot.send_message(
                 Config.OWNER_ID,
                 f"⚠️  **[Bot Flood Warning !](https://t.me/c/{chat.id}/{fa_msg.id})**",
             )
         except UserIsBlockedError:
             if BOTLOG:
-                await zedub.tgbot.send_message(BOTLOG_CHATID, "**Unblock your bot !**")
+                await zq_lo.tgbot.send_message(BOTLOG_CHATID, "**Unblock your bot !**")
     if FloodConfig.ALERT[user_.id].get("fa_id") is None and fa_msg:
         FloodConfig.ALERT[user_.id]["fa_id"] = fa_msg.id
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
 @check_owner
 async def bot_pm_ban_cb(c_q: CallbackQuery):
     user_id = int(c_q.pattern_match.group(1))
     try:
-        user = await zedub.get_entity(user_id)
+        user = await zq_lo.get_entity(user_id)
     except Exception as e:
         await c_q.answer(f"- خطـأ :\n{e}")
     else:
@@ -462,7 +462,7 @@ def is_flood(uid: int) -> Optional[bool]:
         return True
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"toggle_bot-antiflood_off$")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(b"toggle_bot-antiflood_off$")))
 @check_owner
 async def settings_toggle(c_q: CallbackQuery):
     if gvarstatus("bot_antif") is None:
@@ -472,8 +472,8 @@ async def settings_toggle(c_q: CallbackQuery):
     await c_q.edit("BOT_ANTIFLOOD is now disabled !")
 
 
-@zedub.bot_cmd(incoming=True, func=lambda e: e.is_private)
-@zedub.bot_cmd(edited=True, func=lambda e: e.is_private)
+@zq_lo.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@zq_lo.bot_cmd(edited=True, func=lambda e: e.is_private)
 async def antif_on_msg(event):
     if gvarstatus("bot_antif") is None:
         return
