@@ -41,7 +41,7 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-async def zedalive(StartTime):
+async def repalive(StartTime):
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
     uptime = await get_readable_time((time.time() - StartTime))
@@ -83,7 +83,7 @@ async def zedalive(StartTime):
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    return f"🖤༄ ZThon Stats ༄🖤\
+    return f"🖤༄ Repthon Stats ༄🖤\
                  \n\nღ Database : {check_sgnirts}\
                   \nღ Sudo : {sudo}\
                   \nღ Uptime : {uptime}\
