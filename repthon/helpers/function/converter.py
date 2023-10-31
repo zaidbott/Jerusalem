@@ -2,11 +2,11 @@ import os
 
 from PIL import Image
 
-from zthon.core.logger import logging
-from zthon.core.managers import edit_or_reply
-from zthon.helpers.functions.vidtools import take_screen_shot
-from zthon.helpers.tools import fileinfo, media_type, meme_type
-from zthon.helpers.utils.utils import runcmd
+from repthon.core.logger import logging
+from repthon.core.managers import edit_or_reply
+from repthon.helpers.functions.vidtools import take_screen_shot
+from repthon.helpers.tools import fileinfo, media_type, meme_type
+from repthon.helpers.utils.utils import runcmd
 
 LOGS = logging.getLogger(__name__)
 
@@ -19,14 +19,14 @@ class CatConverter:
         if os.path.exists(catfile):
             os.remove(catfile)
         try:
-            zedmedia = reply if os.path.exists(reply) else None
+            repmedia = reply if os.path.exists(reply) else None
         except TypeError:
             if memetype in ["Video", "Gif"]:
                 dirct = "./temp/catfile.mp4"
             elif memetype == "Audio":
                 dirct = "./temp/catfile.mp3"
-            zedmedia = await reply.download_media(dirct)
-        return catfile, zedmedia
+            repmedia = await reply.download_media(dirct)
+        return catfile, repmedia
 
     async def to_image(
         self, event, reply, dirct="./temp", file="meme.png", noedits=False, rgb=False
@@ -42,27 +42,27 @@ class CatConverter:
                 event, "`Transfiguration Time! Converting to ....`"
             )
         )
-        catfile, zedmedia = await self._media_check(reply, dirct, file, memetype)
+        catfile, repmedia = await self._media_check(reply, dirct, file, memetype)
         if memetype == "Photo":
-            im = Image.open(zedmedia)
+            im = Image.open(repmedia)
             im.save(catfile)
         elif memetype in ["Audio", "Voice"]:
-            await runcmd(f"ffmpeg -i '{zedmedia}' -an -c:v copy '{catfile}' -y")
+            await runcmd(f"ffmpeg -i '{repmedia}' -an -c:v copy '{catfile}' -y")
         elif memetype in ["Round Video", "Video", "Gif"]:
-            await take_screen_shot(zedmedia, "00.00", catfile)
+            await take_screen_shot(repmedia, "00.00", catfile)
         if mediatype == "Sticker":
             if memetype == "Animated Sticker":
-                catcmd = f"lottie_convert.py --frame 0 -if lottie -of png '{zedmedia}' '{catfile}'"
+                catcmd = f"lottie_convert.py --frame 0 -if lottie -of png '{repmedia}' '{catfile}'"
                 stdout, stderr = (await runcmd(catcmd))[:2]
                 if stderr:
                     LOGS.info(stdout + stderr)
             elif memetype == "Video Sticker":
-                await take_screen_shot(zedmedia, "00.00", catfile)
+                await take_screen_shot(repmedia, "00.00", catfile)
             elif memetype == "Static Sticker":
                 im = Image.open(zedmedia)
                 im.save(catfile)
-        if zedmedia and os.path.exists(zedmedia):
-            os.remove(zedmedia)
+        if repmedia and os.path.exists(repmedia):
+            os.remove(repmedia)
         if os.path.exists(catfile):
             if rgb:
                 img = Image.open(catfile)
@@ -101,16 +101,16 @@ class CatConverter:
             if noedits
             else await edit_or_reply(event, "__🎞Converting into Animated sticker..__")
         )
-        catfile, zedmedia = await self._media_check(reply, dirct, file, memetype)
+        catfile, repmedia = await self._media_check(reply, dirct, file, memetype)
         media = await fileinfo(zedmedia)
         h = media["height"]
         w = media["width"]
         w, h = (-1, 512) if h > w else (512, -1)
         await runcmd(
-            f"ffmpeg -to 00:00:02.900 -i '{zedmedia}' -vf scale={w}:{h} -c:v libvpx-vp9 -crf 30 -b:v 560k -maxrate 560k -bufsize 256k -an '{catfile}'"
+            f"ffmpeg -to 00:00:02.900 -i '{repmedia}' -vf scale={w}:{h} -c:v libvpx-vp9 -crf 30 -b:v 560k -maxrate 560k -bufsize 256k -an '{catfile}'"
         )  # pain
-        if os.path.exists(zedmedia):
-            os.remove(zedmedia)
+        if os.path.exists(repmedia):
+            os.remove(repmedia)
         if os.path.exists(catfile):
             return catevent, catfile
         return catevent, None
@@ -135,20 +135,20 @@ class CatConverter:
                 event, "`Transfiguration Time! Converting to ....`"
             )
         )
-        catfile, zedmedia = await self._media_check(reply, dirct, file, memetype)
+        catfile, repmedia = await self._media_check(reply, dirct, file, memetype)
         if mediatype == "Sticker":
             if memetype == "Video Sticker":
-                await runcmd(f"ffmpeg -i '{zedmedia}' -c copy '{catfile}'")
+                await runcmd(f"ffmpeg -i '{repmedia}' -c copy '{catfile}'")
             elif memetype == "Animated Sticker":
-                await runcmd(f"lottie_convert.py '{zedmedia}' '{catfile}'")
-        if zedmedia.endswith(".gif"):
-            await runcmd(f"ffmpeg -f gif -i '{zedmedia}' -fs {maxsize} -an '{catfile}'")
+                await runcmd(f"lottie_convert.py '{repmedia}' '{catfile}'")
+        if repmedia.endswith(".gif"):
+            await runcmd(f"ffmpeg -f gif -i '{repmedia}' -fs {maxsize} -an '{catfile}'")
         else:
             await runcmd(
-                f"ffmpeg -i '{zedmedia}' -c:v libx264 -fs {maxsize} -an '{catfile}'"
+                f"ffmpeg -i '{repmedia}' -c:v libx264 -fs {maxsize} -an '{catfile}'"
             )
-        if zedmedia and os.path.exists(zedmedia):
-            os.remove(zedmedia)
+        if repmedia and os.path.exists(repmedia):
+            os.remove(repmedia)
         if os.path.exists(catfile):
             return catevent, catfile
         return catevent, None
