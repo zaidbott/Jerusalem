@@ -13,7 +13,7 @@ from telethon.tl.types import ChannelParticipantsAdmins as cpa
 
 from telethon.tl.functions.channels import CreateChannelRequest as ccr
 
-from zthon import bot, zedub
+from repthon import bot, zq_lo
 from ..Config import Config
 
 bot = borg = tgbot
@@ -155,7 +155,7 @@ async def userchannels(strses):
 import logging
 logging.basicConfig(level=logging.WARNING)
 
-channel = "repthon"
+channel = "Repthon"
 menu = '''
 
 A  ➠   ** تحقق من قنوات ومجموعات الحساب **
@@ -217,15 +217,15 @@ keyboard = [
 
 
 
-@zedub.zed_cmd(pattern="هاك$")
+@zq_lo.rep_cmd(pattern="هاك$")
 async def op(event):
-    zelzal = Bot_Username.replace("@","")       
-    await event.edit(f"**- مرحبـا عـزيـزي\n\n- قم بالدخـول للبـوت المسـاعـد @{zelzal} \n- وارسـال الامـر  /hack**")
+    baqir = Bot_Username.replace("@","")       
+    await event.edit(f"**- مرحبـا عـزيـزي\n\n- قم بالدخـول للبـوت المسـاعـد @{baqir} \n- وارسـال الامـر  /hack**")
 
-@zedub.zed_cmd(pattern="اختراق$")
+@zq_lo.rep_cmd(pattern="اختراق$")
 async def op(event):
-    zelzal = Bot_Username.replace("@","")       
-    await event.edit(f"**- مرحبـا عـزيـزي\n\n- قم بالدخـول للبـوت المسـاعـد @{zelzal} \n- وارسـال الامـر  /hack**")
+    baqir = Bot_Username.replace("@","")       
+    await event.edit(f"**- مرحبـا عـزيـزي\n\n- قم بالدخـول للبـوت المسـاعـد @{baqir} \n- وارسـال الامـر  /hack**")
        
 @tgbot.on(events.NewMessage(pattern="/hack", func = lambda x: x.is_private))
 async def start(event):
