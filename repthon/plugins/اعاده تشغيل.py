@@ -2,7 +2,7 @@ import os
 from asyncio.exceptions import CancelledError
 from time import sleep
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.logger import logging
 from ..core.managers import edit_or_reply
@@ -18,7 +18,7 @@ LOGS = logging.getLogger(__name__)
 plugin_category = "الادوات"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="اعاده تشغيل$",
     command=("اعاده تشغيل", plugin_category),
     info={
@@ -48,14 +48,14 @@ async def _(event):
     except Exception as e:
         LOGS.error(e)
     try:
-        await zedub.disconnect()
+        await zq_lo.disconnect()
     except CancelledError:
         pass
     except Exception as e:
         LOGS.error(e)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ايقاف البوت$",
     command=("ايقاف البوت", plugin_category),
     info={
@@ -75,7 +75,7 @@ async def _(event):
         os._exit(143)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="نوم( [0-9]+)?$",
     command=("نوم", plugin_category),
     info={
@@ -99,7 +99,7 @@ async def _(event):
     await event.edit("`OK, I'm awake now.`")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="notify (on|off)$",
     command=("notify", plugin_category),
     info={
