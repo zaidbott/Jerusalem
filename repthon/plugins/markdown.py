@@ -22,8 +22,8 @@ from telethon.tl.types import (
 )
 from telethon.utils import add_surrogate, del_surrogate
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
@@ -163,7 +163,7 @@ def parse(message, old_entities=None):
         LOGS.info(str(e))
 
 
-@zedub.zed_cmd(outgoing=True)
+@zq_lo.rep_cmd(outgoing=True)
 async def reparse(event):
     old_entities = event.message.entities or []
     parser = partial(parse, old_entities=old_entities)
@@ -185,7 +185,7 @@ async def reparse(event):
         raise events.StopPropagation
 
 
-@zedub.zed_cmd(outgoing=True)
+@zq_lo.rep_cmd(outgoing=True)
 async def mention(event):
     newstr = event.text
     if event.entities:
