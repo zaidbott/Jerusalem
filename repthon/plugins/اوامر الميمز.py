@@ -2,10 +2,10 @@ import random
 from telethon import events
 import random, re
 
-from zthon.utils import admin_cmd
+from repthon.utils import admin_cmd
 
 import asyncio
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_or_reply
 
@@ -14,7 +14,7 @@ plugin_category = "الترفيه"
 
 
 
-@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز$"))
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بصمات ميمز$"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -22,7 +22,7 @@ async def _(event):
 
 )
 
-@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز2$"))
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بصمات ميمز2$"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -30,7 +30,7 @@ async def _(event):
 
 )
 
-@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز3$"))
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بصمات ميمز3$"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -38,7 +38,7 @@ async def _(event):
 
 )
 
-@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز4$"))
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بصمات ميمز4$"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -46,14 +46,14 @@ async def _(event):
 
 )
 	
-@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز5$"))
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بصمات ميمز5$"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
         " قائمة اوامر بصمات الميمز\n★⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n⎉╎ اختر احدى هذه الاوامر\n\n- ( `.امشي كحبة` )\n- ( `.امداك` )\n- ( `.الحس` )\n- ( `.افتهمنا` )\n- ( `.اطلع برا` )\n- ( `.اخت التنيج` )\n- ( `.اوني تشان` )\n- ( `.اوني تشان2` )\n- ( `.بجيت` )\n- ( `.نشاقة` )\n- ( `.لاتغلط` )\n- ( `.احب الله` )\n- ( `.روح` )\n- ( `.خبز يابس` )\n- ( `.خيار بصل` )\n- ( `.ماي ارو` )\n\n\n⎉╎CH : @Repthon"
 
 )
-@zedub.on(admin_cmd(outgoing=True, pattern="بصمات انمي$"))
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بصمات انمي$"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
