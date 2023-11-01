@@ -27,7 +27,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest as unblock
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from . import zedub
+from . import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
@@ -36,8 +36,8 @@ plugin_category = "البوت"
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="ريبثون(?: |$)(.*)")
-async def zelzal_gpt(event):
+@zq_lo.rep_cmd(pattern="ريبثون(?: |$)(.*)")
+async def repthon_gpt(event):
     zilzal = event.pattern_match.group(1)
     zzz = await event.get_reply_message()
     chat = "@GPT4Telegrambot" #code by t.me/zzzzl1l
@@ -58,8 +58,8 @@ async def zelzal_gpt(event):
                 await event.delete()
                 return await borg.send_message(event.chat_id, aa)
             await asyncio.sleep(5)
-            zedthon = await conv.get_response()
-            malath = zedthon.text
+            repthon = await conv.get_response()
+            malath = repthon.text
             if "understanding" in zedthon.text: #code by t.me/zzzzl1l
                 aa = malath.replace("⏳ Please wait another 8 seconds before sending the next question . . .", "**- عـذراً .. لم أفهم سؤالك\n- قم بـ إعادة صياغته من فضلك؟!**") 
                 await event.delete()
@@ -95,7 +95,7 @@ async def zelzal_gpt(event):
 # تخمــط اهينـــك Fuk-You
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="س(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="س(?: |$)(.*)")
 async def zelzal_gpt(event):
     zilzal = event.pattern_match.group(1)
     zzz = await event.get_reply_message()
