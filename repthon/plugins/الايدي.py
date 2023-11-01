@@ -1,7 +1,7 @@
 from telethon.utils import pack_bot_file_id
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -10,7 +10,7 @@ plugin_category = "الادوات"
 LOGS = logging.getLogger(__name__)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(الايدي|id)(?:\s|$)([\s\S]*)",
     command=("id", plugin_category),
     info={
