@@ -29,7 +29,7 @@ from telethon.tl.types import MessageEntityMentionName
 from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import edit_delete, zedub, logging
+from . import edit_delete, zq_lo, logging
 
 plugin_category = "الادوات"
 DEFAULTUSER = gvarstatus("ALIVE_NAME") or Config.ALIVE_NAME
@@ -59,25 +59,25 @@ async def digitalpicloop():
             downloader.start(blocking=False)
             while not downloader.isFinished():
                 pass
-        zedfont = gvarstatus("DEFAULT_PIC") or "zthon/helpers/styles/Papernotes.ttf" #Code by T.me/zzzzl1l
+        repfont = gvarstatus("DEFAULT_PIC") or "zthon/helpers/styles/Papernotes.ttf" #Code by T.me/zzzzl1l
         shutil.copy(digitalpic_path, autophoto_path)
         Image.open(autophoto_path)
         current_time = datetime.now().strftime("%I:%M")
         img = Image.open(autophoto_path)
         drawn_text = ImageDraw.Draw(img)
-        fnt = ImageFont.truetype(f"{zedfont}", 35) #Code by T.me/zzzzl1l
+        fnt = ImageFont.truetype(f"{repfont}", 35) #Code by T.me/zzzzl1l
         drawn_text.text((140, 70), current_time, font=fnt, fill=(280, 280, 280)) #Code by T.me/zzzzl1l
         img.save(autophoto_path)
         file = await zedub.upload_file(autophoto_path)
         try:
             if i > 0:
-                await zedub(
+                await zq_lo(
                     functions.photos.DeletePhotosRequest(
                         await zedub.get_profile_photos("me", limit=1)
                     )
                 )
             i += 1
-            await zedub(functions.photos.UploadProfilePhotoRequest(file))
+            await zq_lo(functions.photos.UploadProfilePhotoRequest(file))
             os.remove(autophoto_path)
             await asyncio.sleep(CHANGE_TIME)
         except BaseException:
@@ -94,11 +94,11 @@ async def autoname_loop():
               namerzfont = gvarstatus("BA_FN") or "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬" 
               namefont = namerzfont[normzltext.index(normal)]
               HM = HM.replace(normal, namefont)
-        ZEDT = gvarstatus("CUSTOM_ALIVE_EMZED") or "" #Code by T.me/zzzzl1l
-        name = f"{ZEDT}{HM}"
+        REPT = gvarstatus("CUSTOM_ALIVE_EMZED") or "" #Code by T.me/zzzzl1l
+        name = f"{REPT}{HM}"
         LOGS.info(name)
         try:
-            await zedub(functions.account.UpdateProfileRequest(last_name=name))
+            await zq_lo(functions.account.UpdateProfileRequest(last_name=name))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -120,7 +120,7 @@ async def autobio_loop():
         bio = f"{DEFAULTUSERBIO} ⏐ {HM}" 
         LOGS.info(bio)
         try:
-            await zedub(functions.account.UpdateProfileRequest(about=bio))
+            await zq_lo(functions.account.UpdateProfileRequest(about=bio))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -128,7 +128,7 @@ async def autobio_loop():
         AUTOBIOSTART = gvarstatus("autobio") == "true"
 
 
-@zedub.zed_cmd(pattern=f"{PAUTO}$")
+@zq_lo.rep_cmd(pattern=f"{PAUTO}$")
 async def _(event):
     digitalpfp = gvarstatus("DIGITAL_PIC")
     downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
@@ -144,7 +144,7 @@ async def _(event):
     await digitalpicloop()
 
 
-@zedub.zed_cmd(pattern=f"{NAUTO}$")
+@zq_lo.rep_cmd(pattern=f"{NAUTO}$")
 async def _(event):
     if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
         return await edit_delete(event, "**⎉╎الاسـم الوقتـي .. تم تفعيلـه سابقـاً**")
@@ -153,7 +153,7 @@ async def _(event):
     await autoname_loop()
 
 
-@zedub.zed_cmd(pattern=f"{BAUTO}$")
+@zq_lo.rep_cmd(pattern=f"{BAUTO}$")
 async def _(event):
     if gvarstatus("DEFAULT_BIO") is None:
         return await edit_delete(event, "**- فار النبـذة الوقتيـه غيـر موجـود ؟!**\n**- ارسـل نـص النبـذه ثم قم بالـرد عليهـا بالامـر :**\n\n`.اضف البايو`")
@@ -164,7 +164,7 @@ async def _(event):
     await autobio_loop()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الغاء ([\s\S]*)",
     command=("الغاء", plugin_category),
     info={
@@ -211,7 +211,7 @@ async def _(event):  # sourcery no-metrics
         return await edit_delete(event, "**⎉╎النبـذه الوقتيـه .. غيـر مفعـله اصـلاً ؟!**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ايقاف ([\s\S]*)",
     command=("ايقاف", plugin_category),
     info={
@@ -259,7 +259,7 @@ async def _(event):  # sourcery no-metrics
 
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="انهاء ([\s\S]*)",
     command=("انهاء", plugin_category),
     info={
@@ -326,6 +326,6 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-zedub.loop.create_task(digitalpicloop())
-zedub.loop.create_task(autoname_loop())
-zedub.loop.create_task(autobio_loop())
+zq_lo.loop.create_task(digitalpicloop())
+zq_lo.loop.create_task(autoname_loop())
+zq_lo.loop.create_task(autobio_loop())
