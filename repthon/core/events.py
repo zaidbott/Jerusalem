@@ -93,7 +93,7 @@ async def safe_check_text(msg):  # sourcery no-metrics
     if not msg:
         return False
     msg = str(msg)
-    from .session import zedub
+    from .session import zq_lo
 
     return bool(
         (
