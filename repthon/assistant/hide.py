@@ -4,14 +4,14 @@ import re
 
 from telethon.events import CallbackQuery
 
-from zthon import zedub
+from repthon import zq_lo
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"hide_(.*)")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(b"hide_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
     if os.path.exists("./zthon/hide.txt"):
-        jsondata = json.load(open("./zthon/hide.txt"))
+        jsondata = json.load(open("./repthon/hide.txt"))
         try:
             reply_pop_up_alert = jsondata[f"{timestamp}"]["text"]
         except KeyError:
