@@ -16,7 +16,7 @@ from .utils import (
 
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
 
-print(zq_lo.__copyright__)
+print(RepUserBotClient.__copyright__)
 print(f"المرخصة بموجب شروط  {repthon.__license__}")
 
 cmdhr = Config.COMMAND_HAND_LER
