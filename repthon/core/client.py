@@ -48,7 +48,7 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 
-class ZedUserBotClient(TelegramClient):
+class RepUserBotClient(TelegramClient):
     def rep_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
@@ -339,14 +339,14 @@ class ZedUserBotClient(TelegramClient):
         self.running_processes.clear()
 
 
-ZedUserBotClient.fast_download_file = download_file
-ZedUserBotClient.fast_upload_file = upload_file
-ZedUserBotClient.reload = restart_script
-ZedUserBotClient.get_msg_link = get_message_link
-ZedUserBotClient.check_testcases = checking
+RepUserBotClient.fast_download_file = download_file
+RepUserBotClient.fast_upload_file = upload_file
+RepUserBotClient.reload = restart_script
+RepUserBotClient.get_msg_link = get_message_link
+RepUserBotClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    ZedUserBotClient.send_message = send_message
-    ZedUserBotClient.send_file = send_file
-    ZedUserBotClient.edit_message = edit_message
+    RepUserBotClient.send_message = send_message
+    RepUserBotClient.send_file = send_file
+    RepUserBotClient.edit_message = edit_message
