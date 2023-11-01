@@ -1,4 +1,4 @@
-# Heroku manager for your ZThon
+# Heroku manager for your RepthonArabic
 
 # CC- @refundisillegal\nSyntax:-\n.get var NAME\n.del var NAME\n.set var NAME
 
@@ -13,7 +13,7 @@ import heroku3
 import requests
 import urllib3
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -29,7 +29,7 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(set|get|del) var ([\s\S]*)",
     command=("var", plugin_category),
     info={
@@ -116,7 +116,7 @@ async def variable(var):  # sourcery no-metrics
         del heroku_var[variable]
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(ضع|جلب|حذف) فار ([\s\S]*)",
     command=("var", plugin_category),
     info={
@@ -204,7 +204,7 @@ async def variable(var):  # sourcery no-metrics
 
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="استخدامي$",
     command=("استخدامي", plugin_category),
     info={
@@ -277,7 +277,7 @@ async def dyno_usage(dyno):
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(سجل التنصيب|السجلات)$",
     command=("سجل التنصيب", plugin_category),
     info={
