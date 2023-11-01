@@ -34,7 +34,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@zq_lo.zq_lo_cmd(outgoing=True, edited=False)
+@zq_lo.rep_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -80,7 +80,7 @@ async def set_not_afk(event):
             )
 
 
-@zq_lo.zq_lo_cmd(
+@zq_lo.rep_cmd(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):
@@ -159,7 +159,7 @@ async def on_afk(event):
             )
 
 
-@zq_lo.zq_lo_cmd(pattern="سليب(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="سليب(?:\s|$)([\s\S]*)")
 async def _(event):
     AFK_.USERAFK_ON = {}
     AFK_.afk_time = None
@@ -203,7 +203,7 @@ async def _(event):
                 )
 
 
-@zq_lo.zq_lo_cmd(pattern="سليب_ميديا(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="سليب_ميديا(?:\s|$)([\s\S]*)")
 async def _(event):
     reply = await event.get_reply_message()
     media_t = media_type(reply)
