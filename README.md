@@ -82,7 +82,7 @@
 
 - `pip3 install -r requirements.txt`
 
-- `python3 -m zthon`
+- `python3 -m repthon`
 * نقوم بالضغط على CTRL+A بعدها نضغط على CTRL+D
  
 
@@ -90,7 +90,7 @@
 # License
 
 <p align="center">
-    <img src="https://www.gnu.org/graphics/gplv3-or-later.png" alt="Zed-Thon License">
+    <img src="https://www.gnu.org/graphics/gplv3-or-later.png" alt="Rep-Thon License">
 </p>
 
 <h4 align="center">
