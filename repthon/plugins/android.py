@@ -3,14 +3,14 @@ import json
 from bs4 import BeautifulSoup
 from requests import get
 
-from . import zedub
+from . import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "آخرى"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="magisk$",
     command=("magisk", plugin_category),
     info={
@@ -37,7 +37,7 @@ async def kakashi(event):
     await edit_or_reply(event, releases)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="device(?: |$)(\S*)",
     command=("device", plugin_category),
     info={
@@ -74,7 +74,7 @@ async def device_info(event):
     await edit_or_reply(event, reply)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)",
     command=("codename", plugin_category),
     info={
@@ -125,7 +125,7 @@ async def codename_info(event):
     await edit_or_reply(event, reply)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="twrp(?: |$)(\S*)",
     command=("twrp", plugin_category),
     info={
