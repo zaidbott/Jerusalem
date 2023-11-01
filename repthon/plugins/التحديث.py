@@ -10,12 +10,12 @@ import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from zthon import HEROKU_APP, UPSTREAM_REPO_URL, zedub
+from repthon import HEROKU_APP, UPSTREAM_REPO_URL, zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _zedutils
+from ..helpers.utils import _reputils
 from ..sql_helper.global_collection import (
     add_to_collectionlist,
     del_keyword_collectionlist,
@@ -154,7 +154,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             HEROKU_APP.restart()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحديث(| الان)?$",
     command=("update", plugin_category),
     info={
@@ -255,7 +255,7 @@ async def upstream(event):
     return
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحديث البوت$",
 )
 async def upstream(event):
