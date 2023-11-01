@@ -4,7 +4,7 @@ from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 from ..Config import Config
-from . import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, zedub, edit_delete, get_user_from_event
+from . import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, zq_lo, edit_delete, get_user_from_event
 from ..sql_helper.globals import gvarstatus
 
 plugin_category = "العروض"
@@ -13,7 +13,7 @@ DEFAULTUSERBIO = Config.DEFAULT_BIO or "- ‏وحدي أضيء، وحدي أنط
 ANTHAL = gvarstatus("ANTHAL") or "(اعادة الحساب|اعادة|اعاده)"
 
 
-@zedub.zed_cmd(pattern="نسخ(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="نسخ(?:\s|$)([\s\S]*)")
 async def _(event):
     replied_user, error_i_a = await get_user_from_event(event)
     if replied_user is None:
@@ -86,7 +86,7 @@ async def _(event):
         )
 
 
-@zedub.zed_cmd(pattern=f"{ANTHAL}$")
+@zq_lo.rep_cmd(pattern=f"{ANTHAL}$")
 async def revert(event):
     firstname = DEFAULTUSER
     lastname = gvarstatus("LAST_NAME") or ""
