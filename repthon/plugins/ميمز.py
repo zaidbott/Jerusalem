@@ -4,6 +4,7 @@ from asyncio.exceptions import TimeoutError
 
 from telethon import events
 
+from repthon.utils import admin_cmd
 from repthon import zq_lo
 from ..helpers.utils import reply_id
 
@@ -37,7 +38,7 @@ async def jepmeme(memejep):
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="احب الله$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/2"
   await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
@@ -175,75 +176,75 @@ async def jepmeme(memejep):
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="اكل خرا$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/34"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="الكعده وياكم"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/35"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="الكمر اني$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/36"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="اللهم لا شماته$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/37"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="اني مااكدر$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/38"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="بقولك ايه$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/39"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="تف على شرفك$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/40"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="شجلبت$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/41"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="شكد شفت ناس$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/42"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="صباح القنادر$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/43"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="ضحكة فيطية$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/44"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="طاهر القلب"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/45"
-  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
+  await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="غطيلي$"))
 async def jepmeme(memejep):
