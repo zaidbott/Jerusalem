@@ -1,6 +1,6 @@
 from telethon.tl import functions
 
-from .. import zedub
+from .. import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..utils.tools import create_supergroup
@@ -8,7 +8,7 @@ from ..utils.tools import create_supergroup
 plugin_category = "الادوات"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="انشاء (كروب|خارق|قناه) ([\s\S]*)",
     command=("انشاء", plugin_category),
     info={
