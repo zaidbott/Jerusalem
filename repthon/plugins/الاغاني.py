@@ -18,23 +18,23 @@ from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import delete_conv, name_dl, song_dl, video_dl, yt_search
 from ..helpers.tools import media_type
-from ..helpers.utils import _zedutils, reply_id
-from . import zedub
+from ..helpers.utils import _reputils, reply_id
+from . import zq_lo
 
 plugin_category = "البحث"
 LOGS = logging.getLogger(__name__)
 
 # =========================================================== #
-#                                                             𝙕𝙏𝙝𝙤𝙣
+#                                                             𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 # =========================================================== #
 SONG_SEARCH_STRING = "<b>╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰</b>"
 SONG_NOT_FOUND = "<b>⎉╎لـم استطـع ايجـاد المطلـوب .. جرب البحث باستخـدام الامـر (.اغنيه)</b>"
 SONG_SENDING_STRING = "<b>╮ جـارِ تحميـل الاغنيـٓه... 🎧♥️╰</b>"
 # =========================================================== #
-#                                                             𝙕𝙏𝙝𝙤𝙣
+#                                                             𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 # =========================================================== #
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="بحث(320)?(?:\s|$)([\s\S]*)",
     command=("بحث", plugin_category),
     info={
@@ -57,10 +57,10 @@ async def _(event):
     else:
         return await edit_or_reply(event, "**⎉╎قم باضافـة الاغنيـه للامـر .. بحث + اسـم الاغنيـه**")
     cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
-    zedevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
+    repevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await zedevent.edit(
+        return await repevent.edit(
             f"⌔∮ عذرا لم استطع ايجاد مقاطع ذات صلة بـ `{query}`"
         )
     cmd = event.pattern_match.group(1)
@@ -73,28 +73,28 @@ async def _(event):
     except BaseException:
         pass
     try:
-        stderr = (await _zedutils.runcmd(song_cmd))[1]
+        stderr = (await _reputils.runcmd(song_cmd))[1]
         await sleep(3)
-        zedname, stderr = (await _zedutils.runcmd(name_cmd))[:2]
+        repname, stderr = (await _reputils.runcmd(name_cmd))[:2]
         if stderr:
-            return await zedevent.edit(f"**خطأ :** `{stderr}`")
+            return await repevent.edit(f"**خطأ :** `{stderr}`")
         await sleep(3)
-        zedname = os.path.splitext(zedname)[0]
+        repname = os.path.splitext(repname)[0]
         await sleep(2)
-        song_file = Path(f"{zedname}.mp3")
-        zedname = urllib.parse.unquote(zedname)
+        song_file = Path(f"{repname}.mp3")
+        repname = urllib.parse.unquote(repname)
     except:
         pass
     if not os.path.exists(song_file):
-        return await zedevent.edit(
+        return await repevent.edit(
             f"**⎉╎عـذراً .. لـم استطـع ايجـاد** {query}"
         )
-    await zedevent.edit("**- جـارِ التحميـل انتظـر ▬▭...**")
-    zedthumb = Path(f"{zedname}.jpg")
-    if not os.path.exists(zedthumb):
-        zedthumb = Path(f"{zedname}.webp")
-    elif not os.path.exists(zedthumb):
-        zedthumb = None
+    await repevent.edit("**- جـارِ التحميـل انتظـر ▬▭...**")
+    repthumb = Path(f"{repname}.jpg")
+    if not os.path.exists(repthumb):
+        repthumb = Path(f"{repname}.webp")
+    elif not os.path.exists(repthumb):
+        repthumb = None
     title = zedname.replace("./temp/", "").replace("_", "|")
     try:
         await event.client.send_file(
@@ -102,20 +102,20 @@ async def _(event):
             song_file,
             force_document=False,
             caption=f"**⎉╎البحث :** `{title}`",
-            thumb=zedthumb,
+            thumb=repthumb,
             supports_streaming=True,
             reply_to=reply_to_id,
         )
-        await zedevent.delete()
-        for files in (zedthumb, song_file):
+        await repevent.delete()
+        for files in (repthumb, song_file):
             if files and os.path.exists(files):
                 os.remove(files)
     except ChatSendMediaForbiddenError as err:
-        await zedevent.edit("**- الوسائط مغلقـه هنـا ؟؟**")
+        await repevent.edit("**- الوسائط مغلقـه هنـا ؟؟**")
         LOGS.error(str(err))
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="فيديو(?:\s|$)([\s\S]*)",
     command=("فيديو", plugin_category),
     info={
@@ -135,10 +135,10 @@ async def _(event):
     else:
         return await edit_or_reply(event, "**⎉╎قم باضافـة الاغنيـه للامـر .. فيديو + اسـم الفيديـو**")
     cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
-    zedevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الفيديـو... 🎧♥️╰**")
+    repevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الفيديـو... 🎧♥️╰**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await zedevent.edit(
+        return await repevent.edit(
             f"**⎉╎عـذراً .. لـم استطـع ايجـاد** {query}"
         )
     try:
@@ -149,38 +149,38 @@ async def _(event):
     name_cmd = name_dl.format(video_link=video_link)
     video_cmd = video_dl.format(video_link=video_link)
     try:
-        stderr = (await _zedutils.runcmd(video_cmd))[1]
+        stderr = (await _reputils.runcmd(video_cmd))[1]
         # if stderr:
-        # return await zedevent.edit(f"**Error :** `{stderr}`")
-        zedname, stderr = (await _zedutils.runcmd(name_cmd))[:2]
+        # return await repevent.edit(f"**Error :** `{stderr}`")
+        repname, stderr = (await _reputils.runcmd(name_cmd))[:2]
         if stderr:
-            return await zedevent.edit(f"**خطأ :** `{stderr}`")
-        zedname = os.path.splitext(zedname)[0]
-        vsong_file = Path(f"{zedname}.mp4")
+            return await repevent.edit(f"**خطأ :** `{stderr}`")
+        repname = os.path.splitext(repname)[0]
+        vsong_file = Path(f"{repname}.mp4")
     except:
         pass
     if not os.path.exists(vsong_file):
-        vsong_file = Path(f"{zedname}.mkv")
+        vsong_file = Path(f"{repname}.mkv")
     elif not os.path.exists(vsong_file):
-        return await zedevent.edit(
+        return await repevent.edit(
             f"**⎉╎عـذراً .. لـم استطـع ايجـاد** {query}"
         )
-    await zedevent.edit("**- جـارِ التحميـل انتظـر ▬▭...**")
-    zedthumb = Path(f"{zedname}.jpg")
-    if not os.path.exists(zedthumb):
-        zedthumb = Path(f"{zedname}.webp")
-    elif not os.path.exists(zedthumb):
-        zedthumb = None
-    title = zedname.replace("./temp/", "").replace("_", "|")
+    await repevent.edit("**- جـارِ التحميـل انتظـر ▬▭...**")
+    repthumb = Path(f"{repname}.jpg")
+    if not os.path.exists(repthumb):
+        repthumb = Path(f"{repname}.webp")
+    elif not os.path.exists(repthumb):
+        repthumb = None
+    title = repname.replace("./temp/", "").replace("_", "|")
     await event.client.send_file(
         event.chat_id,
         vsong_file,
         caption=f"**⎉╎البحث :** `{title}`",
-        thumb=zedthumb,
+        thumb=repthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
     )
-    await zedevent.delete()
-    for files in (zedthumb, vsong_file):
+    await repevent.delete()
+    for files in (repthumb, vsong_file):
         if files and os.path.exists(files):
             os.remove(files)
