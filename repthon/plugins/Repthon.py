@@ -348,7 +348,7 @@ async def inline_handler(event):  # sourcery no-metrics
 
         photo = types.InputWebDocument(
 
-            url=ZEDLOGO, size=0, mime_type="image/jpeg", attributes=[]
+            url=REPLOGO, size=0, mime_type="image/jpeg", attributes=[]
 
         )
 
