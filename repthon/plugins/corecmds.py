@@ -1,4 +1,4 @@
-#ZedThon
+#Repthon
 
 import asyncio
 import os
@@ -8,7 +8,7 @@ from pathlib import Path
 from ..Config import Config
 from ..core import CMD_INFO, PLG_INFO
 from ..utils import load_module, remove_plugin
-from . import CMD_HELP, CMD_LIST, SUDO_LIST, zedub, edit_delete, edit_or_reply, reply_id
+from . import CMD_HELP, CMD_LIST, SUDO_LIST, zq_lo, edit_delete, edit_or_reply, reply_id
 
 plugin_category = "الادوات"
 
@@ -17,11 +17,11 @@ thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg"
 
 
 def plug_checker(plugin):
-    plug_path = f"./zthon/plugins/{plugin}.py"
+    plug_path = f"./repthon/plugins/{plugin}.py"
     return plug_path
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="نصب$",
     command=("تنصيب", plugin_category),
     info={
@@ -36,7 +36,7 @@ async def install(event):
         try:
             downloaded_file_name = await event.client.download_media(
                 await event.get_reply_message(),
-                "zthon/plugins/",
+                "repthon/plugins/",
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
@@ -59,7 +59,7 @@ async def install(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حمل ([\s\S]*)",
     command=("حمل", plugin_category),
     info={
@@ -86,7 +86,7 @@ async def load(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ارسل ([\s\S]*)",
     command=("ارسل", plugin_category),
     info={
@@ -116,7 +116,7 @@ async def send(event):
         await edit_or_reply(event, "404: File Not Found")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الغاء حمل ([\s\S]*)",
     command=("حمل", plugin_category),
     info={
@@ -136,7 +136,7 @@ async def unload(event):
         await edit_or_reply(event, f"Successfully unload {shortname}\n{e}")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الغاء نصب ([\s\S]*)",
     command=("الغاء تنصيب", plugin_category),
     info={
@@ -150,7 +150,7 @@ async def unload(event):
 async def unload(event):
     "To uninstall a plugin."
     shortname = event.pattern_match.group(1)
-    path = Path(f"zthon/plugins/{shortname}.py")
+    path = Path(f"repthon/plugins/{shortname}.py")
     if not os.path.exists(path):
         return await edit_delete(
             event, f"**- عـذراً لا يـوجـد هنـاك مـلف بـ اسـم {shortname} لـ الغـاء تنصيبـه ؟!**"
