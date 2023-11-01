@@ -4,14 +4,14 @@ import re
 
 from telethon.events import CallbackQuery
 
-from zthon import zedub
+from repthon import zq_lo
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"troll_(.*)")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(b"troll_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
-    if os.path.exists("./zthon/troll.txt"):
-        jsondata = json.load(open("./zthon/troll.txt"))
+    if os.path.exists("./repthon/troll.txt"):
+        jsondata = json.load(open("./repthon/troll.txt"))
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]
