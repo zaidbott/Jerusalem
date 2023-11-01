@@ -6,8 +6,8 @@ check = 0
 while flag:
     try:
         from . import format as _format
-        from . import tools as _zedtools
-        from . import utils as _zedutils
+        from . import tools as _reptools
+        from . import utils as _reputils
         from .events import *
         from .format import *
         from .tools import *
