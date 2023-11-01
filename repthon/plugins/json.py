@@ -1,4 +1,4 @@
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
@@ -6,7 +6,7 @@ from ..helpers.utils import _format
 plugin_category = "الادوات"
 
 # yaml_format is ported from uniborg
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="json$",
     command=("json", plugin_category),
     info={
@@ -16,12 +16,12 @@ plugin_category = "الادوات"
 )
 async def _(event):
     "To get details of that message in json format."
-    zedevent = await event.get_reply_message() if event.reply_to_msg_id else event
-    the_real_message = zedevent.stringify()
+    repevent = await event.get_reply_message() if event.reply_to_msg_id else event
+    the_real_message = repevent.stringify()
     await edit_or_reply(event, the_real_message, parse_mode=_format.parse_pre)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="yaml$",
     command=("yaml", plugin_category),
     info={
@@ -31,6 +31,6 @@ async def _(event):
 )
 async def _(event):
     "To get details of that message in yaml format."
-    zedevent = await event.get_reply_message() if event.reply_to_msg_id else event
-    the_real_message = _format.yaml_format(zedevent)
+    repevent = await event.get_reply_message() if event.reply_to_msg_id else event
+    the_real_message = _format.yaml_format(repevent)
     await edit_or_reply(event, the_real_message, parse_mode=_format.parse_pre)
