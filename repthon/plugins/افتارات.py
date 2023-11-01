@@ -11,9 +11,9 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import InputMessagesFilterVideo, InputMessagesFilterVoice, InputMessagesFilterPhotos
 
-from zthon import zedub
+from repthon import zq_lo
 
-from zthon.core.logger import logging
+from repthon.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from . import ALIVE_NAME, mention
@@ -23,11 +23,11 @@ from ..helpers.utils import _format
 from . import reply_id
 
 
-@zedub.zed_cmd(pattern="حالات$")
+@zq_lo.rep_cmd(pattern="حالات$")
 async def _(event):
-    zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل حـالات واتـس ...**")
+    repevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل حـالات واتـس ...**")
     try:
-        ZTHONR = [
+        REPTHON = [
             zlzzl
             async for zlzzl in event.client.iter_messages(
                 "@RSHDO5", filter=InputMessagesFilterVideo
@@ -36,19 +36,19 @@ async def _(event):
         aing = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
-            file=random.choice(ZTHONR),
+            file=random.choice(REPTHON),
             caption=f"**🎆┊حـالات واتـس قصيـرة 🧸♥️**\n\n[➧𝙎𝙤𝙪𝙧𝙘𝙚 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](https://t.me/Repthon)",
         )
-        await zzevent.delete()
+        await repevent.delete()
     except Exception:
-        await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
+        await repevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="ستوري انمي$")
+@zq_lo.rep_cmd(pattern="ستوري انمي$")
 async def _(event):
-    zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الستـوري ...**")
+    repevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الستـوري ...**")
     try:
-        ZTHONR = [
+        REPTHON = [
             zlzzl
             async for zlzzl in event.client.iter_messages(
                 "@AA_Zll", filter=InputMessagesFilterVideo
@@ -57,19 +57,19 @@ async def _(event):
         aing = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
-            file=random.choice(ZTHONR),
+            file=random.choice(REPTHON),
             caption=f"**🎆┊ستـوريات آنمـي قصيـرة 🖤🧧**\n\n[➧𝙎𝙤𝙪𝙧𝙘𝙚 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](https://t.me/Repthon)",
         )
-        await zzevent.delete()
+        await repevent.delete()
     except Exception:
-        await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
+        await repevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="رقيه$")
+@zq_lo.rep_cmd(pattern="رقيه$")
 async def _(event):
-    zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الرقيـه ...**")
+    repevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الرقيـه ...**")
     try:
-        zedgan = [
+        repgan = [
             zlzzl77
             async for zlzzl77 in event.client.iter_messages(
                 "@Rqy_1", filter=InputMessagesFilterVoice
@@ -81,14 +81,14 @@ async def _(event):
             file=random.choice(zedgan),
             caption=f"**◞مقاطـع رقيـه شرعيـة ➧🕋🌸◟**\n\n[➧𝙎𝙤𝙪𝙧𝙘𝙚 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](https://t.me/Repthon)",
         )
-        await zzevent.delete()
+        await repevent.delete()
     except Exception:
-        await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
+        await repevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="رمادي$")
+@zq_lo.rep_cmd(pattern="رمادي$")
 async def _(event):
-    zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الافتـار ...**")
+    repevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الافتـار ...**")
     try:
         zedph = [
             zelzal
@@ -107,7 +107,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="رماديه$")
+@zq_lo.rep_cmd(pattern="رماديه$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الافتـار ...**")
     try:
@@ -128,7 +128,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="بيست$")
+@zq_lo.rep_cmd(pattern="بيست$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮ - جـارِ تحميـل الآفتـار ...🧚🏻‍♀🧚🏻‍♀╰**")
     try:
@@ -149,7 +149,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="حب$")
+@zq_lo.rep_cmd(pattern="حب$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮ - جـارِ تحميـل الآفتـار ...♥️╰**")
     try:
@@ -170,7 +170,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="رياكشن$")
+@zq_lo.rep_cmd(pattern="رياكشن$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الرياكشـن ...**")
     try:
@@ -191,7 +191,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="ادت$")
+@zq_lo.rep_cmd(pattern="ادت$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل مقطـع ادت ...**")
     try:
@@ -212,7 +212,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="غنيلي$")
+@zq_lo.rep_cmd(pattern="غنيلي$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الاغنيـه ...𓅫╰**")
     try:
@@ -233,7 +233,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
         
 
-@zedub.zed_cmd(pattern="شعر$")
+@zq_lo.rep_cmd(pattern="شعر$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الشعـر ...**")
     try:
@@ -254,7 +254,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="ميمز$")
+@zq_lo.rep_cmd(pattern="ميمز$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الميمـز ...**")
     try:
@@ -275,7 +275,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="ري اكشن$")
+@zq_lo.rep_cmd(pattern="ري اكشن$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الرياكشـن ...**")
     try:
@@ -296,7 +296,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="معلومه$")
+@zq_lo.rep_cmd(pattern="معلومه$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل صـورة ومعلومـة ...**")
     try:
@@ -317,7 +317,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="تويت$")
+@zq_lo.rep_cmd(pattern="تويت$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ كـت تـويت بالصـور ...**")
     try:
@@ -338,7 +338,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="خيرني$")
+@zq_lo.rep_cmd(pattern="خيرني$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ لـو خيـروك بالصـور ...**")
     try:
@@ -359,7 +359,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="ولد انمي$")
+@zq_lo.rep_cmd(pattern="ولد انمي$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮ - جـارِ تحميـل الآفتـار ...𓅫╰**")
     try:
@@ -380,7 +380,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="بنت انمي$")
+@zq_lo.rep_cmd(pattern="بنت انمي$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮ - جـارِ تحميـل الآفتـار ...𓅫╰**")
     try:
@@ -401,7 +401,7 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
-@zedub.zed_cmd(pattern="بنات$")
+@zq_lo.rep_cmd(pattern="بنات$")
 async def _(event):
     zzevent = await edit_or_reply(event, "**╮ - جـارِ تحميـل الآفتـار ...𓅫╰**")
     try:
