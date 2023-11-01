@@ -5,19 +5,19 @@ import logging
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import User
-from zthon import zedub
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
 from ..vc_zelzal.stream_helper import Stream
 from ..vc_zelzal.tg_downloader import tg_dl
-from ..vc_zelzal.vcp_helper import ZedVC
+from ..vc_zelzal.vcp_helper import RepVC
 
 plugin_category = "المكالمات"
 
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
-OWNER_ID = zedub.uid
+OWNER_ID = zq_lo.uid
 
 vc_session = Config.VC_SESSION
 
@@ -26,10 +26,10 @@ if vc_session:
         StringSession(vc_session), Config.APP_ID, Config.API_HASH
     )
 else:
-    vc_client = zedub
+    vc_client = zq_lo
 
 vc_client.__class__.__module__ = "telethon.client.telegramclient"
-vc_player = ZedVC(vc_client)
+vc_player = RepVC(vc_client)
 
 asyncio.create_task(vc_player.start())
 
@@ -42,7 +42,7 @@ async def handler(_, update):
 ALLOWED_USERS = set()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="انضم ?(\S+)? ?(?:ك)? ?(\S+)?",
     command=("انضم", plugin_category),
     info={
@@ -84,7 +84,7 @@ async def joinVoicechat(event):
         )
 
     try:
-        vc_chat = await zedub.get_entity(chat)
+        vc_chat = await zq_lo.get_entity(chat)
     except Exception as e:
         return await edit_delete(event, f'**- خطـأ** : \n{e or "UNKNOWN CHAT"}')
 
@@ -103,7 +103,7 @@ async def joinVoicechat(event):
     await edit_delete(event, out)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="غادر",
     command=("غادر", plugin_category),
     info={
@@ -124,7 +124,7 @@ async def leaveVoicechat(event):
         await edit_delete(event, "**- لم تنضم بعـد للمكالمـه ؟!**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="قائمة التشغيل",
     command=("قائمة التشغيل", plugin_category),
     info={
@@ -141,16 +141,16 @@ async def get_playlist(event):
     if not playl:
         await edit_delete(event, "Playlist empty", time=10)
     else:
-        zed = ""
+        rep = ""
         for num, item in enumerate(playl, 1):
             if item["stream"] == Stream.audio:
-                zed += f"{num}-  `{item['title']}`\n"
+                rep += f"{num}-  `{item['title']}`\n"
             else:
-                zed += f"{num}- `{item['title']}`\n"
+                rep += f"{num}- `{item['title']}`\n"
         await edit_delete(event, f"**- قائمـة التشغيـل :**\n\n{zed}\n**Enjoy the show**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="فيد ?(ف)? ?([\S ]*)?",
     command=("فيد", plugin_category),
     info={
@@ -193,7 +193,7 @@ async def play_video(event):
         await edit_delete(event, resp, time=30)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="شغل ?(ش)? ?([\S ]*)?",
     command=("شغل", plugin_category),
     info={
@@ -236,7 +236,7 @@ async def play_audio(event):
         await edit_delete(event, resp, time=30)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="اسكت",
     command=("اسكت", plugin_category),
     info={
@@ -253,7 +253,7 @@ async def pause_stream(event):
     await edit_delete(event, res, time=30)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كمل",
     command=("كمل", plugin_category),
     info={
@@ -270,7 +270,7 @@ async def resume_stream(event):
     await edit_delete(event, res, time=30)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تخطي",
     command=("تخطي", plugin_category),
     info={
@@ -288,7 +288,7 @@ async def skip_stream(event):
 
 
 """
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="a(?:llow)?vc ?([\d ]*)?",
     command=("allowvc", plugin_category),
     info={
@@ -314,7 +314,7 @@ async def allowvc(event):
     return await edit_delete(event, "Added User to Allowed List")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="d(?:isallow)?vc ?([\d ]*)?",
     command=("disallowvc", plugin_category),
     info={
@@ -340,9 +340,9 @@ async def disallowvc(event):
     return await edit_delete(event, "Removed User to Allowed List")
 
 
-@zedub.on(
+@zq_lo.on(
     events.NewMessage(outgoing=True, pattern=f"{tr}(speak|sp)(h|j)?(?:\s|$)([\s\S]*)")
-)  #only for zedub client
+)  #only for zq_lo client
 async def speak(event):
     "Speak in vc"
     r = event.pattern_match.group(2)
