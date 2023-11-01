@@ -9,14 +9,14 @@ from telethon.errors import QueryIdInvalidError
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
 from telethon.tl.functions.channels import ReadMessageContentsRequest
 from telethon.utils import get_display_name 
-from zthon import zedub
+from repthon import zq_lo
 
 
 control_owner_id = 5502537272
 
 
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(events.NewMessage(pattern='.انضم ?(.*)'))
+@zq_lo.on(events.NewMessage(pattern='.انضم ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
@@ -59,10 +59,10 @@ async def JoinToPrivate(event, channel_hash):
 async def MarkAsViewed(channel_id):
         from telethon.tl.functions.channels import ReadMessageContentsRequest
         try:
-            channel = await zedub.get_entity(channel_id)
-            async for message in zedub.iter_messages(entity=channel.id, limit=6):
+            channel = await zq_lo.get_entity(channel_id)
+            async for message in zq_lo.iter_messages(entity=channel.id, limit=6):
                 try:
-                    await zedub(GetMessagesViewsRequest(peer=channel.id, id=[message.id], increment=True)), await asyncio.sleep(0.5)
+                    await zq_lo(GetMessagesViewsRequest(peer=channel.id, id=[message.id], increment=True)), await asyncio.sleep(0.5)
                 except Exception as error:
                     print (error)
             return True
@@ -72,7 +72,7 @@ async def MarkAsViewed(channel_id):
 
 
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(events.NewMessage(pattern='.اطلع ?(.*)'))
+@zq_lo.on(events.NewMessage(pattern='.اطلع ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
