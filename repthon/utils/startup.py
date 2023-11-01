@@ -79,7 +79,7 @@ async def startupmessage():
     """
     try:
         if BOTLOG:
-            Config.ZEDUBLOGO = await zq_lo.tgbot.send_file(
+            Config.ZQ_LOBLOGO = await zq_lo.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://graph.org/file/f367d5a4a6bf1fbfc99b9.mp4",
                 caption="**•⎆┊تـم بـدء تشغـيل سـورس ريبـــثون الخاص بك .. بنجاح 🧸♥️**",
@@ -120,7 +120,7 @@ async def mybot():
     ba_roger = f"[{ROGER}](tg://user?id={Narcissus})"
     f"ـ {ba_roger}"
     f"•⎆┊هــذا البــوت خــاص بـ {ba_roger} يمكـنك التواصــل معـه هـنا 🧸♥️"
-    babot = await zedub.tgbot.get_me()
+    babot = await zq_lo.tgbot.get_me()
     bot_name = babot.first_name
     botname = f"@{babot.username}"
     if bot_name.endswith("Assistant"):
@@ -143,7 +143,7 @@ async def mybot():
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_file("@BotFather", "zthon/zilzal/IMG_20220821_170541_585.jpg")
+            await bot.send_file("@BotFather", "repthon/baqir/IMG_20220821_170541_585.jpg")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setabouttext")
             await asyncio.sleep(1)
@@ -194,8 +194,8 @@ async def load_plugins(folder, extfolder=None):
         path = f"{extfolder}/*.py"
         plugin_path = extfolder
     else:
-        path = f"zthon/{folder}/*.py"
-        plugin_path = f"zthon/{folder}"
+        path = f"repthon/{folder}/*.py"
+        plugin_path = f"repthon/{folder}"
     files = glob.glob(path)
     files.sort()
     success = 0
