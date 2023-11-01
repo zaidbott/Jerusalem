@@ -1,4 +1,4 @@
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.echo_sql import (
@@ -13,12 +13,12 @@ from ..sql_helper.echo_sql import (
 from . import get_user_from_event
 
 
-@zedub.zed_cmd(pattern="(تقليد|ازعاج)$")
+@zq_lo.rep_cmd(pattern="(تقليد|ازعاج)$")
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(event, "**- بالـرد على الشخص الذي تريد ازعاجـه**")
-    zedubevent = await edit_or_reply(event, "**- يتم تفعيل هذا الامر انتظر قليلا ..**")
-    user, rank = await get_user_from_event(event, zedubevent, nogroup=True)
+    repubevent = await edit_or_reply(event, "**- يتم تفعيل هذا الامر انتظر قليلا ..**")
+    user, rank = await get_user_from_event(event, repubevent, nogroup=True)
     if not user:
         return
     reply_msg = await event.get_reply_message()
@@ -40,11 +40,11 @@ async def echo(event):
         await edit_delete(zedubevent, f"**⎉╎خطـأ :**\n`{str(e)}`")
     else:
         await edit_or_reply(
-            zedubevent,
+            repubevent,
             "**- تم تفعيل امر التقليد على هذا الشخص\nسيتم تقليد جميع رسائله هنا**",
         )
 
-@zedub.zed_cmd(pattern="(الغاء تقليد|ايقاف التقليد|ايقاف تقليد|الغاء الازعاج|ايقاف الازعاج|ايقاف ازعاج|الغاء ازعاج)$")
+@zq_lo.rep_cmd(pattern="(الغاء تقليد|ايقاف التقليد|ايقاف تقليد|الغاء الازعاج|ايقاف الازعاج|ايقاف ازعاج|الغاء ازعاج)$")
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(event, "**- بالـرد على الشخص الذي قمت بـ ازعاجـه لايقاف الازعاج**\n**- ارسـل (.المقلدهم) لعـرض الاشخـاص الذي قمت بازعاجهم**")
@@ -55,14 +55,14 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(zedubevent, f"**⎉╎خطـأ :**\n`{e}`")
+            await edit_delete(repubevent, f"**⎉╎خطـأ :**\n`{e}`")
         else:
             await edit_or_reply(event, "**⎉╎تم ايقاف التقليد لهذا المستخدم**")
     else:
         await edit_or_reply(event, "**- لم يتم تفعيل التقليد على هذا المستخدم اصلا**")
 
 
-@zedub.zed_cmd(pattern="حذف المقلدهم( للكل)?")
+@zq_lo.rep_cmd(pattern="حذف المقلدهم( للكل)?")
 async def echo(event):
     input_str = event.pattern_match.group(1)
     if input_str:
@@ -95,7 +95,7 @@ async def echo(event):
             )
 
 
-@zedub.zed_cmd(pattern="المقلدهم( للكل)?$")
+@zq_lo.rep_cmd(pattern="المقلدهم( للكل)?$")
 async def echo(event):
     input_str = event.pattern_match.group(1)
     private_chats = ""
@@ -143,7 +143,7 @@ async def echo(event):
     await edit_or_reply(event, output_str)
 
 
-@zedub.zed_cmd(incoming=True, edited=False)
+@zq_lo.rep_cmd(incoming=True, edited=False)
 async def samereply(event):
     if is_echo(event.chat_id, event.sender_id) and (
         event.message.text or event.message.sticker
