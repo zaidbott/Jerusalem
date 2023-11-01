@@ -4,6 +4,7 @@
 # This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
+
 import asyncio
 import requests
 import logging
@@ -16,8 +17,8 @@ from telethon.tl.functions.messages import ExportChatInviteRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChatBannedRights
 
-from zthon import zedub
-from zthon import BOTLOG_CHATID
+from repthon import zq_lo
+from repthon import BOTLOG_CHATID
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -28,7 +29,7 @@ plugin_category = "الادمن"
 cmdhd = Config.COMMAND_HAND_LER
 
 
-@zedub.zed_cmd(pattern="(ضع الاشتراك خاص|وضع الاشتراك خاص)(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="(ضع الاشتراك خاص|وضع الاشتراك خاص)(?:\s|$)([\s\S]*)")
 async def _(event):
     if input_str := event.pattern_match.group(2):
         try:
@@ -83,7 +84,7 @@ async def _(event):
 
 
 
-@zedub.zed_cmd(pattern="(ضع الاشتراك كروب|وضع الاشتراك كروب)(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="(ضع الاشتراك كروب|وضع الاشتراك كروب)(?:\s|$)([\s\S]*)")
 async def _(event):
     if input_str := event.pattern_match.group(2):
         try:
@@ -131,7 +132,7 @@ async def _(event):
             )
 
 
-@zedub.zed_cmd(pattern="اشتراك")
+@zq_lo.zed_cmd(pattern="اشتراك")
 async def supc(event):
     ty = event.text
     ty = ty.replace(".اشتراك", "")
@@ -157,7 +158,7 @@ async def supc(event):
     if ty not in ["خاص", "كروب", "جروب", "قروب", "مجموعة", "مجموعه"]:
         return await edit_delete(event, "**⎉╎اختـر نوع الاشتـراك الاجبـاري اولاً :**\n\n`.اشتراك كروب`\n\n`.اشتراك خاص`")
 
-@zedub.zed_cmd(pattern="تعطيل")
+@zq_lo.rep_cmd(pattern="تعطيل")
 async def supc (event):
     cc = event.text.replace(".تعطيل", "")
     cc = cc.replace(" ", "")
@@ -177,12 +178,12 @@ async def supc (event):
         return await edit_delete(event, "**⎉╎اختـر نوع الاشتـراك الاجبـاري اولاً لـ الالغـاء :**\n\n`.تعطيل كروب`\n\n`.تعطيل خاص`")
 
 
-@zedub.zed_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
-async def supc(event):  # Zed-Thon - ZelZal
+@zq_lo.rep_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
+async def supc(event):  # Repthon - Baqir
     chat = await event.get_chat()
-    zed_dev = (1895219306, 925972505, 5176749470, 5280339206)
-    zelzal = (await event.get_sender()).id
-    if zelzal in zed_dev:
+    rep_dev = (5502537272, 5502537272)
+    baqir = (await event.get_sender()).id
+    if baqir in rep_dev:
     	return
     if chat.bot:
     	return
@@ -195,26 +196,26 @@ async def supc(event):  # Zed-Thon - ZelZal
             try:
                 ch = int(ch)
             except BaseException as r:
-                return await zedub.tgbot.send_message(BOTLOG_CHATID, f"**- خطـأ \n{r}**")
+                return await zq_lo.tgbot.send_message(BOTLOG_CHATID, f"**- خطـأ \n{r}**")
             url = f"https://api.telegram.org/bot{tok}/getchatmember?chat_id={ch}&user_id={idd}"
             req = requests.get(url)
             reqt = req.text
             if "chat not found" in reqt:
-                mb = await zedub.tgbot.get_me()
+                mb = await zq_lo.tgbot.get_me()
                 mb = mb.username
-                await zedub.tgbot.send_message(BOTLOG_CHATID, f"**⎉╎البوت الخاص بك @{mb} ليس في قناة الاشتراك الاجباري ؟!**")
+                await zq_lo.tgbot.send_message(BOTLOG_CHATID, f"**⎉╎البوت الخاص بك @{mb} ليس في قناة الاشتراك الاجباري ؟!**")
                 return
             if "bot was kicked" in reqt:
-                mb = await zedub.tgbot.get_me()
+                mb = await zq_lo.tgbot.get_me()
                 mb = mb.username
-                await zedub.tgbot.send_message(BOTLOG_CHATID, "**⎉╎البوت الخاص بك @{mb} مطرود من قناة الاشتراك الاجباري اعد اضافته؟!**")
+                await zq_lo.tgbot.send_message(BOTLOG_CHATID, "**⎉╎البوت الخاص بك @{mb} مطرود من قناة الاشتراك الاجباري اعد اضافته؟!**")
                 return
             if "not found" in reqt:
                 try:
-                    c = await zedub.get_entity(ch)
+                    c = await zq_lo.get_entity(ch)
                     chn = c.username
                     if c.username == None:
-                        ra = await zedub.tgbot(ExportChatInviteRequest(ch))
+                        ra = await zq_lo.tgbot(ExportChatInviteRequest(ch))
                         chn = ra.link
                     if chn.startswith("https://"):
                         await event.reply(f"**⎉╎يجب عليك الإشـتࢪاڪ بالقناة أولاً\n⎉╎قناة الاشتراك : {chn}**", buttons=[[Button.url("اضغط لـ الإشـتࢪاڪ 🗳", chn)]]
@@ -225,13 +226,13 @@ async def supc(event):  # Zed-Thon - ZelZal
                         )
                         return await event.delete()
                 except BaseException as er:
-                    await zedub.tgbot.send_message(BOTLOG_CHATID, f"- خطـأ \n{er}")
+                    await zq_lo.tgbot.send_message(BOTLOG_CHATID, f"- خطـأ \n{er}")
             if "left" in reqt:
                 try:
-                    c = await zedub.get_entity(ch)
+                    c = await zq_lo.get_entity(ch)
                     chn = c.username
                     if c.username == None:
-                        ra = await zedub.tgbot(ExportChatInviteRequest(ch))
+                        ra = await zq_lo.tgbot(ExportChatInviteRequest(ch))
                         chn = ra.link
                     if chn.startswith("https://"):
                         await event.reply(f"**⎉╎يجب عليك الإشـتࢪاڪ بالقناة أولاً\n⎉╎قناة الاشتراك : {chn}**", buttons=[[Button.url("اضغط لـ الإشـتࢪاڪ 🗳", chn)]]
@@ -242,10 +243,10 @@ async def supc(event):  # Zed-Thon - ZelZal
                         )
                         return await event.message.delete()
                 except BaseException as er:
-                    await zedub.tgbot.send_message(BOTLOG_CHATID, f"- خطـأ \n{er}")
+                    await zq_lo.tgbot.send_message(BOTLOG_CHATID, f"- خطـأ \n{er}")
             if "error_code" in reqt:
-                await zedub.tgbot.send_message(BOTLOG_CHATID, f"**- خطـأ غير معروف قم باعادة توجيه الرسالة ل@zzzzl1l لحل المشكلة\n{reqt}**")
+                await zq_lo.tgbot.send_message(BOTLOG_CHATID, f"**- خطـأ غير معروف قم باعادة توجيه الرسالة ل@zzzzl1l لحل المشكلة\n{reqt}**")
             
             return
         except BaseException as er:
-            await zedub.tgbot.send_message(BOTLOG_CHATID, f"** - خطـأ\n{er}**")
+            await zq_lo.tgbot.send_message(BOTLOG_CHATID, f"** - خطـأ\n{er}**")
