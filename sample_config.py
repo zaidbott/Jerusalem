@@ -69,7 +69,7 @@ class Config(object):
     CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     BOT_PIC = os.environ.get("BOT_PIC", None)
-    ZED_MEDIA = os.environ.get("ZED_MEDIA", None)
+    REP_MEDIA = os.environ.get("REP_MEDIA", None)
     BOT_HANDLER = os.environ.get("BOT_HANDLER", "^;")
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
     DIGITAL_PIC = os.environ.get("DIGITAL_PIC", None)
@@ -83,7 +83,7 @@ class Config(object):
     VC_SESSION = os.environ.get("VC_SESSION", None)
     # فــارات الــمــيــوزكـ
 
-    # Custom vars for zthon
+    # Custom vars for Repthon
     # set this will channel id of your custom plugins
     PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL") or 0)
     # set this value with your required name for telegraph plugin
@@ -108,7 +108,7 @@ class Config(object):
     FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", "▰")
     UNFINISHED_PROGRESS_STR = os.environ.get("UNFINISHED_PROGRESS_STR", "▱")
 
-    # API VARS FOR ZTHON
+    # API VARS FOR REPTHON
     # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture for screen shot
     SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
     # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
@@ -180,7 +180,7 @@ class Config(object):
     UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
     # dont touch this at all
     SUDO_USERS: Set[int] = set()
-    ZEDUBLOGO = None
+    ZQ_LOLOGO = None
     BOTLOG = False
     BOTLOG_CHATID = 0
     # extra plugins realted vars below  4
