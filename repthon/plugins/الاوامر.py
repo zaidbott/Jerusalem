@@ -329,15 +329,15 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zq_lo.get_me()
-    if query.startswith("ريبثون") and event.query.user_id == zedub.uid:
+    if query.startswith("ريبثون") and event.query.user_id == zq_lo.uid:
         ZPIC = gvarstatus("ALIVE_PIC")
         buttons = [[Button.url("قنـاة السـورس", "https://t.me/Repthon"),],[Button.url("التحـديثـات", "https://t.me/Repthon_up"), Button.url("الفـارات", "https://t.me/Repthon_vars"),],[Button.url("الشـروحـات¹", "https://t.me/Repthonn"),],[Button.url("الشـروحـات²", "https://t.me/Repthonn"),],[Button.url("مطـور السـورس", "https://t.me/E_7_V"),]]
         if ZPIC and ZPIC.endswith((".jpg", ".png", "gif", "mp4")):
             result = builder.photo(ZPIC,text=Channels, buttons=buttons, link_preview=True)
         elif ZPIC and ZPIC.endswith((".gif", ".mp4")):
-            result = builder.document(ZPIC,title="zedub",text=Channels,buttons=buttons,link_preview=True)
+            result = builder.document(ZPIC,title="zq_lo",text=Channels,buttons=buttons,link_preview=True)
         else:
-            result = builder.article(title="zedub",text=Channels,buttons=buttons,link_preview=True)
+            result = builder.article(title="zq_lo",text=Channels,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="ريبثون")
 async def repozedub(event):
@@ -358,15 +358,15 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zq_lo.get_me()
-    if query.startswith("السورس") and event.query.user_id == zedub.uid:
+    if query.startswith("السورس") and event.query.user_id == zq_lo.uid:
         ZPIC = gvarstatus("ALIVE_PIC")
         buttons = [[Button.url("قنـاة الســورس", "https://t.me/Repthon")]]
         if ZPIC and ZPIC.endswith((".jpg", ".png")):
             result = builder.photo(ZPIC,text=Zelzal, buttons=buttons, link_preview=True)
         elif ZPIC and ZPIC.endswith((".gif", ".mp4")):
-            result = builder.document(ZPIC,title="zedub",text=Zelzal,buttons=buttons,link_preview=True)
+            result = builder.document(ZPIC,title="zq_lo",text=Zelzal,buttons=buttons,link_preview=True)
         else:
-            result = builder.article(title="zedub",text=Zelzal,buttons=buttons,link_preview=True)
+            result = builder.article(title="zq_lo",text=Zelzal,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="السورس")
 async def repozedub(event):
@@ -387,15 +387,15 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zq_lo.get_me()
-    if query.startswith("سورس") and event.query.user_id == zedub.uid:
+    if query.startswith("سورس") and event.query.user_id == zq_lo.uid:
         ZPIC = gvarstatus("ALIVE_PIC")
         buttons = [[Button.url("قنـاة الســورس", "https://t.me/Repthon")]]
         if ZPIC and ZPIC.endswith((".jpg", ".png")):
             result = builder.photo(ZPIC,text=Zelzal, buttons=buttons, link_preview=True)
         elif ZPIC and ZPIC.endswith((".gif", ".mp4")):
-            result = builder.document(ZPIC,title="zedub",text=Zelzal,buttons=buttons,link_preview=True)
+            result = builder.document(ZPIC,title="zq_lo",text=Zelzal,buttons=buttons,link_preview=True)
         else:
-            result = builder.article(title="zedub",text=Zelzal,buttons=buttons,link_preview=True)
+            result = builder.article(title="zq_lo",text=Zelzal,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="سورس")
 async def repozedub(event):
@@ -418,13 +418,13 @@ async def zed_handler(event):
     await zq_lo.get_me()
     user = gvarstatus("who_id")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    if query.startswith("اليدوي") and event.query.user_id == zedub.uid:
+    if query.startswith("اليدوي") and event.query.user_id == zq_lo.uid:
         zelzal = f"**• عـزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• اليـك شـرح اعـادة التشغيـل اليـدوي↓**"
         buttons = [[Button.url("اضغــط هنــا", "https://t.me/Repthon")]]
-        result = builder.article(title="zedub",text=zelzal,buttons=buttons,link_preview=False)
+        result = builder.article(title="zq_lo",text=zelzal,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="اليدوي(?: |$)(.*)")
-async def repozedub(event):
+async def repozq_lo(event):
     user, custom = await get_user_from_event(event)
     if not user:
         return
@@ -445,13 +445,13 @@ async def zed_handler(event):
     await zq_lo.get_me()
     user = gvarstatus("who_id")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    if query.startswith("الفيزا") and event.query.user_id == zedub.uid:
+    if query.startswith("الفيزا") and event.query.user_id == zq_lo.uid:
         zelzal = f"**• عـزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• اليـك الفيـزا الخـاصـه بهيـروكـو↓**"
         buttons = [[Button.url("اضغــط هنــا", "https://t.me/Repthon_cc/2")]]
-        result = builder.article(title="zedub",text=zelzal,buttons=buttons,link_preview=False)
+        result = builder.article(title="zq_lo",text=zelzal,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="الفيزا(?: |$)(.*)")
-async def repozedub(event):
+async def repozq_lo(event):
     user, custom = await get_user_from_event(event)
     if not user:
         return
@@ -473,13 +473,13 @@ async def zed_handler(event):
     await zq_lo.get_me()
     user = gvarstatus("who_id")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    if query.startswith("الهيروكو") and event.query.user_id == zedub.uid:
+    if query.startswith("الهيروكو") and event.query.user_id == zq_lo.uid:
         zelzal = f"**• عـزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• اليـك شـرح إنشـاء حسـاب هيـروكـو↓**"
         buttons = [[Button.url("اضغــط هنــا", "https://t.me/Repthon/117")]]
-        result = builder.article(title="zedub",text=zelzal,buttons=buttons,link_preview=False)
+        result = builder.article(title="zq_lo",text=zelzal,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="الهيروكو(?: |$)(.*)")
-async def repozedub(event):
+async def repozq_lo(event):
     user, custom = await get_user_from_event(event)
     if not user:
         return
@@ -500,13 +500,13 @@ async def zed_handler(event):
     await zq_lo.get_me()
     user = gvarstatus("who_id")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    if query.startswith("التنصيب") and event.query.user_id == zedub.uid:
+    if query.startswith("التنصيب") and event.query.user_id == zq_lo.uid:
         zelzal = f"**• عـزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• اليـك شـرح تنصيب السـورس ع هيـروكـو↓**"
         buttons = [[Button.url("اضغــط هنــا", "https://t.me/Repthon/117")]]
-        result = builder.article(title="zedub",text=zelzal,buttons=buttons,link_preview=False)
+        result = builder.article(title="zq_lo",text=zelzal,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="التنصيب(?: |$)(.*)")
-async def repozedub(event):
+async def repozq_lo(event):
     user, custom = await get_user_from_event(event)
     if not user:
         return
