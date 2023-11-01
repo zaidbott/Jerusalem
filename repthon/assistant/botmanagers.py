@@ -3,7 +3,7 @@ from math import floor
 
 from telethon.utils import get_display_name
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -65,14 +65,14 @@ async def ban_user_from_bot(user, reason, reply_to=None):
     banned_msg = (
         f"**- لقد تم حظـرك إلى الأبد من استخدام هذا البـوت.\n- السبب** : {reason}"
     )
-    await zedub.tgbot.send_message(user.id, banned_msg)
+    await zq_lo.tgbot.send_message(user.id, banned_msg)
     info = f"**#حظـر_شخـص_من_البـوت_المسـاعد**\
             \n\n👤 {_format.mentionuser(get_display_name(user) , user.id)}\
             \n**- الاسـم :** {user.first_name}\
             \n**- الايـدي :** `{user.id}`\
             \n**- السبب :** `{reason}`"
     if BOTLOG:
-        await zedub.send_message(BOTLOG_CHATID, info)
+        await zq_lo.send_message(BOTLOG_CHATID, info)
     return info
 
 
@@ -85,11 +85,11 @@ async def unban_user_from_bot(user, reason, reply_to=None):
 
     if reason is not None:
         banned_msg += f"\n**- السبب :** __{reason}__"
-    await zedub.tgbot.send_message(user.id, banned_msg)
+    await zq_lo.tgbot.send_message(user.id, banned_msg)
     info = f"**#الغـاء_حظـر_شخـص_من_البـوت_المسـاعد**\
             \n\n👤 {_format.mentionuser(get_display_name(user) , user.id)}\
             \n**- الاسـم :** {user.first_name}\
             \n**- الايـدي :** `{user.id}`"
     if BOTLOG:
-        await zedub.send_message(BOTLOG_CHATID, info)
+        await zq_lo.send_message(BOTLOG_CHATID, info)
     return info
