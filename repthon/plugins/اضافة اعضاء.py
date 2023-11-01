@@ -7,14 +7,14 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 from ..core.managers import edit_or_reply, edit_delete
 from ..sql_helper.globals import gvarstatus
 
 plugin_category = "الادوات"
 
-ZADD = gvarstatus("Z_ADD") or "ضيف"
+REPADD = gvarstatus("R_ADD") or "ضيف"
 
 
 async def get_chatinfo(event):
@@ -74,7 +74,7 @@ def user_full_name(user):
 
 
 
-@zedub.zed_cmd(pattern=f"{ZADD} ?(.*)")
+@zq_lo.rep_cmd(pattern=f"{REPADD} ?(.*)")
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
@@ -82,7 +82,7 @@ async def get_users(event):
         eva = await event.reply("**╮  جـاري الاضـافه .. الࢪجـاء الانتظـار ...𓅫╰**")
     else:
         eva = await event.edit("**╮  جـاري الاضـافه .. الࢪجـاء الانتظـار ...𓅫╰**.")
-    ZEDTHON = await get_chatinfo(event)
+    REPTHON = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
         return await eva.edit("**╮  لا استطـيع اضافـة الاعضـاء هـنا 𓅫╰**")
@@ -93,7 +93,7 @@ async def get_users(event):
     await eva.edit(
         "**╮  حـالة الإضافـه :**\n\n**╮  جـاري جـمع معـلومات الاعضـاء ...⏳**"
     )
-    async for user in event.client.iter_participants( ZEDTHON.full_chat.id):
+    async for user in event.client.iter_participants(REPTHON.full_chat.id):
         try:
             if error.startswith("Too"):
                 return (
