@@ -1,13 +1,13 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..helpers.utils import get_user_from_event, reply_id
 
 plugin_category = "الادمن"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(tagall|alll)(?:\s|$)([\s\S]*)",
     command=("tagall", plugin_category),
     info={
@@ -30,7 +30,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="report$",
     command=("report", plugin_category),
     info={
@@ -52,7 +52,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="men ([\s\S]*)",
     command=("mention", plugin_category),
     info={
