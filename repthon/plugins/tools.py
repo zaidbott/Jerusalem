@@ -14,14 +14,14 @@ from PIL import Image, ImageColor
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest as unblock
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import AioHttp
 from ..helpers.functions import delete_conv
-from ..helpers.utils import _zedutils, reply_id
+from ..helpers.utils import _reputils, reply_id
 
 plugin_category = "الادوات"
 
@@ -29,7 +29,7 @@ plugin_category = "الادوات"
 LOGS = logging.getLogger(__name__)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="cur(?:\s|$)([\s\S]*)",
     command=("cur", plugin_category),
     info={
@@ -88,7 +88,7 @@ async def currency(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="scan( -i)?$",
     command=("scan", plugin_category),
     info={
@@ -105,15 +105,15 @@ async def scan(event):
     if not reply_message.media:
         return await edit_or_reply(event, "```reply to a media message```")
     chat = "@VS_Robot"
-    zedevent = await edit_or_reply(event, " `Sliding my tip, of fingers over it`")
+    repevent = await edit_or_reply(event, " `Sliding my tip, of fingers over it`")
     async with event.client.conversation(chat) as conv:
         try:
             flag = await conv.send_message("/start")
         except YouBlockedUserError:
             await edit_or_reply(
-                zedevent, "**Error:** Trying to unblock & retry, wait a sec..."
+                repevent, "**Error:** Trying to unblock & retry, wait a sec..."
             )
-            await zedub(unblock("VS_Robot"))
+            await zq_lo(unblock("VS_Robot"))
             flag = await conv.send_message("/start")
         await conv.get_response()
         await conv.send_message(reply_message)
@@ -121,7 +121,7 @@ async def scan(event):
         if response1.text:
             await event.client.send_read_acknowledge(conv.chat_id)
             sec = "".join([num for num in response1.text if num.isdigit()])
-            await edit_delete(zedevent, f"**Please wait for {sec}s before retry**", 15)
+            await edit_delete(repevent, f"**Please wait for {sec}s before retry**", 15)
         else:
             await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
@@ -129,16 +129,16 @@ async def scan(event):
             response3 = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
             if not input_str:
-                await edit_or_reply(zedevent, response3.text[30:])
+                await edit_or_reply(repevent, response3.text[30:])
             else:
-                await zedevent.delete()
+                await repevent.delete()
                 await event.client.send_file(
                     event.chat_id, response2.media, reply_to=(await reply_id(event))
                 )
         await delete_conv(event, chat, flag)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="decode$",
     command=("decode", plugin_category),
     info={
@@ -149,26 +149,26 @@ async def scan(event):
 )
 async def parseqr(event):
     "To decode qrcode or barcode"
-    zedevent = await edit_or_reply(event, "`Decoding....`")
+    repevent = await edit_or_reply(event, "`Decoding....`")
     reply = await event.get_reply_message()
     downloaded_file_name = await reply.download_media()
     # parse the Official ZXing webpage to decode the QRCode
     command_to_exec = f"curl -s -F f=@{downloaded_file_name} https://zxing.org/w/decode"
-    t_response, e_response = (await _zedutils.runcmd(command_to_exec))[:2]
+    t_response, e_response = (await _reputils.runcmd(command_to_exec))[:2]
     if os.path.exists(downloaded_file_name):
         os.remove(downloaded_file_name)
     soup = BeautifulSoup(t_response, "html.parser")
     try:
         qr_contents = soup.find_all("pre")[0].text
-        await edit_or_reply(zedevent, f"**The decoded message is :**\n`{qr_contents}`")
+        await edit_or_reply(repevent, f"**The decoded message is :**\n`{qr_contents}`")
     except IndexError:
         result = soup.text
-        await edit_or_reply(zedevent, f"**Failed to Decode:**\n`{result}`")
+        await edit_or_reply(repevent, f"**Failed to Decode:**\n`{result}`")
     except Exception as e:
-        await edit_or_reply(zedevent, f"**Error:**\n`{e}`")
+        await edit_or_reply(repevent, f"**Error:**\n`{e}`")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="barcode ?([\s\S]*)",
     command=("barcode", plugin_category),
     info={
@@ -179,7 +179,7 @@ async def parseqr(event):
 )
 async def _(event):
     "to make barcode of given content."
-    zedevent = await edit_or_reply(event, "...")
+    repevent = await edit_or_reply(event, "...")
     start = datetime.now()
     input_str = event.pattern_match.group(1)
     message = "SYNTAX: `.barcode <long text to include>`"
@@ -214,13 +214,13 @@ async def _(event):
         )
         os.remove(filename)
     except Exception as e:
-        return await zedevent.edit(str(e))
+        return await repevent.edit(str(e))
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(zedevent, "Created BarCode in {} seconds".format(ms))
+    await edit_delete(repevent, "Created BarCode in {} seconds".format(ms))
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="makeqr(?: |$)([\s\S]*)",
     command=("makeqr", plugin_category),
     info={
@@ -264,7 +264,7 @@ async def make_qr(makeqr):
     await makeqr.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="cal ([\s\S]*)",
     command=("cal", plugin_category),
     info={
@@ -289,7 +289,7 @@ async def _(event):
         await edit_delete(event, f"**Error:**\n`{e}`", 5)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ip(?:\s|$)([\s\S]*)",
     command=("ip", plugin_category),
     info={
@@ -375,7 +375,7 @@ async def spy(event):
     await edit_or_reply(event, string, parse_mode="html")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ifsc ([\s\S]*)",
     command=("ifsc", plugin_category),
     info={
@@ -398,7 +398,7 @@ async def _(event):
     await edit_or_reply(event, str(a))
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="color ([\s\S]*)",
     command=("color", plugin_category),
     info={
@@ -434,7 +434,7 @@ async def _(event):
         await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="xkcd(?:\s|$)([\s\S]*)",
     command=("xkcd", plugin_category),
     info={
@@ -444,7 +444,7 @@ async def _(event):
 )
 async def _(event):
     "Searches for the query for the relevant XKCD comic."
-    zedevent = await edit_or_reply(event, "`processiong...........`")
+    repevent = await edit_or_reply(event, "`processiong...........`")
     input_str = event.pattern_match.group(1)
     xkcd_id = None
     if input_str:
@@ -462,7 +462,7 @@ async def _(event):
         xkcd_url = "https://xkcd.com/{}/info.0.json".format(xkcd_id)
     r = requests.get(xkcd_url)
     if not r.ok:
-        return await zedevent.edit("xkcd n.{} not found!".format(xkcd_id))
+        return await repevent.edit("xkcd n.{} not found!".format(xkcd_id))
     data = r.json()
     year = data.get("year")
     month = data["month"].zfill(2)
@@ -482,4 +482,4 @@ Month: {}
 Year: {}""".format(
         img, input_str, xkcd_link, safe_title, alt, day, month, year
     )
-    await zedevent.edit(output_str, link_preview=True)
+    await repevent.edit(output_str, link_preview=True)
