@@ -29,7 +29,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_display_name
 from urlextract import URLExtract
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -58,7 +58,7 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-ZelzalVP_cmd = (
+Baqir_vars_cmd = (
     "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 𝗩𝗮𝗿𝘀 - اوامـر الفـارات](t.me/Repthon) 𓆪\n\n"
     "**⎉╎قائـمه اوامر تغييـر فـارات الصـور بأمـر واحـد فقـط - لـ اول مـره ع سـورس تليثـون يوزر بـوت 🦾 :** \n\n"
     "⪼ `.اضف صورة الحماية` بالـرد ع صـورة او ميديـا\n\n"
@@ -106,7 +106,7 @@ ZelzalVP_cmd = (
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern=r"اضف (.*)")
+@zq_lo.rep_cmd(pattern=r"اضف (.*)")
 async def variable(event):
     input_str = event.pattern_match.group(1)
     reply = await event.get_reply_message()
@@ -508,7 +508,7 @@ async def variable(event):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="حذف فار(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="حذف فار(?:\s|$)([\s\S]*)")
 async def variable(event):
     input_str = event.text[9:]
     if (input_str == "من" or input_str == "الى" or input_str == "الترحيب") or "رسائلي" in input_str or "رسائله" in input_str:
@@ -788,7 +788,7 @@ async def variable(event):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="جلب (?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="جلب (?:\s|$)([\s\S]*)")
 async def custom_zed(event):
     input_str = event.text[9:]
     zed = await edit_or_reply(event, "**⎉╎جــاري جلـب معلـومـات الفــار 🛂. . .**")
@@ -1148,7 +1148,7 @@ async def custom_zed(event):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="وقت (?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="وقت (?:\s|$)([\s\S]*)")
 async def variable(event):
     if Config.HEROKU_API_KEY is None:
         return await ed(
@@ -1232,7 +1232,7 @@ async def variable(event):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="اضف صورة (الحماية|الحمايه|الفحص|الوقتي|البوت|الكتم) ?(.*)")
+@zq_lo.rep_cmd(pattern="اضف صورة (الحماية|الحمايه|الفحص|الوقتي|البوت|الكتم) ?(.*)")
 async def _(malatha):
     if malatha.fwd_from:
         return
@@ -1405,14 +1405,14 @@ def resize_image(image):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="اوامر الفارات")
+@zq_lo.rep_cmd(pattern="اوامر الفارات")
 async def cmd(roger):
-    await edit_or_reply(roger, ZelzalVP_cmd)
+    await edit_or_reply(roger, Baqir_vars_cmd)
 
-@zedub.zed_cmd(pattern="الفارات")
+@zq_lo.rep_cmd(pattern="الفارات")
 async def cmd(roger):
-    await edit_or_reply(roger, ZelzalVP_cmd)
+    await edit_or_reply(roger, Baqir_vars_cmd)
 
-@zedub.zed_cmd(pattern="التخصيص")
+@zq_lo.rep_cmd(pattern="التخصيص")
 async def cmd(roger):
-    await edit_or_reply(roger, ZelzalVP_cmd)
+    await edit_or_reply(roger, Baair_vars_cmd)
