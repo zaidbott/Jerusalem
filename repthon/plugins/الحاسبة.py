@@ -2,12 +2,12 @@ import io
 import sys
 import traceback
 
-from . import zedub, edit_or_reply
+from . import zq_lo, edit_or_reply
 
 plugin_category = "الادوات"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حاسبه ([\s\S]*)",
     command=("حاسبه", plugin_category),
     info={
