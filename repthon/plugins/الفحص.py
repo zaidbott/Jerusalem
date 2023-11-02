@@ -35,7 +35,7 @@ async def alive(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
-    R_EMOJI = gvarstatus("ALIVE_EMOJI") or "**𓃰┊**"
+    R_EMOJI = gvarstatus("ALIVE_EMOJI") or "𓃰┊"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **"
     REP_IMG = gvarstatus("ALIVE_PIC") or "https://graph.org/file/f701e179b634b5a873e8c.mp4"
     rep_caption = gvarstatus("ALIVE_TEMPLATE") or rep_temp
@@ -49,6 +49,7 @@ async def alive(event):
         pyver=python_version(),
         dbhealth=check_sgnirts,
         ping=ms,
+        repthon_Tare5=installation_time
     )
     if REP_IMG:
         REP = [x for x in REP_IMG.split()]
@@ -78,6 +79,7 @@ rep_temp = """{ALIVE_TEXT}
 **{R_EMOJI} إصـدار البـايثون :** `{pyver}`
 **{R_EMOJI} الوقـت :** `{uptime}`
 **{R_EMOJI} المسـتخدم:** {mention}
+**{R_EMOJI} التـاريـخ:** {repthon_Tare5}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
 
 
