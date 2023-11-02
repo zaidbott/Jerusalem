@@ -1,11 +1,11 @@
 from telethon import *
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.autopost_sql import add_post, get_all_post, is_post, remove_post
-from zthon.core.logger import logging
+from repthon.core.logger import logging
 from ..sql_helper.globals import gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 from . import *
@@ -16,15 +16,15 @@ LOGS = logging.getLogger(__name__)
 SPRD = gvarstatus("Z_SPRD") or "(نشر_تلقائي|نشر|تلقائي)"
 OFSPRD = gvarstatus("Z_OFSPRD") or "(ايقاف_النشر|ايقاف النشر|ستوب)"
 
-ZelzalNSH_cmd = (
-    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامـر النشـر التلقـائي](t.me/Repthon) 𓆪\n\n"
+BaqirNSH_cmd = (
+    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامـر النشـر التلقـائي](t.me/Repthon) 𓆪\n\n"
     "**- اضغـط ع الامـر للنسـخ** \n\n\n"
     "**⪼** `.تلقائي` \n"
     "**- الامـر + ايـدي القنـاة تستخـدم الامـر بقنـاتـك** \n\n"
     "**⪼** `.ايقاف النشر` \n"
     "**- الامـر + ايـدي القنـاة تستخـدم الامـر بقنـاتـك** \n\n"
     "🛃 سيتـم اضـافة المزيـد من تخصيص الاوامـر بالتحديثـات الجـايه\n"
-    "\n𓆩 [𐇮  ✗ ¦ ↱𝐺𝑜𝑙 𝐷. 𝑅𝑜𝑔𝑒𝑟↲ ¦ ✗ 𐇮](t.me/ZQ_LO) 𓆪"
+    "\n𓆩 [𐇮  ✗ ¦ ↱𝐺𝑜𝑙 𝐷. 𝑅𝑜𝑔𝑒𝑟↲ ¦ ✗ 𐇮](t.me/E_7_V) 𓆪"
 )
 
 
@@ -56,7 +56,7 @@ async def get_user_from_event(event):
     return user_object
 
 
-@zedub.zed_cmd(pattern=f"{SPRD} ?(.*)")
+@zq_lo.rep_cmd(pattern=f"{SPRD} ?(.*)")
 async def _(event):
     if (event.is_private or event.is_group):
         return await edit_or_reply(event, "**✾╎عـذراً .. النشر التلقائي خـاص بالقنـوات فقـط**")
@@ -73,7 +73,7 @@ async def _(event):
     await edit_or_reply(event, f"**✾╎جـاري بدء النشـر التلقـائي من القنـاة ** `{trz_}`")
 
 
-@zedub.zed_cmd(pattern=f"{OFSPRD} ?(.*)")
+@zq_lo.rep_cmd(pattern=f"{OFSPRD} ?(.*)")
 async def _(event):
     if (event.is_private or event.is_group):
         return await edit_or_reply(event, "**✾╎عـذراً .. النشر التلقائي خـاص بالقنـوات فقـط**")
@@ -90,7 +90,7 @@ async def _(event):
     await edit_or_reply(event, f"**✾╎تم ايقـاف النشـر التلقـائي من** `{trz_}`")
 
 
-@zedub.zed_cmd(incoming=True, forword=None)
+@zq_lo.rep_cmd(incoming=True, forword=None)
 async def _(event):
     if event.is_private:
         return
@@ -102,12 +102,12 @@ async def _(event):
         if event.media:
             await event.client.send_file(int(chat), event.media, caption=event.text)
         elif not event.media:
-            await zedub.send_message(int(chat), event.message)
+            await zq_lo.send_message(int(chat), event.message)
 
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="النشر")
-async def cmd(zelzallll):
-    await edit_or_reply(zelzallll, ZelzalNSH_cmd)
+@zq_lo.rep_cmd(pattern="النشر")
+async def cmd(Baqir):
+    await edit_or_reply(Baqir, BaairNSH_cmd)
 
