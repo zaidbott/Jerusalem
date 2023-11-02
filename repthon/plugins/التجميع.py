@@ -612,17 +612,17 @@ async def _(event):
         if event.is_group:
             await event.client.send_message(event.chat_id, "فلوسي")
             await asyncio.sleep(3)
-            zzzthon = await event.client.get_messages(event.chat_id, limit=1)
-            zzzthon = zzzthon[0].message
-            zzzthon = ("".join(zzzthon.split(maxsplit=2)[2:])).split(" ", 2)
-            zedub = zzzthon[0]
-            if zedub.isdigit() and int(zedub) > 500000000:
-                await event.client.send_message(event.chat_id,f"استثمار {zedub}")
+            reepthon = await event.client.get_messages(event.chat_id, limit=1)
+            reepthon = reepthon[0].message
+            reepthon = ("".join(reepthon.split(maxsplit=2)[2:])).split(" ", 2)
+            zq_lo = reepthon[0]
+            if zq_lo.isdigit() and int(zq_lo) > 500000000:
+                await event.client.send_message(event.chat_id,f"استثمار {zq_lo}")
                 await asyncio.sleep(5)
-                zzthon = await event.client.get_messages(event.chat_id, limit=1)
-                await zzthon[0].click(text="اي ✅")
+                reeepthon = await event.client.get_messages(event.chat_id, limit=1)
+                await reeepthon[0].click(text="اي ✅")
             else:
-                await event.client.send_message(event.chat_id, f"استثمار {zedub}")
+                await event.client.send_message(event.chat_id, f"استثمار {zq_lo}")
             await asyncio.sleep(1210)
         
         else:
