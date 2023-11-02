@@ -40,7 +40,7 @@ from ..helpers import progress, reply_id
 from ..helpers.functions import delete_conv
 from ..helpers.functions.utube import _mp3Dl, get_yt_video_id, get_ytthumb, ytsearch
 from ..helpers.utils import _format
-from . import BOTLOG, BOTLOG_CHATID, zedub
+from . import BOTLOG, BOTLOG_CHATID, zq_lo
 
 BASE_YT_URL = "https://www.youtube.com/watch?v="
 extractor = URLExtract()
@@ -153,7 +153,7 @@ async def fix_attributes(
     return new_attributes, mime_type
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحميل صوت(?:\s|$)([\s\S]*)",
     command=("تحميل صوت", plugin_category),
     info={
@@ -170,7 +170,7 @@ async def download_audio(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    repevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         try:
@@ -191,8 +191,8 @@ async def download_audio(event):
             else:
                 _fpath = _path
         if not _fpath:
-            return await edit_delete(zedevent, "__Unable to upload file__")
-        await zedevent.edit(
+            return await edit_delete(repevent, "__Unable to upload file__")
+        await repevent.edit(
             f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
             \n**{vid_data['title']}***"
         )
@@ -235,10 +235,10 @@ async def download_audio(event):
         )
         for _path in [_fpath, thumb_pic]:
             os.remove(_path)
-    await zedevent.delete()
+    await repevent.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحميل فيديو(?:\s|$)([\s\S]*)",
     command=("تحميل فيديو", plugin_category),
     info={
@@ -258,10 +258,10 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    repevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
-        ytdl_data = await ytdl_down(zedevent, video_opts, url)
+        ytdl_data = await ytdl_down(repevent, video_opts, url)
         if ytdl_down is None:
             return
         try:
@@ -272,7 +272,7 @@ async def download_video(event):
                 catthumb = pathlib.Path("cat_ytv.webp")
             if not os.path.exists(catthumb):
                 catthumb = None
-            await zedevent.edit(
+            await repevent.edit(
                 f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
                 \n**{ytdl_data['title']}**"
             )
@@ -285,7 +285,7 @@ async def download_video(event):
                 file=ul,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(
-                        d, t, zedevent, c_time, "Upload :", file_name=ytdl_data["title"]
+                        d, t, repevent, c_time, "Upload :", file_name=ytdl_data["title"]
                     )
                 ),
             )
@@ -310,7 +310,7 @@ async def download_video(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="فيس(?:\s|$)([\s\S]*)",
     command=("فيسبوك", plugin_category),
     info={
@@ -330,10 +330,10 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل مـن فيـس بـوك انتظر قليلا ▬▭ ...**")
+    repevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل مـن فيـس بـوك انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
-        ytdl_data = await ytdl_down(zedevent, video_opts, url)
+        ytdl_data = await ytdl_down(repevent, video_opts, url)
         if ytdl_down is None:
             return
         try:
@@ -344,7 +344,7 @@ async def download_video(event):
                 catthumb = pathlib.Path("cat_ytv.webp")
             if not os.path.exists(catthumb):
                 catthumb = None
-            await zedevent.edit(
+            await repevent.edit(
                 f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
                 \n**{ytdl_data['title']}**"
             )
@@ -357,7 +357,7 @@ async def download_video(event):
                 file=ul,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(
-                        d, t, zedevent, c_time, "Upload :", file_name=ytdl_data["title"]
+                        d, t, repevent, c_time, "Upload :", file_name=ytdl_data["title"]
                     )
                 ),
             )
@@ -382,7 +382,7 @@ async def download_video(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="سناب(?:\s|$)([\s\S]*)",
     command=("سناب شات", plugin_category),
     info={
@@ -402,10 +402,10 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    repevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
-        ytdl_data = await ytdl_down(zedevent, video_opts, url)
+        ytdl_data = await ytdl_down(repevent, video_opts, url)
         if ytdl_down is None:
             return
         try:
@@ -416,7 +416,7 @@ async def download_video(event):
                 catthumb = pathlib.Path("cat_ytv.webp")
             if not os.path.exists(catthumb):
                 catthumb = None
-            await zedevent.edit(
+            await repevent.edit(
                 f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
                 \n**{ytdl_data['title']}**"
             )
@@ -429,7 +429,7 @@ async def download_video(event):
                 file=ul,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(
-                        d, t, zedevent, c_time, "Upload :", file_name=ytdl_data["title"]
+                        d, t, repevent, c_time, "Upload :", file_name=ytdl_data["title"]
                     )
                 ),
             )
