@@ -24,6 +24,15 @@ from . import mention
 
 plugin_category = "العروض"
 ALIVE = gvarstatus("R_ALIVE") or "فحص"
+# @E_7_V 
+file_path = "installation_date.txt"
+if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
+    with open(file_path, "r") as file:
+        installation_time = file.read().strip()
+else:
+    installation_time = datetime.now().strftime("%Y-%m-%d")
+    with open(file_path, "w") as file:
+        file.write(installation_time)
 
 
 @zq_lo.rep_cmd(pattern=f"{ALIVE}$")
