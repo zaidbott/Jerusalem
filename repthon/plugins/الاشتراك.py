@@ -132,7 +132,7 @@ async def _(event):
             )
 
 
-@zq_lo.zed_cmd(pattern="اشتراك")
+@zq_lo.rep_cmd(pattern="اشتراك")
 async def supc(event):
     ty = event.text
     ty = ty.replace(".اشتراك", "")
