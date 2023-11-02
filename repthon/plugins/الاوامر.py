@@ -74,7 +74,7 @@ async def rep_handler(event):
     result = None
     query = event.text
     await zq_lo.get_me()
-    if query.startswith("الاوامر") and event.query.user_id == zedub.uid:
+    if query.startswith("الاوامر") and event.query.user_id == zq_lo.uid:
         buttons = [[Button.inline("❶", data="ahmed1"), Button.inline("❷", data="ahmed2"), Button.inline("❸", data="ahmed3"), Button.inline("❹", data="ahmed4"),],[Button.inline("❺", data="ahmed5"), Button.inline("❻", data="ahmed6"), Button.inline("❼", data="ahmed7"), Button.inline("⇒", data="back1"),]]
         result = builder.article(title="zq_lo",text=Malath,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
