@@ -3,15 +3,15 @@
 # ها شعدك داخل ع الملف تريد تخمط ؟ ابو زربة لهل درجة فاشل  
 
 from telethon import events
-from zthon import zedub
+from repthon import zq_lo
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..core.managers import edit_delete, edit_or_reply
 from telethon import functions
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
-from zthon.utils import admin_cmd
+from repthon.utils import admin_cmd
 
 
-@zedub.on(admin_cmd(pattern="(خط الغامق|خط غامق)"))
+@zq_lo.on(admin_cmd(pattern="(خط الغامق|خط غامق)"))
 async def btext(event):
     isbold = gvarstatus("bold")
     if not isbold:
@@ -25,7 +25,7 @@ async def btext(event):
         return
 
 
-@zedub.on(admin_cmd(pattern="(خط رمز|خط الرمز)"))
+@zq_lo.on(admin_cmd(pattern="(خط رمز|خط الرمز)"))
 async def btext(event):
     isramz = gvarstatus("ramz")
     if not isramz:
@@ -39,7 +39,7 @@ async def btext(event):
         return
 
 
-@zedub.on(admin_cmd(pattern="(خط المشطوب|خط مشطوب)"))
+@zq_lo.on(admin_cmd(pattern="(خط المشطوب|خط مشطوب)"))
 async def btext(event):
     istshwesh = gvarstatus("tshwesh")
     if not istshwesh:
@@ -53,7 +53,7 @@ async def btext(event):
         return
 
 
-@zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل)"))  
+@zq_lo.on(admin_cmd(pattern="(خط مائل|الخط المائل)"))  
 async def btext(event):
     isitalic = gvarstatus("italic")
     if not isitalic:
@@ -67,7 +67,7 @@ async def btext(event):
         return
 
 
-@zedub.on(events.NewMessage(outgoing=True))
+@zq_lo.on(events.NewMessage(outgoing=True))
 async def baqir(event):
     isbold = gvarstatus("bold")
     if isbold and "." not in event.message.message:
