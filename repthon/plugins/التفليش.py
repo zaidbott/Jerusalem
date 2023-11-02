@@ -24,7 +24,7 @@ from telethon.errors import UserNotParticipantError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.channels import GetParticipantRequest
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -61,27 +61,27 @@ async def ban_user(chat_id, i, rights):
         return False, str(exc)
 
 
-@zedub.zed_cmd(pattern=r"غادر(.*)")
+@zq_lo.rep_cmd(pattern=r"غادر(.*)")
 async def leavme(leave):
     await leave.edit("**⎉╎جـاري مـغادرة المجـموعة مـع السـلامة  🚶‍♂️  ..**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
-@zedub.zed_cmd(pattern=r"اطردني(.*)")
+@zq_lo.rep_cmd(pattern=r"اطردني(.*)")
 async def kickme(leave):
     await leave.edit("**⎉╎جـاري مـغادرة المجـموعة مـع السـلامة  🚶‍♂️  ..**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
-@zedub.zed_cmd(pattern=r"مغادره(.*)")
+@zq_lo.rep_cmd(pattern=r"مغادره(.*)")
 async def banme(leave):
     await leave.edit("**⎉╎جـاري مـغادرة المجـموعة مـع السـلامة  🚶‍♂️  ..**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
-@zedub.zed_cmd(pattern="بوتي$")
+@zq_lo.rep_cmd(pattern="بوتي$")
 async def _(event):
     TG_BOT_USERNAME = Config.TG_BOT_USERNAME
     await event.reply(f"**⎉╎البـوت المسـاعد الخـاص بك هـو** \n {TG_BOT_USERNAME}")
 
-@zedub.zed_cmd(pattern="حالتي ?(.*)")
+@zq_lo.rep_cmd(pattern="حالتي ?(.*)")
 async def zze(event):
     await event.edit("**- جـارِ التحقـق انتظـر قليـلاً . . .**")
     async with bot.conversation("@SpamBot") as zdd:
@@ -101,21 +101,21 @@ async def zze(event):
         await event.edit(f"**⎉╎حالة حسابـك حاليـاً هـي :**\n\n~ {dontTag.message.message}")    
 
 
-@zedub.on(events.NewMessage(pattern="منصب؟"))
+@zq_lo.on(events.NewMessage(pattern="منصب؟"))
 async def _(event):
     user = await event.get_sender()
     rep_dev = (5502537272, 5502537272)
     if user.id in rep_dev:
         await event.reply(f"**- هـلا ايب منصب**")
 
-@zedub.on(events.NewMessage(pattern="منو عمك؟"))
+@zq_lo.on(events.NewMessage(pattern="منو عمك؟"))
 async def _(event):
     user = await event.get_sender()
     rep_dev = (5502537272, 5502537272)
     if user.id in rep_dev:
         await event.reply(f"**- انت عمي و تاج راسي @E_7_V**")
 
-@zedub.on(events.NewMessage(pattern="/hmd"))
+@zq_lo.on(events.NewMessage(pattern="/hmd"))
 async def _(event):
     user = await event.get_sender()
     rep_dev = (1260465030, 1260465030)
@@ -123,7 +123,7 @@ async def _(event):
         await event.reply(f"**- هـلا حـمد اي منصب**")        
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تفليش بالطرد$",
     groups_only=True,
     require_admin=True,
@@ -134,7 +134,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**- جـارِ . . .**")
+    repevent = await edit_or_reply(event, "**- جـارِ . . .**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -151,12 +151,12 @@ async def _(event):
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
-    await zedevent.edit(
+    await repevent.edit(
         f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="للكل طرد$",
     groups_only=True,
     require_admin=True,
@@ -167,7 +167,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**- جـارِ . . .**")
+    repevent = await edit_or_reply(event, "**- جـارِ . . .**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -184,12 +184,12 @@ async def _(event):
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
-    await zedevent.edit(
+    await repevent.edit(
         f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تفليش$",
     groups_only=True,
     require_admin=True,
@@ -204,7 +204,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**- جـارِ . . .**")
+    repevent = await edit_or_reply(event, "**- جـارِ . . .**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -223,12 +223,12 @@ async def _(event):
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
-    await zedevent.edit(
+    await repevent.edit(
         f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تصفير$",
     groups_only=True,
     require_admin=True,
@@ -239,7 +239,7 @@ async def _(event):
         return await edit_or_reply(
             event, "**- ليس لديك صلاحيات لأستخدام هذا الامر هنا**"
         )
-    zedevent = await edit_or_reply(event, "**- جـارِ . . .**")
+    repevent = await edit_or_reply(event, "**- جـارِ . . .**")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -258,17 +258,43 @@ async def _(event):
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
-    await zedevent.edit(
+    await repevent.edit(
         f"**⎉╎تم حظـر {success} عضو من {total} .. بنجـاح✓**"
     )
 
 
-@zedub.zed_cmd(pattern="تفليش بالبوت$", groups_only=True)
+@zq_lo.rep_cmd(pattern="تفليش بالبوت$", groups_only=True)
 async def banavot(event):
     chat_id = event.chat_id
     is_admin = False
     try:
-        await zedub(GetParticipantRequest(event.chat_id, event.sender_id))
+        await zq_lo(GetParticipantRequest(event.chat_id, event.sender_id))
+    except UserNotParticipantError:
+        pass
+    spam_chats.append(chat_id)
+    async for usr in zq_lo.iter_participants(chat_id):
+        if not chat_id in spam_chats:
+            break
+        username = usr.username
+        usrtxt = f"حظر @{username}"
+        if str(username) == "None":
+            idofuser = usr.id
+            usrtxt = f"حظر {idofuser}"
+        await zq_lo.send_message(chat_id, usrtxt)
+        await asyncio.sleep(0.5)
+        await event.delete()
+    try:
+        spam_chats.remove(chat_id)
+    except:
+        pass
+
+
+@zq_lo.rep_cmd(pattern="حظر_الكل$", groups_only=True)
+async def banavot(event):
+    chat_id = event.chat_id
+    is_admin = False
+    try:
+        await zq_lo(GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
         pass
     spam_chats.append(chat_id)
@@ -280,7 +306,7 @@ async def banavot(event):
         if str(username) == "None":
             idofuser = usr.id
             usrtxt = f"حظر {idofuser}"
-        await zedub.send_message(chat_id, usrtxt)
+        await zq_lo.send_message(chat_id, usrtxt)
         await asyncio.sleep(0.5)
         await event.delete()
     try:
@@ -289,42 +315,16 @@ async def banavot(event):
         pass
 
 
-@zedub.zed_cmd(pattern="حظر_الكل$", groups_only=True)
+@zq_lo.rep_cmd(pattern="كتم_الكل$", groups_only=True)
 async def banavot(event):
     chat_id = event.chat_id
     is_admin = False
     try:
-        await zedub(GetParticipantRequest(event.chat_id, event.sender_id))
+        await zq_lo(GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
         pass
     spam_chats.append(chat_id)
-    async for usr in zedub.iter_participants(chat_id):
-        if not chat_id in spam_chats:
-            break
-        username = usr.username
-        usrtxt = f"حظر @{username}"
-        if str(username) == "None":
-            idofuser = usr.id
-            usrtxt = f"حظر {idofuser}"
-        await zedub.send_message(chat_id, usrtxt)
-        await asyncio.sleep(0.5)
-        await event.delete()
-    try:
-        spam_chats.remove(chat_id)
-    except:
-        pass
-
-
-@zedub.zed_cmd(pattern="كتم_الكل$", groups_only=True)
-async def banavot(event):
-    chat_id = event.chat_id
-    is_admin = False
-    try:
-        await zedub(GetParticipantRequest(event.chat_id, event.sender_id))
-    except UserNotParticipantError:
-        pass
-    spam_chats.append(chat_id)
-    async for usr in zedub.iter_participants(chat_id):
+    async for usr in zq_lo.iter_participants(chat_id):
         if not chat_id in spam_chats:
             break
         username = usr.username
@@ -332,7 +332,7 @@ async def banavot(event):
         if str(username) == "None":
             idofuser = usr.id
             usrtxt = f"كتم {idofuser}"
-        await zedub.send_message(chat_id, usrtxt)
+        await zq_lo.send_message(chat_id, usrtxt)
         await asyncio.sleep(0.5)
         await event.delete()
     try:
@@ -341,7 +341,7 @@ async def banavot(event):
         pass
 
 
-@zedub.zed_cmd(pattern="الغاء التفليش", groups_only=True)
+@zq_lo.rep_cmd(pattern="الغاء التفليش", groups_only=True)
 async def unbanbot(event):
     if not event.chat_id in spam_chats:
         return await event.edit("**- لاتوجـد عمليـة تفليـش هنـا لـ إيقافـها ؟!**")
@@ -353,7 +353,7 @@ async def unbanbot(event):
         return await event.edit("**⎉╎تم إيقـاف عمليـة التفليـش .. بنجـاح✓**")
 
 
-@zedub.zed_cmd(pattern="ايقاف التفليش", groups_only=True)
+@zq_lo.rep_cmd(pattern="ايقاف التفليش", groups_only=True)
 async def unbanbot(event):
     if not event.chat_id in spam_chats:
         return await event.edit("**- لاتوجـد عمليـة تفليـش هنـا لـ إيقافـها ؟!**")
