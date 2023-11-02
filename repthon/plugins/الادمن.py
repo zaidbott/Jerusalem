@@ -19,7 +19,7 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_display_name
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.data import _sudousers_list
 from ..core.logger import logging
@@ -80,7 +80,7 @@ KICK = gvarstatus("R_KICK") or "طرد"
 # ================================================
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الصورة (وضع|حذف)$",
     command=("الصورة", plugin_category),
     info={
@@ -142,7 +142,7 @@ async def set_group_photo(event):  # sourcery no-metrics
         )
 
 
-@zedub.zed_cmd(pattern=f"{ADMZ}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{ADMZ}(?:\s|$)([\s\S]*)")
 async def promote(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -179,7 +179,7 @@ async def promote(event):
 
 
 
-@zedub.zed_cmd(pattern="رفع مالك(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="رفع مالك(?:\s|$)([\s\S]*)")
 async def promote(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -216,7 +216,7 @@ async def promote(event):
         )
 
 
-@zedub.zed_cmd(pattern="اخفاء(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="اخفاء(?:\s|$)([\s\S]*)")
 async def promote(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -254,7 +254,7 @@ async def promote(event):
         )
 
 
-@zedub.zed_cmd(pattern=f"{UNADMZ}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{UNADMZ}(?:\s|$)([\s\S]*)")
 async def demote(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -289,7 +289,7 @@ async def demote(event):
         )
 
 
-@zedub.zed_cmd(pattern=f"{BANN}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{BANN}(?:\s|$)([\s\S]*)")
 async def _ban_person(event):
     user, reason = await get_user_from_event(event)
     if not user:
@@ -344,7 +344,7 @@ async def _ban_person(event):
             )
 
 
-@zedub.zed_cmd(pattern=f"{UNBANN}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{UNBANN}(?:\s|$)([\s\S]*)")
 async def nothanos(event):
     user, _ = await get_user_from_event(event)
     if not user:
@@ -368,7 +368,7 @@ async def nothanos(event):
         await zedevent.edit(f"**- خطــأ :**\n`{e}`")
 
 
-@zedub.zed_cmd(incoming=True)
+@zq_lo.rep_cmd(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, event.chat_id):
         try:
@@ -377,7 +377,7 @@ async def watcher(event):
             LOGS.info(str(e))
 
 
-@zedub.zed_cmd(pattern=f"{MUTE}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{MUTE}(?:\s|$)([\s\S]*)")
 async def startmute(event):
     if event.is_private:
         replied_user = await event.client.get_entity(event.chat_id)
@@ -385,7 +385,7 @@ async def startmute(event):
             return await event.edit(
                 "**- ❝ ⌊هـذا المسـتخـدم مڪتـوم . . سـابقـاً 𓆰**"
             )
-        if event.chat_id == zedub.uid:
+        if event.chat_id == zq_lo.uid:
             return await edit_delete(event, "**- لا تستطــع كتـم نفسـك**")
         if event.chat_id == 1260465030 or event.chat_id == 1260465030 or event.chat_id == 1260465030:
             return await edit_delete(event, "**╮ ❐ دي لا يمڪنني كتـم احـد مطـورين السـورس  ❏╰**")
@@ -414,7 +414,7 @@ async def startmute(event):
         user, reason = await get_user_from_event(event)
         if not user:
             return
-        if user.id == zedub.uid:
+        if user.id == zq_lo.uid:
             return await edit_or_reply(event, "**- عــذراً .. لا استطيــع كتــم نفســي**")
         if user.id == 1260465030 or user.id == 1260465030 or user.id == 1260465030:
             return await edit_or_reply(event, "**╮ ❐ دي لا يمڪنني كتـم احـد مطـورين السـورس  ❏╰**")
@@ -473,7 +473,7 @@ async def startmute(event):
             )
 
 
-@zedub.zed_cmd(pattern=f"{UNMUTE}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{UNMUTE}(?:\s|$)([\s\S]*)")
 async def endmute(event):
     if event.is_private:
         replied_user = await event.client.get_entity(event.chat_id)
@@ -528,7 +528,7 @@ async def endmute(event):
             )
 
 
-@zedub.zed_cmd(pattern=f"{KICK}(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern=f"{KICK}(?:\s|$)([\s\S]*)")
 async def kick(event):
     user, reason = await get_user_from_event(event)
     if not user:
@@ -557,7 +557,7 @@ async def kick(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تثبيت( لود|$)",
     command=("تثبيت", plugin_category),
     info={
@@ -597,7 +597,7 @@ async def pin(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الغاء تثبيت( الكل|$)",
     command=("الغاء تثبيت", plugin_category),
     info={
@@ -646,7 +646,7 @@ async def unpin(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الاحداث( م)?(?: |$)(\d*)?",
     command=("الاحداث", plugin_category),
     info={
@@ -704,7 +704,7 @@ async def _iundlt(event):  # sourcery no-metrics
                     f"\n🖇┊{msg.old.message} \n\n**🛂┊تم ارسـالهـا بـواسطـة** {_format.mentionuser(ruser.first_name ,ruser.id)}",
                     file=msg.old.media,
                 )
-@zedub.zed_cmd(incoming=True)
+@zq_lo.rep_cmd(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, "كتم_مؤقت"):
         await event.delete()
