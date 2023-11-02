@@ -376,7 +376,7 @@ async def react_spam(event):
             )
         emoji = grp_emoji
     addgvar("spamwork", True)
-    await zedevent.delete()
+    await repevent.delete()
     while gvarstatus("spamwork"):
         for i in emoji:
             await asyncio.sleep(0.2)
@@ -404,6 +404,6 @@ async def spammer(event):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="التكرار")
-async def cmd(roger):
-    await edit_or_reply(roger, BAQIRSP_cmd)
+@zq_lo.rep_cmd(pattern="التكرار")
+async def cmd(baqir_shiite_god_is_the_greatest):
+    await edit_or_reply(baqir_shiite_god_is_the_greatest, BAQIRSP_cmd)
