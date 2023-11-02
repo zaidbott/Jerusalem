@@ -1,8 +1,8 @@
 # pm and tagged messages logger for catuserbot by @mrconfused (@sandy1709)
 import asyncio
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete
@@ -27,7 +27,7 @@ class LOG_CHATS:
 LOG_CHATS_ = LOG_CHATS()
 
 
-@zedub.zed_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
+@zq_lo.rep_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def monito_p_m_s(event):  # sourcery no-metrics
     if Config.PM_LOGGER_GROUP_ID == -100:
         return
@@ -67,7 +67,7 @@ async def monito_p_m_s(event):  # sourcery no-metrics
                 LOGS.warn(str(e))
 
 
-@zedub.zed_cmd(incoming=True, func=lambda e: e.mentioned, edited=False, forword=None)
+@zq_lo.rep_cmd(incoming=True, func=lambda e: e.mentioned, edited=False, forword=None)
 async def log_tagged_messages(event):
     hmm = await event.get_chat()
     from .afk import AFK_
@@ -106,7 +106,7 @@ async def log_tagged_messages(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="خزن(?:\s|$)([\s\S]*)",
     command=("خزن", plugin_category),
     info={
@@ -136,7 +136,7 @@ async def log(log_text):
     await log_text.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تفعيل التخزين$",
     command=("تفعيل التخزين", plugin_category),
     info={
@@ -157,7 +157,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تعطيل التخزين$",
     command=("تعطيل التخزين", plugin_category),
     info={
@@ -178,7 +178,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تخزين الخاص (تفعيل|تعطيل)$",
     command=("تخزين الخاص", plugin_category),
     info={
@@ -216,7 +216,7 @@ async def set_pmlog(event):
         await event.edit("**- تخزين الخاص بالفعـل معطـل ✓**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تخزين الكروبات (تفعيل|تعطيل)$",
     command=("تخزين الكروبات", plugin_category),
     info={
