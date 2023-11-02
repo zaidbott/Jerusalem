@@ -5,13 +5,13 @@ import random
 import requests
 
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _zedutils, reply_id
-from . import zedub
+from ..helpers.utils import _reputils, reply_id
+from . import zq_lo
 
 plugin_category = "البحث"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="متحركه(?:\s|$)([\s\S]*)",
     command=("متحركه", plugin_category),
     info={
@@ -49,5 +49,5 @@ async def some(event):
             f"https://media.giphy.com/media/{items}/giphy.gif",
             reply_to=reply_to_id,
         )
-        await _zedutils.unsavegif(event, nood)
+        await _reputils.unsavegif(event, nood)
     await zedevent.delete()
