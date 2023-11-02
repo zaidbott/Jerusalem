@@ -1,4 +1,4 @@
-# ZThon module for purging unneeded messages(usually spam or ot).
+# Repthon module for purging unneeded messages(usually spam or ot).
 import re
 from asyncio import sleep
 
@@ -16,7 +16,7 @@ from telethon.tl.types import (
     InputMessagesFilterVoice,
 )
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
@@ -42,7 +42,7 @@ purgetype = {
 }
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="مسح(\s*| \d+)$",
     command=("del", plugin_category),
     info={
@@ -89,7 +89,7 @@ async def delete_it(event):
         await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="purgefrom$",
     command=("purgefrom", plugin_category),
     info={
@@ -112,7 +112,7 @@ async def purge_from(event):
         await edit_delete(event, "`Reply to a message to let me know what to delete.`")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="purgeto$",
     command=("purgeto", plugin_category),
     info={
@@ -165,7 +165,7 @@ async def purge_to(event):
         await edit_delete(event, f"**Error**\n`{e}`")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حذف رسائلي",
     command=("حذف رسائلي", plugin_category),
     info={
@@ -200,7 +200,7 @@ async def purgeme(event):
 
 
 # TODO: only sticker messages.
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تنظيف(?:\s|$)([\s\S]*)",
     command=("تنظيف", plugin_category),
     info={
@@ -454,7 +454,7 @@ async def fastpurger(event):  # sourcery no-metrics
     await hi.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="upurge( -a)?(?:\s|$)([\s\S]*)",
     command=("upurge", plugin_category),
     info={
