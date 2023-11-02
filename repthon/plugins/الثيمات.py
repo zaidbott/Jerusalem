@@ -8,25 +8,25 @@
 
 import random
 
-from zthon import zedub
-from zthon.core.managers import edit_or_reply
+from repthon import zq_lo
+from repthon.core.managers import edit_or_reply
 from ..helpers.utils import reply_id as rd 
-from zthon.helpers import get_user_from_event
-from zedthon.malath.theme import *
+from repthon.helpers import get_user_from_event
+from baqir.baqir.theme import *
 
 from . import *
 
-@zedub.zed_cmd(pattern="ث1$")
-async def stsTHMAT(zelzal):
-    if zelzal.fwd_from:
+@zq_lo.rep_cmd(pattern="ث1$")
+async def stsTHMAT(baqir):
+    if baqir.fwd_from:
         return
-    zel = await rd(zelzal)
+    baq = await rd(baqir)
     if sts_attheme:
-        zelzal_c = f"**{THMAT}**\n"
-        await zelzal.client.send_file(zelzal.chat_id, sts_attheme, caption=zelzal_c, reply_to=zel)
+        baqir_c = f"**{THMAT}**\n"
+        await baqir.client.send_file(baqir.chat_id, sts_attheme, caption=baqir_c, reply_to=baq)
 
 
-@zedub.zed_cmd(pattern="ث2$")
+@zq_lo.rep_cmd(pattern="ث2$")
 async def stsTHMAT(lon):
     if lon.fwd_from:
         return
@@ -36,7 +36,7 @@ async def stsTHMAT(lon):
         await lon.client.send_file(lon.chat_id, sts_attheme2, caption=zed_c, reply_to=lonid)
 
 
-@zedub.zed_cmd(pattern="ث3$")
+@zq_lo.rep_cmd(pattern="ث3$")
 async def stsTHMAT(i):
     if i.fwd_from:
         return
@@ -46,7 +46,7 @@ async def stsTHMAT(i):
         await i.client.send_file(i.chat_id, sts_attheme3, caption=tumc, reply_to=sic_id)
 
 
-@zedub.zed_cmd(pattern="ث4$")
+@zq_lo.rep_cmd(pattern="ث4$")
 async def stsTHMAT(lon):
     if lon.fwd_from:
         return
@@ -58,7 +58,7 @@ async def stsTHMAT(lon):
         )
 
 
-@zedub.zed_cmd(pattern="ث5$")
+@zq_lo.rep_cmd(pattern="ث5$")
 async def stsTHMAT(malat):
     if malat.fwd_from:
         return
@@ -70,7 +70,7 @@ async def stsTHMAT(malat):
         )
 
 
-@zedub.zed_cmd(pattern="ث6$")
+@zq_lo.rep_cmd(pattern="ث6$")
 async def stsTHMAT(zelzalo):
     if zelzalo.fwd_from:
         return
@@ -82,7 +82,7 @@ async def stsTHMAT(zelzalo):
         )
 
 
-@zedub.zed_cmd(pattern="ث7$")
+@zq_lo.rep_cmd(pattern="ث7$")
 async def stsTHMAT(zed):
     if zed.fwd_from:
         return
@@ -94,7 +94,7 @@ async def stsTHMAT(zed):
         )
         
         
-@zedub.zed_cmd(pattern="ث8$")
+@zq_lo.rep_cmd(pattern="ث8$")
 async def stsTHMAT(zed):
     if zed.fwd_from:
         return
@@ -105,7 +105,7 @@ async def stsTHMAT(zed):
             zed.chat_id, sts_attheme8, caption=tumc, reply_to=reply_to_id
         )
         
-@zedub.zed_cmd(pattern="ث9$")
+@zq_lo.rep_cmd(pattern="ث9$")
 async def stsTHMAT(zed):
     if zed.fwd_from:
         return
@@ -116,7 +116,7 @@ async def stsTHMAT(zed):
             zed.chat_id, sts_attheme9, caption=tumc, reply_to=reply_to_id
         )
 
-@zedub.zed_cmd(pattern="ث10$")
+@zq_lo.rep_cmd(pattern="ث10$")
 async def stsTHMAT(zed):
     if zed.fwd_from:
         return
@@ -127,7 +127,7 @@ async def stsTHMAT(zed):
             zed.chat_id, sts_attheme10, caption=tumc, reply_to=reply_to_id
         )
         
-@zedub.zed_cmd(pattern="ث11$")
+@zq_lo.rep_cmd(pattern="ث11$")
 async def stsTHMAT(zed):
     if zed.fwd_from:
         return
@@ -138,7 +138,7 @@ async def stsTHMAT(zed):
             zed.chat_id, sts_attheme11, caption=tumc, reply_to=reply_to_id
         )
         
-@zedub.zed_cmd(pattern="ث12$")
+@zq_lo.rep_cmd(pattern="ث12$")
 async def stsTHMAT(zed):
     if zed.fwd_from:
         return
@@ -151,7 +151,7 @@ async def stsTHMAT(zed):
 
 
 
-@zedub.zed_cmd(pattern="ن1$")
+@zq_lo.rep_cmd(pattern="ن1$")
 async def stsfanan(zelzal):
     if zelzal.fwd_from:
         return
@@ -164,7 +164,7 @@ async def stsfanan(zelzal):
         await zelzal.client.send_file(zelzal.chat_id, sts_fanan, caption=zelzal_c, reply_to=zel)
 
 
-@zedub.zed_cmd(pattern="ن2$")
+@zq_lo.rep_cmd(pattern="ن2$")
 async def stsfanan(lon):
     if lon.fwd_from:
         return
@@ -177,7 +177,7 @@ async def stsfanan(lon):
         await lon.client.send_file(lon.chat_id, sts_fanan2, caption=zed_c, reply_to=lonid)
 
 
-@zedub.zed_cmd(pattern="ن3$")
+@zq_lo.rep_cmd(pattern="ن3$")
 async def stsfanan(i):
     if i.fwd_from:
         return
@@ -190,7 +190,7 @@ async def stsfanan(i):
         await i.client.send_file(i.chat_id, sts_fanan3, caption=tumc, reply_to=sic_id)
 
 
-@zedub.zed_cmd(pattern="ن4$")
+@zq_lo.rep_cmd(pattern="ن4$")
 async def stsfanan(lon):
     if lon.fwd_from:
         return
@@ -205,7 +205,7 @@ async def stsfanan(lon):
         )
 
 
-@zedub.zed_cmd(pattern="ن5$")
+@zq_lo.rep_cmd(pattern="ن5$")
 async def stsfanan(malat):
     if malat.fwd_from:
         return
@@ -220,7 +220,7 @@ async def stsfanan(malat):
         )
 
 
-@zedub.zed_cmd(pattern="ن6$")
+@zq_lo.rep_cmd(pattern="ن6$")
 async def stsfanan(zelzalo):
     if zelzalo.fwd_from:
         return
@@ -235,7 +235,7 @@ async def stsfanan(zelzalo):
         )
 
 
-@zedub.zed_cmd(pattern="ن7$")
+@zq_lo.rep_cmd(pattern="ن7$")
 async def stsfanan(zed):
     if zed.fwd_from:
         return
@@ -250,7 +250,7 @@ async def stsfanan(zed):
         )
         
         
-@zedub.zed_cmd(pattern="ن8$")
+@zq_lo.rep_cmd(pattern="ن8$")
 async def stsfanan(zed):
     if zed.fwd_from:
         return
@@ -264,7 +264,7 @@ async def stsfanan(zed):
             zed.chat_id, sts_fanan8, caption=tumc, reply_to=reply_to_id
         )
         
-@zedub.zed_cmd(pattern="ن9$")
+@zq_lo.rep_cmd(pattern="ن9$")
 async def stsfanan(zed):
     if zed.fwd_from:
         return
@@ -278,7 +278,7 @@ async def stsfanan(zed):
             zed.chat_id, sts_fanan9, caption=tumc, reply_to=reply_to_id
         )
 
-@zedub.zed_cmd(pattern="ن10$")
+@zq_lo.rep_cmd(pattern="ن10$")
 async def stsfanan(zed):
     if zed.fwd_from:
         return
@@ -292,7 +292,7 @@ async def stsfanan(zed):
             zed.chat_id, sts_fanan10, caption=tumc, reply_to=reply_to_id
         )
         
-@zedub.zed_cmd(pattern="ن11$")
+@zq_lo.rep_cmd(pattern="ن11$")
 async def stsfanan(zed):
     if zed.fwd_from:
         return
@@ -306,7 +306,7 @@ async def stsfanan(zed):
             zed.chat_id, sts_fanan11, caption=tumc, reply_to=reply_to_id
         )
         
-@zedub.zed_cmd(pattern="ن12$")
+@zq_lo.rep_cmd(pattern="ن12$")
 async def stsfanan(zed):
     if zed.fwd_from:
         return
@@ -321,10 +321,10 @@ async def stsfanan(zed):
         )
 
 
-@zedub.zed_cmd(pattern="ثيمات")
+@zq_lo.rep_cmd(pattern="ثيمات")
 async def zed(zelzal):
     await edit_or_reply(zelzal, ZL)
 
-@zedub.zed_cmd(pattern="الثيمات")
+@zq_lo.rep_cmd(pattern="الثيمات")
 async def zed(zelzal):
     await edit_or_reply(zelzal, X)
