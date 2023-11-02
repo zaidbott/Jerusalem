@@ -2,7 +2,7 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
@@ -11,7 +11,7 @@ from ..helpers.utils import _format
 plugin_category = "العروض"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كشف (المعرف)?(?:\s|$)([\s\S]*)",
     command=("كشف", plugin_category),
     info={
@@ -71,7 +71,7 @@ async def _(event):  # sourcery no-metrics
 
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الاسماء(المعرف)?(?:\s|$)([\s\S]*)",
     command=("الاسماء", plugin_category),
     info={
