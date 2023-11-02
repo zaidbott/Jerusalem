@@ -110,7 +110,7 @@ async def jepmeme(memejep):
   await memejep.delete()
 @zedub.on(admin_cmd(outgoing=True, pattern="زيج2$"))
 async def jepmeme(memejep):
-  Jep = await reply_id(memejep)
+  Rep = await reply_id(memejep)
   url = f"https://t.me/MemeSoundJep/19"
   await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
