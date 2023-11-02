@@ -12,7 +12,7 @@ from repthon import zq_lo
 from repthon.core.managers import edit_or_reply
 from ..helpers.utils import reply_id as rd 
 from repthon.helpers import get_user_from_event
-from baqir.baqir.theme import *
+from baqir.taiba.theme import *
 
 from . import *
 
