@@ -2,7 +2,7 @@ import re
 
 from telethon.utils import get_display_name
 
-from zthon import zedub
+from repthon import zq_lo
 from ..core.managers import edit_or_reply
 from ..sql_helper.filter_sql import (
     add_filter,
@@ -45,16 +45,16 @@ RepthonWF_cmd = (
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="الردود")
+@zq_lo.rep_cmd(pattern="الردود")
 async def cmd(baqir):
     await edit_or_reply(baqir, RepthonWF_cmd)
 
-@zedub.zed_cmd(pattern="الترحيب")
+@zq_lo.rep_cmd(pattern="الترحيب")
 async def cmd(roger):
     await edit_or_reply(roger, RepthonWF_cmd)
 
 
-@zedub.zed_cmd(incoming=True)
+@zq_lo.rep_cmd(incoming=True)
 async def filter_incoming_handler(event):
     name = event.raw_text
     filters = get_filters(event.chat_id)
@@ -113,7 +113,7 @@ async def filter_incoming_handler(event):
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="رد (.*)",
     command=("رد", plugin_category),
     info={
@@ -177,7 +177,7 @@ async def add_new_filter(event):
     await edit_or_reply(event, f"**- اووبـس .. لقـد حـدث خطأ اثنـاء إعـداد الـرد** {keyword}")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ردودي$",
     command=("ردودي", plugin_category),
     info={
@@ -201,7 +201,7 @@ async def on_snip_list(event):
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حذف رد ([\s\S]*)",
     command=("حذف رد", plugin_category),
     info={
@@ -218,7 +218,7 @@ async def remove_a_filter(event):
         await event.edit("**- ❝ الـرد ↫** {} **تم حذفه بنجاح ☑️**".format(filt))
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حذف الردود$",
     command=("حذف الردود", plugin_category),
     info={
