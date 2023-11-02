@@ -2,8 +2,8 @@
 from telethon import events
 from telethon.utils import get_display_name
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
@@ -19,7 +19,7 @@ plugin_category = "الخدمات"
 LOGS = logging.getLogger(__name__)
 
 
-@zedub.on(events.ChatAction)
+@zq_lo.on(events.ChatAction)
 async def _(event):  # sourcery no-metrics
     cws = get_current_welcome_settings(event.chat_id)
     if (
@@ -87,7 +87,7 @@ async def _(event):  # sourcery no-metrics
         update_previous_welcome(event.chat_id, current_message.id)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ترحيب(?:\s|$)([\s\S]*)",
     command=("ترحيب", plugin_category),
     info={
@@ -148,7 +148,7 @@ async def save_welcome(event):
     await edit_or_reply("**⪼ هنالك خطأ في وضع الترحيب هنا**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حذف الترحيب$",
     command=("حذف الترحيب", plugin_category),
     info={
@@ -164,7 +164,7 @@ async def del_welcome(event):
         await edit_or_reply(event, "**⪼ ليـس لـدي اي ترحيبـات هنـا ؟!.**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الترحيبات$",
     command=("الترحيبات", plugin_category),
     info={
@@ -192,7 +192,7 @@ async def show_welcome(event):
         await event.reply(cws.reply, link_preview=False)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="cleanwelcome (on|off)$",
     command=("cleanwelcome", plugin_category),
     info={
