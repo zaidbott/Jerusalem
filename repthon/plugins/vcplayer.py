@@ -9,9 +9,9 @@ from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
-from ..vc_zelzal.stream_helper import Stream
-from ..vc_zelzal.tg_downloader import tg_dl
-from ..vc_zelzal.vcp_helper import RepVC
+from ..vc_baqir.stream_helper import Stream
+from ..vc_baqir.tg_downloader import tg_dl
+from ..vc_baqir.vcp_helper import RepVC
 
 plugin_category = "المكالمات"
 
