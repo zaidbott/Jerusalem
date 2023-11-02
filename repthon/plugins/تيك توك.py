@@ -23,7 +23,7 @@ from telethon.tl.functions.contacts import UnblockRequest as unblock
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 
-from . import zedub
+from . import zq_lo
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import media_type
 from ..helpers.utils import reply_id
@@ -31,8 +31,8 @@ from ..helpers.utils import reply_id
 
 
 
-#Code by T.me/zzzzl1l
-@zedub.zed_cmd(pattern=f"تيك(?: |$)(.*)")
+#Code by T.me/E_7_V
+@zq_lo.rep_cmd(pattern=f"تيك(?: |$)(.*)")
 async def baqir_tiktok(event):
     LAN = event.pattern_match.group(1)
     if LAN: #Write Code By T.me/zzzzl1l
@@ -41,13 +41,13 @@ async def baqir_tiktok(event):
         ROGER = await event.get_reply_message()
     else:
         return await edit_or_reply(event, "**⎉╎بالـࢪد ؏ــلى رابـط تيـك تـوك**")
-    chat = "@downloader_tiktok_bot" #Code by T.me/zzzzl1l
+    chat = "@downloader_tiktok_bot" #Code by T.me/E_7_V
     rep = await edit_or_reply(event, "**⎉╎جـارِ التحميـل من تيـك تـوك ...**")
-    async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
+    async with borg.conversation(chat) as conv: #Code by T.me/E_7_V
         try:
             await conv.send_message("/start")
             await conv.get_response()
-            await conv.send_message(ROGER) #Code by T.me/zzzzl1l
+            await conv.send_message(ROGER) #Code by T.me/E_7_V
             repthon = await conv.get_response()
             await rep.delete()
             await borg.send_file(
@@ -57,7 +57,7 @@ async def baqir_tiktok(event):
                 parse_mode="html",
             )
         except YouBlockedUserError: #Code by T.me/zzzzl1l
-            await zedub(unblock("downloader_tiktok_bot"))
+            await zq_lo(unblock("downloader_tiktok_bot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(ROGER)
