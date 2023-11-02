@@ -210,7 +210,7 @@ async def download_audio(event):
                 progress(
                     d,
                     t,
-                    zedevent,
+                    repevent,
                     startTime,
                     "trying to upload",
                     file_name=os.path.basename(pathlib.Path(_fpath)),
@@ -454,7 +454,7 @@ async def download_video(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تيك(?:\s|$)([\s\S]*)",
     command=("تيك", plugin_category),
     info={
@@ -474,10 +474,10 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    repevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
-        ytdl_data = await ytdl_down(zedevent, video_opts, url)
+        ytdl_data = await ytdl_down(repevent, video_opts, url)
         if ytdl_down is None:
             return
         try:
@@ -488,7 +488,7 @@ async def download_video(event):
                 catthumb = pathlib.Path("cat_ytv.webp")
             if not os.path.exists(catthumb):
                 catthumb = None
-            await zedevent.edit(
+            await repevent.edit(
                 f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
                 \n**{ytdl_data['title']}**"
             )
@@ -501,7 +501,7 @@ async def download_video(event):
                 file=ul,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(
-                        d, t, zedevent, c_time, "Upload :", file_name=ytdl_data["title"]
+                        d, t, repevent, c_time, "Upload :", file_name=ytdl_data["title"]
                     )
                 ),
             )
@@ -526,7 +526,7 @@ async def download_video(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ساوند(?:\s|$)([\s\S]*)",
     command=("ساوند", plugin_category),
     info={
@@ -543,7 +543,7 @@ async def download_audio(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    repevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         try:
@@ -564,8 +564,8 @@ async def download_audio(event):
             else:
                 _fpath = _path
         if not _fpath:
-            return await edit_delete(zedevent, "__Unable to upload file__")
-        await zedevent.edit(
+            return await edit_delete(repevent, "__Unable to upload file__")
+        await repevent.edit(
             f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
             \n**{vid_data['title']}***"
         )
@@ -583,7 +583,7 @@ async def download_audio(event):
                 progress(
                     d,
                     t,
-                    zedevent,
+                    repevent,
                     startTime,
                     "trying to upload",
                     file_name=os.path.basename(pathlib.Path(_fpath)),
@@ -608,11 +608,11 @@ async def download_audio(event):
         )
         for _path in [_fpath, thumb_pic]:
             os.remove(_path)
-    await zedevent.delete()
+    await repevent.delete()
 
 
-#Code by T.me/zzzzl1l
-@zedub.zed_cmd(pattern="انستا(?: |$)([\s\S]*)")
+#Code by T.me/E_7_V
+@zq_lo.rep_cmd(pattern="انستا(?: |$)([\s\S]*)")
 async def zelzal_gif(event):
     link = event.pattern_match.group(1)
     reply = await event.get_reply_message()
@@ -625,7 +625,7 @@ async def zelzal_gif(event):
             event, "**- احتـاج الـى رابــط من الانستـا .. للتحميــل ؟!**", 10
         )
     chat = "@FullSavebot" #Code by T.me/zzzzl1l
-    zed = await edit_or_reply(event, "**⎉╎جـارِ التحميل من الانستـا .. انتظر قليلا ▬▭**")
+    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميل من الانستـا .. انتظر قليلا ▬▭**")
     async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
         try:
             await conv.send_message("/start")
@@ -633,33 +633,33 @@ async def zelzal_gif(event):
             await conv.send_message(link) #Code by T.me/zzzzl1l
             await conv.get_response()
             await asyncio.sleep(2)
-            zedthon = await conv.get_response()
-            await zed.delete()
+            repthon = await conv.get_response()
+            await rep.delete()
             await borg.send_file(
                 event.chat_id,
-                zedthon,
+                repthon,
                 caption=f"<b>⎉╎تم التحميـل من انستجـرام 🎬 .. بنجاح ✅</b>",
                 parse_mode="html",
             )
-        except YouBlockedUserError: #Code by T.me/zzzzl1l
-            await zedub(unblock("FullSavebot"))
+        except YouBlockedUserError: #Code by T.me/E_7_V
+            await zq_lo(unblock("FullSavebot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(link)
             await conv.get_response()
             await asyncio.sleep(2)
-            zedthon = await conv.get_response()
-            await zed.delete()
+            repthon = await conv.get_response()
+            await rep.delete()
             await borg.send_file(
                 event.chat_id,
-                zedthon,
+                repthon,
                 caption=f"<b>⎉╎تم التحميـل من انستجـرام 🎬 .. بنجاح ✅</b>",
                 parse_mode="html",
             )
 
 
-#Code by T.me/zzzzl1l
-@zedub.zed_cmd(pattern="لايكي(?: |$)([\s\S]*)")
+#Code by T.me/E_7_V
+@zq_lo.rep_cmd(pattern="لايكي(?: |$)([\s\S]*)")
 async def zelzal_lik(event):
     link = event.pattern_match.group(1)
     reply = await event.get_reply_message()
@@ -672,7 +672,7 @@ async def zelzal_lik(event):
             event, "**- احتـاج الـى رابــط من لايكـي .. للتحميــل ؟!**", 10
         )
     chat = "@savetok_bot" #Code by T.me/zzzzl1l
-    zed = await edit_or_reply(event, "**⎉╎جـارِ التحميل من لايكـي .. انتظر قليلا ▬▭**")
+    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميل من لايكـي .. انتظر قليلا ▬▭**")
     async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
         try:
             await conv.send_message("/start")
@@ -680,33 +680,33 @@ async def zelzal_lik(event):
             await conv.send_message(link) #Code by T.me/zzzzl1l
             await conv.get_response()
             await asyncio.sleep(2)
-            zedthon = await conv.get_response()
-            await zed.delete()
+            repthon = await conv.get_response()
+            await rep.delete()
             await borg.send_file(
                 event.chat_id,
-                zedthon,
+                repthon,
                 caption=f"<b>⎉╎تم التحميـل من لايكـي 🎬 .. بنجاح ✅</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError: #Code by T.me/zzzzl1l
-            await zedub(unblock("savetok_bot"))
+            await zq_lo(unblock("savetok_bot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(link)
             await conv.get_response()
             await asyncio.sleep(2)
-            zedthon = await conv.get_response()
-            await zed.delete()
+            repthon = await conv.get_response()
+            await rep.delete()
             await borg.send_file(
                 event.chat_id,
-                zedthon,
+                repthon,
                 caption=f"<b>⎉╎تم التحميـل من لايكـي 🎬 .. بنجاح ✅</b>",
                 parse_mode="html",
             )
 
 
-#Code by T.me/zzzzl1l
-@zedub.zed_cmd(pattern="بنترست(?: |$)([\s\S]*)")
+#Code by T.me/E_7_V
+@zq_lo.rep_cmd(pattern="بنترست(?: |$)([\s\S]*)")
 async def zelzal_pin(event):
     link = event.pattern_match.group(1)
     reply = await event.get_reply_message()
@@ -719,7 +719,7 @@ async def zelzal_pin(event):
             event, "**- احتـاج الـى رابــط من بنتـرسـت .. للتحميــل ؟!**", 10
         )
     chat = "@GoPinterestBot" #Code by T.me/zzzzl1l
-    zed = await edit_or_reply(event, "**⎉╎جـارِ التحميل من بنتـرسـت .. انتظر قليلا ▬▭**")
+    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميل من بنتـرسـت .. انتظر قليلا ▬▭**")
     async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
         try:
             await conv.send_message("/start")
@@ -727,32 +727,32 @@ async def zelzal_pin(event):
             await conv.send_message(link) #Code by T.me/zzzzl1l
             await conv.get_response()
             await asyncio.sleep(2)
-            zedthon = await conv.get_response()
-            await zed.delete()
+            repthon = await conv.get_response()
+            await rep.delete()
             await borg.send_file(
                 event.chat_id,
-                zedthon,
+                repthon,
                 caption=f"<b>⎉╎تم التحميـل من بنتـرسـت 🎬 .. بنجاح ✅</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError: #Code by T.me/zzzzl1l
-            await zedub(unblock("GoPinterestBot"))
+            await zq_lo(unblock("GoPinterestBot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(link)
             await conv.get_response()
             await asyncio.sleep(2)
-            zedthon = await conv.get_response()
-            await zed.delete()
+            repthon = await conv.get_response()
+            await rep.delete()
             await borg.send_file(
                 event.chat_id,
-                zedthon,
+                repthon,
                 caption=f"<b>⎉╎تم التحميـل من بنتـرسـت 🎬 .. بنجاح ✅</b>",
                 parse_mode="html",
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="يوتيوب(?: |$)(\d*)? ?([\s\S]*)",
     command=("يوتيوب", plugin_category),
     info={
