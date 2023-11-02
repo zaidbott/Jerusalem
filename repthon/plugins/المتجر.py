@@ -1,19 +1,19 @@
 """Fetch App Details from Playstore.
 .app <app_name> to fetch app details.
 .appr <app_name>  to fetch app details with Xpl0iter request link.
-  ©ZED™ - @ZlZZl77 """
+  ©REP™ - @E_7_V """
 
 import bs4
 import requests
 
-from . import ALIVE_NAME, zedub, edit_or_reply
+from . import ALIVE_NAME, zq_lo, edit_or_reply
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "zedthon"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REPTHON"
 
 plugin_category = "البحث"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="app ([\s\S]*)",
     command=("app", plugin_category),
     info={
@@ -89,7 +89,7 @@ async def apk(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="متجر ([\s\S]*)",
     command=("متجر", plugin_category),
     info={
@@ -166,11 +166,11 @@ async def apkr(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-#𝙕𝙚𝙙𝙏𝙝𝙤𝙣 ®
-#الملـف حقـوق زلـزال الهيبـه ⤶ @zzzzl1l خاص بسـورس ⤶ 𝙕𝙚𝙙𝙏𝙝𝙤𝙣
-#الملف متعوب عليه So تخمط وماتذكـر المصـدر == اهينـك
+#𝙍𝙀𝙋𝙏𝙃𝙊𝙉 ®
+# الملـف حقـوق روجـــــــر - بـاقـر ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
+# الملف متعوب عليه So تخمط وماتذكـر المصـدر == اهينـك
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تطبيق ([\s\S]*)",
     command=("تطبيق", plugin_category),
     info={
@@ -190,7 +190,7 @@ async def zed(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="فلم ([\s\S]*)",
     command=("فلم", plugin_category),
     info={
