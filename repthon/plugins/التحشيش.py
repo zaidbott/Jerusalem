@@ -70,7 +70,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
-@zedub.zed_cmd(pattern="رفع مرتي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع مرتي(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -181,7 +181,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
-ZelzalTHS_cmd = (
+BaqirTHS_cmd = (
     "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 𝗩𝗮𝗿𝘀 - اوامـر التحشيش](t.me/Repthon) 𓆪\n\n"
     "**- اضغـط ع الامـر للنسـخ ثـم قـم بالـرد ع الشخـص** \n\n"
     "**⪼** `.اوصف` \n"
@@ -500,12 +500,12 @@ zid = [
 
 ]
 
-@zedub.zed_cmd(pattern="كت(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="كت(?: |$)(.*)")
 async def mention(mention):
     medo = random.choice(kettuet)
     await edit_or_reply(mention, f"**⌔╎{medo}**")
 
-@zedub.zed_cmd(pattern="(نسبه الحب|نسبة الحب)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه الحب|نسبة الحب)(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -513,7 +513,7 @@ async def zed(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(mth)
     await edit_or_reply(mention, f"**✾╎نـسبـة حبكـم انـت و**  [{zedth}](tg://user?id={user.id}) **هـي {zedt} 😻♥️**")
-@zedub.zed_cmd(pattern="(نسبه الانوثة|نسبة الانوثه|نسبه الانوثه|نسبة الانوثة)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه الانوثة|نسبة الانوثه|نسبه الانوثه|نسبة الانوثة)(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -525,7 +525,7 @@ async def zed(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
     await edit_or_reply(mention, f"**✾╎نسبـة الانوثه لـ**  [{zedth}](tg://user?id={user.id}) **هـي {zedt} 🤰**")
-@zedub.zed_cmd(pattern="(نسبه الغباء|نسبة الغباء)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه الغباء|نسبة الغباء)(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -537,7 +537,7 @@ async def permalink(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
     await edit_or_reply(mention, f"**✾╎نسبـة الغبـاء لـ**  [{zedth}](tg://user?id={user.id}) **هـي {zedt} 😂💔**")
-@zedub.zed_cmd(pattern="(نسبه الانحراف|نسبة الانحراف)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه الانحراف|نسبة الانحراف)(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -549,7 +549,7 @@ async def permalink(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
     await edit_or_reply(mention, f"**✾╎نسبـة الانحـراف لـ**  [{zedth}](tg://user?id={user.id}) **هـي {zedt} 🥵🖤**")
-@zedub.zed_cmd(pattern="(نسبه المثليه|نسبة المثليه)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه المثليه|نسبة المثليه)(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -561,7 +561,7 @@ async def permalink(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
     await edit_or_reply(mention, f"**✾╎نسبـة المثليـه لـ**  [{zedth}](tg://user?id={user.id}) **هـي {zedt} 🤡 🏳️‍🌈.**")
-@zedub.zed_cmd(pattern="(نسبه النجاح|نسبة النجاح)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه النجاح|نسبة النجاح)(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -569,7 +569,7 @@ async def permalink(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
     await edit_or_reply(mention, f"**✾╎نسبـة النجـاح لـ** [{zedth}](tg://user?id={user.id}) **هـي {zedt} 🤓.**") 
-@zedub.zed_cmd(pattern="(نسبه الكراهية|نسبة الكراهيه|نسبه الكراهيه|نسبة الكراهية)(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="(نسبه الكراهية|نسبة الكراهيه|نسبه الكراهيه|نسبة الكراهية)(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -577,7 +577,7 @@ async def permalink(mention):
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
     await edit_or_reply(mention, f"**✾╎نسبـة الكراهيـة لـ** [{zedth}](tg://user?id={user.id}) **هـي {zedt} 🤮.**")
-@zedub.zed_cmd(pattern="رفع ورع(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع ورع(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -779,7 +779,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚺 ╎ المستخـدم ه ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـهـا خطيبتك .. بنجـاح 💍👰🏼‍♀️.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="مصه(?:\s|$)([\s\S]*)",
     command=("مصه", plugin_category),
 )
@@ -837,7 +837,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎  تم رفعـها حـاتـه الكـروب 👸🏼.** \n**🤵‍♂️ ╎ بواسطـه  : ** {my_mention} ")
-@zedub.zed_cmd(pattern="اوصف(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="اوصف(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -847,7 +847,7 @@ async def permalink(mention):
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     owsf = random.choice(wasf)
     await edit_or_reply(mention, f"**- {owsf}**")
-@zedub.zed_cmd(pattern="هينه(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="هينه(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -860,7 +860,7 @@ async def permalink(mention):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="التحشيش")
-async def cmd(zelzallll):
-    await edit_or_reply(zelzallll, ZelzalTHS_cmd)
+@zq_lo.rep_cmd(pattern="التحشيش")
+async def cmd(BAQIR):
+    await edit_or_reply(BAQIR, BaqirTHS_cmd)
 
