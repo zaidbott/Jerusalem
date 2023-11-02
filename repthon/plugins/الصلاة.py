@@ -1,18 +1,20 @@
 """ Command: اوقات الصلاة لعواصم الدول باللغـة العربيـة
-Credit: @ZedThon
-@ZQ_LO - كتـابـة الملـف :  روجر"""
+Credit: @Repthon
+@ZQ_LO - كتـابـة الملـف :  روجـر
+بـاقـر - @E_7_V """
+
 
 import json
 import requests
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "البحث"
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="صلاة ([\s\S]*)",
     command=("صلاة", plugin_category),
     info={
@@ -47,7 +49,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "مصر" or ZELZAL == "القاهرة" or ZELZAL == "القاهره":
@@ -75,7 +77,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "بغداد" or ZELZAL == "العراق":
@@ -103,7 +105,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "دمشق" or ZELZAL == "سوريا":
@@ -131,7 +133,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "الدوحه" or ZELZAL == "قطر":
@@ -159,7 +161,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "مسقط" or ZELZAL == "سلطنه عمان":
@@ -187,7 +189,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "مكه" or ZELZAL == "السعوديه":
@@ -215,7 +217,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "بيروت" or ZELZAL == "لبنان":
@@ -243,7 +245,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "عمان" or ZELZAL == "الاردن":
@@ -271,7 +273,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "الرباط" or ZELZAL == "المغرب":
@@ -299,7 +301,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "الخرطوم" or ZELZAL == "السودان":
@@ -327,7 +329,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "بنغازي" or ZELZAL == "ليبيا":
@@ -355,7 +357,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "تونس":
@@ -383,7 +385,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
     elif ZELZAL == "ازمير" or ZELZAL == "اسطنبول" or ZELZAL == "انقره" or ZELZAL == "تركيا":
@@ -411,7 +413,7 @@ async def get_adzan(adzan):
 	            \n<b>المـغرب  : <b>{result['results']['datetime'][0]['times']['Maghrib']}</b>\
 	            \n<b>العشـاء     : <b>{result['results']['datetime'][0]['times']['Isha']}</b>\
 	            \n<b>منتـصف الليل : <b>{result['results']['datetime'][0]['times']['Midnight']}</b>\
-		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏╎@Repthon\
+		        \n\nᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻╎@Repthon\
 	    "
 	    await edit_or_reply(adzan, zedthonresult, "html")
 
