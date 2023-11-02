@@ -17,13 +17,13 @@ import random
 
 from telethon import events
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_or_reply, edit_delete
 from ..helpers import reply_id, get_user_from_event
 from . import BOTLOG, BOTLOG_CHATID
-from zthon.utils import admin_cmd
+from repthon.utils import admin_cmd
 plugin_category = "الادوات"
 LOGS = logging.getLogger(__name__)
 
@@ -46,13 +46,13 @@ import random
 from telethon import events
 
 
-@zedub.zed_cmd(pattern="رابط الحذف")
+@zq_lo.rep_cmd(pattern="رابط الحذف")
 async def _(zed):
     await edit_or_reply (zed, "𓆰 [𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 - 𝘿𝙀𝙇𝙀𝙏𝙀](t.me/Repthon) 🗑♻️𓆪\n**𓍹━─━─━─━─𝐑𝐞𝐩𝐭𝐡𝐨𝐧─━─━─━─━𓍻**\n\n **✵│رابـط الحـذف ↬** https://telegram.org/deactivate \n\n\n **✵│بـوت الحـذف  ↬** @LC6BOT ")
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
-@zedub.zed_cmd(pattern="رفع جلب(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع جلب(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
