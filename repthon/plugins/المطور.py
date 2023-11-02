@@ -2,8 +2,8 @@ from datetime import datetime
 
 from telethon.utils import get_display_name
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core import CMD_INFO, PLG_INFO
@@ -18,7 +18,7 @@ plugin_category = "الادوات"
 
 LOGS = logging.getLogger(__name__)
 
-ZDEV = gvarstatus("sudoenable") or "true"
+REPV = gvarstatus("sudoenable") or "true"
 
 BaqirDV_cmd = (
     "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامــر المطـور المســاعد](t.me/Repthon) 𓆪\n\n"
@@ -57,7 +57,7 @@ def get_key(val):
     return None
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="وضع المطور (تفعيل|تعطيل)$",
     command=("وضع المطور", plugin_category),
     info={
@@ -108,7 +108,7 @@ async def chat_blacklist(event):
     await edit_delete(event, "**- وضـع المطــور فـي وضـع التعطيـل مسبقــاً ✓**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="رفع مطور(?:\s|$)([\s\S]*)",
     command=("رفع مطور", plugin_category),
     info={
@@ -148,7 +148,7 @@ async def add_sudo_user(event):
     await event.client.reload(msg)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تنزيل مطور(?:\s|$)([\s\S]*)",
     command=("تنزيل مطور", plugin_category),
     info={
@@ -179,7 +179,7 @@ async def _(event):
     await event.client.reload(msg)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المطورين$",
     command=("المطورين", plugin_category),
     info={
@@ -205,7 +205,7 @@ async def _(event):
     await edit_or_reply(event, result)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحكم(s)?(?:\s|$)([\s\S]*)",
     command=("تحكم", plugin_category),
     info={
@@ -300,7 +300,7 @@ async def _(event):  # sourcery no-metrics
     await event.client.reload(msg)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ايقاف تحكم(s)?(?:\s|$)([\s\S]*)?",
     command=("ايقاف تحكم", plugin_category),
     info={
@@ -394,7 +394,7 @@ async def _(event):  # sourcery no-metrics
     await event.client.reload(msg)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="vscmds( -d)?$",
     command=("vscmds", plugin_category),
     info={
@@ -460,12 +460,12 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, finalstr, aslink=True, linktext=text)
 
 
-zedub.loop.create_task(_init())
+zq_lo.loop.create_task(_init())
 
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="المساعد")
+@zq_lo.rep_cmd(pattern="المساعد")
 async def cmd(baqir):
     await edit_or_reply(baqir, BaqirDV_cmd)
 
