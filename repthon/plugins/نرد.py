@@ -11,7 +11,7 @@ from telethon.events import CallbackQuery, InlineQuery
 from telethon.utils import get_display_name
 from telethon.errors import QueryIdInvalidError
 from telethon.tl.types import InputMessagesFilterDocument
-from . import StartTime, zedub, repversion
+from . import StartTime, zq_lo, repversion
 from ..Config import Config
 from ..core import check_owner, pool
 from ..core.logger import logging
@@ -31,7 +31,7 @@ SLOT_E_MOJI = "🎰"
 # EMOJI CONSTANTS
 
 
-@zedub.zed_cmd(pattern="اكس او$")
+@zq_lo.rep_cmd(pattern="اكس او$")
 async def gamez(event):
     if event.fwd_from:
         return
@@ -44,7 +44,7 @@ async def gamez(event):
     await event.delete()
 
 
-@zedub.zed_cmd(pattern=f"({DART_E_MOJI}|سهم)( ([1-6])|$)")
+@zq_lo.rep_cmd(pattern=f"({DART_E_MOJI}|سهم)( ([1-6])|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -72,7 +72,7 @@ async def _(event):
             await event.reply(file=InputMediaDice(emoticon=emoticon))
 
 
-@zedub.zed_cmd(pattern=f"({DICE_E_MOJI}|نرد)( ([1-6])|$)")
+@zq_lo.rep_cmd(pattern=f"({DICE_E_MOJI}|نرد)( ([1-6])|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -100,7 +100,7 @@ async def _(event):
             await event.reply(file=InputMediaDice(emoticon=emoticon))
 
 
-@zedub.zed_cmd(pattern=f"({BALL_E_MOJI}|سله)( ([1-5])|$)")
+@zq_lo.rep_cmd(pattern=f"({BALL_E_MOJI}|سله)( ([1-5])|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -128,7 +128,7 @@ async def _(event):
             await event.reply(file=InputMediaDice(emoticon=emoticon))
 
 
-@zedub.zed_cmd(pattern=f"({FOOT_E_MOJI}|.كرة)( ([1-5])|$)")
+@zq_lo.rep_cmd(pattern=f"({FOOT_E_MOJI}|.كرة)( ([1-5])|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -156,7 +156,7 @@ async def _(event):
             await event.reply(file=InputMediaDice(emoticon=emoticon))
 
 
-@zedub.zed_cmd(pattern=f"({SLOT_E_MOJI}|حظ)( ([1-64])|$)")
+@zq_lo.rep_cmd(pattern=f"({SLOT_E_MOJI}|حظ)( ([1-64])|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -185,12 +185,12 @@ async def _(event):
 
 
 
-@zedub.zed_cmd(pattern=f"احكام(?: |$)(.*)") 
+@zq_lo.rep_cmd(pattern=f"احكام(?: |$)(.*)") 
 async def zed(event):
     await edit_or_reply(event, f"**⪼ عـذراً .. اللعبـه فـي وضـع الصيـانـه سيتـم تحديثهـا لاحقـاً ...⏣**")
 
 
-@zedub.zed_cmd(pattern=f"عقاب(?: |$)(.*)") 
+@zq_lo.rep_cmd(pattern=f"عقاب(?: |$)(.*)") 
 async def zed(event):
     await edit_or_reply(event, f"**⪼ عـذراً .. اللعبـه فـي وضـع الصيـانـه سيتـم تحديثهـا لاحقـاً ...⏣**")
 
