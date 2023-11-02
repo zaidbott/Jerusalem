@@ -50,7 +50,7 @@ from prettytable import PrettyTable
 from emoji import emojize
 from pathlib import Path
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -165,7 +165,7 @@ async def ban_user(chat_id, i, rights):
 
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تفليش$",
     command=("تفليش", plugin_category),
     info={
@@ -209,7 +209,7 @@ async def _(event):
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تصفير$",
     command=("تصفير", plugin_category),
     info={
@@ -251,52 +251,52 @@ async def _(event):
     )
 
 
-@zedub.zed_cmd(pattern="اضافه ([\s\S]*)", groups_only=True)
+@zq_lo.rep_cmd(pattern="اضافه ([\s\S]*)", groups_only=True)
 async def get_users(event):
     legen_ = event.text[10:]
-    zedthon_chat = legen_.lower
+    repthon_chat = legen_.lower
     restricted = ["@Repthon_support", "@Repthon_support"]
-    ZTHON = await edit_or_reply(event, f"**❈╎جـارِ اضافـه الاعضـاء مـن  ** {legen_}   **⅏ . . .**")
-    if zedthon_chat in restricted:
-        return await ZTHON.edit(
+    REPTHON = await edit_or_reply(event, f"**❈╎جـارِ اضافـه الاعضـاء مـن  ** {legen_}   **⅏ . . .**")
+    if repthon_chat in restricted:
+        return await REPTHON.edit(
             event, "**- دي . . لا يمكنك تخميط الاعضـاء من كـروب السـورس**"
         )
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        await ZTHON.edit("**❈╎ جـارِ إتمـام العمليـة إنتظـر ⅏ . . .**")
+        await REPTHON.edit("**❈╎ جـارِ إتمـام العمليـة إنتظـر ⅏ . . .**")
     else:
-        await ZTHON.edit("**❈╎ جـارِ إتمـام العمليـة إنتظـر ⅏ . . .**")
+        await REPTHON.edit("**❈╎ جـارِ إتمـام العمليـة إنتظـر ⅏ . . .**")
     if event.is_private:
-        return await ZTHON.edit("- لا يمكنك اضافه الاعضاء هنا")
+        return await REPTHON.edit("- لا يمكنك اضافه الاعضاء هنا")
     s = 0
     f = 0
     error = "None"
-    await ZTHON.edit(
+    await REPTHON.edit(
         "**❈╎ حالة الاضـافـه:**\n\n**❈╎ تتم جمع معلومات المستخدمين 🔄 ...⏣**"
     )
     async for user in event.client.iter_participants(event.pattern_match.group(1)):
         try:
             if error.startswith("Too"):
-                return await ZTHON.edit(
+                return await REPTHON.edit(
                     f"**حالة الاضـافـه انتهت مع الأخطاء**\n- (**ربما هنالك ضغط على الأمر حاول مجددا لاحقا **) \n**الخطأ** : \n`{error}`\n\n• اضافة `{s}` \n• خطأ بأضافة `{f}`"
                 )
             tol = f"@{user.username}"
             lol = tol.split("`")
-            await zedub(InviteToChannelRequest(channel=event.chat_id, users=lol))
+            await zq_lo(InviteToChannelRequest(channel=event.chat_id, users=lol))
             s = s + 1
-            await ZTHON.edit(
+            await REPTHON.edit(
                 f"**❈╎جـارِ الإضافـة . . .**\n\n**❈╎اضيف** `{s}` \n**❈╎خطـأ بـ اضافـة** `{f}` \n\n**❈╎آخـر خطـأ:** `{error}`"
             )
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await ZTHON.edit(
+    return await REPTHON.edit(
         f"**❈╎اڪتملت الإضافـة . . ✅** \n\n**❈╎تم بنجـاح اضافـة** `{s}` \n**❈╎خطـأ بـ اضافـة** `{f}`"
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="stat$",
     command=("stat", plugin_category),
     info={
@@ -378,7 +378,7 @@ async def stats(event):  # sourcery no-metrics
     await cat.edit(response)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="قنواتي (الكل|ادمن|مالك)$",
 )
 async def stats(event):  # sourcery no-metrics
@@ -429,7 +429,7 @@ async def stats(event):  # sourcery no-metrics
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كروباتي (الكل|ادمن|مالك)$",
 )
 async def stats(event):  # sourcery no-metrics
@@ -490,7 +490,7 @@ async def stats(event):  # sourcery no-metrics
 
 # the bot used for ustat cmd is premium now
 
-# @zedub.zed_cmd(
+# @zq_lo.rep_cmd(
 #     pattern="ustat(?:\s|$)([\s\S]*)",
 #     command=("ustat", plugin_category),
 #     info={
@@ -533,7 +533,7 @@ async def stats(event):  # sourcery no-metrics
 
 
 moment_worker = []
-@zedub.zed_cmd(pattern="all?(.*)")
+@zq_lo.rep_cmd(pattern="all?(.*)")
 async def tagall(event):
   global moment_worker
   if event.is_private:
@@ -554,14 +554,14 @@ async def tagall(event):
     moment_worker.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    async for usr in zedub.iter_participants(event.chat_id):
+    async for usr in zq_lo.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
         await edit_or_reply(event, "**- تم إيقـاف تـاك all**")
         return
       if usrnum == 5:
-        await zedub.send_message(event.chat_id, f"{usrtxt}\n\n- {msg}")
+        await zq_lo.send_message(event.chat_id, f"{usrtxt}\n\n- {msg}")
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
@@ -569,21 +569,21 @@ async def tagall(event):
     moment_worker.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    async for usr in zedub.iter_participants(event.chat_id):
+    async for usr in zq_lo.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
         await edit_or_reply(event, "**- تم إيقـاف تـاك all**")
         return
       if usrnum == 5:
-        await zedub.send_message(event.chat_id, usrtxt, reply_to=msg)
+        await zq_lo.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
 
 
 
-@zedub.zed_cmd(pattern="ايقاف التاك?(.*)")
+@zq_lo.rep_cmd(pattern="ايقاف التاك?(.*)")
 async def stop_tagall(event):
   if not event.chat_id in moment_worker:
     return await edit_or_reply(event, '**- عـذراً .. لا يوجـد هنـاك تـاك لـ إيقـافـه ؟!**')
@@ -595,7 +595,7 @@ async def stop_tagall(event):
     return await edit_or_reply(event, '**- تم إيقـاف تـاك all .. بنجـاح ✓**')
 
 
-@zedub.zed_cmd(pattern="تجميع الاعضاء$")
+@zq_lo.rep_cmd(pattern="تجميع الاعضاء$")
 async def scrapmem(event):
     chat = event.chat_id
     xx = await edit_or_reply(event, "**❈╎جـارِ إتمـام العمليـة إنتظـر ⅏ . . .**")
@@ -608,7 +608,7 @@ async def scrapmem(event):
     await xx.edit("**⪼ تم تجميع الاعضاء بنجاح 𓆰،**")
 
 
-@zedub.zed_cmd(pattern="تاك?(.*)")
+@zq_lo.rep_cmd(pattern="تاك?(.*)")
 async def tagall(event):
   global moment_worker
   if event.is_private:
@@ -629,14 +629,14 @@ async def tagall(event):
     moment_worker.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    async for usr in zedub.iter_participants(event.chat_id):
+    async for usr in zq_lo.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
         await edit_or_reply(event, "**- تم إيقـاف تـاك all**")
         return
       if usrnum == 5:
-        await zedub.send_message(event.chat_id, f"{usrtxt}\n\n- {msg}")
+        await zq_lo.send_message(event.chat_id, f"{usrtxt}\n\n- {msg}")
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
@@ -644,21 +644,21 @@ async def tagall(event):
     moment_worker.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    async for usr in zedub.iter_participants(event.chat_id):
+    async for usr in zq_lo.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"- [{usr.first_name}](tg://user?id={usr.id}) "
       if event.chat_id not in moment_worker:
         await edit_or_reply(event, "**- تم إيقـاف تـاك all**")
         return
       if usrnum == 5:
-        await zedub.send_message(event.chat_id, usrtxt, reply_to=msg)
+        await zq_lo.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
 
 
 
-@zedub.zed_cmd(pattern="اضف الاعضاء$")
+@zq_lo.rep_cmd(pattern="اضف الاعضاء$")
 async def admem(event):
     xx = await edit_or_reply(event, "**⪼ اضافه 0 من الاعضاء  ؟..**")
     chat = await event.get_chat()
@@ -696,7 +696,7 @@ async def admem(event):
             continue
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المشرفين(?:\s|$)([\s\S]*)",
     command=("المشرفين", plugin_category),
     info={
@@ -711,7 +711,7 @@ async def admem(event):
 )
 async def _(event):
     "To get list of admins."
-    mentions = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n** ⪼ المشرفـون في ۿذه المجموعه :** \n"
+    mentions = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n** ⪼ المشرفـون في ۿذه المجموعه :** \n"
     reply_message = await reply_id(event)
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
