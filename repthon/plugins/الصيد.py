@@ -7,7 +7,7 @@ import telethon
 from fake_useragent import UserAgent
 from telethon.sync import functions
 
-from zthon import zedub
+from repthon import zq_lo
 
 a = "qwertyuiopassdfghjklzxcvbnm"
 b = "1234567890"
@@ -104,7 +104,7 @@ def gen_user(choice):
     return username
 
 
-@zedub.zed_cmd(pattern="الصيد")
+@zq_lo.rep_cmd(pattern="الصيد")
 async def _(event):
     await event.edit(
         """
@@ -133,12 +133,12 @@ async def _(event):
     )
 
 
-@zedub.zed_cmd(pattern="صيد (.*)")
+@zq_lo.rep_cmd(pattern="صيد (.*)")
 async def hunterusername(event):
     choice = str(event.pattern_match.group(1))
     await event.edit(f"**- تم تفعيل الصيد بنجاح الان**")
     try:
-        ch = await zedub(
+        ch = await zq_lo(
             functions.channels.CreateChannelRequest(
                 title="REPTHON HUNTER - صيد ريبثون",
                 about="This channel to hunt username by - @Repthon",
@@ -146,7 +146,7 @@ async def hunterusername(event):
         )
         ch = ch.updates[1].channel_id
     except Exception as e:
-        await zedub.send_message(
+        await zq_lo.send_message(
             event.chat_id, f"خطأ في انشاء القناة , الخطأ**-  : {str(e)}**"
         )
         sedmod = False
@@ -162,7 +162,7 @@ async def hunterusername(event):
         isav = check_user(username)
         if isav == True:
             try:
-                await zedub(
+                await zq_lo(
                     functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username
                     )
@@ -192,7 +192,7 @@ async def hunterusername(event):
                 if "(caused by UpdateUsernameRequest)" in str(baned):
                     pass
             except telethon.errors.FloodError as e:
-                await zedub.send_message(
+                await zq_lo.send_message(
                     event.chat_id,
                     f"للاسف تبندت , مدة الباند**-  ({e.seconds}) ثانية .**",
                 )
@@ -204,7 +204,7 @@ async def hunterusername(event):
                 if "USERNAME_PURCHASE_AVAILABLE" in str(eee):
                     pass
                 else:
-                    await zedub.send_message(
+                    await zq_lo.send_message(
                         event.chat_id,
                         f"""- خطأ مع @{username} , الخطأ :{str(eee)}""",
                     )
@@ -217,7 +217,7 @@ async def hunterusername(event):
     isclaim.append("off")
 
 
-@zedub.zed_cmd(pattern="تثبيت (.*)")
+@zq_lo.rep_cmd(pattern="تثبيت (.*)")
 async def _(event):
     msg = event.text.split()
     try:
@@ -226,7 +226,7 @@ async def _(event):
         await event.edit(f"حسناً سيتم بدء التثبيت في**-  @{ch} .**")
     except:
         try:
-            ch = await zedub(
+            ch = await zq_lo(
                 functions.channels.CreateChannelRequest(
                     title="REPTHON HUNTER - تثبيت ريبثون",
                     about="This channel to hunt username by - @Repthon",
@@ -235,7 +235,7 @@ async def _(event):
             ch = ch.updates[1].channel_id
             await event.edit(f"**- تم بنجاح بدأ التثبيت**")
         except Exception as e:
-            await zedub.send_message(
+            await zq_lo.send_message(
                 event.chat_id, f"خطأ في انشاء القناة , الخطأ : {str(e)}"
             )
     isauto.clear()
@@ -247,7 +247,7 @@ async def _(event):
         isav = check_user(username)
         if isav == True:
             try:
-                await zedub(
+                await zq_lo(
                     functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username
                     )
@@ -279,13 +279,13 @@ async def _(event):
                 swapmod = False
                 break
             except telethon.errors.FloodError as e:
-                await zedub.send_message(
+                await zq_lo.send_message(
                     event.chat_id, f"للاسف تبندت , مدة الباند ({e.seconds}) ثانية ."
                 )
                 swapmod = False
                 break
             except Exception as eee:
-                await zedub.send_message(
+                await zq_lo.send_message(
                     event.chat_id,
                     f"""خطأ مع {username} , الخطأ :{str(eee)}""",
                 )
@@ -299,7 +299,7 @@ async def _(event):
     isclaim.append("off")
 
 
-@zedub.zed_cmd(pattern="ايقاف الصيد")
+@zq_lo.rep_cmd(pattern="ايقاف الصيد")
 async def _(event):
     if "on" in isclaim:
         isclaim.clear()
@@ -311,7 +311,7 @@ async def _(event):
         return await event.edit("**- لقد حدث خطأ ما وتوقف الامر لديك**")
 
 
-@zedub.zed_cmd(pattern="ايقاف التثبيت")
+@zq_lo.rep_cmd(pattern="ايقاف التثبيت")
 async def _(event):
     if "on" in isauto:
         isauto.clear()
@@ -323,7 +323,7 @@ async def _(event):
         return await event.edit("**-لقد حدث خطأ ما وتوقف الامر لديك**")
 
 
-@zedub.zed_cmd(pattern="حالة الصيد")
+@zq_lo.rep_cmd(pattern="حالة الصيد")
 async def _(event):
     if "on" in isclaim:
         await event.edit(f"**- الصيد وصل لـ({trys[0]}) **من المحاولات")
@@ -333,7 +333,7 @@ async def _(event):
         await event.edit("- لقد حدث خطأ ما وتوقف الامر لديك")
 
 
-@zedub.zed_cmd(pattern="حالة التثبيت")
+@zq_lo.rep_cmd(pattern="حالة التثبيت")
 async def _(event):
     if "on" in isauto:
         await event.edit(f"**- التثبيت وصل لـ({trys2[0]}) من المحاولات**")
