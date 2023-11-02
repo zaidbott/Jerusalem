@@ -6,8 +6,8 @@ from telethon import Button, functions
 from telethon.events import CallbackQuery
 from telethon.utils import get_display_name
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -403,7 +403,7 @@ async def do_pm_spam_action(event, chat):
         return
 
 
-@zedub.zed_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
+@zq_lo.rep_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def on_new_private_message(event):
     if gvarstatus("pmpermit") is None:
         return
@@ -455,7 +455,7 @@ async def on_new_private_message(event):
     await do_pm_permit_action(event, chat)
 
 
-@zedub.zed_cmd(outgoing=True, func=lambda e: e.is_private, edited=False, forword=None)
+@zq_lo.rep_cmd(outgoing=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def you_dm_other(event):
     if gvarstatus("pmpermit") is None:
         return
@@ -535,7 +535,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text, buttons=buttons)
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"to_enquire_something")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"to_enquire_something")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "⤶ عـذراً سيـدي ، هـذه الـخـيـارات لـلـمـسـتـخـدم الـذي يـراسـلـك 🤷🏻‍♂"
@@ -554,7 +554,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text)
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"to_request_something")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"to_request_something")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "⤶ عـذراً سيـدي ، هـذه الـخـيـارات لـلـمـسـتـخـدم الـذي يـراسـلـك 🤷🏻‍♂"
@@ -573,7 +573,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text)
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"to_chat_with_my_master")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"to_chat_with_my_master")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "⤶ عـذراً سيـدي ، هـذه الـخـيـارات لـلـمـسـتـخـدم الـذي يـراسـلـك 🤷🏻‍♂"
@@ -592,7 +592,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text)
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"to_spam_my_master_inbox")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"to_spam_my_master_inbox")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "⤶ عـذراً سيـدي ، هـذه الـخـيـارات لـلـمـسـتـخـدم الـذي يـراسـلـك 🤷🏻‍♂"
@@ -625,7 +625,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الحمايه (تفعيل|تعطيل)$",
     command=("الحمايه", plugin_category),
     info={
@@ -672,7 +672,7 @@ async def pmpermit_on(event):
             event, "** ⌔∮ امـر حمايـه الخـاص بالفعـل .. مُفعـل  🔐✅**"
         )
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الحماية (تفعيل|تعطيل)$",
     command=("الحماية", plugin_category),
     info={
@@ -720,7 +720,7 @@ async def pmpermit_on(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(قبول|سماح)(?:\s|$)([\s\S]*)",
     command=("سماح", plugin_category),
     info={
@@ -796,7 +796,7 @@ async def approve_p_m(event):  # sourcery no-metrics
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="t(emp)?(a|approve)(?:\s|$)([\s\S]*)",
     command=("tapprove", plugin_category),
     info={
@@ -877,7 +877,7 @@ async def tapprove_pm(event):  # sourcery no-metrics
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(رف|رفض)(?:\s|$)([\s\S]*)",
     command=("رفض", plugin_category),
     info={
@@ -933,7 +933,7 @@ async def disapprove_p_m(event):
         )
 
 
-@zedub.zed_cmd(pattern="بلوك(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="بلوك(?:\s|$)([\s\S]*)")
 async def block_p_m(event):
     if event.is_private:
         user = await event.get_chat()
@@ -973,7 +973,7 @@ async def block_p_m(event):
     )
 
 
-@zedub.zed_cmd(pattern="الغاء بلوك(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="الغاء بلوك(?:\s|$)([\s\S]*)")
 async def unblock_pm(event):
     if event.is_private:
         user = await event.get_chat()
@@ -991,7 +991,7 @@ async def unblock_pm(event):
     )
 
 
-@zedub.zed_cmd(pattern="المقبولين$")
+@zq_lo.rep_cmd(pattern="المقبولين$")
 async def approve_p_m(event):
     if gvarstatus("pmpermit") is None:
         return await edit_delete(
@@ -1009,5 +1009,5 @@ async def approve_p_m(event):
         event,
         APPROVED_PMs,
         file_name="قائمـة الحمايـة.txt",
-        caption="**- ️قائمـة المسمـوح لهـم ( المقبوليـن )**\n\n**- سـورس زدثــون** 𝙕𝙏𝙝𝙤𝙣 ",
+        caption="**- ️قائمـة المسمـوح لهـم ( المقبوليـن )**\n\n**- سـورس ريبـــثون** 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 ",
     )
