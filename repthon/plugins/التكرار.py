@@ -9,11 +9,11 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.utils import get_display_name
 
-from . import zedub
+from . import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import media_type, unsavegif
-from ..helpers.utils import _zedutils
+from ..helpers.utils import _reputils
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
@@ -41,11 +41,11 @@ BAQIRSP_cmd = (
 )
 
 
-async def spam_function(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=False):
+async def spam_function(event, sandy, rep, sleeptimem, sleeptimet, DelaySpam=False):
     # sourcery no-metrics
-    counter = int(zed[0])
-    if len(zed) == 2:
-        spam_message = str(zed[1])
+    counter = int(rep[0])
+    if len(rep) == 2:
+        spam_message = str(rep[1])
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
                 return
@@ -61,7 +61,7 @@ async def spam_function(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=Fal
             sandy = await event.client.send_file(
                 event.chat_id, sandy, caption=sandy.text
             )
-            await _zedutils.unsavegif(event, sandy)
+            await _reputils.unsavegif(event, sandy)
             await asyncio.sleep(sleeptimem)
         if BOTLOG:
             if DelaySpam is not True:
@@ -91,7 +91,7 @@ async def spam_function(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=Fal
                 )
 
             sandy = await event.client.send_file(BOTLOG_CHATID, sandy)
-            await _zedutils.unsavegif(event, sandy)
+            await _reputils.unsavegif(event, sandy)
         return
     elif event.reply_to_msg_id and sandy.text:
         spam_message = sandy.text
@@ -135,7 +135,7 @@ async def spam_function(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=Fal
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كرر ([\s\S]*)",
     command=("كرر", plugin_category),
     info={
@@ -148,9 +148,9 @@ async def spam_function(event, sandy, zed, sleeptimem, sleeptimet, DelaySpam=Fal
 async def spammer(event):
     "لـ تكـرار كلمـه معينـه لعـدد معيـن من المـرات"
     sandy = await event.get_reply_message()
-    zed = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
+    rep = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
     try:
-        counter = int(zed[0])
+        counter = int(rep[0])
     except Exception:
         return await edit_delete(
             event, "**- ارسـل الامـر بالشكـل الآتي**\n\n`.كرر` **+ عدد الثواني + الرسالة او بالـرد ع رسالة**\n**- مثـال : .كرر 12 السلام عليكم**"
@@ -163,10 +163,10 @@ async def spammer(event):
         sleeptimem = 0.3
     await event.delete()
     addgvar("spamwork", True)
-    await spam_function(event, sandy, zed, sleeptimem, sleeptimet)
+    await spam_function(event, sandy, rep, sleeptimem, sleeptimet)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تكرار ملصق$",
     command=("تكرار ملصق", plugin_category),
     info={
@@ -185,7 +185,7 @@ async def stickerpack_spam(event):
     hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     try:
         stickerset_attr = reply.document.attributes[1]
-        zedevent = await edit_or_reply(
+        repevent = await edit_or_reply(
             event, "**- جـارِ إحضـار تفاصيل حـزمة الملصقات .. يرجى الإنتظـار**"
         )
     except BaseException:
@@ -203,7 +203,7 @@ async def stickerpack_spam(event):
         )
     except Exception:
         return await edit_delete(
-            zedevent,
+            repevent,
             "**- هذا الملصق ليس مرتبط بـ أي حـزمة .. لذا تعذر إيجـاد الحـزمة ؟!**",
         )
     with contextlib.suppress(BaseException):
@@ -223,7 +223,7 @@ async def stickerpack_spam(event):
             return
         await event.client.send_file(event.chat_id, m)
         await asyncio.sleep(0.7)
-    await zedevent.delete()
+    await repevent.delete()
     if BOTLOG:
         if event.is_private:
             await event.client.send_message(
@@ -240,7 +240,7 @@ async def stickerpack_spam(event):
         await event.client.send_file(BOTLOG_CHATID, reqd_sticker_set.documents[0])
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="وسبام ([\s\S]*)",
     command=("وسبام", plugin_category),
     info={
@@ -274,13 +274,13 @@ async def tmeme(event):
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="سبام ([\s\S]*)",
     command=("سبام", plugin_category),
     info={
         "header": "تكرار كلمـة او جملـة نصيـه",
         "الاستخـدام": "{tr}سبام + كلمـه",
-        "مثــال": "{tr}سبام زدثــون",
+        "مثــال": "{tr}سبام ريبـــثون",
     },
 )
 async def tmeme(event):
@@ -308,7 +308,7 @@ async def tmeme(event):
             )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern=f"{SPAM} ([\s\S]*)",
     command=("مكرر", plugin_category),
     info={
@@ -329,24 +329,24 @@ async def spammer(event):
         return await edit_delete(
             event, "**- ارسـل الامـر بالشكـل الآتي**\n\n`.مؤقت` **+ عدد الثواني + عدد المرات + الرسالة**\n**- مثـال : .مؤقت 12 12 السلام عليكم**"
         )
-    zed = input_str[1:]
+    rep = input_str[1:]
     try:
-        int(zed[0])
+        int(rep[0])
     except Exception:
         return await edit_delete(
             event, "**- ارسـل الامـر بالشكـل الآتي**\n\n`.مؤقت` **+ عدد الثواني + عدد المرات + الرسالة**\n**- مثـال : .مؤقت 12 12 السلام عليكم**"
         )
     await event.delete()
     addgvar("spamwork", True)
-    await spam_function(event, reply, zed, sleeptimem, sleeptimet, DelaySpam=True)
+    await spam_function(event, reply, rep, sleeptimem, sleeptimet, DelaySpam=True)
 
 
-@zedub.zed_cmd(pattern="تعبير مكرر$")
+@zq_lo.rep_cmd(pattern="تعبير مكرر$")
 async def react_spam(event):
     msg = await event.get_reply_message()
     if not msg:
         return await edit_delete(event, "**- بالـرد على الرسـالة اولاً ...**", 10)
-    zedevent = await edit_or_reply(event, "**- جـارِ بدء التفاعـلات انتظـر ...**")
+    repevent = await edit_or_reply(event, "**- جـارِ بدء التفاعـلات انتظـر ...**")
     if isinstance(msg.peer_id, types.PeerUser):
         emoji = [
             "👍",
@@ -365,6 +365,7 @@ async def react_spam(event):
             "🤩",
             "🤮",
             "💩",
+            "🖕",
         ]
     else:
         getchat = await event.client(GetFullChannelRequest(channel=event.chat_id))
@@ -385,7 +386,7 @@ async def react_spam(event):
                 pass
 
 
-@zedub.zed_cmd(pattern="ايقاف التكرار ?(.*)")
+@zq_lo.rep_cmd(pattern="ايقاف التكرار ?(.*)")
 async def stopspamrz(event):
     if gvarstatus("spamwork") is not None and gvarstatus("spamwork") == "true":
         delgvar("spamwork")
@@ -393,7 +394,7 @@ async def stopspamrz(event):
     return await edit_delete(event, "**- لايوجـد هنـاك تڪرار لـ إيقافه ؟!**")
 
 
-@zedub.zed_cmd(pattern=f"{UNSPAM} ?(.*)",)
+@zq_lo.rep_cmd(pattern=f"{UNSPAM} ?(.*)",)
 async def spammer(event):
     reply = await event.get_reply_message()
     await event.delete()
