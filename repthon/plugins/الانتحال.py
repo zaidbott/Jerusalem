@@ -50,7 +50,7 @@ async def _(event):
 
 
 
-@zedub.zed_cmd(pattern="انتحال(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="انتحال(?:\s|$)([\s\S]*)")
 async def _(event):
     replied_user, error_i_a = await get_user_from_event(event)
     if replied_user is None:
