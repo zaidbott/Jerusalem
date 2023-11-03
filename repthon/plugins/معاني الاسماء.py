@@ -1,6 +1,6 @@
-#𝙕𝙚𝙙𝙏𝙝𝙤𝙣 ®
-# Port to ZThon
-# modified by @ZedThon
+#𝙍𝙀𝙋𝙏𝙃𝙊𝙉 ®
+# Port to Repthon
+# modified by @Repthon
 # Copyright (C) 2022.
 
 import asyncio
@@ -9,7 +9,7 @@ import os
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id, _format
@@ -18,7 +18,7 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "الترفيه"
 
 
-@zedub.zed_cmd(pattern="(معاني|معنى|معني) ?(.*)")
+@zq_lo.rep_cmd(pattern="(معاني|معنى|معني) ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
