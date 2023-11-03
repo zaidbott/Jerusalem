@@ -511,7 +511,7 @@ async def you_dm_other(event):
         sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
 
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"show_pmpermit_options")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"show_pmpermit_options")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "⤶ عـذراً سيـدي ، هـذه الـخـيـارات لـلـمـسـتـخـدم الـذي يـراسـلـك 🤷🏻‍♂"
