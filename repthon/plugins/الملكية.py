@@ -1,11 +1,11 @@
 """امـر نقـل ملكيـة القنـاة/الكـروب
-كتابـة وتطويـر الكـود لـ زلـزال الهيبـه T.ME/E_7_V
+كتابـة وتطويـر الكـود لـ بـاقـر T.ME/E_7_V
 حقـــوق ريــبــثــون™ T.me/Repthon"""
 
 import telethon.password as pwd_mod
 from telethon.tl import functions
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..sql_helper.globals import gvarstatus
@@ -13,7 +13,7 @@ from ..sql_helper.globals import gvarstatus
 plugin_category = "الادوات"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحويل ملكية ([\s\S]*)",
     command=("تحويل ملكية", plugin_category),
     info={
