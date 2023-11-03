@@ -1,12 +1,12 @@
-# edit by: @ZedThon for zed
+# edit by: @Repthon for rep
 
 import asyncio
 import os
 import random
 from urllib.parse import quote_plus
 from collections import deque
-from zthon.core.logger import logging
-from zthon import zedub
+from repthon.core.logger import logging
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -14,16 +14,16 @@ plugin_category = "الترفيه"
 
 from . import ALIVE_NAME, deEmojify
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "zed"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rep"
 
 
-@zedub.zed_cmd(pattern="غبي$")
+@zq_lo.rep_cmd(pattern="غبي$")
 async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
     animation_ttl = range(14)
-    zed = await edit_or_reply(event, "🧠.")
+    rep = await edit_or_reply(event, "🧠.")
     animation_chars = [
         "**- عقلك** ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
         "**- عقلك** ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",
@@ -42,10 +42,10 @@ async def _(event):
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
-        await zed.edit(animation_chars[i % 14])
+        await rep.edit(animation_chars[i % 14])
 
 
-@zedub.zed_cmd(pattern=f"قنابل$")
+@zq_lo.rep_cmd(pattern=f"قنابل$")
 async def _(event):
     if event.fwd_from:
         return
@@ -72,7 +72,7 @@ async def _(event):
     await asyncio.sleep(2)
 
 
-@zedub.zed_cmd(pattern=r"اتصل$")
+@zq_lo.rep_cmd(pattern=r"اتصل$")
 async def _(event):
     if event.fwd_from:
         return
@@ -104,7 +104,7 @@ async def _(event):
         await zed.edit(animation_chars[i % 18])
 
 
-@zedub.zed_cmd(pattern=f"قتل$")
+@zq_lo.rep_cmd(pattern=f"قتل$")
 async def _(event):
     if event.fwd_from:
         return
@@ -130,7 +130,7 @@ async def _(event):
         await zed.edit(animation_chars[i % 12])
 
 
-@zedub.zed_cmd(pattern="شنو$")
+@zq_lo.rep_cmd(pattern="شنو$")
 async def _(event):
     if event.fwd_from:
         return
@@ -149,7 +149,7 @@ async def _(event):
         await zed.edit(animation_chars[i % 5], link_preview=True)
 
 
-@zedub.zed_cmd(pattern="طوبه$")
+@zq_lo.rep_cmd(pattern="طوبه$")
 async def _(event):
     if event.fwd_from:
         return
@@ -173,7 +173,7 @@ async def _(event):
         await zed.edit(animation_chars[i % 10])
 
 
-@zedub.zed_cmd(pattern=f"شطرنج$")
+@zq_lo.rep_cmd(pattern=f"شطرنج$")
 async def _(event):
     if event.fwd_from:
         return
@@ -202,7 +202,7 @@ async def _(event):
         await zed.edit(animation_chars[i % 15])
 
 
-@zedub.zed_cmd(pattern=r"حلويات$")
+@zq_lo.rep_cmd(pattern=r"حلويات$")
 async def _(event):
     if event.fwd_from:
         return
@@ -214,7 +214,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@zedub.zed_cmd(pattern="gangasta$")
+@zq_lo.rep_cmd(pattern="gangasta$")
 async def _(event):
     if event.fwd_from:
         return
@@ -236,7 +236,7 @@ async def _(event):
     await zed.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
 
 
-@zedub.zed_cmd(pattern=f"charging$")
+@zq_lo.rep_cmd(pattern=f"charging$")
 async def timer_blankx(e):
     if e.fwd_from:
         return
@@ -273,6 +273,6 @@ Fun1_cmd = (
 )
 
 # Copyright (C) 2022 Zedthon . All Rights Reserved
-@zedub.zed_cmd(pattern="تسليه1")
+@zq_lo.rep_cmd(pattern="تسليه1")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, Fun1_cmd)
