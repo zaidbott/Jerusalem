@@ -10,7 +10,7 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify, reply_id
@@ -18,7 +18,7 @@ from . import deEmojify, reply_id
 plugin_category = "الخدمات"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="صوت جوجل(?:\s|$)([\s\S]*)",
     command=("صوت جوجل", plugin_category),
     info={
