@@ -14,11 +14,11 @@ plugin_category = "الترفيه"
 
 from . import ALIVE_NAME, deEmojify
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "zed"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rep"
 
 from telethon.tl.functions.users import GetFullUserRequest
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ZED - THON"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REP - THON"
 
 
 @zq_lo.rep_cmd(pattern=r"تهكير$")
