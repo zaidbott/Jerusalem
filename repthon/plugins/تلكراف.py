@@ -15,7 +15,7 @@ from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import delete_conv
-from . import BOTLOG, BOTLOG_CHATID, zedub, reply_id
+from . import BOTLOG, BOTLOG_CHATID, zq_lo, reply_id
 
 LOGS = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(ت(ل)?ك(راف)?) ?(m|t|ميديا|نص)(?:\s|$)([\s\S]*)",
     command=("تلكراف", plugin_category),
     info={
@@ -130,7 +130,7 @@ async def _(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ctg(?: |$)([\s\S]*)",
     command=("ctg", plugin_category),
     info={
