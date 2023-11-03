@@ -1,8 +1,8 @@
-#    Credts @Mrconfused
+# Credts @Mrconfused
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_or_reply
 from ..helpers import reply_id
@@ -10,7 +10,7 @@ from ..helpers import reply_id
 plugin_category = "الادوات"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الموقع ([\s\S]*)",
     command=("الموقع", plugin_category),
     info={
