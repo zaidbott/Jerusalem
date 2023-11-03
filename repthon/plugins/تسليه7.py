@@ -1,12 +1,12 @@
-# hack code for ZED - THON 
+# hack code for Repthon
 
 import asyncio
 import os
 import random
 from urllib.parse import quote_plus
 from collections import deque
-from zthon.core.logger import logging
-from zthon import zedub
+from repthon.core.logger import logging
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -21,7 +21,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ZED - THON"
 
 
-@zedub.zed_cmd(pattern=r"تهكير$")
+@zq_lo.rep_cmd(pattern=r"تهكير$")
 async def _(event):
     if event.fwd_from:
         return
@@ -57,7 +57,7 @@ async def _(event):
         await edit_or_reply(event, "No User is Defined\n Can't hack account")
 
 
-@zedub.zed_cmd(pattern=f"thack$")
+@zq_lo.rep_cmd(pattern=f"thack$")
 async def _(event):
     if event.fwd_from:
         return
@@ -82,7 +82,7 @@ async def _(event):
         await event.edit(animation_chars[i % 11])
 
 
-@zedub.zed_cmd(pattern=f"wahack$")
+@zq_lo.rep_cmd(pattern=f"wahack$")
 async def _(event):
     if event.fwd_from:
         return
@@ -119,6 +119,6 @@ Fun7_cmd = (
 )
 
 # Copyright (C) 2022 Zedthon . All Rights Reserved
-@zedub.zed_cmd(pattern="تسليه7")
+@zq_lo.rep_cmd(pattern="تسليه7")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, Fun7_cmd)
