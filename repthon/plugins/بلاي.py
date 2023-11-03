@@ -1,5 +1,5 @@
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -35,7 +35,7 @@ R = (
 )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="بلاي$",
     command=("بلاي", plugin_category),
     info={
