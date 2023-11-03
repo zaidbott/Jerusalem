@@ -1,8 +1,8 @@
 """
-©ZelZal™
+©Repthon™
 """
-#𝙕𝙚𝙙𝙏𝙝𝙤𝙣 ®
-#الملـف حقـوق وتعديـل زلـزال الهيبـه ⤶ @zzzzl1l خاص بسـورس ⤶ 𝙕𝙚𝙙𝙏𝙝𝙤𝙣
+#𝗥𝗲𝗽𝘁𝗵𝗼𝗻 ®
+#الملـف حقـوق وتعديـل بـاقـر ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 
 import asyncio
 import base64
@@ -17,7 +17,7 @@ from telethon.errors import PhotoInvalidDimensionsError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -28,7 +28,7 @@ if not os.path.isdir("./temp"):
     os.makedirs("./temp")
 
 
-@zedub.zed_cmd(pattern="لصوره$")
+@zq_lo.rep_cmd(pattern="لصوره$")
 async def _(cat):
     if cat.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(cat):
         await event.edit("**⌔∮ بالـرد ﮼؏ ملصـق . . .**")
 
 
-@zedub.zed_cmd(pattern="لملصق$")
+@zq_lo.rep_cmd(pattern="لملصق$")
 async def _(cat):
     if cat.fwd_from:
         return
@@ -103,7 +103,7 @@ async def silently_send_message(conv, text):
     return response
 
 
-@zedub.zed_cmd(pattern="ttf ?(.*)")
+@zq_lo.rep_cmd(pattern="ttf ?(.*)")
 async def get(event):
     name = event.text[5:]
     if name is None:
@@ -120,7 +120,7 @@ async def get(event):
         await edit_or_reply(event, "reply to text message as `.ttf <file name>`")
 
 
-@zedub.zed_cmd(pattern="ftoi$")
+@zq_lo.rep_cmd(pattern="ftoi$")
 async def on_file_to_photo(event):
     target = await event.get_reply_message()
     catt = await edit_or_reply(event, "Converting.....")
@@ -153,7 +153,7 @@ async def on_file_to_photo(event):
     await catt.delete()
 
 
-@zedub.zed_cmd(pattern="لمتحرك(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="لمتحرك(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -224,7 +224,7 @@ async def _(event):
             os.remove(files)
 
 
-@zedub.zed_cmd(pattern="حول ?(.*)")
+@zq_lo.rep_cmd(pattern="حول ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -333,8 +333,8 @@ async def _(event):
             os.remove(new_required_file_name)
             await event.delete()
             
-#ZedThon 
-@zedub.zed_cmd(pattern="متحركه ?(.*)")
+#Repthon
+@zq_lo.rep_cmd(pattern="متحركه ?(.*)")
 async def gifs(ult):
     get = ult.pattern_match.group(1)
     xx = random.randint(0, 5)
