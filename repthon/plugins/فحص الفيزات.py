@@ -22,7 +22,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest as unblock
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from . import zedub
+from . import zq_lo
 
 from ..core.managers import edit_or_reply
 
@@ -30,7 +30,7 @@ plugin_category = "البوت"
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="cc(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="cc(?:\s|$)([\s\S]*)")
 async def song2(event):
     song = event.pattern_match.group(1)
     chat = "@SDBB_Bot" # code by t.me/zzzzl1l
@@ -41,7 +41,7 @@ async def song2(event):
             gool = "/chk {}".format(song)
             await conv.send_message(gool)
         except YouBlockedUserError:
-            await zedub(unblock("SDBB_Bot"))
+            await zq_lo(unblock("SDBB_Bot"))
             gool = "/chk {}".format(song)
             await conv.send_message(gool)
         await asyncio.sleep(22)
@@ -56,7 +56,7 @@ async def song2(event):
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="كومبو(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="كومبو(?:\s|$)([\s\S]*)")
 async def song2(event): # code by t.me/zzzzl1l
     been = event.pattern_match.group(1)
     chat = "@SDBB_Bot"
@@ -67,7 +67,7 @@ async def song2(event): # code by t.me/zzzzl1l
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         except YouBlockedUserError:
-            await zedub(unblock("SDBB_Bot"))
+            await zq_lo(unblock("SDBB_Bot"))
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         await asyncio.sleep(5)
@@ -82,7 +82,7 @@ async def song2(event): # code by t.me/zzzzl1l
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="توليد(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="توليد(?:\s|$)([\s\S]*)")
 async def song2(event):
     been = event.pattern_match.group(1)
     chat = "@SDBB_Bot" # code by t.me/zzzzl1l
@@ -93,7 +93,7 @@ async def song2(event):
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         except YouBlockedUserError:
-            await zedub(unblock("SDBB_Bot"))
+            await zq_lo(unblock("SDBB_Bot"))
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         await asyncio.sleep(5)
@@ -108,7 +108,7 @@ async def song2(event):
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="فيزا(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="فيزا(?:\s|$)([\s\S]*)")
 async def song2(event):
     been = "410039xxxxxxxxxx|xx|xxxx|xxx" # code by t.me/zzzzl1l
     chat = "@SDBB_Bot" # code by t.me/zzzzl1l
@@ -119,7 +119,7 @@ async def song2(event):
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         except YouBlockedUserError:
-            await zedub(unblock("SDBB_Bot"))
+            await zq_lo(unblock("SDBB_Bot"))
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         await asyncio.sleep(5)
@@ -134,7 +134,7 @@ async def song2(event):
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="ماستر(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="ماستر(?:\s|$)([\s\S]*)")
 async def song2(event):
     been = "524447000053xxxx|xx|xxxx|xxx" # code by t.me/zzzzl1l
     chat = "@SDBB_Bot" # code by t.me/zzzzl1l
@@ -145,7 +145,7 @@ async def song2(event):
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         except YouBlockedUserError:
-            await zedub(unblock("SDBB_Bot"))
+            await zq_lo(unblock("SDBB_Bot"))
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         await asyncio.sleep(5)
@@ -160,7 +160,7 @@ async def song2(event):
 
 
 # code by t.me/zzzzl1l
-@zedub.zed_cmd(pattern="اماكس(?:\s|$)([\s\S]*)")
+@zq_lo.rep_cmd(pattern="اماكس(?:\s|$)([\s\S]*)")
 async def song2(event):
     been = "373352589xxxxxx|xx|xxxx|xxxx" # code by t.me/zzzzl1l
     chat = "@SDBB_Bot" # code by t.me/zzzzl1l
@@ -171,7 +171,7 @@ async def song2(event):
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         except YouBlockedUserError:
-            await zedub(unblock("SDBB_Bot"))
+            await zq_lo(unblock("SDBB_Bot"))
             gool = "/gen {}".format(been)
             await conv.send_message(gool)
         await asyncio.sleep(5)
