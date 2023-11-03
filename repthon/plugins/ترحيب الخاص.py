@@ -3,7 +3,7 @@ from asyncio import sleep
 from telethon import events
 from telethon.utils import get_display_name
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_or_reply
 from ..sql_helper import pmpermit_sql as pmpermit_sql
@@ -17,7 +17,7 @@ from . import BOTLOG_CHATID
 plugin_category = "الترفيه"
 
 
-@zedub.on(events.ChatAction)
+@zq_lo.on(events.ChatAction)
 async def _(event):  # sourcery no-metrics
     cws = getcurrent_welcome_settings(event.chat_id)
     if (
@@ -83,7 +83,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="رحب(?:\s|$)([\s\S]*)",
     command=("رحب", plugin_category),
     info={
@@ -146,7 +146,7 @@ async def save_welcome(event):
     await edit_or_reply("**- خطأ .. لا يسمح بوضع ترحيب خـاص بهذه الدردشـه**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حذف رحب$",
     command=("حذف رحب", plugin_category),
     info={
@@ -163,7 +163,7 @@ async def del_welcome(event):
         await edit_or_reply(event, "**⪼ انت لا تمتلك تـرحيب الخـاص لــ هذه الدردشـه 𓆰**")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="قائمه رحب$",
     command=("قائمه رحب", plugin_category),
     info={
