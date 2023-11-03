@@ -1,5 +1,5 @@
-#𝙕𝙚𝙙𝙏𝙝𝙤𝙣 ®
-#الملـف حقـوق وتعديـل زلـزال الهيبـه ⤶ @zzzzl1l خاص بسـورس ⤶ 𝙕𝙚𝙙𝙏𝙝𝙤𝙣
+#Repthon ®
+#الملـف حقـوق وتعديـل زلـزال الهيبـه ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 
 import asyncio
 import base64
@@ -21,7 +21,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
 from telethon.utils import get_attributes
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -36,7 +36,7 @@ from ..helpers.functions import (
     ud_frames,
     vid_to_gif,
 )
-from ..helpers.utils import _zedtools, _zedutils, _format
+from ..helpers.utils import _reptools, _reputils, _format
 from . import make_gif
 
 plugin_category = "الادوات"
@@ -51,7 +51,7 @@ PATH = os.path.join("./temp", "temp_vid.mp4")
 thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 
 
-@zedub.zed_cmd(pattern="spin(?: |$)((-)?(s)?)$")
+@zq_lo.rep_cmd(pattern="spin(?: |$)((-)?(s)?)$")
 async def pic_gifcmd(event):  # sourcery no-metrics
     args = event.pattern_match.group(1)
     reply = await event.get_reply_message()
@@ -59,7 +59,7 @@ async def pic_gifcmd(event):  # sourcery no-metrics
         return await edit_delete(event, "`Reply to supported Media...`")
     media_type(reply)
     catevent = await edit_or_reply(event, "__Making round spin video wait a sec.....__")
-    output = await _zedtools.media_to_pic(event, reply)
+    output = await _reptools.media_to_pic(event, reply)
     if output[1] is None:
         return await edit_delete(
             output[0], "__Unable to extract image from the replied message.__"
@@ -92,7 +92,7 @@ async def pic_gifcmd(event):  # sourcery no-metrics
     PATH = os.path.join(Config.TEMP_DIR, "round.gif")
     if aspect_ratio != 1:
         crop_by = width if (height > width) else height
-        await _zedutils.runcmd(
+        await _reputils.runcmd(
             f'ffmpeg -i {final} -vf "crop={crop_by}:{crop_by}" {PATH}'
         )
     else:
@@ -126,14 +126,14 @@ async def pic_gifcmd(event):  # sourcery no-metrics
         supports_streaming=True,
     )
     if not args:
-        await _zedutils.unsavegif(event, sandy)
+        await _reputils.unsavegif(event, sandy)
     await catevent.delete()
     for i in [final, "Output.gif", meme_file, PATH, final]:
         if os.path.exists(i):
             os.remove(i)
 
 
-@zedub.zed_cmd(pattern="دائري ?((-)?s)?$")
+@zq_lo.rep_cmd(pattern="دائري ?((-)?s)?$")
 async def video_catfile(event):  # sourcery no-metrics
     reply = await event.get_reply_message()
     args = event.pattern_match.group(1)
@@ -195,7 +195,7 @@ async def video_catfile(event):  # sourcery no-metrics
             catthumb = os.path.join("./temp", "thumb.jpg")
             copyfile(thumb_loc, catthumb)
         if catthumb is not None and os.path.exists(catthumb):
-            await _zedutils.runcmd(
+            await _reputils.runcmd(
                 f"""ffmpeg -loop 1 -i {catthumb} -i {catfile} -c:v libx264 -tune stillimage -c:a aac -b:a 192k -vf \"scale=\'iw-mod (iw,2)\':\'ih-mod(ih,2)\',format=yuv420p\" -shortest -movflags +faststart {PATH}"""
             )
             os.remove(catfile)
@@ -280,7 +280,7 @@ async def video_catfile(event):  # sourcery no-metrics
     await catevent.delete()
 
 
-@zedub.zed_cmd(pattern="طباعه (.*)")
+@zq_lo.rep_cmd(pattern="طباعه (.*)")
 async def get(event):
     name = event.text[5:]
     if name is None:
@@ -297,7 +297,7 @@ async def get(event):
         await edit_or_reply(event, "reply to text message as `.ttf <file name>`")
 
 
-@zedub.zed_cmd(pattern="ftoi$")
+@zq_lo.rep_cmd(pattern="ftoi$")
 async def on_file_to_photo(event):
     target = await event.get_reply_message()
     try:
@@ -330,7 +330,7 @@ async def on_file_to_photo(event):
     await catt.delete()
 
 
-@zedub.zed_cmd(pattern="ملصق متحرك(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="ملصق متحرك(?: |$)(.*)")
 async def _(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     if not input_str:
@@ -390,7 +390,7 @@ async def _(event):  # sourcery no-metrics
             os.remove(files)
 
 
-@zedub.zed_cmd(pattern="لمتحركه(?: |$)((-)?(r|l|u|d|s|i)?)$")
+@zq_lo.rep_cmd(pattern="لمتحركه(?: |$)((-)?(r|l|u|d|s|i)?)$")
 async def pic_gifcmd(event):
     reply = await event.get_reply_message()
     mediatype = media_type(reply)
@@ -404,7 +404,7 @@ async def pic_gifcmd(event):
     args = event.pattern_match.group(1)
     args = "i" if not args else args.replace("-", "")
     catevent = await edit_or_reply(event, "**╮ جـاري ﮼التحويـل لـ متحركـة 🎞🎆...𓅫╰**")
-    imag = await _zedtools.media_to_pic(event, reply)
+    imag = await _reptools.media_to_pic(event, reply)
     if imag[1] is None:
         return await edit_delete(
             imag[0], "**- اووبـس .. تعذر استخراج الصورة من الرسالة التي تم الرد عليها..**"
@@ -444,14 +444,14 @@ async def pic_gifcmd(event):
                 os.remove(i)
         return
     sandy = await event.client.send_file(event.chat_id, output, reply_to=reply)
-    await _zedutils.unsavegif(event, sandy)
+    await _reputils.unsavegif(event, sandy)
     await catevent.delete()
     for i in [final, "Output.gif", imag[1]]:
         if os.path.exists(i):
             os.remove(i)
 
 
-@zedub.zed_cmd(pattern="متحرك ?([0-9.]+)?$")
+@zq_lo.rep_cmd(pattern="متحرك ?([0-9.]+)?$")
 async def _(event):
     reply = await event.get_reply_message()
     mediatype = media_type(event)
@@ -472,7 +472,7 @@ async def _(event):
     if result is None:
         return await edit_delete(event, "**- لا يمكنني تحويلهـا إلى متحركـة ؟! **")
     sandy = await event.client.send_file(event.chat_id, result, reply_to=reply)
-    await _zedutils.unsavegif(event, sandy)
+    await _reputils.unsavegif(event, sandy)
     await catevent.delete()
     for i in [inputfile, outputfile]:
         if os.path.exists(i):
