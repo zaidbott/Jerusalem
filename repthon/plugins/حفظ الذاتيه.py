@@ -3,12 +3,12 @@ import shutil
 from asyncio import sleep
 from telethon import events
 
-from . import zedub
+from . import zq_lo
 from ..core.logger import logging
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..sql_helper.echo_sql import addecho, get_all_echos, get_echos, is_echo, remove_all_echos, remove_echo, remove_echos
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.logger import logging
 from . import BOTLOG, BOTLOG_CHATID
@@ -16,7 +16,7 @@ plugin_category = "الادوات"
 LOGS = logging.getLogger(__name__)
 zedself = True
 
-POSC = gvarstatus("Z_POSC") or "(مم|ذاتية|ذاتيه|جلب الوقتيه)"
+POSC = gvarstatus("R_POSC") or "(مم|ذاتية|ذاتيه|جلب الوقتيه)"
 
 ZelzalSelf_cmd = (
     "𓆩 [ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/Repthon) 𓆪\n\n"
@@ -33,20 +33,20 @@ ZelzalSelf_cmd = (
     "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](t.me/Repthon) 𓆪"
 )
 
-@zedub.zed_cmd(pattern="الذاتيه")
+@zq_lo.rep_cmd(pattern="الذاتيه")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, ZelzalSelf_cmd)
 
-@zedub.zed_cmd(pattern=f"{POSC}(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern=f"{POSC}(?: |$)(.*)")
 async def oho(event):
     if not event.is_reply:
         return await event.edit("**- ❝ ⌊بالـرد علـى صورة ذاتيـة التدميـر 𓆰...**")
     zzzzl1l = await event.get_reply_message()
     pic = await zzzzl1l.download_media()
-    await zedub.send_file("me", pic, caption=f"**⎉╎تم حفـظ الصـورة الذاتيـه .. بنجـاح ☑️𓆰**")
+    await zq_lo.send_file("me", pic, caption=f"**⎉╎تم حفـظ الصـورة الذاتيـه .. بنجـاح ☑️𓆰**")
     await event.delete()
 
-@zedub.zed_cmd(pattern="(تفعيل الذاتيه|تفعيل الذاتية)")
+@zq_lo.rep_cmd(pattern="(تفعيل الذاتيه|تفعيل الذاتية)")
 async def start_datea(event):
     global zedself
     if zedself:
@@ -54,7 +54,7 @@ async def start_datea(event):
     zedself = True
     await edit_or_reply(event, "**⎉╎تم تفعيـل حفظ الذاتيـة التلقائـي .. بنجـاح ☑️**")
 
-@zedub.zed_cmd(pattern="(تعطيل الذاتيه|تعطيل الذاتية)")
+@zq_lo.rep_cmd(pattern="(تعطيل الذاتيه|تعطيل الذاتية)")
 async def stop_datea(event):
     global zedself
     if zedself:
@@ -63,21 +63,21 @@ async def stop_datea(event):
     await edit_or_reply(event, "**⎉╎حفظ الذاتيـة التلقـائي .. معطلـه مسبقـاً ☑️**")
 
 #Code For @R0R77
-@zedub.on(events.NewMessage(func=lambda e: e.is_private and (e.photo or e.video) and e.media_unread))
+@zq_lo.on(events.NewMessage(func=lambda e: e.is_private and (e.photo or e.video) and e.media_unread))
 async def sddm(event):
     global zedself
     zelzal = event.sender_id
-    malath = zedub.uid
+    malath = zq_lo.uid
     if zelzal == malath:
         return
     if zedself:
         sender = await event.get_sender()
         chat = await event.get_chat()
         pic = await event.download_media()
-        await zedub.send_file("me", pic, caption=f"[ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/Repthon) .\n\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎مࢪحبـاً عـزيـزي المـالك 🫂\n⌔╎ تـم حفـظ الذاتيـة تلقائيـاً .. بنجـاح ☑️** ❝\n**⌔╎المـرسـل** {_format.mentionuser(sender.first_name , sender.id)} .")
+        await zq_lo.send_file("me", pic, caption=f"[ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/Repthon) .\n\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎مࢪحبـاً عـزيـزي المـالك 🫂\n⌔╎ تـم حفـظ الذاتيـة تلقائيـاً .. بنجـاح ☑️** ❝\n**⌔╎المـرسـل** {_format.mentionuser(sender.first_name , sender.id)} .")
 
 #Code For T.me/@zzzzl1l ~ T.me/E_7_V
-@zedub.zed_cmd(pattern="اعلان (\d*) ([\s\S]*)")
+@zq_lo.rep_cmd(pattern="اعلان (\d*) ([\s\S]*)")
 async def selfdestruct(destroy):
     zed = ("".join(destroy.text.split(maxsplit=1)[1:])).split(" ", 1)
     message = zed[1]
@@ -89,7 +89,7 @@ async def selfdestruct(destroy):
     await smsg.delete()
 
 #Code For T.me/@zzzzl1l ~ T.me/@E_7_V
-@zedub.zed_cmd(pattern="إعلان (\d*) ([\s\S]*)")
+@zq_lo.rep_cmd(pattern="إعلان (\d*) ([\s\S]*)")
 async def selfdestruct(destroy):
     zed = ("".join(destroy.text.split(maxsplit=1)[1:])).split(" ", 1)
     message = zed[1]
