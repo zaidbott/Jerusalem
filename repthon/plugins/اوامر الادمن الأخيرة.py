@@ -25,7 +25,7 @@ from telethon.tl.types import ChatBannedRights
 from telethon.tl.types import MessageEntityCustomEmoji
 from telethon import events
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_or_reply, edit_delete
 from ..helpers.utils import _format
@@ -39,7 +39,7 @@ NO_PERM = "**⎉╎ يبـدو انه ليس لديك صلاحيات كافية 
 
 repthon_t8ed = "https://graph.org/file/00478b30c7e13bc2a183d.jpg"
 repthon_unt8ed = "https://graph.org/file/3e2ecf7ec1c8d72e34e8a.jpg"
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تقييد_مؤقت(?:\s|$)([\s\S]*)",
     command=("تقييد_مؤقت", plugin_category),
     info={
@@ -127,7 +127,7 @@ async def tmuter(event):  # sourcery no-metrics
         return await event.edit(f"`{str(e)}`")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حظر_مؤقت(?:\s|$)([\s\S]*)",
     command=("حظر_مؤقت", plugin_category),
     info={
@@ -222,7 +222,7 @@ async def tban(event):  # sourcery no-metrics
                 f"**مـدة الحـظر : **`{cattime}`",
             )
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تقييد(?:\s|$)([\s\S]*)",
     command=("تقييد", plugin_category),
     info={
@@ -285,7 +285,7 @@ async def T8ed_Repthon(event):
         return await event.edit("يبدو أنك لست مشرفًا في المجموعة أو تحاول تقييد مشرف هنا.")
     except Exception as e:
         return await event.edit(f"`{str(e)}`")
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الغاء تقييد(?:\s|$)([\s\S]*)",
     command=("الغاء تقييد", plugin_category),
     info={
@@ -329,7 +329,7 @@ async def cancel_t8ed(event):
 
 Ya_Hussein = False
 active_repthon = []
-@zedub.on(events.NewMessage(incoming=True))
+@zq_lp.on(events.NewMessage(incoming=True))
 async def Hussein(event):
     if not Ya_Hussein:
         return
@@ -340,10 +340,10 @@ async def Hussein(event):
         if isinstance(event.message.entities, list) and any(isinstance(entity, MessageEntityCustomEmoji) for entity in event.message.entities):
             await event.delete()
             sender = await event.get_sender()
-            therepthon_entity = await zedub.get_entity(sender.id)
+            therepthon_entity = await zq_lo.get_entity(sender.id)
             therepthon_profile = f"[{therepthon_entity.first_name}](tg://user?id={therepthon_entity.id})"
             await event.reply(f"**⎉╎ عذراً {therepthon_profile}، يُرجى عدم إرسال الرسائل التي تحتوي على إيموجي المُميز**")
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المميز تفعيل$",
     command=("المميز تفعيل", plugin_category),
     info={
@@ -361,7 +361,7 @@ async def enable_emoji_blocker(event):
     active_repthon.append(event.chat_id)
     await event.edit(f"**⎉╎ تم تفعيل منع ارسال الايموجي المُميز بنجاح ✓**")
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المميز تعطيل$",
     command=("المميز تعطيل", plugin_category),
     info={
@@ -382,7 +382,7 @@ async def disable_emoji_blocker(event):
 
 is_Reham = False
 No_group_Repthon = "@Repthon_support"
-@zedub.on(events.NewMessage(incoming=True))
+@zq_lo.on(events.NewMessage(incoming=True))
 async def reply_to_baqir(event):
     if not is_Reham:
         return
@@ -399,17 +399,17 @@ async def reply_to_baqir(event):
             await asyncio.sleep(4)
             await event.reply(response)
 repthon = False
-async def repthon_nshr(zedub, sleeptimet, chat, message, seconds):
+async def repthon_nshr(zq_lo, sleeptimet, chat, message, seconds):
     global repthon
     repthon = True
     while repthon:
         if message.media:
-            sent_message = await zedub.send_file(chat, message.media, caption=message.text)
+            sent_message = await zq_lo.send_file(chat, message.media, caption=message.text)
         else:
-            sent_message = await zedub.send_message(chat, message.text)
+            sent_message = await zq_lo.send_message(chat, message.text)
         await asyncio.sleep(sleeptimet)
 
-@zedub.zed_cmd(pattern="انشر")
+@zq_lo.rep_cmd(pattern="انشر")
 async def baqir(event):
     await event.delete()
     seconds = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -421,11 +421,11 @@ async def baqir(event):
         return await edit_delete(
             event, "⌔∮ يجب استخدام كتابة صحيحة الرجاء التاكد من الامر اولا ⚠️"
         )
-    zedub = event.client
+    zq_lo = event.client
     global repthon
     repthon = True
-    await repthon_nshr(zedub, sleeptimet, chat, message, seconds)
-@zedub.zed_cmd(pattern="ايقاف (النشر|نشر)")
+    await repthon_nshr(zq_lo, sleeptimet, chat, message, seconds)
+@zq_lo.rep_cmd(pattern="ايقاف (النشر|نشر)")
 async def stop_repthon(event):
     global repthon
     repthon = False
