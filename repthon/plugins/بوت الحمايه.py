@@ -1,13 +1,13 @@
-# Zedthon - zthon
-# Copyright (C) 2022 Zedthon . All Rights Reserved
+# Repthon - ROGER
+# Copyright (C) 2022 Repthon. All Rights Reserved
 #
-# This file is a part of < https://github.com/Zed-Thon/ZelZal/ >
+# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/Zed-Thon/ZelZal/blob/master/LICENSE/>.
+# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
 
 """ Command: اوامـر حمـاية المجمـوعات والقنـوات بالمسـح والطـرد والتقييـد
 Credit: @Repthon
-@ZQ_LO - كتـابـة الملـف :   روجر"""
+@E_7_V - كتـابـة الملـف :   روجر"""
 
 
 import base64
@@ -44,11 +44,11 @@ from telethon.errors import (
     ChatAdminRequiredError,
     UserAdminInvalidError,
 )
-from zthon import zedub
+from repthon import zq_lo
 from ..utils import is_admin
 from ..sql_helper.locks_sql import get_locks, is_locked, update_lock
 from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event
-# All Rights Reserved for "Zedthon - zthon" "زلـزال الهيبـه"
+# All Rights Reserved for "Repthon - Userbot" "بـاقـر"
 ANTI_DDDD_ZEDTHON_MODE = ChatBannedRights(
     until_date=None, view_messages=None, send_media=True, send_stickers=True, send_gifs=True
 )
@@ -56,7 +56,7 @@ ANTI_DDDD_ZEDTHON_MODE = ChatBannedRights(
 
 plugin_category = "الادمن"
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="قفل ([\s\S]*)",
     command=("قفل", plugin_category),
     info={
@@ -92,56 +92,56 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    zed_id = event.chat_id
-    # All Rights Reserved for "Zedthon - zthon" "زلـزال الهيبـه"
+    rep_id = event.chat_id
+    # All Rights Reserved for "Repthon - Userbot" "بـاقـر"
     if not event.is_group:
         return await edit_delete(event, "**ايا مطـي! ، هـذه ليست مجموعـة لقفـل الأشيـاء**")
     chat_per = (await event.get_chat()).default_banned_rights
     if input_str == "البوتات":
-        update_lock(zed_id, "bots", True)
+        update_lock(rep_id, "bots", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة الطـرد والتحذيـر •**".format(input_str))
     if input_str == "المعرفات":
-        update_lock(zed_id, "button", True)
+        update_lock(rep_id, "button", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح والتحذيـر •**".format(input_str))
     if input_str == "الدخول":
-        update_lock(zed_id, "location", True)
+        update_lock(rep_id, "location", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة الطـرد والتحذيـر •**".format(input_str))
     if input_str == "الفارسيه":
-        update_lock(zed_id, "egame", True)
+        update_lock(rep_id, "egame", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح والتحذيـر •**".format(input_str))
     if input_str == "الاضافه":
-        update_lock(zed_id, "contact", True)
+        update_lock(rep_id, "contact", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة الطـرد والتحذيـر •**".format(input_str))
     if input_str == "التوجيه":
-        update_lock(zed_id, "forward", True)
+        update_lock(rep_id, "forward", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح والتحذيـر •**".format(input_str))
     if input_str == "الميديا":
-        update_lock(zed_id, "game", True)
+        update_lock(rep_id, "game", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح بالتقييـد والتحذيـر •**".format(input_str))
     if input_str == "الانلاين":
-        update_lock(zed_id, "inline", True)
+        update_lock(rep_id, "inline", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح والتحذيـر •**".format(input_str))
     if input_str == "الفشار":
-        update_lock(zed_id, "rtl", True)
+        update_lock(rep_id, "rtl", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح والتحذيـر •**".format(input_str))
     if input_str == "الروابط":
-        update_lock(zed_id, "url", True)
+        update_lock(rep_id, "url", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح والتحذيـر •**".format(input_str))
     if input_str == "الكل":
-        update_lock(zed_id, "bots", True)
-        update_lock(zed_id, "location", True)
-        update_lock(zed_id, "game", True)
-        update_lock(zed_id, "forward", True)
-        update_lock(zed_id, "egame", True)
-        update_lock(zed_id, "rtl", True)
-        update_lock(zed_id, "url", True)
-        update_lock(zed_id, "contact", True)
-        update_lock(zed_id, "location", True)
-        update_lock(zed_id, "button", True)
-        update_lock(zed_id, "inline", True)
-        update_lock(zed_id, "video", True)
-        update_lock(zed_id, "sticker", True)
-        update_lock(zed_id, "voice", True)
+        update_lock(rep_id, "bots", True)
+        update_lock(rep_id, "location", True)
+        update_lock(rep_id, "game", True)
+        update_lock(rep_id, "forward", True)
+        update_lock(rep_id, "egame", True)
+        update_lock(rep_id, "rtl", True)
+        update_lock(rep_id, "url", True)
+        update_lock(rep_id, "contact", True)
+        update_lock(rep_id, "location", True)
+        update_lock(rep_id, "button", True)
+        update_lock(rep_id, "inline", True)
+        update_lock(rep_id, "video", True)
+        update_lock(rep_id, "sticker", True)
+        update_lock(rep_id, "voice", True)
         return await edit_or_reply(event, "**❈╎تـم قفـل {} بنجـاح ✅ •**\n\n**❈╎خاصيـة المسـح - الطـرد - التقييـد - التحذيـر •**".format(input_str))
     else:
         if input_str:
@@ -152,7 +152,7 @@ async def _(event):
         return await edit_or_reply(event, "`❈╎عذراً لايمكنك قفل اي شي هنا 𓆰•`")
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="فتح ([\s\S]*)",
     command=("فتح", plugin_category),
     info={
@@ -188,59 +188,59 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    zed_id = event.chat_id
-   # All Rights Reserved for "Zedthon - zthon" "زلـزال الهيبـه"
+    rep_id = event.chat_id
+   # All Rights Reserved for "Repthon - Userbot" "بـاقـر"
     if not event.is_group:
         return await edit_delete(event, "**ايا مطـي! ، هـذه ليست مجموعـة لقفـل الأشيـاء**")
     chat_per = (await event.get_chat()).default_banned_rights
     if input_str == "البوتات":
-        update_lock(zed_id, "bots", False)
+        update_lock(rep_id, "bots", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الدخول":
-        update_lock(zed_id, "location", False)
+        update_lock(rep_id, "location", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الاضافه":
-        update_lock(zed_id, "contact", False)
+        update_lock(rep_id, "contact", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "التوجيه":
-        update_lock(zed_id, "forward", False)
+        update_lock(rep_id, "forward", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الفارسيه":
-        update_lock(zed_id, "egame", False)
+        update_lock(rep_id, "egame", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الفشار":
-        update_lock(zed_id, "rtl", False)
+        update_lock(rep_id, "rtl", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الروابط":
-        update_lock(zed_id, "url", False)
+        update_lock(rep_id, "url", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الميديا":
-        update_lock(zed_id, "game", False)
+        update_lock(rep_id, "game", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "المعرفات":
-        update_lock(zed_id, "button", False)
+        update_lock(rep_id, "button", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الانلاين":
-        update_lock(zed_id, "inline", False)
+        update_lock(rep_id, "inline", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الكل":
-        update_lock(zed_id, "bots", False)
-        update_lock(zed_id, "location", False)
-        update_lock(zed_id, "game", False)
-        update_lock(zed_id, "forward", False)
-        update_lock(zed_id, "egame", False)
-        update_lock(zed_id, "rtl", False)
-        update_lock(zed_id, "url", False)
-        update_lock(zed_id, "contact", False)
-        update_lock(zed_id, "location", False)
-        update_lock(zed_id, "button", False)
-        update_lock(zed_id, "inline", False)
-        update_lock(zed_id, "video", False)
-        update_lock(zed_id, "sticker", False)
-        update_lock(zed_id, "voice", False)
+        update_lock(rep_id, "bots", False)
+        update_lock(rep_id, "location", False)
+        update_lock(rep_id, "game", False)
+        update_lock(rep_id, "forward", False)
+        update_lock(rep_id, "egame", False)
+        update_lock(rep_id, "rtl", False)
+        update_lock(rep_id, "url", False)
+        update_lock(rep_id, "contact", False)
+        update_lock(rep_id, "location", False)
+        update_lock(rep_id, "button", False)
+        update_lock(rep_id, "inline", False)
+        update_lock(rep_id, "video", False)
+        update_lock(rep_id, "sticker", False)
+        update_lock(rrp_id, "voice", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     if input_str == "الفارسيه":
-        update_lock(zed_id, "egame", False)
+        update_lock(rep_id, "egame", False)
         return await edit_or_reply(event, "**❈╎تـم فتـح** {} **بنجـاح ✅ 𓆰•**".format(input_str))
     else:
         if input_str:
