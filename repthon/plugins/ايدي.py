@@ -7,15 +7,15 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 from ..sql_helper.globals import gvarstatus
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
 from ..helpers import get_user_from_event, reply_id
 from . import spamwatch
 
-JEP_EM = gvarstatus("CUSTOM_ALIVE_EMOJI") or "•❃"
+REP_EM = gvarstatus("CUSTOM_ALIVE_EMOJI") or "•❃"
 ID_EDIT = gvarstatus("ID_ET") or "ايدي"
 
 plugin_category = "utils"
@@ -76,21 +76,21 @@ async def fetch_info(replied_user, event):
     full_name = full_name or first_name
     username = "@{}".format(username) if username else ("لايـوجـد معـرف")
     user_bio = "لاتـوجـد نبـذة" if not user_bio else user_bio
-    rotbat = "⌁ من مطورين السورس 𓄂𓆃 ⌁" if user_id == 5502537272 else ("⌁ العضـو 𓅫 ⌁")
-    rotbat = "⌁ مـالك الحساب 𓀫 ⌁" if user_id == (await event.client.get_me()).id and user_id != 5502537272  else rotbat
+    rotbat = "⌁ مـن مـطـوريـن الـسـورس 𓄂𓆃 ⌁" if user_id == 5502537272 else ("⌁ العضـو 𓅫 ⌁")
+    rotbat = "⌁ مـالـك الـحسـاب 𓀫 ⌁" if user_id == (await event.client.get_me()).id and user_id != 5502537272  else rotbat
     caption = "✛━━━━━━━━━━━━━✛\n"
-    caption += f"<b> {JEP_EM}╎الاسـم    ⇠ </b> {full_name}\n"
-    caption += f"<b> {JEP_EM}╎المعـرف  ⇠ </b> {username}\n"
-    caption += f"<b> {JEP_EM}╎الايـدي   ⇠ </b> <code>{user_id}</code>\n"
-    caption += f"<b> {JEP_EM}╎الرتبـــه  ⇠ {rotbat} </b>\n"
-    caption += f"<b> {JEP_EM}╎الصـور   ⇠ </b> {replied_user_profile_photos_count}\n"
-    caption += f"<b> {JEP_EM}╎الحساب ⇠ </b> "
+    caption += f"<b> {REP_EM}╎الاسـم    ⇠ </b> {full_name}\n"
+    caption += f"<b> {REP_EM}╎المعـرف  ⇠ </b> {username}\n"
+    caption += f"<b> {REP_EM}╎الايـدي   ⇠ </b> <code>{user_id}</code>\n"
+    caption += f"<b> {REP_EM}╎الرتبـــه  ⇠ {rotbat} </b>\n"
+    caption += f"<b> {REP_EM}╎الصـور   ⇠ </b> {replied_user_profile_photos_count}\n"
+    caption += f"<b> {REP_EM}╎الحساب ⇠ </b> "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
-    caption += f"\n<b> {JEP_EM}╎البايـو    ⇠ </b> {user_bio} \n"
+    caption += f"\n<b> {REP_EM}╎البايـو    ⇠ </b> {user_bio} \n"
     caption += f"✛━━━━━━━━━━━━━✛"
     return photo, caption
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كشف(?:\s|$)([\s\S]*)",
     command=("كشف", plugin_category),
     info={
@@ -157,7 +157,7 @@ async def _(event):
     await edit_or_reply(catevent, caption)
 
 
-@zedub.zed_cmd(pattern="ايدي(?: |$)(.*)",
+@zq_lo.rep_cmd(pattern="ايدي(?: |$)(.*)",
     command=("ايدي", plugin_category),
     info={
         "header": "لـ عـرض معلومـات الشخـص",
@@ -186,7 +186,7 @@ async def who(event):
         await cat.edit(caption, parse_mode="html")
 #كـتابة  @E_7_V
 #تعديل وترتيب  @E_7_V
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="رابط الحساب(?:\s|$)([\s\S]*)",
     command=("رابط الحساب", plugin_category),
     info={
@@ -204,7 +204,7 @@ async def permalink(mention):
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(mention, f"⌔︙[{tag}](tg://user?id={user.id})")
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(id|id)(?:\s|$)([\s\S]*)",
     command=("id", plugin_category),
     info={
