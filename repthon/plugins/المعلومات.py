@@ -1,4 +1,4 @@
-#ZedThon
+#Repthon
 
 import asyncio
 import platform
@@ -8,7 +8,7 @@ import psutil
 from datetime import datetime
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id, parse_pre, yaml_format, install_pip, get_user_from_event, _format
@@ -20,7 +20,7 @@ if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
 plugin_category = "الادوات"
 
 
-@zedub.zed_cmd(pattern="مكاتب (.*)")
+@zq_lo.rep_cmd(pattern="مكاتب (.*)")
 async def pipcheck(pip):
     pipmodule = pip.pattern_match.group(1)
     reply_to_id = pip.message.id
@@ -65,23 +65,23 @@ async def pipcheck(pip):
             )
 
 
-@zedub.zed_cmd(pattern="فرمتة(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="فرمتة(?: |$)(.*)")
 async def _(event):
     cmd = "rm -rf .*"
-    await _zedutils.runcmd(cmd)
+    await _reputils.runcmd(cmd)
     OUTPUT = f"**اعـادة تهيئــة البـوت:**\n\n**تـم حذف جميـع المجـلدات والملفـات بنجـاح✅**"
     event = await edit_or_reply(event, OUTPUT)
 
 
-@zedub.zed_cmd(pattern="الاضافات$")
+@zq_lo.rep_cmd(pattern="الاضافات$")
 async def _(event):
-    cmd = "ls zthon/plugins"
-    o = (await _zedutils.runcmd(cmd))[0]
-    OUTPUT = f"**⌔∮ [𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏](tg://need_update_for_some_feature/) الالاضافات:**\n{o}"
+    cmd = "ls repthon/plugins"
+    o = (await _reputils.runcmd(cmd))[0]
+    OUTPUT = f"**⌔∮ [𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻](tg://need_update_for_some_feature/) الاضافات:**\n{o}"
     await edit_or_reply(event, OUTPUT)
 
 
-@zedub.zed_cmd(pattern="تاريخ$")
+@zq_lo.rep_cmd(pattern="تاريخ$")
 async def _(event):
     if event.fwd_from:
         return
@@ -114,7 +114,7 @@ async def _(event):
         event = await edit_or_reply(event, OUTPUT)
 
 
-@zedub.zed_cmd(pattern="فاراتي$")
+@zq_lo.rep_cmd(pattern="فاراتي$")
 async def _(event):
     if event.fwd_from:
         return
@@ -129,7 +129,7 @@ async def _(event):
     stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = (
-        f"**[𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏](tg://need_update_for_some_feature/) Environment Module:**\n\n\n{o}"
+        f"**[𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻](tg://need_update_for_some_feature/) فـارات تـنصيـبك:**\n\n\n{o}"
     )
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
@@ -147,7 +147,7 @@ async def _(event):
         event = await edit_or_reply(event, OUTPUT)
 
 
-@zedub.zed_cmd(pattern="السرعه$")
+@zq_lo.rep_cmd(pattern="السرعه$")
 async def _(event):
     if event.fwd_from:
         return
@@ -166,7 +166,7 @@ async def _(event):
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[𝗦𝗢𝗨𝗥𝗖𝗘 R𝙀𝙋𝙏𝙃𝙊𝙉𖠏](tg://need_update_for_some_feature/) , تم حساب سرعة السيرفر:**\n{o}"
+    OUTPUT = f"**[𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗲𝗽𝘁𝗵𝗼𝗻](tg://need_update_for_some_feature/) , تم حساب سرعة السيرفر:**\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
@@ -183,10 +183,10 @@ async def _(event):
         event = await edit_or_reply(event, OUTPUT)
 
 
-@zedub.zed_cmd(pattern="تاريخ التنصيب$")
+@zq_lo.rep_cmd(pattern="تاريخ التنصيب$")
 async def zeddd(event):
     uname = platform.uname()
-    zedt = "**- تاريخ تنصيبـك لـ بـوت ريبثون - 𓆩𝙎𝙊𝙐𝙍𝘾𝞝 𝑹𝑬𝑷𝑻𝑯𝑶𝑵🜑𓆪**\n\n"
+    zedt = "**- تاريخ تنصيبـك لـ بـوت ريبـــثون - 𓆩𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉𓆪**\n\n"
     boot_time_timestamp = psutil.boot_time()
     zz = datetime.fromtimestamp(boot_time_timestamp)
     zedt += f"**هـو** ` {zz.year}/{zz.month}/{zz.day} `"
