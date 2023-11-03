@@ -1,4 +1,4 @@
-# ©source Zed - @ZlZZl77
+# ©source Repthon - @E_7_V
 from zthon.core.logger import logging
 from zthon import zedub
 from ..Config import Config
@@ -12,7 +12,7 @@ from . import ALIVE_NAME
 DEF = str(ALIVE_NAME) if ALIVE_NAME else "zed"
 
 
-@zedub.zed_cmd(pattern="ميت (.*)")
+@zq_lo.rep_cmd(pattern="ميت (.*)")
 async def kakashi(ded):
     name = ded.pattern_match.group(1)
     await edit_or_reply(
