@@ -25,12 +25,12 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import animator, crop_and_divide
 from ..helpers.tools import media_type
-from ..helpers.utils import _zedtools
+from ..helpers.utils import _reptools
 from ..sql_helper.globals import gvarstatus
 
 plugin_category = "الادوات"
@@ -145,7 +145,7 @@ async def newpacksticker(
     try:
         await conv.send_message(cmd)
     except YouBlockedUserError:
-        await zedub(unblock("stickers"))
+        await zq_lo(unblock("stickers"))
         await conv.send_message(cmd)
     await conv.get_response()
     await args.client.send_read_acknowledge(conv.chat_id)
@@ -207,7 +207,7 @@ async def add_to_pack(
     try:
         await conv.send_message("/addsticker")
     except YouBlockedUserError:
-        await zedub(unblock("stickers"))
+        await zq_lo(unblock("stickers"))
         await conv.send_message("/addsticker")
     vtry = True if is_video else None
     await conv.get_response()
@@ -278,7 +278,7 @@ async def add_to_pack(
     return pack, packname
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ملصق(?:\s|$)([\s\S]*)",
     command=("ملصق", plugin_category),
     info={
@@ -468,7 +468,7 @@ async def kang(args):  # sourcery no-metrics
                 )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حزمه(?:\s|$)([\s\S]*)",
     command=("حزمه", plugin_category),
     info={
@@ -662,7 +662,7 @@ async def pack_kang(event):  # sourcery no-metrics
     await zedevent.edit(result)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="متحرك$",
     command=("متحرك", plugin_category),
     info={
@@ -731,7 +731,7 @@ async def pussycat(args):
         os.remove(sticker)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="حزمة(?:\s|$)([\s\S]*)",
     command=("حزمة", plugin_category),
     info={
@@ -744,7 +744,7 @@ async def pussycat(args):
             "{tr}حزمة -e👌 <packname>",
         ],
         "مثــال": [
-            "{tr}حزمة -e👌 ZThon",
+            "{tr}حزمة -e👌 Repthon",
         ],
     },
 )
@@ -772,11 +772,11 @@ async def pic2packcmd(event):
     except Exception:
         emoji = "▫️"
     chat = "@Stickers"
-    name = "ZThon_" + "".join(
+    name = "Repthon_" + "".join(
         random.choice(list(string.ascii_lowercase + string.ascii_uppercase))
         for _ in range(16)
     )
-    image = await _zedtools.media_to_pic(zedevent, reply, noedits=True)
+    image = await _reptools.media_to_pic(zedevent, reply, noedits=True)
     if image[1] is None:
         return await edit_delete(
             image[0], "__Unable to extract image from the replied message.__"
@@ -798,7 +798,7 @@ async def pic2packcmd(event):
         try:
             await event.client.send_message(chat, "/cancel")
         except YouBlockedUserError:
-            await zedub(unblock("stickers"))
+            await zq_lo(unblock("stickers"))
             await event.client.send_message(chat, "/cancel")
         await conv.wait_event(events.NewMessage(incoming=True, from_users=chat))
         await event.client.send_message(chat, "/newpack")
@@ -835,7 +835,7 @@ async def pic2packcmd(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="معلومات الملصق$",
     command=("معلومات الملصق", plugin_category),
     info={
@@ -879,7 +879,7 @@ async def get_pack_info(event):
         if document_sticker.emoticon not in pack_emojis:
             pack_emojis.append(document_sticker.emoticon)
     OUTPUT = (
-        f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝙕𝞝𝘿 - 𝑺𝑻𝑰𝑪𝑲𝑹𝑺 𝑰𝑵𝑭𝑶 𓆪\n"
+        f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑹𝑬𝑷𝑻𝑯𝑶𝑵 - 𝑺𝑻𝑰𝑪𝑲𝑹𝑺 𝑰𝑵𝑭𝑶 𓆪\n"
         f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         f"⪼ **عنوان الملصق:** {get_stickerset.set.title}\n"
         f"⪼ **الاسم المختصر للملصق:** {get_stickerset.set.short_name}\n"
@@ -891,7 +891,7 @@ async def get_pack_info(event):
     await zedevent.edit(OUTPUT)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ملصقات ?([\s\S]*)",
     command=("ملصقات", plugin_category),
     info={
