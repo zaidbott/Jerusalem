@@ -1,6 +1,6 @@
 # ©source Repthon - @E_7_V
-from zthon.core.logger import logging
-from zthon import zedub
+from repthon.core.logger import logging
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -34,7 +34,7 @@ async def kakashi(ded):
     )
 
 
-@zedub.zed_cmd(pattern="مافيا (.*)")
+@zq_lo.rep_cmd(pattern="مافيا (.*)")
 async def kakashi(killer):
     name = killer.pattern_match.group(1)
     await edit_or_reply(
@@ -324,72 +324,72 @@ R = (
 )
 
 
-@zedub.zed_cmd(pattern=r"وحش$")
+@zq_lo.rep_cmd(pattern=r"وحش$")
 async def bluedevilmonster(monster):
     await edit_or_reply(monster, A)
 
 
-@zedub.zed_cmd(pattern=r"خنزير$")
+@zq_lo.rep_cmd(pattern=r"خنزير$")
 async def bluedevilpig(pig):
     await edit_or_reply(pig, B)
 
 
-@zedub.zed_cmd(pattern=r"مسدس$")
+@zq_lo.rep_cmd(pattern=r"مسدس$")
 async def bluedevilgun(gun):
     await edit_or_reply(gun, D)
 
 
-@zedub.zed_cmd(pattern=r"كلب$")
+@zq_lo.rep_cmd(pattern=r"كلب$")
 async def bluedevildog(dog):
     await edit_or_reply(dog, E)
 
 
-@zedub.zed_cmd(pattern=r"هلو$")
+@zq_lo.rep_cmd(pattern=r"هلو$")
 async def bluedevilhello(hello):
     await edit_or_reply(hello, F)
 
 
-@zedub.zed_cmd(pattern=r"طائره$")
+@zq_lo.rep_cmd(pattern=r"طائره$")
 async def bluedevilhmf(hmf):
     await edit_or_reply(hmf, G)
 
 
-@zedub.zed_cmd(pattern=r"حبايب$")
+@zq_lo.rep_cmd(pattern=r"حبايب$")
 async def bluedevilcouple(couple):
     await edit_or_reply(couple, H)
 
 
-@zedub.zed_cmd(pattern=r"سوبر$")
+@zq_lo.rep_cmd(pattern=r"سوبر$")
 async def bluedevilsupreme(supreme):
     await edit_or_reply(supreme, I)
 
 
-@zedub.zed_cmd(pattern=r"الهند$")
+@zq_lo.rep_cmd(pattern=r"الهند$")
 async def bluedevilindia(india):
     await edit_or_reply(india, J)
 
 
-@zedub.zed_cmd(pattern=r"هلا$")
+@zq_lo.rep_cmd(pattern=r"هلا$")
 async def bluedevilwelcome(welcome):
     await edit_or_reply(welcome, K)
 
 
-@zedub.zed_cmd(pattern=r"حيه$")
+@zq_lo.rep_cmd(pattern=r"حيه$")
 async def bluedevilsnake(snake):
     await edit_or_reply(snake, L)
 
 
-@zedub.zed_cmd(pattern=r"باي$")
+@zq_lo.rep_cmd(pattern=r"باي$")
 async def bluedevilbye(bye):
     await edit_or_reply(bye, O)
 
 
-@zedub.zed_cmd(pattern=r"خرا$")
+@zq_lo.rep_cmd(pattern=r"خرا$")
 async def bluedevilshitos(shitos):
     await edit_or_reply(shitos, P)
 
 
-@zedub.zed_cmd(pattern=r"دس لايك$")
+@zq_lo.rep_cmd(pattern=r"دس لايك$")
 async def bluedevildislike(dislike):
     await edit_or_reply(dislike, R)
 
@@ -416,7 +416,7 @@ Fun_cmd = (
 
 
 # Copyright (C) 2022 Zedthon . All Rights Reserved
-@zedub.zed_cmd(pattern="تسليه")
+@zq_lo.rep_cmd(pattern="تسليه")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, Fun_cmd)
 
