@@ -39,9 +39,9 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 normzltext = "1234567890"
 
-autopic_path = os.path.join(os.getcwd(), "zthon", "original_pic.png")
-digitalpic_path = os.path.join(os.getcwd(), "zthon", "digital_pic.png")
-autophoto_path = os.path.join(os.getcwd(), "zthon", "photo_pfp.png")
+autopic_path = os.path.join(os.getcwd(), "repthon", "original_pic.png")
+digitalpic_path = os.path.join(os.getcwd(), "repthon", "digital_pic.png")
+autophoto_path = os.path.join(os.getcwd(), "repthon", "photo_pfp.png")
 
 
 NAUTO = gvarstatus("R_NAUTO") or "(الاسم تلقائي|الاسم الوقتي|اسم وقتي|اسم تلقائي)"
@@ -68,12 +68,12 @@ async def digitalpicloop():
         fnt = ImageFont.truetype(f"{repfont}", 35) #Code by T.me/zzzzl1l
         drawn_text.text((140, 70), current_time, font=fnt, fill=(280, 280, 280)) #Code by T.me/zzzzl1l
         img.save(autophoto_path)
-        file = await zedub.upload_file(autophoto_path)
+        file = await zq_lo.upload_file(autophoto_path)
         try:
             if i > 0:
                 await zq_lo(
                     functions.photos.DeletePhotosRequest(
-                        await zedub.get_profile_photos("me", limit=1)
+                        await zq_lo.get_profile_photos("me", limit=1)
                     )
                 )
             i += 1
