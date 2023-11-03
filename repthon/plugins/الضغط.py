@@ -7,14 +7,14 @@ import re
 import time
 from datetime import datetime
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import (
-    _zedtools,
-    _zedutils,
+    _reptools,
+    _reputils,
     fileinfo,
     humanbytes,
     media_type,
@@ -128,7 +128,7 @@ async def cult_small_video(
     return None
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(|ا)ضغط(?:\s|$)([\s\S]*)",
     command=("ضغط", plugin_category),
     info={
@@ -231,7 +231,7 @@ async def ffmpeg_compress(event):
             except Exception as e:
                 return await edit_delete(zedevent, f"**- خطـأ : **`{e}`")
         else:
-            thumb = await _zedtools.take_screen_shot(compress, "00:01")
+            thumb = await _reptools.take_screen_shot(compress, "00:01")
             try:
                 c_time = time.time()
                 catt = await event.client.send_file(
@@ -259,7 +259,7 @@ async def ffmpeg_compress(event):
     await edit_or_reply(catt, cap)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ffmpegsave(?:\s|$)([\s\S]*)",
     command=("ffmpegsave", plugin_category),
     info={
@@ -276,7 +276,7 @@ async def ff_mpeg_trim_cmd(event):
             media = (await fileinfo(mpath))["type"]
             if media not in ["Video", "Audio"]:
                 return await edit_delete(event, "`Only media files are supported`", 5)
-            await _zedutils.runcmd(f"cp -r {mpath} {FF_MPEG_DOWN_LOAD_MEDIA_PATH}")
+            await _reputils.runcmd(f"cp -r {mpath} {FF_MPEG_DOWN_LOAD_MEDIA_PATH}")
             return await edit_or_reply(
                 event, f"Saved file to `{FF_MPEG_DOWN_LOAD_MEDIA_PATH}`"
             )
@@ -316,7 +316,7 @@ async def ff_mpeg_trim_cmd(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="vtrim(?:\s|$)([\s\S]*)",
     command=("vtrim", plugin_category),
     info={
@@ -372,7 +372,7 @@ async def ff_mpeg_trim_cmd(event):
     elif len(cmt) == 2:
         # output should be image
         cmd, start_time = cmt
-        o = await _zedtools.take_screen_shot(FF_MPEG_DOWN_LOAD_MEDIA_PATH, start_time)
+        o = await _reptools.take_screen_shot(FF_MPEG_DOWN_LOAD_MEDIA_PATH, start_time)
         if o is None:
             return await edit_delete(
                 zedevent, "**Error : **`Can't complete the process`"
@@ -402,7 +402,7 @@ async def ff_mpeg_trim_cmd(event):
     await edit_delete(zedevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="atrim(?:\s|$)([\s\S]*)",
     command=("atrim", plugin_category),
     info={
@@ -467,7 +467,7 @@ async def ff_mpeg_trim_cmd(event):
     await edit_delete(zedevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ffmpegclear$",
     command=("ffmpegclear", plugin_category),
     info={
