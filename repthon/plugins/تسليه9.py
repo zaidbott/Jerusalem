@@ -6,8 +6,8 @@ import os
 import random
 from urllib.parse import quote_plus
 from collections import deque
-from zthon.core.logger import logging
-from zthon import zedub
+from repthon.core.logger import logging
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -15,11 +15,11 @@ plugin_category = "الترفيه"
 
 from . import ALIVE_NAME, deEmojify
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "zed"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rep"
 
 
 
-@zedub.zed_cmd(pattern="كرات( (.*)|$)")
+@zq_lo.rep_cmd(pattern="كرات( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -225,7 +225,7 @@ async def _(event):
         await event.edit(animation_chars[i % 192])
         
         
-@zedub.zed_cmd(pattern="🖤( (.*)|$)")
+@zq_lo.rep_cmd(pattern="🖤( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -431,7 +431,7 @@ async def _(event):
         await event.edit(animation_chars[i % 192])
         
         
-@zedub.zed_cmd(pattern="💙( (.*)|$)")
+@zq_lo.rep_cmd(pattern="💙( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -637,7 +637,7 @@ async def _(event):
         await event.edit(animation_chars[i % 192])
         
         
-@zedub.zed_cmd(pattern="💜( (.*)|$)")
+@zq_lo.rep_cmd(pattern="💜( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -843,7 +843,7 @@ async def _(event):
         await event.edit(animation_chars[i % 192])
         
         
-@zedub.zed_cmd(pattern="❤️( (.*)|$)")
+@zq_lo.rep_cmd(pattern="❤️( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -1050,7 +1050,7 @@ async def _(event):
 
 
 
-@zedub.zed_cmd(pattern="❤️( (.*)|$)")
+@zq_lo.rep_cmd(pattern="❤️( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -1257,7 +1257,7 @@ async def _(event):
 
 
 
-@zedub.zed_cmd(pattern="❤️( (.*)|$)")
+@zq_lo.rep_cmd(pattern="💛( (.*)|$)")
 async def _(event):
     if event.fwd_from:
         return
@@ -1482,6 +1482,6 @@ Fun9_cmd = (
 
 
 # Copyright (C) 2022 Zedthon . All Rights Reserved
-@zedub.zed_cmd(pattern="تسليه9")
+@zq_lo.rep_cmd(pattern="تسليه9")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, Fun9_cmd)
