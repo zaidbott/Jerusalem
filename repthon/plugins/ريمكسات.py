@@ -8,15 +8,15 @@ import os
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "البحث"
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ريماكس ([\s\S]*)",
     command=("ريماكس", plugin_category),
     info={
@@ -41,7 +41,7 @@ async def remaxzedthon(zedrm):
     await zedrm.delete()
     
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ريمكس ([\s\S]*)",
     command=("ريمكس", plugin_category),
     info={
