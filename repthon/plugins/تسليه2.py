@@ -112,7 +112,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@zedub.zed_cmd(pattern="قمر$")
+@zq_lo.rep_cmd(pattern="قمر$")
 async def _(event):
     if event.fwd_from:
         return
