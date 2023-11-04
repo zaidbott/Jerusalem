@@ -11,7 +11,7 @@ from PIL import Image
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
 from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 
-from zthon import BOTLOG, BOTLOG_CHATID, zedub
+from repthon import BOTLOG, BOTLOG_CHATID, zq_lo
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
