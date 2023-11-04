@@ -1,11 +1,11 @@
-#ZedThon
+#Repthon
 
 import asyncio
 import os
 import time
 from datetime import datetime
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -17,7 +17,7 @@ plugin_category = "الادوات"
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "thumb_image.jpg"
 
 
-@zedub.zed_cmd(pattern="rename (.*)")
+@zq_lo.rep_cmd(pattern="rename (.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -56,7 +56,7 @@ async def _(event):
         )
 
 
-@zedub.zed_cmd(pattern="إسم (.*)")
+@zq_lo.rep_cmd(pattern="إسم (.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -123,7 +123,7 @@ async def _(event):
         )
 
 
-@zedub.zed_cmd(pattern="اسم (.*)")
+@zq_lo.rep_cmd(pattern="اسم (.*)")
 async def _(event):
     if event.fwd_from:
         return
