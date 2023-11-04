@@ -19,8 +19,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import delete_conv, name_dl, song_dl, video_dl, yt_search
 from ..helpers.tools import media_type
 from ..helpers.utils import _reputils, reply_id
-from repthon.helpers.functions.musictool import song_download
-from repthon import zq_lo
+from . import zq_lo, song_download
 
 plugin_category = "البحث"
 LOGS = logging.getLogger(__name__)
@@ -47,7 +46,7 @@ SONG_SENDING_STRING = "<b>╮ جـارِ تحميـل الاغنيـٓه... 🎧
         "مثــال": "{tr}بحث حسين الجسمي احبك",
     },
 )
-async def _(event):
+async def song(event):
     "لـ تحميـل الاغـانـي مـن يـوتيـوب"
     reply_to_id = await reply_id(event)
     reply = await event.get_reply_message()
@@ -57,63 +56,29 @@ async def _(event):
         query = reply.message
     else:
         return await edit_or_reply(event, "**⎉╎قم باضافـة الاغنيـه للامـر .. بحث + اسـم الاغنيـه**")
-    cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
-    repevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
+    zed = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    zedevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await repevent.edit(
-            f"⌔∮ عذرا لم استطع ايجاد مقاطع ذات صلة بـ `{query}`"
+        return await zedevent.edit(
+            f"**⎉╎عـذراً .. لـم استطـع ايجـاد** {query}"
         )
     cmd = event.pattern_match.group(1)
     q = "320k" if cmd == "320" else "128k"
-    song_cmd = song_dl.format(QUALITY=q, video_link=video_link)
-    name_cmd = name_dl.format(video_link=video_link)
-    try:
-        cat = Get(cat)
-        await event.client(cat)
-    except BaseException:
-        pass
-    try:
-        stderr = (await _reputils.runcmd(song_cmd))[1]
-        await sleep(3)
-        repname, stderr = (await _reputils.runcmd(name_cmd))[:2]
-        if stderr:
-            return await repevent.edit(f"**خطأ :** `{stderr}`")
-        await sleep(3)
-        repname = os.path.splitext(repname)[0]
-        await sleep(2)
-        song_file = Path(f"{repname}.mp3")
-        repname = urllib.parse.unquote(repname)
-    except:
-        pass
-    if not os.path.exists(song_file):
-        return await repevent.edit(
-            f"**⎉╎عـذراً .. لـم استطـع ايجـاد** {query}"
-        )
-    await repevent.edit("**- جـارِ التحميـل انتظـر ▬▭...**")
-    repthumb = Path(f"{repname}.jpg")
-    if not os.path.exists(repthumb):
-        repthumb = Path(f"{repname}.webp")
-    elif not os.path.exists(repthumb):
-        repthumb = None
-    title = zedname.replace("./temp/", "").replace("_", "|")
-    try:
-        await event.client.send_file(
-            event.chat_id,
-            song_file,
-            force_document=False,
-            caption=f"**⎉╎البحث :** `{title}`",
-            thumb=repthumb,
-            supports_streaming=True,
-            reply_to=reply_to_id,
-        )
-        await repevent.delete()
-        for files in (repthumb, song_file):
-            if files and os.path.exists(files):
-                os.remove(files)
-    except ChatSendMediaForbiddenError as err:
-        await repevent.edit("**- الوسائط مغلقـه هنـا ؟؟**")
-        LOGS.error(str(err))
+    song_file, zedthumb, title = await song_download(video_link, zedevent, quality=q)
+    await event.client.send_file(
+        event.chat_id,
+        song_file,
+        force_document=False,
+        caption=f"**⎉╎البحث :** `{title}`",
+        thumb=zedthumb,
+        supports_streaming=True,
+        reply_to=reply_to_id,
+    )
+    await zedevent.delete()
+    for files in (zedthumb, song_file):
+        if files and os.path.exists(files):
+            os.remove(files)
 
 
 @zq_lo.rep_cmd(
