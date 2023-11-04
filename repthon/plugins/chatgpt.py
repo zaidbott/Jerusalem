@@ -35,7 +35,7 @@ from ..helpers.utils import reply_id
 plugin_category = "البوت"
 
 
-# code by t.me/zzzzl1l
+# code by t.me/E_7_V
 @zq_lo.rep_cmd(pattern="ريبثون(?: |$)(.*)")
 async def repthon_gpt(event):
     zilzal = event.pattern_match.group(1)
@@ -67,7 +67,7 @@ async def repthon_gpt(event):
             await zed.delete()
             await borg.send_message(event.chat_id, f"**س/ {zelzal}\n\n{malath}**\n\n───────────────────\n𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨**ꜱᴇʀʙᴏᴛ** 𝗧**ᴏᴏʟꜱ**\n\t\t\t\t\t\t\t\t𝐁𝐀𝐐𝐈𝐑 • ᴼᵖᵉⁿᴬᴵ")
         except YouBlockedUserError: #code by t.me/zzzzl1l
-            await zedub(unblock("GPT4Telegrambot"))
+            await zq_lo(unblock("GPT4Telegrambot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(zelzal)
@@ -94,7 +94,7 @@ async def repthon_gpt(event):
 
 # تخمــط اهينـــك Fuk-You
 
-# code by t.me/zzzzl1l
+# code by t.me/E_7_V
 @zq_lo.rep_cmd(pattern="س(?: |$)(.*)")
 async def zelzal_gpt(event):
     zilzal = event.pattern_match.group(1)
@@ -130,7 +130,7 @@ async def zelzal_gpt(event):
             await zed.delete()
             await borg.send_message(event.chat_id, f"**س/ {zelzal}\n\n{malath}**\n\n───────────────────\n𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨**ꜱᴇʀʙᴏᴛ** 𝗧**ꜱᴇʀʙᴏᴛ**\n\t\t\t\t\t\t\t\t𝐁𝐀𝐐𝐈𝐑 • ᴼᵖᵉⁿᴬᴵ")
         except YouBlockedUserError: #code by t.me/zzzzl1l
-            await zedub(unblock("GPT4Telegrambot"))
+            await zq_lo(unblock("GPT4Telegrambot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(zelzal)
