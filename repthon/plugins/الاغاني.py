@@ -19,6 +19,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import delete_conv, name_dl, song_dl, video_dl, yt_search
 from ..helpers.tools import media_type
 from ..helpers.utils import _reputils, reply_id
+from repthon.helpers.functions.musictool import song_download
 from repthon import zq_lo
 
 plugin_category = "البحث"
