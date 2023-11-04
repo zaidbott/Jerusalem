@@ -1,3 +1,21 @@
+import requests
+import asyncio
+import os
+import sys
+import urllib.request
+from datetime import timedelta
+from telethon import events
+from telethon.errors import FloodWaitError
+from telethon.tl.functions.messages import GetHistoryRequest, ImportChatInviteRequest
+from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.contacts import UnblockRequest as unblock
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+
+from ..Config import Config
+from ..core.managers import edit_delete, edit_or_reply
+from ..helpers.utils import reply_id
 import asyncio
 import base64
 import io
@@ -34,9 +52,62 @@ SONG_SENDING_STRING = "<b>╮ جـارِ تحميـل الاغنيـٓه... 🎧
 #                                                             𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 # =========================================================== #
 
+@zq_lo.rep_cmd(pattern="بحث(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    d_link = event.pattern_match.group(1)
+    if ".com" not in d_link:
+        await event.edit("**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
+    else:
+        await event.edit("**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
+    chat = "@Abm_MusicDownloader_Bot"
+    async with borg.conversation(chat) as conv: # code by t.me/zzzzl1l
+        try:
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(d_link)
+            await conv.get_response()
+            await asyncio.sleep(5)
+            zelzal = await conv.get_response()
+            if "⏳" not in zelzal.text:
+                await zelzal.click(0)
+                await asyncio.sleep(5)
+                zelzal = await conv.get_response()
+                await event.delete()
+                await borg.send_file(
+                    event.chat_id,
+                    zelzal,
+                    caption=f"**❈╎البحـث :** `{d_link}`",
+                )
+
+            else:
+                await event.edit("**- لـم استطـع العثـور على نتائـج ؟!**\n**- حـاول مجـدداً في وقت لاحـق ...**")
+        except YouBlockedUserError:
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(d_link)
+            await conv.get_response()
+            await asyncio.sleep(5)
+            zelzal = await conv.get_response()
+            zelzal = await conv.get_response()
+            if "⏳" not in zelzal.text:
+                await zelzal.click(0)
+                await asyncio.sleep(5)
+                zelzal = await conv.get_response()
+                await event.delete()
+                await borg.send_file(
+                    event.chat_id,
+                    zelzal,
+                    caption=f"**❈╎البحـث :** `{d_link}`",
+                )
+
+            else:
+                await event.edit("**- لـم استطـع العثـور على نتائـج ؟!**\n**- حـاول مجـدداً في وقت لاحـق ...**")
+
 @zq_lo.rep_cmd(
-    pattern="بحث(320)?(?:\s|$)([\s\S]*)",
-    command=("بحث", plugin_category),
+    pattern="اغنيه?(?:\s|$)([\s\S]*)",
+    command=("اغنيه", plugin_category),
     info={
         "header": "لـ تحميـل الاغـانـي مـن يـوتيـوب",
         "امـر مضـاف": {
