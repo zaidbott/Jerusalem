@@ -10,8 +10,6 @@ import os
 from telethon import events 
 plugin_category = "الادوات"
 
-# Roger-Baqir
-
 
 ZQ_LO = ["5502537272"]
 @zq_lo.on(events.NewMessage(incoming=True))
