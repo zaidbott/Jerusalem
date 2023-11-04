@@ -13,7 +13,7 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import clippy
@@ -38,7 +38,7 @@ vars_list = {
 plugin_category = "الترفيه"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(|s)لوجو(?: |$)([\s\S]*)",
     command=("لوجو", plugin_category),
     info={
@@ -135,7 +135,7 @@ async def very(event):  # sourcery no-metrics
         os.remove(file_name)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(|c)lbg(?:\s|$)([\s\S]*)",
     command=("lbg", plugin_category),
     info={
@@ -201,7 +201,7 @@ async def bad(event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="lf(|c|s|h|w|sc|sw)(?:\s|$)([\s\S]*)",
     command=("lf", plugin_category),
     info={
@@ -357,7 +357,7 @@ async def pussy(event):  # sourcery no-metrics
                 )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(g|d|r)lvar(?:\s|$)([\s\S]*)",
     command=("lvar", plugin_category),
     info={
