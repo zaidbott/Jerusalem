@@ -6,7 +6,7 @@ import requests
 from github import Github
 from pySmartDL import SmartDL
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -32,15 +32,15 @@ GIT_TEMP_DIR = "./temp/"
     },
 )
 async def source(e):
-    "Source code link of ZThon"
+    "Source code link of Repthon"
     await edit_or_reply(
         e,
-        "Click [here](https://t.me/ZedThon) to open this bot source code\
-        \nClick [here](https://t.me/ZedThon/105) to open supported link for heroku",
+        "Click [here](https://t.me/Repthon) to open this bot source code\
+        \nClick [here](https://t.me/Repthon/117) to open supported link for heroku",
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كيثاب( -l(\d+))? ([\s\S]*)",
     command=("كيثاب", plugin_category),
     info={
@@ -106,7 +106,7 @@ async def _(event):
             await catevent.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.zed_cmd(
     pattern="commit$",
     command=("commit", plugin_category),
     info={
