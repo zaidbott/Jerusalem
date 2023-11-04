@@ -1,7 +1,7 @@
 import os
 import asyncio
 from PIL import Image, ImageDraw, ImageFont
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from . import BOTLOG, BOTLOG_CHATID, mention
@@ -26,7 +26,7 @@ def text_set(text):
     
 
 
-@zedub.zed_cmd(pattern="رساله ?(.*)")
+@zq_lo.rep_cmd(pattern="رساله ?(.*)")
 async def writer(e):
     if e.reply_to:
         reply = await e.get_reply_message()
@@ -35,16 +35,16 @@ async def writer(e):
         text = e.text.split(maxsplit=1)[1]
     else:
         return await e.edit("**- بالـرد على نص او .رساله + النص**")
-    img = Image.open("zedthon/malath/ppmsg.jpg")
+    img = Image.open("baqir/taiba/ppmsg.jpg")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("zedthon/malath/zarz.ttf", 30)
+    font = ImageFont.truetype("baqir/taiba/zarz.ttf", 30)
     x, y = 150, 140
     lines = text_set(text)
     line_height = font.getsize("hg")[1]
     for line in lines:
         draw.text((x, y), line, fill=(1, 22, 55), font=font)
         y = y + line_height - 5
-    file = "zilzal.jpg"
+    file = "baqir.jpg"
     img.save(file)
     await e.reply(file=file)
     os.remove(file)
@@ -52,7 +52,7 @@ async def writer(e):
 
 
 
-@zedub.zed_cmd(pattern="^\:/$")
+@zq_lo.rep_cmd(pattern="^\:/$")
 async def kek(keks):
     keks = await edit_or_reply(keks, ":\\")
     uio = ["/", "\\"]
@@ -62,7 +62,7 @@ async def kek(keks):
         await keks.edit(txt)
 
 
-@zedub.zed_cmd(pattern="^\-_-$")
+@zq_lo.rep_cmd(pattern="^\-_-$")
 async def lol(lel):
     lel = await edit_or_reply(lel, "-__-")
     okay = "-__-"
@@ -72,7 +72,7 @@ async def lol(lel):
         await lel.edit(okay)
 
 
-@zedub.zed_cmd(pattern="^\;_;$")
+@zq_lo.rep_cmd(pattern="^\;_;$")
 async def fun(e):
     e = await edit_or_reply(e, ";__;")
     t = ";__;"
@@ -82,7 +82,7 @@ async def fun(e):
         await e.edit(t)
 
 
-@zedub.zed_cmd(pattern="oof$")
+@zq_lo.rep_cmd(pattern="oof$")
 async def Oof(e):
     t = "Oof"
     catevent = await edit_or_reply(e, t)
@@ -92,7 +92,7 @@ async def Oof(e):
         await catevent.edit(t)
 
 
-@zedub.zed_cmd(pattern="اكتب (.*)")
+@zq_lo.rep_cmd(pattern="اكتب (.*)")
 async def typewriter(typew):
     message = typew.pattern_match.group(1)
     sleep_time = 0.2
@@ -109,7 +109,7 @@ async def typewriter(typew):
         await asyncio.sleep(sleep_time)
 
 
-@zedub.zed_cmd(pattern="كرر (\d*) (.*)")
+@zq_lo.rep_cmd(pattern="كرر (\d*) (.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -121,7 +121,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(pattern=f"ميمي")
+@zq_lo.rep_cmd(pattern=f"ميمي")
 async def meme(event):
     memeVar = event.text
     sleepValue = 0.5
@@ -187,7 +187,7 @@ async def meme(event):
     await event.edit(memeVar)
 
 
-@zedub.zed_cmd(pattern=f"جف")
+@zq_lo.rep_cmd(pattern=f"جف")
 async def give(event):
     if event.fwd_from:
         return
