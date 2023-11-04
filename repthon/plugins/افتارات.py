@@ -422,3 +422,24 @@ async def _(event):
         await zzevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
 
 
+@zq_lo.rep_cmd(pattern="كرة$")
+async def _(event):
+    repevent = await edit_or_reply(event, "**╮ - جـارِ تحميـل الآفتـار ...𓅫╰**")
+    try:
+        repph = [
+            baqir
+            async for baqir in event.client.iter_messages(
+                "@xy_89y", filter=InputMessagesFilterPhotos
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(repph),
+            caption=f"**◞افتـارات كــرة قـدم تمبلـرࢪ ➧🎆🧚🏻‍♀◟**\n\n[➧𝙎𝙤𝙪𝙧𝙘𝙚 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](https://t.me/Repthon)",
+        )
+        await repevent.delete()
+    except Exception:
+        await repevent.edit("**╮•⎚ عـذراً .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
+
+
