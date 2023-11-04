@@ -158,7 +158,7 @@ def user_full_name(user):
 
 async def ban_user(chat_id, i, rights):
     try:
-        await zedub(functions.channels.EditBannedRequest(chat_id, i, rights))
+        await zq_lo(functions.channels.EditBannedRequest(chat_id, i, rights))
         return True, None
     except Exception as exc:
         return False, str(exc)
@@ -750,7 +750,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="الاعضاء(?:\s|$)([\s\S]*)",
     command=("الاعضاء", plugin_category),
     info={
@@ -798,7 +798,7 @@ async def get_users(show):
     await edit_or_reply(zedevent, mentions)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المعلومات(?:\s|$)([\s\S]*)",
     command=("المعلومات", plugin_category),
     info={
@@ -1081,7 +1081,7 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     return caption
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="اكسباير ?([\s\S]*)",
     command=("اكسباير", plugin_category),
     info={
@@ -1235,7 +1235,7 @@ async def _(event):  # sourcery no-metrics
     )
 
 
-@zedub.zed_cmd(pattern="رفع الحظر ?(.*)")
+@zq_lo.rep_cmd(pattern="رفع الحظر ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -1262,12 +1262,12 @@ async def _(event):
         await et.edit("⪼ {} **↫** {} **رفع الحظر عنهم**".format(event.chat_id, p))
 
 
-@zedub.zed_cmd(pattern=r"غادر(.*)")
+@zq_lo.rep_cmd(pattern=r"غادر(.*)")
 async def kickme(leave):
     await leave.edit("**❈╎جـاري مـغادرة المجـموعة مـع السـلامة  🚶‍♂️  ..**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
-@zedub.zed_cmd(pattern=r"مسح المحظورين(.*)")
+@zq_lo.rep_cmd(pattern=r"مسح المحظورين(.*)")
 async def _(event):
     zedevent = await edit_or_reply(event, "**❈╎ إلغاء حظر جميع الحسابات المحظورة في هذه المجموعة 🆘**")
     succ = 0
@@ -1298,7 +1298,7 @@ async def _(event):
                 pass
     await zedevent.edit(f"**❈╎تـم مسـح المحـظورين مـن أصـل 🆘 :**{succ}/{total} \n اسـم المجـموعـة 📄 : {chat.title}")
 
-@zedub.zed_cmd(pattern=r"المحذوفين ?([\s\S]*)")
+@zq_lo.rep_cmd(pattern=r"المحذوفين ?([\s\S]*)")
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
@@ -1346,7 +1346,7 @@ async def rm_deletedacc(show):
             \n*❈╎المحادثـة ⌂** {show.chat.title}(`{show.chat_id}`)",
         )
 
-@zedub.zed_cmd(pattern="احصائياتي$")
+@zq_lo.rep_cmd(pattern="احصائياتي$")
 async def count(event):
     u = 0
     g = 0
@@ -1385,7 +1385,7 @@ async def count(event):
     await event.edit(result)
 
 
-@zedub.zed_cmd(pattern="الرابط ?(.*)")
+@zq_lo.rep_cmd(pattern="الرابط ?(.*)")
 async def zed(event):
     zedevent = await edit_or_reply(event, "**⇜ جـاري جلـب رابـط المجموعـه ⇜**")
     chat = await event.get_chat()
@@ -1397,7 +1397,7 @@ async def zed(event):
         return await edit_delete(zedevent, "**❈╎عـذراً عـزيـزي .. انت لسـت مشرفـاً هنـا 🙇🏻**", 5)
     await zedevent.edit(f"**❈╎رابـط الـمجموعـه ⎋:**\n\n⎌ [{chat.title}]({ZL.link}) ⎌")   
     
-@zedub.zed_cmd(pattern="رسائلي ?(.*)")
+@zq_lo.rep_cmd(pattern="رسائلي ?(.*)")
 async def zed(event):
     k = await event.get_reply_message()
     if k:
@@ -1418,7 +1418,7 @@ async def zed(event):
         f"**❈╎لديـك هنـا ⇽**  `{a.total}`  **رسـالـه 📩**"
     )   
 
-@zedub.zed_cmd(pattern="رسائله ?(.*)")
+@zq_lo.rep_cmd(pattern="رسائله ?(.*)")
 async def zed(event):
     k = await event.get_reply_message()
     if k:
