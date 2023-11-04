@@ -1,4 +1,4 @@
-# animation code for zed edit by @zlzzl77
+# animation code for rep edit by @E_7_V
 
 import asyncio
 from collections import deque
@@ -7,8 +7,8 @@ import random
 from urllib.parse import quote_plus
 from collections import deque
 from telethon.tl.types import ChannelParticipantsAdmins
-from zthon.core.logger import logging
-from zthon import zedub
+from repthon.core.logger import logging
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from . import ALIVE_NAME, deEmojify, mention
@@ -18,7 +18,7 @@ plugin_category = "الترفيه"
 
 
 
-@zedub.zed_cmd(pattern="جو$")
+@zq_lo.rep_cmd(pattern="جو$")
 async def _(event):
     if event.fwd_from:
         return
@@ -37,7 +37,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(pattern="كليم$")
+@zq_lo.rep_cmd(pattern="كليم$")
 async def _(event):
     if event.fwd_from:
         return
@@ -56,7 +56,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(pattern="نار$")
+@zq_lo.rep_cmd(pattern="نار$")
 async def _(event):
     if event.fwd_from:
         return
@@ -75,7 +75,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(pattern="انتحر$")
+@zq_lo.rep_cmd(pattern="انتحر$")
 async def _(event):
     if event.fwd_from:
         return
@@ -94,7 +94,7 @@ async def _(event):
     await event.delete()
 
 
-@zedub.zed_cmd(pattern="مذاكره$")
+@zq_lo.rep_cmd(pattern="مذاكره$")
 async def _(event):
     if event.fwd_from:
         return
@@ -113,8 +113,8 @@ async def _(event):
     await event.delete()
 
 
-# edit by: @zzzzl1l
-@zedub.zed_cmd(pattern=r"القمر$")
+# edit by: @E_7_V
+@zq_lo.rep_cmd(pattern=r"القمر$")
 async def test(event):
     if event.fwd_from:
         return
@@ -124,7 +124,7 @@ async def test(event):
     )
 
 
-@zedub.zed_cmd(pattern=r"مدينه$")
+@zq_lo.rep_cmd(pattern=r"مدينه$")
 async def test(event):
     if event.fwd_from:
         return
@@ -158,6 +158,6 @@ Fun8_cmd = (
 )
 
 # Copyright (C) 2022 Zedthon . All Rights Reserved
-@zedub.zed_cmd(pattern="تسليه8")
+@zq_lo.rep_cmd(pattern="تسليه8")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, Fun8_cmd)
