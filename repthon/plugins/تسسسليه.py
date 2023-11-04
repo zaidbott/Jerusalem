@@ -1,4 +1,5 @@
 from repthon import zq_lo
+from repthon.utils import admin_cmd
 import pkg_resources
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _reputils, parse_pre, yaml_format
