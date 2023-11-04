@@ -11,8 +11,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from zthon import zedub
-from zthon.core.logger import logging
+from repthon import zq_lo
+from repthon.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_or_reply, edit_delete
@@ -200,7 +200,7 @@ async def fetch_info(replied_user, event):
        return sts_animal9, caption
 
 
-@zedub.zed_cmd(pattern="حيوان(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="حيوان(?: |$)(.*)")
 async def who(event):
     zed = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
