@@ -21,7 +21,7 @@ plugin_category = "البحث"
 GIT_TEMP_DIR = "./temp/"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="repo$",
     command=("repo", plugin_category),
     info={
@@ -106,7 +106,7 @@ async def _(event):
             await catevent.delete()
 
 
-@zq_lo.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="commit$",
     command=("commit", plugin_category),
     info={
