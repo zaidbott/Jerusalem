@@ -1,21 +1,3 @@
-import requests
-import asyncio
-import os
-import sys
-import urllib.request
-from datetime import timedelta
-from telethon import events
-from telethon.errors import FloodWaitError
-from telethon.tl.functions.messages import GetHistoryRequest, ImportChatInviteRequest
-from telethon.tl.functions.channels import JoinChannelRequest
-from telethon.tl.functions.messages import ImportChatInviteRequest
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.contacts import UnblockRequest as unblock
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-
-from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import reply_id
 import asyncio
 import base64
 import io
@@ -52,73 +34,21 @@ SONG_SENDING_STRING = "<b>╮ جـارِ تحميـل الاغنيـٓه... 🎧
 #                                                             𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 # =========================================================== #
 
-@zq_lo.rep_cmd(pattern="بحث(?: |$)(.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    d_link = event.pattern_match.group(1)
-    if ".com" not in d_link:
-        await event.edit("**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
-    else:
-        await event.edit("**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
-    chat = "@Abm_MusicDownloader_Bot"
-    async with borg.conversation(chat) as conv: # code by t.me/zzzzl1l
-        try:
-            await conv.send_message("/start")
-            await conv.get_response()
-            await conv.send_message(d_link)
-            await conv.get_response()
-            await asyncio.sleep(5)
-            zelzal = await conv.get_response()
-            if "⏳" not in zelzal.text:
-                await zelzal.click(0)
-                await asyncio.sleep(5)
-                zelzal = await conv.get_response()
-                await event.delete()
-                await borg.send_file(
-                    event.chat_id,
-                    zelzal,
-                    caption=f"**❈╎البحـث :** `{d_link}`",
-                )
-
-            else:
-                await event.edit("**- لـم استطـع العثـور على نتائـج ؟!**\n**- حـاول مجـدداً في وقت لاحـق ...**")
-        except YouBlockedUserError:
-            await conv.send_message("/start")
-            await conv.get_response()
-            await conv.send_message(d_link)
-            await conv.get_response()
-            await asyncio.sleep(5)
-            zelzal = await conv.get_response()
-            zelzal = await conv.get_response()
-            if "⏳" not in zelzal.text:
-                await zelzal.click(0)
-                await asyncio.sleep(5)
-                zelzal = await conv.get_response()
-                await event.delete()
-                await borg.send_file(
-                    event.chat_id,
-                    zelzal,
-                    caption=f"**❈╎البحـث :** `{d_link}`",
-                )
-
-            else:
-                await event.edit("**- لـم استطـع العثـور على نتائـج ؟!**\n**- حـاول مجـدداً في وقت لاحـق ...**")
-
 @zq_lo.rep_cmd(
-    pattern="اغنيه?(?:\s|$)([\s\S]*)",
-    command=("اغنيه", plugin_category),
+    pattern="بحث(320)?(?:\s|$)([\s\S]*)",
+    command=("بحث", plugin_category),
     info={
-        "header": "لـ تحميـل الاغـانـي مـن يـوتيـوب",
-        "امـر مضـاف": {
-            "320": "لـ البحـث عـن الاغـانـي وتحميـلهـا بـدقـه عـاليـه 320k",
+        "header": "To get songs from youtube.",
+        "description": "Basically this command searches youtube and send the first video as audio file.",
+        "flags": {
+            "320": "if you use song320 then you get 320k quality else 128k quality",
         },
-        "الاسـتخـدام": "{tr}بحث + اسـم الاغنيـه",
-        "مثــال": "{tr}بحث حسين الجسمي احبك",
+        "usage": "{tr}song <song name>",
+        "examples": "{tr}song memories song",
     },
 )
-async def song(event):
-    "لـ تحميـل الاغـانـي مـن يـوتيـوب"
+async def _(event):
+    "To search songs"
     reply_to_id = await reply_id(event)
     reply = await event.get_reply_message()
     if event.pattern_match.group(2):
@@ -126,31 +56,63 @@ async def song(event):
     elif reply and reply.message:
         query = reply.message
     else:
-        return await edit_or_reply(event, "**⎉╎قم باضافـة الاغنيـه للامـر .. بحث + اسـم الاغنيـه**")
-    zed = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    zedevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
+        return await edit_or_reply(event, "⌔∮ يرجى الرد على ما تريد البحث عنه")
+    cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+    catevent = await edit_or_reply(event, "⌔∮ جاري البحث عن المطلوب انتظر")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await zedevent.edit(
-            f"**⎉╎عـذراً .. لـم استطـع ايجـاد** {query}"
+        return await catevent.edit(
+            f"⌔∮ عذرا لم استطع ايجاد مقاطع ذات صلة بـ `{query}`"
         )
     cmd = event.pattern_match.group(1)
     q = "320k" if cmd == "320" else "128k"
-    song_file, zedthumb, title = await song_download(video_link, zedevent, quality=q)
-    await event.client.send_file(
-        event.chat_id,
-        song_file,
-        force_document=False,
-        caption=f"**⎉╎البحث :** `{title}`",
-        thumb=zedthumb,
-        supports_streaming=True,
-        reply_to=reply_to_id,
-    )
-    await zedevent.delete()
-    for files in (zedthumb, song_file):
-        if files and os.path.exists(files):
-            os.remove(files)
-
+    song_cmd = song_dl.format(QUALITY=q, video_link=video_link)
+    name_cmd = name_dl.format(video_link=video_link)
+    try:
+        cat = Get(cat)
+        await event.client(cat)
+    except BaseException:
+        pass
+    try:
+        stderr = (await _reputils.runcmd(song_cmd))[1]
+        # if stderr:
+        # await catevent.edit(f"**خطأ :** `{stderr}`")
+        catname, stderr = (await _reputils.runcmd(name_cmd))[:2]
+        if stderr:
+            return await catevent.edit(f"**خطأ :** `{stderr}`")
+        catname = os.path.splitext(catname)[0]
+        song_file = Path(f"{catname}.mp3")
+        catname = urllib.parse.unquote(catname)
+    except:
+        pass
+    if not os.path.exists(song_file):
+        return await catevent.edit(
+            f"⌔∮ عذرا لم استطع ايجاد مقاطع ذات صله بـ `{query}`"
+        )
+    await catevent.edit("**⌔∮ جارِ الارسال انتظر قليلاً**")
+    catthumb = Path(f"{catname}.jpg")
+    if not os.path.exists(catthumb):
+        catthumb = Path(f"{catname}.webp")
+    elif not os.path.exists(catthumb):
+        catthumb = None
+    title = catname.replace("./temp/", "").replace("_", "|")
+    try:
+        await event.client.send_file(
+            event.chat_id,
+            song_file,
+            force_document=False,
+            caption=f"**العنوان:** `{title}`",
+            thumb=catthumb,
+            supports_streaming=True,
+            reply_to=reply_to_id,
+        )
+        await catevent.delete()
+        for files in (catthumb, song_file):
+            if files and os.path.exists(files):
+                os.remove(files)
+    except ChatSendMediaForbiddenError as err:
+        await catevent.edit("لا يمكن ارسال المقطع الصوتي هنا")
+        LOGS.error(str(err))
 
 @zq_lo.rep_cmd(
     pattern="فيديو(?:\s|$)([\s\S]*)",
