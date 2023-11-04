@@ -329,7 +329,7 @@ async def cancel_t8ed(event):
 
 Ya_Hussein = False
 active_repthon = []
-@zq_lp.on(events.NewMessage(incoming=True))
+@zq_lo.on(events.NewMessage(incoming=True))
 async def Hussein(event):
     if not Ya_Hussein:
         return
