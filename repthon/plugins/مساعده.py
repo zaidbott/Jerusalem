@@ -1,6 +1,6 @@
 from telethon import functions
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core import CMD_INFO, GRP_INFO, PLG_INFO
@@ -131,7 +131,7 @@ async def cmdlist():
     return outstr
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="مساعده ?(-c|-p|-t)? ?([\s\S]*)?",
     command=("مساعده", plugin_category),
     info={
@@ -151,7 +151,7 @@ async def cmdlist():
     },
 )
 async def _(event):
-    "To get guide for ZThon."
+    "To get guide for Repthon."
     flag = event.pattern_match.group(1)
     input_str = event.pattern_match.group(2)
     reply_to_id = await reply_id(event)
@@ -173,7 +173,7 @@ async def _(event):
     await edit_or_reply(event, outstr)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="مساعدة(?:\s|$)([\s\S]*)",
     command=("مساعدة", plugin_category),
     info={
@@ -204,7 +204,7 @@ async def _(event):
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="s ([\s\S]*)",
     command=("s", plugin_category),
     info={
@@ -224,7 +224,7 @@ async def _(event):
     await edit_or_reply(event, out)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="المركز$",
     command=("المركز", plugin_category),
     info={
