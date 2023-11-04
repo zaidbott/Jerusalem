@@ -88,7 +88,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
-@zedub.zed_cmd(pattern="رفع تاج(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع تاج(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -102,7 +102,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
  
-@zedub.zed_cmd(pattern="رفع بكلبي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع بكلبي(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -116,7 +116,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
-@zedub.zed_cmd(pattern="رفع بقلبي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع بقلبي(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -130,7 +130,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
-@zedub.zed_cmd(pattern="رفع قلبي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع قلبي(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -144,7 +144,7 @@ async def permalink(mention):
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
  
-@zedub.zed_cmd(pattern="رفع جريذي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع جريذي(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -163,7 +163,7 @@ async def permalink(mention):
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
 
-@zedub.zed_cmd(pattern="رفع فرخ(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع فرخ(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -591,7 +591,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه ورع القـروب .. بنجـاح😹🙇🏻.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع مزه(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع مزه(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -605,7 +605,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚺 ╎ المستخـدم ه ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـها مـزة الكروب .. بنجـاح 🥳💃.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع مطي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع مطي(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -619,7 +619,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه مطي سبورتي 🐴.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع حمار(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع حمار(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -633,7 +633,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه حمار جحا 😂🐴.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع خروف(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع خروف(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -647,7 +647,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه خـروف 🐑.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع حيوان(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع حيوان(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -663,7 +663,7 @@ async def permalink(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **🐑╎ تم رفعـه حيـوان .** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع بزون(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع بزون(?: |$)(.*)")
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -681,7 +681,7 @@ async def permalink(mention):
     await edit_or_reply(
         mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **🐈╎ تم رفعـه بـزون .** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} "
     )
-@zedub.zed_cmd(pattern="رفع زباله(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع زباله(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -695,7 +695,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه زباله معفنه 🗑.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع منشئ(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع منشئ(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -705,7 +705,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه منشئ الكروب 👷‍♂️.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع مدير(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع مدير(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -715,7 +715,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه مدير الكروب 🤵‍♂️.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع كواد(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع كواد(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -727,7 +727,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎  تم رفعـه كـواد .. بنجـاح 👀. ** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع مرتبط(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع مرتبط(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -741,7 +741,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تـم رفعـه مرتبـط .. بنجـاح 💍💞** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع مرتبطه(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع مرتبطه(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -755,7 +755,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚺 ╎ المستخـدم ه ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تـم رفعـهـا مرتبطـه .. بنجـاح 💍💞. .** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع حبيبي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع حبيبي(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -765,7 +765,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـه حبيبـج .. بنجـاح 💍🤵‍♂👰🏻‍♀.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع خطيبتي(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع خطيبتي(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -797,7 +797,7 @@ async def zed(mention):
     await edit_or_reply(mention, f"** ⣠⡶⠚⠛⠲⢄⡀\n⣼⠁      ⠀⠀⠀⠳⢤⣄\n⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇\n⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄\n⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄\n⠀⠀⠀⠘⣆       ⠀⠀⠀⠀⠀⠈⠓⢦⣀\n⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤\n⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧\n⠀⠀⠀⠀⠀⠀⠀    ⠓⠦⠀⠀⠀⠀**\n**🚹 ¦ تعال مصه عزيزي ** [{tag}](tg://user?id={user.id})")
 
     
-@zedub.zed_cmd(pattern="رفع صاك(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع صاك(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -807,7 +807,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎  تم رفعـه صاك 🤴 .** \n**🤵‍♂️ ╎ بواسطـه  : ** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع صاكه(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع صاكه(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -817,7 +817,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎  تم رفعـها صاكه 👸🏼.** \n**🤵‍♂️ ╎ بواسطـه  : ** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع حات(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع حات(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -827,7 +827,7 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚹 ╎ المستخـدم  ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎  تم رفعـه حـات الكـروب 🤴 .** \n**🤵‍♂️ ╎ بواسطـه  : ** {my_mention} ")
-@zedub.zed_cmd(pattern="رفع حاته(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="رفع حاته(?: |$)(.*)")
 async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
