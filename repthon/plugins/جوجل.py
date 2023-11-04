@@ -59,7 +59,7 @@ async def scam(results, lim):
     return imglinks
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="جو ([\s\S]*)",
     command=("جو", plugin_category),
     info={
@@ -142,7 +142,7 @@ async def gsearch(q_event):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="gis ([\s\S]*)",
     command=("gis", plugin_category),
     info={
@@ -155,7 +155,7 @@ async def _(event):
     "To search in google and send result in picture."
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="grs$",
     command=("grs", plugin_category),
     info={
@@ -228,7 +228,7 @@ async def _(event):
     await edit_or_reply(zedevent, OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="تحليل(?:\s|$)([\s\S]*)",
     command=("تحليل", plugin_category),
     info={
@@ -296,7 +296,7 @@ async def _(img):
         )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="جوجل(?:\s|$)([\s\S]*)",
     command=("جوجل", plugin_category),
     info={
