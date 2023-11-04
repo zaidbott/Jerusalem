@@ -24,15 +24,15 @@ repversion = "3.1.3"
 
 def close_connection(*_):
     print("تم اغلاق اتصال السورس.")
-    runasync(zedub.disconnect())
+    runasync(zq_lo.disconnect())
     sys.exit(143)
 
 
 signal.signal(signal.SIGTERM, close_connection)
 
 
-if Config.UPSTREAM_REPO == "Rep":
-    UPSTREAM_REPO_URL = "https://github.com/RepthonArabic/RepthonAr"
+if Config.UPSTREAM_REPO == "Repthon":
+    UPSTREAM_REPO_URL = "https://github.com/RepthonArabic/Repthon"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
