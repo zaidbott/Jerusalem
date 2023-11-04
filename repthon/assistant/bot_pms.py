@@ -71,7 +71,7 @@ async def check_bot_started_users(user, event):
 )
 async def bot_start(event):
     chat = await event.get_chat()
-    user = await zedub.get_me()
+    user = await zq_lo.get_me()
     if check_is_black_list(chat.id):
         return
     reply_to = await reply_id(event)
