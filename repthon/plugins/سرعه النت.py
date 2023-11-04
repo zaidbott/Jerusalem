@@ -6,7 +6,7 @@ from time import time
 
 import speedtest
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import reply_id
@@ -24,7 +24,7 @@ def convert_from_bytes(size):
     return f"{round(size, 2)} {units[n]}"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="سرعه النت(?:\s|$)([\s\S]*)",
     command=("سرعه النت", plugin_category),
     info={
