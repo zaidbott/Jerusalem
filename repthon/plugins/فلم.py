@@ -8,7 +8,7 @@ import os
 from justwatch import JustWatch, justwatchapi
 from pySmartDL import SmartDL
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -89,7 +89,7 @@ def get_provider(url):
     return url
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="فلم ([\s\S]*)",
     command=("فلم", plugin_category),
     info={
