@@ -1,6 +1,6 @@
-#𝙕𝙚𝙙𝙏𝙝𝙤𝙣 ®
-# Port to ZThon
-# modified by @ZedThon
+#𝙍𝙀𝙋𝙏𝙃𝙊𝙉 ®
+# Port to RepthonArabic
+# modified by @Repthon
 # Copyright (C) 2022.
 
 import asyncio
@@ -9,7 +9,7 @@ import os
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
@@ -18,7 +18,7 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "البحث"
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="ساوند(?:\s|$)([\s\S]*)",
     command=("ساوند", plugin_category),
     info={
@@ -58,7 +58,7 @@ async def _(event):
             await event.client.send_message(event.chat_id, response.message)
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="كلود ([\s\S]*)",
     command=("كلود", plugin_category),
     info={
