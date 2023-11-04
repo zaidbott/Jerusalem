@@ -1,14 +1,14 @@
-# animation3 for zed edit by: @zlzzl77
+# animation3 for rep edit by: @E_7_V
 
-# edit by: @ZedThon for zed
+# edit by: @Repthon for rep
 
 import asyncio
 import os
 import random
 from urllib.parse import quote_plus
 from collections import deque
-from zthon.core.logger import logging
-from zthon import zedub
+from repthon.core.logger import logging
+from repthon import zq_lo
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from . import ALIVE_NAME, deEmojify, mention
@@ -17,7 +17,7 @@ from . import ALIVE_NAME, deEmojify, mention
 plugin_category = "الترفيه"
 
 
-@zedub.zed_cmd(pattern=r"نجمه$")
+@zq_lo.rep_cmd(pattern=r"نجمه$")
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@zedub.zed_cmd(pattern=r"مكعبات$")
+@zq_lo.rep_cmd(pattern=r"مكعبات$")
 async def _(event):
     if event.fwd_from:
         return
@@ -41,7 +41,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@zedub.zed_cmd(pattern=r"مطر$")
+@zq_lo.rep_cmd(pattern=r"مطر$")
 async def _(event):
     if event.fwd_from:
         return
@@ -53,7 +53,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@zedub.zed_cmd(pattern=r"deploy$")
+@zq_lo.rep_cmd(pattern=r"deploy$")
 async def _(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@zedub.zed_cmd(pattern=r"تفريغ ?(.*)")
+@zq_lo.rep_cmd(pattern=r"تفريغ ?(.*)")
 async def _(message):
     if message.fwd_from:
         return
@@ -121,7 +121,7 @@ async def _(message):
                 return
 
 
-@zedub.zed_cmd(pattern=r"فليم$")
+@zq_lo.rep_cmd(pattern=r"فليم$")
 async def _(event):
     if event.fwd_from:
         return
@@ -146,7 +146,7 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@zedub.zed_cmd(pattern=r"احبك$")
+@zq_lo.rep_cmd(pattern=r"احبك$")
 async def _(event):
     if event.fwd_from:
         return
@@ -195,7 +195,7 @@ async def _(event):
         await event.edit(animation_chars[i % 35])
 
 
-@zedub.zed_cmd(pattern=r"طائره$")
+@zq_lo.rep_cmd(pattern=r"طائره$")
 async def _(event):
     if event.fwd_from:
         return
@@ -217,7 +217,7 @@ async def _(event):
     await asyncio.sleep(3)
 
 
-@zedub.zed_cmd(pattern=r"شرطه$")
+@zq_lo.rep_cmd(pattern=r"شرطه$")
 async def _(event):
     if event.fwd_from:
         return
@@ -243,7 +243,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@zedub.zed_cmd(pattern=r"jio$")
+@zq_lo.rep_cmd(pattern=r"jio$")
 async def _(event):
     if event.fwd_from:
         return
@@ -276,7 +276,7 @@ async def _(event):
         await event.edit(animation_chars[i % 19])
 
 
-@zedub.zed_cmd(pattern=r"النضام الشمسي$")
+@zq_lo.rep_cmd(pattern=r"النضام الشمسي$")
 async def _(event):
     if event.fwd_from:
         return
@@ -316,6 +316,6 @@ Fun3_cmd = (
 )
 
 # Copyright (C) 2022 Zedthon . All Rights Reserved
-@zedub.zed_cmd(pattern="تسليه3")
+@zq_lo.rep_cmd(pattern="تسليه3")
 async def cmd(zelzallll):
     await edit_or_reply(zelzallll, Fun3_cmd)
