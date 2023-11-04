@@ -3,7 +3,7 @@ import os
 
 import requests
 
-from zthon import zedub
+from repthon import zq_lo
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -45,7 +45,7 @@ def ReTrieveURL(input_url):
     )
 
 
-@zedub.zed_cmd(
+@zq_lo.rep_cmd(
     pattern="(تحلييل|تغيير)(?:\s|$)([\s\S]*)",
     command=("تغيير", plugin_category),
     info={
