@@ -1,7 +1,7 @@
 """
 ©Repthon™
 """
-#𝗥𝗲𝗽𝘁𝗵𝗼𝗻 ®
+#𝙍𝙀𝙋𝙏𝙃𝙊𝙉 ®
 #الملـف حقـوق وتعديـل بـاقـر ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 
 import asyncio
@@ -17,7 +17,7 @@ from telethon.errors import PhotoInvalidDimensionsError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
 
-from repthon import zq_lo
+from . import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -153,7 +153,7 @@ async def on_file_to_photo(event):
     await catt.delete()
 
 
-@zq_lo.rep_cmd(pattern="لمتحرك(?: |$)(.*)")
+@zq_lo.rep_cmd(pattern="متحركة(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
