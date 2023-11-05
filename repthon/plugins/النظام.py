@@ -110,7 +110,7 @@ async def sysdetails(sysd):
     "Shows system information using neofetch"
     zedevent = await edit_or_reply(sysd, "`Fetching system information.`")
     cmd = "git clone https://github.com/dylanaraps/neofetch.git"
-    await _zedutils.runcmd(cmd)
+    await _reputils.runcmd(cmd)
     neo = "neofetch/neofetch --off --color_blocks off --bold off --cpu_temp C \
                     --cpu_speed on --cpu_cores physical --kernel_shorthand off --stdout"
     a, b, c, d = await _reputils.runcmd(neo)
