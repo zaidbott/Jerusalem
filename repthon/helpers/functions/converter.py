@@ -59,7 +59,7 @@ class CatConverter:
             elif memetype == "Video Sticker":
                 await take_screen_shot(repmedia, "00.00", catfile)
             elif memetype == "Static Sticker":
-                im = Image.open(zedmedia)
+                im = Image.open(repmedia)
                 im.save(catfile)
         if repmedia and os.path.exists(repmedia):
             os.remove(repmedia)
@@ -102,7 +102,7 @@ class CatConverter:
             else await edit_or_reply(event, "__🎞Converting into Animated sticker..__")
         )
         catfile, repmedia = await self._media_check(reply, dirct, file, memetype)
-        media = await fileinfo(zedmedia)
+        media = await fileinfo(repmedia)
         h = media["height"]
         w = media["width"]
         w, h = (-1, 512) if h > w else (512, -1)
