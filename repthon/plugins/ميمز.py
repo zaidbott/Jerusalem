@@ -457,13 +457,13 @@ async def jepmeme(memejep):
   await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
   await memejep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="ولك حشاش$"))
-async def repmeme(memerep)
+async def repmeme(memerep):
  Rep = await reply_id(memerep)
  url = f"https://t.me/Repthon_meme/3"
  await memerep.client.send_file(memerep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
  await memerep.delete()
 @zq_lo.on(admin_cmd(outgoing=True, pattern="انت شرايود$"))
-async def repmeme(memerep)
+async def repmeme(memerep):
  Rep = await reply_id(memerep)
  url = f"https://t.me/Repthon_meme/16"
  await memerep.client.send_file(memerep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
