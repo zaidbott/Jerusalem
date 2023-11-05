@@ -1,5 +1,5 @@
 #Repthon ®
-#الملـف حقـوق وتعديـل زلـزال الهيبـه ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
+#الملـف حقـوق وتعديـل بـاقـر ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 
 import asyncio
 import base64
@@ -21,7 +21,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
 from telethon.utils import get_attributes
 
-from repthon import zq_lo
+from . import zq_lo
 
 from ..Config import Config
 from ..core.logger import logging
@@ -165,7 +165,7 @@ async def video_catfile(event):  # sourcery no-metrics
                     width = track.width
             if aspect_ratio != 1:
                 crop_by = width if (height > width) else height
-                await _zedutils.runcmd(
+                await _reputils.runcmd(
                     f'ffmpeg -i {catfile} -vf "crop={crop_by}:{crop_by}" {PATH}'
                 )
             else:
