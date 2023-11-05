@@ -92,7 +92,7 @@ async def zze(event):
             dontTag = await dontTag
             await bot.send_read_acknowledge(zdd.chat_id)
         except YouBlockedUserError:
-            await zedub(unblock("SpamBot"))
+            await zq_lo(unblock("SpamBot"))
             dontTag = zdd.wait_event(
                 events.NewMessage(incoming=True, from_users=178220800))
             await zdd.send_message("/start")
