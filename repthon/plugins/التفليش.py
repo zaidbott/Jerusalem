@@ -55,7 +55,7 @@ chr = Config.COMMAND_HAND_LER
 
 async def ban_user(chat_id, i, rights):
     try:
-        await zedub(functions.channels.EditBannedRequest(chat_id, i, rights))
+        await zq_lo(functions.channels.EditBannedRequest(chat_id, i, rights))
         return True, None
     except Exception as exc:
         return False, str(exc)
@@ -111,16 +111,16 @@ async def _(event):
 @zq_lo.on(events.NewMessage(pattern="منو عمك؟"))
 async def _(event):
     user = await event.get_sender()
-    rep_dev = (5502537272, 5502537272)
+    rep_dev = (5502537272, 1619973202)
     if user.id in rep_dev:
-        await event.reply(f"**- انت عمي و تاج راسي @E_7_V**")
+        await event.reply(f"**- انتم عمامي و تاج راسي @E_7_V, @i6_yx**")
 
-@zq_lo.on(events.NewMessage(pattern="/hmd"))
+@zq_lo.on(events.NewMessage(pattern="/baqir"))
 async def _(event):
     user = await event.get_sender()
-    rep_dev = (1260465030, 1260465030)
+    rep_dev = (1619973202, 1619973202)
     if user.id in rep_dev:
-        await event.reply(f"**- هـلا حـمد اي منصب**")        
+        await event.reply(f"**- هـلا بـاقـر اي منصب**")        
 
 
 @zq_lo.rep_cmd(
