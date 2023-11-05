@@ -250,7 +250,7 @@ async def video_catfile(event):  # sourcery no-metrics
             )
 
             if not args:
-                await _zedutils.unsavegif(event, sandy)
+                await _reputils.unsavegif(event, sandy)
             os.remove(PATH)
             if not flag:
                 os.remove(catthumb)
@@ -383,7 +383,7 @@ async def _(event):  # sourcery no-metrics
         force_document=False,
         reply_to=reply_to_id,
     )
-    await _zedutils.unsavegif(event, sandy)
+    await _reputils.unsavegif(event, sandy)
     await catevent.delete()
     for files in (catgif, catfile):
         if files and os.path.exists(files):
