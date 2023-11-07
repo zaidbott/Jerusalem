@@ -73,7 +73,7 @@ async def _(cat):
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
-        filename = "hi.webp"
+        filename = "repthon.webp"
         file_name = filename
         reply_message = await event.get_reply_message()
         to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
@@ -268,7 +268,7 @@ async def _(event):
         voice_note = False
         supports_streaming = False
         if input_str == "بصمه":
-            new_required_file_caption = "voice_" + str(round(time.time())) + ".opus"
+            new_required_file_caption = "voice_" + str(round(time.time())) + ".html"
             new_required_file_name = (
                 Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             )
