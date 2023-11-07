@@ -84,7 +84,7 @@ def remove_plugin(shortname):
         pass
     try:
         name = f"repthon.plugins.{shortname}"
-        for i in reversed(range(len(zedub._event_builders))):
+        for i in reversed(range(len(zq_lo._event_builders))):
             ev, cb = zq_lo._event_builders[i]
             if cb.__module__ == name:
                 del zq_lo._event_builders[i]
