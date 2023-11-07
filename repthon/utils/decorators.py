@@ -274,8 +274,8 @@ def command(**args):
 
     def decorator(func):
         if allow_edited_updates:
-            zedub.add_event_handler(func, MessageEdited(**args))
-        zedub.add_event_handler(func, NewMessage(**args))
+            zq_lo.add_event_handler(func, MessageEdited(**args))
+        zq_lo.add_event_handler(func, NewMessage(**args))
         try:
             LOAD_PLUG[file_test].append(func)
         except BaseException:
