@@ -29,7 +29,7 @@ plugin_category = "الادوات"
 
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = os.path.join(
-    Config.TMP_DOWNLOAD_DIRECTORY, "zedzthon.media.ffmpeg"
+    Config.TMP_DOWNLOAD_DIRECTORY, "reprepthon.media.ffmpeg"
 )
 FINISHED_PROGRESS_STR = Config.FINISHED_PROGRESS_STR
 UN_FINISHED_PROGRESS_STR = Config.UNFINISHED_PROGRESS_STR
@@ -200,7 +200,7 @@ async def ffmpeg_compress(event):
         os.mkdir("./temp")
     cstart = datetime.now()
     compress = await convert_video(
-        dlpath, "./temp", crf, old["duration"], zedub, zedevent
+        dlpath, "./temp", crf, old["duration"], zq_lo, zedevent
     )
     cend = datetime.now()
     cms = (cend - cstart).seconds
