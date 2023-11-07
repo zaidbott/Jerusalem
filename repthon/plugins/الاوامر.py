@@ -340,7 +340,7 @@ async def zed_handler(event):
             result = builder.article(title="zq_lo",text=Channels,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="ريبثون")
-async def repozedub(event):
+async def repozq_lo(event):
     if event.fwd_from:
         return
     TG_BOT = Config.TG_BOT_USERNAME
@@ -369,7 +369,7 @@ async def zed_handler(event):
             result = builder.article(title="zq_lo",text=Zelzal,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="السورس")
-async def repozedub(event):
+async def repozq_lo(event):
     if event.fwd_from:
         return
     TG_BOT = Config.TG_BOT_USERNAME
@@ -398,7 +398,7 @@ async def zed_handler(event):
             result = builder.article(title="zq_lo",text=Zelzal,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
 @zq_lo.rep_cmd(pattern="سورس")
-async def repozedub(event):
+async def repozq_lo(event):
     if event.fwd_from:
         return
     TG_BOT = Config.TG_BOT_USERNAME
