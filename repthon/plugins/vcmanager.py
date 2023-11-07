@@ -137,7 +137,7 @@ async def info_vc(event):
     if not gc_call:
         return
     await edit_or_reply(event, "**- جـارِ جلب معلومـات المحـادثه الصـوتيـه ...**")
-    call_details = await zedub(
+    call_details = await zq_lo(
         functions.phone.GetGroupCallRequest(call=gc_call, limit=1)
     )
     grp_call = "**معلومـات المحـادثـه الصـوتيـه**\n\n"
