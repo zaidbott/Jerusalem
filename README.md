@@ -62,7 +62,7 @@
 
 - `git clone https://github.com/RepthonArabic/Repthon` 
 
-- `cd RepthonAr`
+- `cd Repthon`
 
 - `sudo apt install virtualenv`
 
