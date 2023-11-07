@@ -298,7 +298,7 @@ async def banavot(event):
     except UserNotParticipantError:
         pass
     spam_chats.append(chat_id)
-    async for usr in zedub.iter_participants(chat_id):
+    async for usr in zq_lo.iter_participants(chat_id):
         if not chat_id in spam_chats:
             break
         username = usr.username
