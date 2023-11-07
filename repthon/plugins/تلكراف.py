@@ -159,7 +159,7 @@ async def ctg(event):
             await edit_or_reply(
                 zedevent, "**Error:** Trying to unblock & retry, wait a sec..."
             )
-            await zedub(unblock("chotamreaderbot"))
+            await zq_lo(unblock("chotamreaderbot"))
             msg_flag = await conv.send_message(urls[0])
         response = await conv.get_response()
         await event.client.send_read_acknowledge(conv.chat_id)
