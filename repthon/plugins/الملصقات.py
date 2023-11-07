@@ -91,7 +91,7 @@ async def delpack(zedevent, conv, args, packname):
     try:
         await conv.send_message("/delpack")
     except YouBlockedUserError:
-        await zedub(unblock("stickers"))
+        await zq_lo(unblock("stickers"))
         await conv.send_message("/delpack")
     await conv.get_response()
     await args.client.send_read_acknowledge(conv.chat_id)
