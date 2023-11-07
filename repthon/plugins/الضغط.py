@@ -159,7 +159,7 @@ async def ffmpeg_compress(event):
     start = datetime.now()
     if not crf:
         crf = "23"
-    dlpath = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "zed.media.ffmpeg")
+    dlpath = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "rep.media.ffmpeg")
     if not reply_message or not reply_message.media:
         if os.path.exists(FF_MPEG_DOWN_LOAD_MEDIA_PATH):
             media = (await fileinfo(FF_MPEG_DOWN_LOAD_MEDIA_PATH))["type"]
