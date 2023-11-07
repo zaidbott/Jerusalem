@@ -60,7 +60,7 @@
 * سيكون شكل قاعده البيانات كـالتالي و تبدل كلمة pass مع الباسوورد الذي وضعته وكلمة Repthon مع اسم القاعدة التي وضعتها 
 - ` postgresql://postgres:pass@localhost:5432/Repthon`
 
-- `git clone https://github.com/RepthonArabic/RepthonAr` 
+- `git clone https://github.com/RepthonArabic/Repthon` 
 
 - `cd RepthonAr`
 
@@ -74,7 +74,7 @@
 
 - `sudo apt install screen`
 
-- `screen -S RepthonAr`
+- `screen -S Repthon`
 
 - `virtualenv venv`
 
@@ -97,7 +97,7 @@
     Copyright (C) 2022 <a href="https://github.com/RepthonArabic">Repthon</a>
 </h4>
 
-Project [𝐑𝐞𝐩𝐭𝐡𝐨𝐧](https://github.com/RepthonArabic/RepthonAr) is free software: you can redistribute it and/or modify
+Project [𝐑𝐞𝐩𝐭𝐡𝐨𝐧](https://github.com/RepthonArabic/Repthon) is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
