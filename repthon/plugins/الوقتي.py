@@ -1,9 +1,9 @@
 # @Repthon - Roger
 # Copyright (C) 2022 RepthonArabic. All Rights Reserved
-#< https://t.me/ZThon >
-# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
+#< https://t.me/Repthon >
+# This file is a part of < https://github.com/RepthonArabic/Repthon/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
+# <https://www.github.com/RepthonArabic/Repthon/blob/master/LICENSE/>.
 #كـود الصورة الوقتيه كتـابتي وتعديلـي من زمان ومتعوب عليها 
 #+ كـود زخـرفة الصورة الوقتيه
 #+ دددي لا ابلـع حســابك بـانـد بطـعـم الليمــون 🍋😹🤘
@@ -59,7 +59,7 @@ async def digitalpicloop():
             downloader.start(blocking=False)
             while not downloader.isFinished():
                 pass
-        repfont = gvarstatus("DEFAULT_PIC") or "zthon/helpers/styles/Papernotes.ttf" #Code by T.me/zzzzl1l
+        repfont = gvarstatus("DEFAULT_PIC") or "repthon/helpers/styles/Papernotes.ttf" #Code by T.me/zzzzl1l
         shutil.copy(digitalpic_path, autophoto_path)
         Image.open(autophoto_path)
         current_time = datetime.now().strftime("%I:%M")
