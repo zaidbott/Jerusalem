@@ -1137,9 +1137,9 @@ async def custom_zed(event):
     elif input_str == "الهمسه":
         variable = gvarstatus("hmsa_id")
         if gvarstatus("hmsa_id") is None:
-            await zed.edit("**⎉╎المتغيـر غيـر موجـود ❌**\n\n**⎉╎قنـاة السـورس : @ZThon**")
+            await zed.edit("**⎉╎المتغيـر غيـر موجـود ❌**\n\n**⎉╎قنـاة السـورس : @Repthon**")
         else:
-            await zed.edit("**⎉╎المتغيـر {} موجـود ☑️**\n**⎉╎قيمـة المتغيـر : ↶**\n `{}` \n\n**⎉╎قنـاة السـورس : @ZThon**".format(input_str, variable))
+            await zed.edit("**⎉╎المتغيـر {} موجـود ☑️**\n**⎉╎قيمـة المتغيـر : ↶**\n `{}` \n\n**⎉╎قنـاة السـورس : @Repthon**".format(input_str, variable))
 
     else:
         if input_str:
