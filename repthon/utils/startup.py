@@ -32,7 +32,7 @@ from ..sql_helper.globals import addgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
-ENV = bool(os.environ.get("ENV", False))
+ENV = bool(os.environ.get("ENV", "ANYTHING"))
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
 cmdhr = Config.COMMAND_HAND_LER
 
@@ -51,7 +51,7 @@ elif os.path.exists("config.py"):
     VPS_NOLOAD = ["heroku"]
 
 bot = zq_lo
-DEV = 1895219306
+DEV = 5502537272
 
 
 async def setup_bot():
