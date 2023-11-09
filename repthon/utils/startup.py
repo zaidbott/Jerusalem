@@ -35,7 +35,7 @@ ENV = bool(os.environ.get("ENV", False))
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
 cmdhr = Config.COMMAND_HAND_LER
 
-if ENV:
+if ENV: ANYTHING
     VPS_NOLOAD = ["vps"]
 elif os.path.exists("config.py"):
     VPS_NOLOAD = ["heroku"]
