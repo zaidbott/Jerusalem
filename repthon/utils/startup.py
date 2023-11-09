@@ -35,13 +35,22 @@ ENV = bool(os.environ.get("ENV", False))
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
 cmdhr = Config.COMMAND_HAND_LER
 
-if ENV: ANYTHING
+heroku_api = "https://api.heroku.com"
+if Config.HEROKU_APP_NAME is not None and Config.HEROKU_API_KEY is not None:
+    Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+    app = Heroku.app(Config.HEROKU_APP_NAME)
+    heroku_var = app.config()
+else:
+    app = None
+
+
+if ENV:
     VPS_NOLOAD = ["vps"]
 elif os.path.exists("config.py"):
     VPS_NOLOAD = ["heroku"]
 
 bot = zq_lo
-DEV = 5502537272
+DEV = 1895219306
 
 
 async def setup_bot():
