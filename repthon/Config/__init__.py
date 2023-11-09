@@ -1,1 +1,1 @@
-from .zq_lo_config import Config
+from Config.zq_lo_config import Config
