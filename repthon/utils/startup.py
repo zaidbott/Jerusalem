@@ -9,6 +9,7 @@ import asyncio
 import glob
 import os
 import sys
+import heroku3
 import urllib.request
 from datetime import timedelta
 from pathlib import Path
