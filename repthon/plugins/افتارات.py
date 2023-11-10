@@ -436,7 +436,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(repph),
-            caption=f"**◞افتـارات كــرة قـدم تمبلـرࢪ ➧🎆🧚🏻‍♀◟**\n\n[➧𝙎𝙤𝙪𝙧𝙘𝙚 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](https://t.me/Repthon)",
+            caption=f"**◞افتـارات كــرة قـدم ➧🎆⚽◟**\n\n[➧𝙎𝙤𝙪𝙧𝙘𝙚 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](https://t.me/Repthon)",
         )
         await repevent.delete()
     except Exception:
