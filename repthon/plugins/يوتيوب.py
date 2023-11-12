@@ -4,6 +4,7 @@ import io
 import os
 import re
 import pathlib
+import base64
 from time import time
 import requests
 from datetime import datetime
