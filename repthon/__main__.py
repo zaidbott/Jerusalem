@@ -29,18 +29,25 @@ except Exception as e:
     LOGS.error(f"{e}")
     sys.exit()
 
+if not Config.ALIVE_NAME:
+    try: #Code by T.me/E_7_V
+        LOGS.info("⌭ بـدء إضافة الاسـم التلقـائـي ⌭")
+        zq_lo.loop.run_until_complete(autoname())
+        LOGS.info("✓ تـم إضافة فار الاسـم .. بـنجـاح ✓")
+    except Exception as e:
+        LOGS.error(f"- {e}")
+
+try: #Code by T.me/E_7_V
+    LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
+    zq_lo.loop.run_until_complete(autovars())
+    LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
+except Exception as e:
+    LOGS.error(f"- {e}")
 
 try:
     LOGS.info("⌭ جـار تفعيـل وضـع الانـلاين ⌭")
     zq_lo.loop.run_until_complete(mybot())
     LOGS.info("✓ تـم تفعيـل الانـلاين .. بـنجـاح ✓")
-except Exception as e:
-    LOGS.error(f"- {e}")
-
-try:
-    LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
-    zq_lo.loop.create_task(saves())
-    LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
 
