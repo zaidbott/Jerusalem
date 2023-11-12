@@ -791,7 +791,7 @@ async def yt_search(event):
         return await edit_delete(video_q, str(e), time=10, parse_mode=_format.parse_pre)
     reply_text = f"**⎉╎اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**⎉╎النتائج:**\n{full_response}"
     await edit_or_reply(video_q, reply_text)
-@zq_lo.rep_cmd(pattern="ستوري(?: |$)(.*)"))
+@zq_lo.on(admin_cmd(pattern="ستوري(?: |$)(.*)"))
 async def repthon(baqir):
     if baqir.fwd_from:
         return
