@@ -4,7 +4,7 @@ from repthon import BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 from .Config import Config
 from .core.logger import logging
 from .core.session import zq_lo
-from .utils import mybot
+from .utils import mybot, autoname, autovars
 from .utils import (
     add_bot_to_logger_group,
     load_plugins,
