@@ -46,7 +46,6 @@ from . import BOTLOG, BOTLOG_CHATID, zq_lo
 from repthon.utils import admin_cmd
 
 
-bot = zq_lo
 BASE_YT_URL = "https://www.youtube.com/watch?v="
 extractor = URLExtract()
 LOGS = logging.getLogger(__name__)
@@ -792,7 +791,7 @@ async def yt_search(event):
         return await edit_delete(video_q, str(e), time=10, parse_mode=_format.parse_pre)
     reply_text = f"**⎉╎اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**⎉╎النتائج:**\n{full_response}"
     await edit_or_reply(video_q, reply_text)
-
+bot = zq_lo
 @zq_lo.on(admin_cmd(pattern="ستوري(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -819,4 +818,4 @@ async def _(event):
         except BaseException:
             pass
         await bot.send_file(event.chat_id, video, caption="**⎉╎ BY : @Repthon 📹**",parse_mode="html")
-        await event.delete()    
+        await event.delete()
