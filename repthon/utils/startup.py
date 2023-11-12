@@ -32,7 +32,7 @@ from ..sql_helper.globals import addgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
-ENV = bool(os.environ.get("ENV", "ANYTHING"))
+ENV = bool(os.environ.get("ENV", False))
 LOGS = logging.getLogger("𝐑𝐞𝐩𝐭𝐡𝐨𝐧")
 cmdhr = Config.COMMAND_HAND_LER
 
@@ -53,6 +53,28 @@ elif os.path.exists("config.py"):
 bot = zq_lo
 DEV = 5502537272
 
+async def autovars(): #Code by T.me/E_7_V
+    if "ENV" in heroku_var:
+        return
+    LOGS.info("جـارِ اضافـة بقيـة الفـارات .. تلقائيـاً")
+    rrenv = "ANYTHING"
+    rrcom = "."
+    rrrtz = "Asia/Baghdad"
+    heroku_var["ENV"] = rrenv
+    heroku_var["COMMAND_HAND_LER"] = rrcom
+    heroku_var["TZ"] = rrrtz
+    LOGS.info("تم اضافـة بقيـة الفـارات .. بنجـاح")
+
+async def autoname(): #Code by T.me/E_7_V
+    if Config.ALIVE_NAME:
+        return
+    await bot.start()
+    await asyncio.sleep(15)
+    LOGS.info("جـارِ اضافة فـار الاسـم التلقـائـي .. انتظـر قليـلاً")
+    baqir = await bot.get_me()
+    rrname = f"{baqir.first_name}"
+    LOGS.info(f"تم اضافـة اسـم المستخـدم {rrname} .. بنجـاح")
+    heroku_var["ALIVE_NAME"] = rrname
 
 async def setup_bot():
     """
