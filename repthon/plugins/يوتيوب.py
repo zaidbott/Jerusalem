@@ -44,6 +44,7 @@ from . import BOTLOG, BOTLOG_CHATID, zq_lo
 from repthon.utils import admin_cmd
 
 
+bot = zq_lo
 BASE_YT_URL = "https://www.youtube.com/watch?v="
 extractor = URLExtract()
 LOGS = logging.getLogger(__name__)
@@ -804,10 +805,10 @@ async def _(event):
         try:
             msg = await conv.send_message(j_link)
             video = await conv.get_response()
-            """**⎉╎تـم تـحمـيـل الـسـتـوري بـنجـاح @Repthon***"""
+            """ **⎉╎تـم تـحمـيـل الـسـتـوري بـنجـاح @Repthon** """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await event.edit("⎉╎ الغـي حـظر هـذا البـوت و حـاول مجـددا @msaver_bot")
+            await event.edit("**⎉╎ الغـي حـظر هـذا البـوت و حـاول مجـددا @msaver_bot**")
             return
         repthon = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
         repthon = Get(repthon)
