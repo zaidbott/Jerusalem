@@ -53,7 +53,7 @@ async def baqir_tiktok(event):
             await borg.send_file(
                 event.chat_id,
                 repthon,
-                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                caption=f"<b>**⎉╎تم تحميل الفيديـو .. بنجاح 🎬**</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError: #Code by T.me/E_7_V
@@ -66,9 +66,10 @@ async def baqir_tiktok(event):
             await borg.send_file(
                 event.chat_id,
                 repthon,
-                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                caption=f"<b>**⎉╎تم تحميل الفيديـو .. بنجاح 🎬**</b>",
                 parse_mode="html",
             )
+# Write Code By telegram.dog/E_7_V ✌🏻
 @zq_lo.rep_cmd(pattern=f"ستوري(?: |$)(.*)")
 async def baqir_telegram(event):
     TAIBA = event.pattern_match.group(1)
@@ -79,7 +80,7 @@ async def baqir_telegram(event):
     else:
         return await edit_or_reply(event, "**⎉╎بالـࢪد ؏ــلى رابـط الـسـتوري**")
     chat = "@msaver_bot" #Code by T.me/E_7_V
-    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميـل من الـسـتـوري ...**")
+    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميـل الـسـتـوري مـن تـلـيـكـرام ...**")
     async with borg.conversation(chat) as conv: #Code by T.me/E_7_V
         try:
             await conv.send_message("/start")
@@ -90,7 +91,7 @@ async def baqir_telegram(event):
             await borg.send_file(
                 event.chat_id,
                 repthon,
-                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                caption=f"<b>**⎉╎تـم تـحـمـيـل الـسـتـوري .. بنجــاح 🎬**</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError: #Code by T.me/E_7_V
@@ -103,6 +104,6 @@ async def baqir_telegram(event):
             await borg.send_file(
                 event.chat_id,
                 repthon,
-                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                caption=f"<b>**⎉╎تـم تـحـمـيـل الـسـتـوري .. بنجــاح 🎬**</b>",
                 parse_mode="html",
             )
