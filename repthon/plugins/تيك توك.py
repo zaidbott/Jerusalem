@@ -34,9 +34,9 @@ from ..helpers.utils import reply_id
 #Code by T.me/E_7_V
 @zq_lo.rep_cmd(pattern=f"تيك(?: |$)(.*)")
 async def baqir_tiktok(event):
-    LAN = event.pattern_match.group(1)
-    if LAN: #Write Code By T.me/zzzzl1l
-        ROGER = LAN
+    TAIBA = event.pattern_match.group(1)
+    if TAIBA: #Write Code By T.me/E_7_V
+        ROGER = TAIBA
     elif event.is_reply:
         ROGER = await event.get_reply_message()
     else:
@@ -56,8 +56,45 @@ async def baqir_tiktok(event):
                 caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
                 parse_mode="html",
             )
-        except YouBlockedUserError: #Code by T.me/zzzzl1l
+        except YouBlockedUserError: #Code by T.me/E_7_V
             await zq_lo(unblock("downloader_tiktok_bot"))
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(ROGER)
+            repthon = await conv.get_response()
+            await rep.delete()
+            await borg.send_file(
+                event.chat_id,
+                repthon,
+                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                parse_mode="html",
+            )
+@zq_lo.rep_cmd(pattern=f"ستوري(?: |$)(.*)")
+async def baqir_telegram(event):
+    TAIBA = event.pattern_match.group(1)
+    if TAIBA: #Write Code By T.me/E_7_V
+        ROGER = TAIBA
+    elif event.is_reply:
+        ROGER = await event.get_reply_message()
+    else:
+        return await edit_or_reply(event, "**⎉╎بالـࢪد ؏ــلى رابـط الـسـتوري**")
+    chat = "@msaver_bot" #Code by T.me/E_7_V
+    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميـل من الـسـتـوري ...**")
+    async with borg.conversation(chat) as conv: #Code by T.me/E_7_V
+        try:
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(ROGER) #Code by T.me/E_7_V
+            repthon = await conv.get_response()
+            await rep.delete()
+            await borg.send_file(
+                event.chat_id,
+                repthon,
+                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                parse_mode="html",
+            )
+        except YouBlockedUserError: #Code by T.me/E_7_V
+            await zq_lo(unblock("msaver_bot"))
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(ROGER)
