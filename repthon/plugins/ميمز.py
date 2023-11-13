@@ -468,3 +468,9 @@ async def repmeme(memerep):
  url = f"https://t.me/Repthon_meme/16"
  await memerep.client.send_file(memerep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
  await memerep.delete()
+@zq_lo.on(admin_cmd(outgoing=True, pattern="بالعباس$"))
+async def repmeme(memerep):
+  Rep = await reply_id(memerep)
+  url = f"https://t.me/Repthon_meme/18"
+  await memerep.client.send_file(memerep.chat_id,url,caption="",parse_mode="html",reply_to=Rep)
+  await memerep.delete
