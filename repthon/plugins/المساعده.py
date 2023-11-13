@@ -22,7 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await zq_lo.get_me()
         if query.startswith("مساعده") and event.query.user_id == zq_lo.uid:
             buttons = [
-                [Button.inline("𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻", data="ZAZ")],
+                [Button.inline("𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻", data="https://t.me/Repthon")],
                 [Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
                 [
                     Button.inline("البـوت 🤖", data="botvr"),
@@ -446,7 +446,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"sleep")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"sleep")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -505,7 +505,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zedvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"zedvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -541,7 +541,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"devvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"devvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -672,7 +672,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"group4vr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"group4vr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -714,7 +714,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"group5vr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"group5vr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -757,7 +757,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"group1vr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"group1vr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -798,7 +798,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"botveiw")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"botveiw")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -816,7 +816,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"botlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"botlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -835,7 +835,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"addlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"addlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -873,7 +873,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"medlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"medlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -892,7 +892,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"edmdlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"edmdlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -911,7 +911,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"urlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"urlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -930,7 +930,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"userlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"userlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -949,7 +949,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"forlock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"forlock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -968,7 +968,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"inilock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"inilock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -987,7 +987,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"farslock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"farslock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1006,7 +1006,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"fuklock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"fuklock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1025,7 +1025,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"alllock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"alllock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1044,7 +1044,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"setelock")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"setelock")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1062,7 +1062,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"lolzed")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"lolzed")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1085,7 +1085,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"group2vr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"group2vr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1125,7 +1125,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"urlveiw")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"urlveiw")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1143,7 +1143,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"tagvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"tagvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1167,7 +1167,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"addmnvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"addmnvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1186,7 +1186,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"creatorvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"creatorvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1205,7 +1205,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"msgvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"msgvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1226,7 +1226,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"msgvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"msgvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1251,7 +1251,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"delmsgvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"delmsgvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1283,7 +1283,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"iundlt")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"iundlt")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1303,7 +1303,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"infoovr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"infoovr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1321,7 +1321,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"memver")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"memver")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1340,7 +1340,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"creatorrvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"creatorrvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1359,7 +1359,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"botssvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"botssvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1378,7 +1378,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"photoadd")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"photoadd")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1399,7 +1399,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"pinvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"pinvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1420,7 +1420,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zomby")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"zomby")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1440,7 +1440,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"delbans")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"delbans")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1458,7 +1458,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"group3vr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"group3vr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1482,7 +1482,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"mutevr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"mutevr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1515,7 +1515,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"banvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"banvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1549,7 +1549,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"kickvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"kickvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1568,7 +1568,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"tkkkvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"tkkkvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1587,7 +1587,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"nospam")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"nospam")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1609,7 +1609,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"noway")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"noway")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1631,7 +1631,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"group0vr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"group0vr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1655,7 +1655,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"addvr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"addvr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1686,7 +1686,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zerovr")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"zerovr")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1707,7 +1707,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"banall")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"banall")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1728,7 +1728,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"kickall")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"kickall")))
 @check_owner
 async def _(event):
     await event.edit(
@@ -1749,7 +1749,7 @@ async def _(event):
         ],
     link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"mutall")))
+@zq_lo.tgbot.on(CallbackQuery(data=re.compile(rb"mutall")))
 @check_owner
 async def _(event):
     await event.edit(
