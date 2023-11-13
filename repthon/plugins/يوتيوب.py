@@ -792,30 +792,3 @@ async def yt_search(event):
         return await edit_delete(video_q, str(e), time=10, parse_mode=_format.parse_pre)
     reply_text = f"**⎉╎اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**⎉╎النتائج:**\n{full_response}"
     await edit_or_reply(video_q, reply_text)
-@zq_lo.on(admin_cmd(pattern="ستوري(?: |$)(.*)"))
-async def repthon(baqir):
-    if baqir.fwd_from:
-        return
-    j_link = baqir.pattern_match.group(1)
-    if ".me" not in j_link:
-        await baqir.edit("**⎉╎ يجب وضع رابط الستوري مع الامر اولا **")
-    else:
-        await baqir.edit("**⎉╎ يتم الان تنزيل الستوري انتظر قليلا**")
-    chat = "@msaver_bot"
-    async with zq_lo.conversation(chat) as conv:
-        try:
-            msg = await conv.send_message(j_link)
-            video = await conv.get_response()
-            """ **⎉╎تـم تـحمـيـل الـسـتـوري بـنجـاح @Repthon** """
-            await zq_lo.send_read_acknowledge(conv.chat_id)
-        except YouBlockedUserError:
-            await baqir.edit("**⎉╎ الغـي حـظر هـذا البـوت و حـاول مجـددا @msaver_bot**")
-            return
-        repthon = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
-        repthon = Get(repthon)
-        try:
-            await baqir.client(repthon)
-        except BaseException:
-            pass
-        await zq_lo.send_file(event.chat_id, video, caption="**⎉╎ BY : @Repthon 📹**",parse_mode="html")
-        await baqir.delete()
