@@ -1,10 +1,11 @@
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 <p align="center"><a href="https://t.me/Repthon"><img src="https://graph.org/file/f2fa5ee991b8d42030ece.jpg" width="5000"></a></p> 
 <h1 align="center"><b>سـورس ريبـــثون</b></h1>
 <h1 align="center"><b>𝗪𝗲𝗹𝗖𝗼𝗺𝗲 𝗧𝗼 𝙍𝙀𝙋𝙏𝙃𝙊𝙉™ 𓅛</b></h1>
 
-## استخراج اكواد الايبي 🖱
-- عبر البوت   [⦇  اضـغـط هنــا  ⦈](http://t.me/TeleORG_Bot)
-- او عبر الرابط   [⦇  اضـغـط هنــا  ⦈](https://my.telegram.org/)
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### استخراج كواد جلسة تيرمكس 💡
 - عبر البوت   [⦇  اضـغـط هنــا  ⦈](https://t.me/RepthonStringSessionBot)
 - او عبر الرابط   [⦇  اضـغـط هنــا  ⦈](https://replit.com/@taabn-tabantaba/RepthonSession?v=1)
@@ -17,6 +18,7 @@
 - قناة الشروحات 📺   [⦇  اضـغـط هنــا  ⦈](https://t.me/Repthonn)
 - مطور السـورس 💻   [⦇  اضـغـط هنــا  ⦈](https://t.me/E_7_V.)
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## التنصيب ع كويب
 
@@ -25,7 +27,7 @@
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/RepthonArabic/E_7_V&branch=main&name=RepthonArabic&run_command=python3%20-m%20zthon&env%5BTG_BOT_TOKEN%5D=&env%5BAPP_ID%5D=&env%5BAPI_HASH%5D=&env%5BSTRING_SESSION%5D=&env%5BDATABASE_URL%5D=&env%5BENV%5D=ANYTHING)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/RepthonArabic/E_7_V&branch=main&name=RepthonArabic&run_command=python3%20-m%20repthon&env%5BTG_BOT_TOKEN%5D=&env%5BAPP_ID%5D=&env%5BAPI_HASH%5D=&env%5BSTRING_SESSION%5D=&env%5BDATABASE_URL%5D=&env%5BENV%5D=ANYTHING)
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -39,8 +41,8 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 
-## التنصيب ع السيرفـر
 
+## التنصيب ع السيرفـر
 - `sudo apt update && sudo apt upgrade -y`
 
 - `sudo apt install --no-install-recommends -y curl git libffi-dev libjpeg-dev libwebp-dev python3-lxml python3-psycopg2 libpq-dev libcurl4-openssl-dev libxml2-dev libxslt1-dev python3-pip python3-sqlalchemy openssl wget python3 python3-dev libreadline-dev libyaml-dev gcc zlib1g ffmpeg libssl-dev libgconf-2-4 libxi6 unzip libopus0 libopus-dev python3-venv libmagickwand-dev pv tree mediainfo nano nodejs`
@@ -89,6 +91,8 @@
 - `pip3 install -r requirements.txt`
 
 - `python3 -m repthon`
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 * نقوم بالضغط على CTRL+A بعدها نضغط على CTRL+D
  
 
