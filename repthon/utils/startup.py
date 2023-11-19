@@ -175,7 +175,7 @@ async def mybot():
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_file("@BotFather", "repthon/baqir/IMG_20220821_170541_585.jpg")
+            await bot.send_file("@BotFather", "repthon/baqir/Repthon3.jpg")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setabouttext")
             await asyncio.sleep(1)
@@ -369,7 +369,7 @@ async def verifyLoggerGroup():
             )
     else:
         descript = "لا تقم بحذف هذه المجموعة أو التغيير إلى مجموعة عامه (وظيفتهـا تخزيـن كـل سجـلات وعمليـات البـوت.)"
-        photozed = await zq_lo.upload_file(file="baqir/taiba/IMG_20220821_230957_726.jpg")
+        photozed = await zq_lo.upload_file(file="baqir/taiba/Repthon1.jpg")
         _, groupid = await create_supergroup(
             "كـروب السجـل ريبـــثون", zq_lo, Config.TG_BOT_USERNAME, descript, photozed
         )
@@ -398,7 +398,7 @@ async def verifyLoggerGroup():
             LOGS.error("حدث خطأ اثناء التعرف على فار PM_LOGGER_GROUP_ID.\n" + str(e))
     else:
         descript = "لا تقم بحذف هذه المجموعة أو التغيير إلى مجموعة عامه (وظيفتهـا تخزيـن رسـائل الخـاص.)"
-        photozed = await zq_lo.upload_file(file="baqir/taiba/IMG_20220821_170831_450.jpg")
+        photozed = await zq_lo.upload_file(file="baqir/taiba/Repthon2.jpg")
         _, groupid = await create_supergroup(
             "كـروب التخـزين", zq_lo, Config.TG_BOT_USERNAME, descript, photozed
         )
@@ -417,7 +417,7 @@ async def install_externalrepo(repo, branch, cfolder):
     if REPBRANCH := branch:
         repourl = os.path.join(REPREPO, f"tree/{REPBRANCH}")
         gcmd = f"git clone -b {REPBRANCH} {REPREPO} {cfolder}"
-        errtext = f"There is no branch with name `{REPBRANCH}` in your external repo {ZEDREPO}. Recheck branch name and correct it in vars(`EXTERNAL_REPO_BRANCH`)"
+        errtext = f"There is no branch with name `{REPBRANCH}` in your external repo {REPREPO}. Recheck branch name and correct it in vars(`EXTERNAL_REPO_BRANCH`)"
     else:
         repourl = REPREPO
         gcmd = f"git clone {REPREPO} {cfolder}"
