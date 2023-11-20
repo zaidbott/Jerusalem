@@ -7,8 +7,8 @@ from beaker.cache import CacheManager
 from beaker.util import parse_cache_config_options
 
 # Replace with the actual path to your Config and logging modules
-from path.to.Config import Config
-from path.to.core.logger import logging
+from ..Config import Config
+from ..core.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
