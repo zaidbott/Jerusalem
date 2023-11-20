@@ -27,6 +27,11 @@ cache = CacheManager(**parse_cache_config_options(cache_opts))
 
 
 def start() -> scoped_session:
+    redis_url = (
+        Config.REDIS_URI.replace("redis:", "redisql:")
+        if "redis://" in Config.REDIS_URI
+        else Config.REDIS_URI
+    )
     database_url = (
         Config.DB_URI.replace("postgres:", "postgresql:")
         if "postgres://" in Config.DB_URI
