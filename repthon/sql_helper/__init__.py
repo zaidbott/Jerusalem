@@ -6,7 +6,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from beaker.cache import CacheManager
 from beaker.util import parse_cache_config_options
 
-# Import Config and logging based on your project structure
+# Replace with the actual path to your Config and logging modules
 from path.to.Config import Config
 from path.to.core.logger import logging
 
