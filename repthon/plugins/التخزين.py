@@ -1,4 +1,3 @@
-# pm and tagged messages logger for catuserbot by @mrconfused (@sandy1709)
 import asyncio
 
 from repthon import zq_lo
@@ -74,6 +73,8 @@ async def log_tagged_messages(event):
 
     if gvarstatus("GRPLOG") and gvarstatus("GRPLOG") == "false":
         return
+    if gvarstatus("GRPLOG") is None:
+        return
     if (
         (no_log_pms_sql.is_approved(hmm.id))
         or (Config.PM_LOGGER_GROUP_ID == -100)
@@ -86,7 +87,7 @@ async def log_tagged_messages(event):
         full = await event.client.get_entity(event.message.from_id)
     except Exception as e:
         LOGS.info(str(e))
-    messaget = media_type(event)
+    messaget = await media_type(event)
     resalt = f"#التــاكــات\n\n<b>⌔┊الكــروب : </b><code>{hmm.title}</code>"
     if full is not None:
         resalt += (
@@ -240,7 +241,7 @@ async def set_grplog(event):
         h_type = False
     elif input_str == "تفعيل":
         h_type = True
-    GRPLOG = not gvarstatus("GRPLOG") or gvarstatus("GRPLOG") != "false"
+    GRPLOG = gvarstatus("GRPLOG") or gvarstatus("GRPLOG") == "false"
     if GRPLOG:
         if h_type:
             await event.edit("**- تخزين الكـروبات بالفعـل ممكـن ✓**")
