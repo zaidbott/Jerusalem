@@ -16,4 +16,3 @@ class Development(Config):
     SUDO_COMMAND_HAND_LER = "."  # اتركهــا كمـا هـي
     TZ = "Asia/Baghdad"  # اتركهــا كمـا هي
     ENV = "ANYTHING" # اتركـهــا كمـا هي
-    
