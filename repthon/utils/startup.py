@@ -326,14 +326,9 @@ async def saves():
     except BaseException:
         pass
     try:
-        await zq_lo(JoinChannelRequest("@f3ytr"))
-    except BaseException:
-        pass
-    try:
         await zq_lo(JoinChannelRequest("@xxfir"))
     except BaseException:
         pass
-
 
 
 
