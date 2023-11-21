@@ -1,4 +1,3 @@
-from typing import Set
 from sample_config import Config
 
 
@@ -10,9 +9,7 @@ class Development(Config):
     DB_URI = "رابـط التخـزين الخـاص بك"
     STRING_SESSION = "كود تيرمــكس"
     TG_BOT_TOKEN = "توكـن البـوت الخـاص بك"
-    PM_LOGGER_GROUP_ID = "-100" # ايدي كروب التخزين
     PRIVATE_GROUP_BOT_API_ID = "-100" # ضـع ايـدي كـروب السجـل بجـانب العـدد -100 لا تمسـح العـدد هـذا
     COMMAND_HAND_LER = "."  # اتركهــا كمـا هـي
     SUDO_COMMAND_HAND_LER = "."  # اتركهــا كمـا هـي
     TZ = "Asia/Baghdad"  # اتركهــا كمـا هي
-    ENV = "ANYTHING" # اتركـهــا كمـا هي
