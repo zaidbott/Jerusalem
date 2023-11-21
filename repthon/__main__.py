@@ -8,6 +8,7 @@ from .utils import mybot, autoname, autovars
 from .utils import (
     add_bot_to_logger_group,
     load_plugins,
+    saves,
     setup_bot,
     startupmessage,
     verifyLoggerGroup,
@@ -20,12 +21,13 @@ print(f"المرخصة بموجب شروط  {repthon.__license__}")
 
 cmdhr = Config.COMMAND_HAND_LER
 
-try: #Code by T.me/E_7_V
-    LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
-    zq_lo.loop.run_until_complete(autovars())
-    LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
+try:
+    LOGS.info("⌭ بـدء تنزيـل ريبـــثون ⌭")
+    zq_lo.loop.run_until_complete(setup_bot())
+    LOGS.info("⌭ بـدء تشغيـل البـوت ⌭")
 except Exception as e:
-    LOGS.error(f"- {e}")
+    LOGS.error(f"{e}")
+    sys.exit()
 
 if not Config.ALIVE_NAME:
     try: #Code by T.me/E_7_V
@@ -36,9 +38,9 @@ if not Config.ALIVE_NAME:
         LOGS.error(f"- {e}")
 
 try: #Code by T.me/E_7_V
-    LOGS.info("⌭ بـدء تنزيـل ريبـــثون ⌭")
-    zq_lo.loop.run_until_complete(setup_bot())
-    LOGS.info("⌭ بـدء تشغيـل البـوت ⌭")
+    LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
+    zq_lo.loop.run_until_complete(autovars())
+    LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
 
