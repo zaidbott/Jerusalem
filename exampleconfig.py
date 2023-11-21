@@ -1,4 +1,4 @@
-from typing import set
+from typing import Set
 from sample_config import Config
 
 
