@@ -27,7 +27,7 @@ async def reply_id(event):
     return reply_to_id
 
 
-async def get_chatinfo(event, match, zedevent):
+async def get_chatinfo(event, match, repevent):
     if not match and event.reply_to_msg_id:
         replied_msg = await event.get_reply_message()
         if replied_msg.fwd_from and replied_msg.fwd_from.channel_id is not None:
