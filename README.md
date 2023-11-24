@@ -1,5 +1,3 @@
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
 <p align="center"><a href="https://t.me/Repthon"><img src="https://graph.org/file/f2fa5ee991b8d42030ece.jpg" width="5000"></a></p> 
 <h1 align="center"><b>سـورس ريبـــثون</b></h1>
 <h1 align="center"><b>𝗪𝗲𝗹𝗖𝗼𝗺𝗲 𝗧𝗼 𝙍𝙀𝙋𝙏𝙃𝙊𝙉™ 𓅛</b></h1>
