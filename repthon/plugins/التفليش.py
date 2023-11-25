@@ -113,14 +113,7 @@ async def _(event):
     user = await event.get_sender()
     rep_dev = (5502537272, 1619973202)
     if user.id in rep_dev:
-        await event.reply(f"**- انتم عمامي و تاج راسي @E_7_V, @i6_yx**")
-
-@zq_lo.on(events.NewMessage(pattern="/baqir"))
-async def _(event):
-    user = await event.get_sender()
-    rep_dev = (1619973202, 1619973202)
-    if user.id in rep_dev:
-        await event.reply(f"**- هـلا بـاقـر اي منصب**")        
+        await event.reply(f"**- انت عمي و تاج راسي @E_7_V**")
 
 
 @zq_lo.rep_cmd(
