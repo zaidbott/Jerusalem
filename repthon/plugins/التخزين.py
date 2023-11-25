@@ -1,7 +1,7 @@
 import asyncio
 
 from repthon import zq_lo
-from repthon.core.logger import logging
+from ..core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_delete
@@ -33,7 +33,7 @@ async def monito_p_m_s(event):  # sourcery no-metrics
     if gvarstatus("PMLOG") and gvarstatus("PMLOG") == "false":
         return
     sender = await event.get_sender()
-    if not sender.bot:
+    if not sender.bot and gvarstatus("PMLOG") and gvarstatus("PMLOG") != "false":
         chat = await event.get_chat()
         if not no_log_pms_sql.is_approved(chat.id) and chat.id != 777000:
             if LOG_CHATS_.RECENT_USER != chat.id:
@@ -73,38 +73,37 @@ async def log_tagged_messages(event):
 
     if gvarstatus("GRPLOG") and gvarstatus("GRPLOG") == "false":
         return
-    if gvarstatus("GRPLOG") is None:
-        return
-    if (
-        (no_log_pms_sql.is_approved(hmm.id))
-        or (Config.PM_LOGGER_GROUP_ID == -100)
-        or ("on" in AFK_.USERAFK_ON)
-        or (await event.get_sender() and (await event.get_sender()).bot)
-    ):
-        return
-    full = None
-    try:
-        full = await event.client.get_entity(event.message.from_id)
-    except Exception as e:
-        LOGS.info(str(e))
-    messaget = await media_type(event)
-    resalt = f"#التــاكــات\n\n<b>⌔┊الكــروب : </b><code>{hmm.title}</code>"
-    if full is not None:
-        resalt += (
-            f"\n\n<b>⌔┊المـرسـل : </b> {_format.htmlmentionuser(full.first_name , full.id)}"
-        )
-    if messaget is not None:
-        resalt += f"\n\n<b>⌔┊رسـالـة ميـديـا : </b><code>{messaget}</code>"
-    else:
-        resalt += f"\n\n<b>⌔┊الرســالـه : </b>{event.message.message}"
-    resalt += f"\n\n<b>⌔┊رابـط الرسـاله : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>"
-    if not event.is_private:
-        await event.client.send_message(
-            Config.PM_LOGGER_GROUP_ID,
-            resalt,
-            parse_mode="html",
-            link_preview=False,
-        )
+    if gvarstatus("GRPLOG") and gvarstatus("GRPLOG") != "false":
+        if (
+            (no_log_pms_sql.is_approved(hmm.id))
+            or (Config.PM_LOGGER_GROUP_ID == -100)
+            or ("on" in AFK_.USERAFK_ON)
+            or (await event.get_sender() and (await event.get_sender()).bot)
+        ):
+            return
+        full = None
+        try:
+            full = await event.client.get_entity(event.message.from_id)
+        except Exception as e:
+            LOGS.info(str(e))
+        messaget = await media_type(event)
+        resalt = f"#التــاكــات\n\n<b>⌔┊الكــروب : </b><code>{hmm.title}</code>"
+        if full is not None:
+            resalt += (
+                f"\n\n<b>⌔┊المـرسـل : </b> {_format.htmlmentionuser(full.first_name , full.id)}"
+            )
+        if messaget is not None:
+            resalt += f"\n\n<b>⌔┊رسـالـة ميـديـا : </b><code>{messaget}</code>"
+        else:
+            resalt += f"\n\n<b>⌔┊الرســالـه : </b>{event.message.message}"
+        resalt += f"\n\n<b>⌔┊رابـط الرسـاله : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>"
+        if not event.is_private:
+            await event.client.send_message(
+                Config.PM_LOGGER_GROUP_ID,
+                resalt,
+                parse_mode="html",
+                link_preview=False,
+            )
 
 
 @zq_lo.rep_cmd(
@@ -203,9 +202,10 @@ async def set_pmlog(event):
         h_type = False
     elif input_str == "تفعيل":
         h_type = True
-    PMLOG = not gvarstatus("PMLOG") or gvarstatus("PMLOG") != "false"
+    PMLOG = gvarstatus("PMLOG") and gvarstatus("PMLOG") != "false"
     if PMLOG:
         if h_type:
+            addgvar("PMLOG", h_type)
             await event.edit("**- تخزين الخاص بالفعـل ممكـن ✓**")
         else:
             addgvar("PMLOG", h_type)
@@ -214,6 +214,7 @@ async def set_pmlog(event):
         addgvar("PMLOG", h_type)
         await event.edit("**- تـم تفعيـل تخـزين رسـائل الخـاص .. بنجـاح✓**")
     else:
+        addgvar("PMLOG", h_type)
         await event.edit("**- تخزين الخاص بالفعـل معطـل ✓**")
 
 
@@ -241,9 +242,10 @@ async def set_grplog(event):
         h_type = False
     elif input_str == "تفعيل":
         h_type = True
-    GRPLOG = gvarstatus("GRPLOG") or gvarstatus("GRPLOG") == "false"
+    GRPLOG = gvarstatus("GRPLOG") and gvarstatus("GRPLOG") != "false"
     if GRPLOG:
         if h_type:
+            addgvar("GRPLOG", h_type)
             await event.edit("**- تخزين الكـروبات بالفعـل ممكـن ✓**")
         else:
             addgvar("GRPLOG", h_type)
@@ -252,4 +254,5 @@ async def set_grplog(event):
         addgvar("GRPLOG", h_type)
         await event.edit("**- تـم تفعيـل تخـزين تاكـات الكـروبات .. بنجـاح✓**")
     else:
+        addgvar("GRPLOG", h_type)
         await event.edit("**- تخزين الكـروبات بالفعـل معطـل ✓**")
