@@ -16,8 +16,6 @@ from telethon.errors.rpcerrorlist import (
     WebpageCurlFailedError,
     WebpageMediaEmptyError,
 )
-from telethon.events import CallbackQuery
-
 from repthon import StartTime, zq_lo, repversion
 
 from ..Config import Config
