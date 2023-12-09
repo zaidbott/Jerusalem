@@ -4,6 +4,7 @@ import time
 import os
 from datetime import datetime
 from platform import python_version
+from random import choice
 
 import requests
 from telethon import version
@@ -26,7 +27,7 @@ from . import mention
 plugin_category = "العروض"
 ALIVE = gvarstatus("R_ALIVE") or "فحص"
 
-# @E_7_V 
+# @E_7_V
 file_path = "installation_date.txt"
 if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
     with open(file_path, "r") as file:
@@ -47,7 +48,7 @@ async def alive(event):
     _, check_sgnirts = check_data_base_heal_th()
     R_EMOJI = gvarstatus("ALIVE_EMOJI") or "𓃰┊"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **"
-    REP_IMG = gvarstatus("ALIVE_PIC") or "https://graph.org/file/f701e179b634b5a873e8c.mp4"
+    RANDOM_MEDIA = ["https://graph.org/file/f4c01d51562507a36c07e.mp4","https://graph.org/file/0b1e5679e24e735f870c5.mp4","https://graph.org/file/cafa0e8a1320891a65ae2.mp4","https://graph.org/file/b442b635cecca399dea39.mp4","https://graph.org/file/534d48ffb4b1e22e4ee39.mp4","https://graph.org/file/ec26c9d0a5532f17f85ac.mp4"]
     rep_caption = gvarstatus("ALIVE_TEMPLATE") or rep_temp
     caption = rep_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
@@ -91,33 +92,4 @@ rep_temp = """{ALIVE_TEXT}
 **{R_EMOJI} المسـتخدم:** {mention}
 **{R_EMOJI} التـاريـخ:** {repthon_Tare5}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
-
-
-@zq_lo.rep_cmd(
-    pattern="الفحص$",
-    command=("الفحص", plugin_category),
-    info={
-        "header": "- لـ التحـقق من ان البـوت يعمـل بنجـاح .. بخـاصيـة الانـلايـن ✓",
-        "الاسـتخـدام": [
-            "{tr}الفحص",
-        ],
-    },
-)
-async def amireallyialive(event):
-    "A kind of showing bot details by your inline bot"
-    reply_to_id = await reply_id(event)
-    R_EMOJI = gvarstatus("ALIVE_EMOJI") or "𓅓┊"
-    rep_caption = "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **\n"
-    rep_caption += f"**{R_EMOJI} إصـدار التـيليثون :** `{version.__version__}\n`"
-    rep_caption += f"**{R_EMOJI} إصـدار ريبـــثون :** `{repversion}`\n"
-    rep_caption += f"**{R_EMOJI} إصـدار البـايثون :** `{python_version()}\n`"
-    rep_caption += f"**{R_EMOJI} المسـتخدم :** {mention}\n"
-    results = await event.client.inline_query(Config.TG_BOT_USERNAME, rep_caption)
-    await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
-    await event.delete()
-
-
-@zq_lo.tgbot.on(CallbackQuery(data=re.compile(b"stats")))
-async def on_plug_in_callback_query_handler(event):
-    statstext = await repalive(StartTime)
-    await event.answer(statstext, cache_time=0, alert=True)
+    send_new_message = await event.client.send_message(entity=event.chat_id, message=final_message, file=random.choice(RANDOM_MEDIA))
