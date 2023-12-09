@@ -60,6 +60,12 @@ async def alive(event):
     ping=ms,
     repthon_Tare5=installation_time
     tgbot = Config.TG_BOT_USERNAME
+    me = await event.client.get_me()
+    my_first = me.first_name
+    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
+    delete = await event.delete()
+    user = await event.client.get_entity(event.chat_id)
+    my_mention=my_mention
         
 
 
@@ -69,7 +75,7 @@ async def alive(event):
 **{R_EMOJI} إصـدار ريبـــثون :** `{repver}`
 **{R_EMOJI} إصـدار البـايثون :** `{pyver}`
 **{R_EMOJI} الوقـت :** `{uptime}`
-**{R_EMOJI} المسـتخدم:** {mention}
+**{R_EMOJI} المسـتخدم:** {my_mention}
 **{R_EMOJI} التـاريـخ:** {repthon_Tare5}
 **{R_EMOJI} الـبـوت: ** {tgbot}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
