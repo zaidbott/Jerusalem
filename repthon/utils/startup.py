@@ -13,6 +13,10 @@ import heroku3
 import urllib.request
 from datetime import timedelta
 from pathlib import Path
+from random import randint
+from datetime import datetime as dt
+from pytz import timezone
+import requests
 
 from telethon import Button, functions, types, utils
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -73,6 +77,18 @@ async def autoname(): #Code by T.me/E_7_V
     LOGS.info("جـارِ اضافة فـار الاسـم التلقـائـي .. انتظـر قليـلاً")
     baqir = await bot.get_me()
     rrname = f"{baqir.first_name}"
+    tz = Config.TZ
+    tzDateTime = dt.now(timezone(tz))
+    rdate = tzDateTime.strftime('%Y/%m/%d')
+    militaryTime = tzDateTime.strftime('%H:%M')
+    rtime = dt.strptime(militaryTime, "%H:%M").strftime("%I:%M %p")
+    rrd = f"‹ {rdate} ›"
+    rrt = f"‹ {rtime} ›"
+    if gvarstatus("r_date") is None:
+        rd = "r_date"
+        rt = "r_time"
+        addgvar(rd, rrd)
+        addgvar(rt, rrt)
     LOGS.info(f"تم اضافـة اسـم المستخـدم {rrname} .. بنجـاح")
     heroku_var["ALIVE_NAME"] = rrname
 
