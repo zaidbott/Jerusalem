@@ -22,7 +22,6 @@ from ..core.managers import edit_or_reply
 from ..helpers.functions import repalive, check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
-from . import mention
 
 plugin_category = "العروض"
 ALIVE = gvarstatus("R_ALIVE") or "فحص"
@@ -51,7 +50,6 @@ async def alive(event):
     RANDOM_MEDIA = ["https://graph.org/file/f4c01d51562507a36c07e.mp4","https://graph.org/file/0b1e5679e24e735f870c5.mp4","https://graph.org/file/cafa0e8a1320891a65ae2.mp4","https://graph.org/file/b442b635cecca399dea39.mp4","https://graph.org/file/534d48ffb4b1e22e4ee39.mp4","https://graph.org/file/ec26c9d0a5532f17f85ac.mp4"]
     ALIVE_TEXT=ALIVE_TEXT,
     R_EMOJI=R_EMOJI,
-    mention=mention,
     uptime=uptime,
     telever=version.__version__,
     repver=repversion,
