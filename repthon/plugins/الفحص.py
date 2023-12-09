@@ -82,8 +82,7 @@ async def alive(event):
         )
 
 
-rep_temp = f"""{ALIVE_TEXT}
-
+    rep_temp = f"""{ALIVE_TEXT}
 **{R_EMOJI} قاعدۿ البيانات :** تعمل بنـجاح
 **{R_EMOJI} إصـدار التـيليثون :** `{telever}`
 **{R_EMOJI} إصـدار ريبـــثون :** `{repver}`
