@@ -22,7 +22,6 @@ from ..core.managers import edit_or_reply
 from ..helpers.functions import repalive, check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
-from . import mention
 
 plugin_category = "العروض"
 ALIVE = gvarstatus("R_ALIVE") or "فحص"
@@ -65,7 +64,6 @@ async def alive(event):
     delete = await event.delete()
     user = await event.client.get_entity(event.chat_id)
     my_mention=my_mention
-    mention=mention
         
 
     
