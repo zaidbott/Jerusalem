@@ -67,7 +67,7 @@ async def alive(event):
         
 
     
-    final_message = """ **{ALIVE_TEXT}**
+    final_message = f""" **{ALIVE_TEXT}**
 **{R_EMOJI} قاعدۿ البيانات :** تعمل بنـجاح
 **{R_EMOJI} إصـدار التـيليثون :** {telever}
 **{R_EMOJI} إصـدار ريبـــثون :** {repver}
