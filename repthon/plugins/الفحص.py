@@ -29,7 +29,7 @@ from ..sql_helper.globals import gvarstatus
 plugin_category = "العروض"
 ALIVE = gvarstatus("R_ALIVE") or "فحص"
 
-# @E_7_V
+# @E_7_V - # إضافة التاريخ كتابتي غير مبري الذمة الي ياخذه
 file_path = "installation_date.txt"
 if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
     with open(file_path, "r") as file:
@@ -59,7 +59,7 @@ async def alive(event):
     pyver=python_version()
     dbhealth=check_sgnirts
     ping=ms
-    repthon_Tare5=installation_time
+    repthon_Tare5=installation_time # إضافة التاريخ كتابتي
     tgbot = Config.TG_BOT_USERNAME #@rNrYr اذكر حقوق يلا تخمط حقوق أحمد-دار
     me = await event.client.get_me()
     my_first = me.first_name
@@ -77,7 +77,7 @@ async def alive(event):
 **{R_EMOJI} إصـدار البـايثون :** {pyver}
 **{R_EMOJI} الوقـت :** {uptime}
 **{R_EMOJI} المسـتخدم:** {my_mention}
-**{R_EMOJI} التـاريـخ:** {repthon_Tare5} # إضافة التاريخ كتابتي
+**{R_EMOJI} التـاريـخ:** {repthon_Tare5}
 **{R_EMOJI} الـبـوت: ** {tgbot}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
     send_new_message = await event.client.send_message(entity=event.chat_id, message=final_message, file=random.choice(RANDOM_MEDIA)) #اذكر الحقوق @rNrYr حقوق أحمد-دار
