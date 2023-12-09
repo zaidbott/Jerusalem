@@ -50,14 +50,14 @@ async def alive(event):
     RANDOM_MEDIA = ["https://graph.org/file/f4c01d51562507a36c07e.mp4","https://graph.org/file/0b1e5679e24e735f870c5.mp4","https://graph.org/file/cafa0e8a1320891a65ae2.mp4","https://graph.org/file/b442b635cecca399dea39.mp4","https://graph.org/file/534d48ffb4b1e22e4ee39.mp4","https://graph.org/file/ec26c9d0a5532f17f85ac.mp4"]
     ALIVE_TEXT=ALIVE_TEXT,
     R_EMOJI=R_EMOJI,
-    uptime=uptime,
-    telever=version.__version__,
-    repver=repversion,
-    pyver=python_version(),
-    dbhealth=check_sgnirts,
-    ping=ms,
+    uptime=uptime
+    telever=version.__version__
+    repver=repversion
+    pyver=python_version()
+    dbhealth=check_sgnirts
+    ping=ms
     repthon_Tare5=installation_time
-    tgbot = Config.TG_BOT_USERNAME
+    tgbot = Config.TG_BOT_USERNAME #@rNrYr اذكر حقوق
     me = await event.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
@@ -77,4 +77,4 @@ async def alive(event):
 **{R_EMOJI} التـاريـخ:** {repthon_Tare5}
 **{R_EMOJI} الـبـوت: ** {tgbot}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
-    send_new_message = await event.client.send_message(entity=event.chat_id, message=final_message, file=random.choice(RANDOM_MEDIA))
+    send_new_message = await event.client.send_message(entity=event.chat_id, message=final_message, file=random.choice(RANDOM_MEDIA)) #اذكر الحقوق @rNrYr
