@@ -50,7 +50,7 @@ async def alive(event):
     _, check_sgnirts = check_data_base_heal_th()
     R_EMOJI = gvarstatus("ALIVE_EMOJI") or "𓃰┊"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩"
-    RANDOM_MEDIA = ["https://graph.org/file/f4c01d51562507a36c07e.mp4","https://graph.org/file/0b1e5679e24e735f870c5.mp4","https://graph.org/file/cafa0e8a1320891a65ae2.mp4","https://graph.org/file/b442b635cecca399dea39.mp4","https://graph.org/file/534d48ffb4b1e22e4ee39.mp4","https://graph.org/file/ec26c9d0a5532f17f85ac.mp4"] #@rNrYr
+    RANDOM_MEDIA = ["https://graph.org/file/f4c01d51562507a36c07e.mp4","https://graph.org/file/0b1e5679e24e735f870c5.mp4","https://graph.org/file/cafa0e8a1320891a65ae2.mp4","https://graph.org/file/b442b635cecca399dea39.mp4","https://graph.org/file/534d48ffb4b1e22e4ee39.mp4","https://graph.org/file/ec26c9d0a5532f17f85ac.mp4","https://graph.org/file/5201ed73785e5a928c853.mp4","https://graph.org/file/764e2427fafbe4aec2251.mp4","https://graph.org/file/9501d29c6cccd86b22686.mp4","https://graph.org/file/e30ff8013dd3f61f0735e.mp4","https://graph.org/file/3b9dc775779767faeb774.mp4","https://graph.org/file/1ee6a852367700b272a51.mp4","https://graph.org/file/53809263bafc29ef6adee.mp4","https://graph.org/file/4c6325935cb7e5494c77e.mp4"] #@rNrYr
     ALIVE_TEXT=ALIVE_TEXT
     R_EMOJI=R_EMOJI
     uptime=uptime
@@ -77,7 +77,7 @@ async def alive(event):
 **{R_EMOJI} إصـدار البـايثون :** {pyver}
 **{R_EMOJI} الوقـت :** {uptime}
 **{R_EMOJI} المسـتخدم:** {my_mention}
-**{R_EMOJI} التـاريـخ:** {repthon_Tare5}
+**{R_EMOJI} التـاريـخ:** {repthon_Tare5} # إضافة التاريخ كتابتي
 **{R_EMOJI} الـبـوت: ** {tgbot}
 **{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
     send_new_message = await event.client.send_message(entity=event.chat_id, message=final_message, file=random.choice(RANDOM_MEDIA)) #اذكر الحقوق @rNrYr حقوق أحمد-دار
