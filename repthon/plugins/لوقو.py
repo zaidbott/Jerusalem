@@ -30,6 +30,7 @@ from . import *
 
 LOGS = logging.getLogger(__name__)
 PICS_STR = []
+bot = zq_lo
 
 
 # code by t.me/E_7_V
@@ -86,7 +87,7 @@ async def lg1(userevent):
         strik = 20
     img = Image.open(logo_)
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(zed_font, font_size_)
+    font = ImageFont.truetype(rep_font, font_size_)
     image_widthz, image_heightz = img.size
     w, h = draw.textsize(text, font=font)
     h += int(h * 0.21)
@@ -112,7 +113,7 @@ async def lg1(userevent):
     await event.delete()
     try:
         os.remove(file_name)
-        os.remove(zed_font)
+        os.remove(rep_font)
         os.remove(logo_)
     except BaseException:
         pass
@@ -161,7 +162,7 @@ async def lg1(userevent):
         strik = 20
     img = Image.open(logo_)
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(zed_font, font_size_)
+    font = ImageFont.truetype(rep_font, font_size_)
     image_widthz, image_heightz = img.size
     w, h = draw.textsize(text, font=font)
     h += int(h * 0.21)
@@ -187,7 +188,7 @@ async def lg1(userevent):
     await event.delete()
     try:
         os.remove(file_name)
-        os.remove(zed_font)
+        os.remove(rep_font)
         os.remove(logo_)
     except BaseException:
         pass
