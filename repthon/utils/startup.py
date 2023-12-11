@@ -128,6 +128,10 @@ async def startupmessage():
     """
     Start up message in telegram logger group
     """
+    if gvarstatus("PMLOG") and gvarstatus("PMLOG") != "false":
+        delgvar("PMLOG")
+    if gvarstatus("GRPLOG") and gvarstatus("GRPLOG") != "false":
+        delgvar("GRPLOG")
     try:
         if BOTLOG:
             Config.ZQ_LOBLOGO = await zq_lo.tgbot.send_file(
