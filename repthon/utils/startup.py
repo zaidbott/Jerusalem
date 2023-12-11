@@ -35,7 +35,7 @@ from ..sql_helper.global_collection import (
     del_keyword_collectionlist,
     get_item_collectionlist,
 )
-from ..sql_helper.globals import addgvar, gvarstatus
+from ..sql_helper.globals import addgvar, gvarstatus, delgvar
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
