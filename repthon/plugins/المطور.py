@@ -2,10 +2,9 @@ from datetime import datetime
 
 from telethon.utils import get_display_name
 
-from repthon import zq_lo
-from repthon.core.logger import logging
-
+from . import zq_lo
 from ..Config import Config
+from ..core.logger import logging
 from ..core import CMD_INFO, PLG_INFO
 from ..core.data import _sudousers_list, sudo_enabled_cmds
 from ..core.managers import edit_delete, edit_or_reply
@@ -21,24 +20,34 @@ LOGS = logging.getLogger(__name__)
 REPV = gvarstatus("sudoenable") or "true"
 
 BaqirDV_cmd = (
-    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامــر المطـور المســاعد](t.me/Repthon) 𓆪\n\n"
-    "**✾╎قائـمـه اوامـر رفـع المطـور المسـاعـد 🧑🏻‍💻✅ 🦾 :** \n"
+    "[ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - اوامــر المطـور المســاعد](t.me/Repthon) .\n\n"
+    "**⎉╎قائـمـه اوامـر رفـع المطـور المسـاعـد 🧑🏻‍💻✅ 🦾 :** \n"
     "**- اضغـط ع الامـر للنسـخ ثـم استخـدمهـا بالتـرتيـب** \n\n"
     "**⪼** `.رفع مطور` \n"
     "**- لـ رفـع الشخـص مطـور مسـاعـد معـك بالبـوت** \n\n"
     "**⪼** `.تنزيل مطور` \n"
     "**- لـ تنزيـل الشخـص مطـور مسـاعـد مـن البـوت** \n\n"
+    "**⪼** `.المطورين` \n"
+    "**- لـ عـرض قائمـة بمطـورين البـوت الخـاص بـك 🧑🏻‍💻📑** \n\n"
     "**⪼** `.وضع المطور تفعيل` \n"
     "**لـ تفعيـل وضـع المطـورين المسـاعدين** \n\n"
     "**⪼** `.وضع المطور تعطيل` \n"
     "**لـ تعطيـل وضـع المطـورين المسـاعدين** \n\n"
-    "**⪼** `.تحكم الكل` \n"
+    "**⪼** `.تحكم كامل` \n"
     "**- اعطـاء المطـورين المرفـوعيـن صلاحيـة التحكـم الكـاملـه بالاوامــر ✓** \n\n"
-    "**⪼** `.ايقاف تحكم الكل` \n"
+    "**⪼** `.تحكم آمن` \n"
+    "**- اعطـاء المطـورين المرفـوعيـن صلاحيـة التحكـم الآمـن لـ الاوامــر الامنـه فقـط ✓** \n\n"
+    "**⪼** `.تحكم` + اسم الامـر\n"
+    "**- اعطـاء المطـورين المرفـوعيـن صلاحيـة التحكـم بأمـر واحـد فقـط او عـدة اوامـر معينـه ✓ .. مثـال (.تحكم ايدي) او (.تحكم ايدي فحص كتم)**\n\n"
+    "**⪼** `.ايقاف تحكم كامل` \n"
     "**- ايقـاف صلاحيـة التحكـم الكـاملـه بالاوامــر للمطـورين المرفـوعيـن ✓** \n\n"
-    "**🛃 ملاحظـة مهمـه:**\n"
-    "لـرفع مطـور ارسـل الامـر (.رفع مطور) بالـرد ع الشخص ثـم الامر (.وضع المطور تفعيل) لتفعيـل وضع المطور ثم (.تحكم الكل) .. الاوامـر الثاني والثالث فقط تدزهن اول مـره\n\n"
-    "\n𓆩 [𐇮  ✗ ¦ ↱𝐺𝑜𝑙 𝐷. 𝑅𝑜𝑔𝑒𝑟↲ ¦ ✗ 𐇮](t.me/E_7_V) 𓆪"
+    "**⪼** `.ايقاف تحكم آمن` \n"
+    "**- ايقـاف صلاحيـة التحكـم الآمـن لـ الاوامــر الآمنـه للمطـورين المرفـوعيـن ✓** \n\n"
+    "**⪼** `.ايقاف تحكم` + اسم الامـر \n"
+    "**- ايقـاف صلاحيـة التحكـم المعطـاه لـ امـر واحـد فقـط او عـدة اوامـر للمطـورين المرفـوعيـن ✓ .. مثـال (.ايقاف تحكم ايدي) او (.ايقاف تحكم ايدي فحص كتم)** \n\n"
+    "**⪼** `.التحكم`  /  `.التحكم المعطل` \n"
+    "**- لـ عـرض قائمـة بالاوامـر المسمـوحـه والغيـر مسمـوحـه للمطـوريـن التحكـم فيهـا 🛃🚷** \n\n"
+    "\n𓆩 [𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁](t.me/Repthon) 𓆪"
 )
 
 
@@ -47,6 +56,11 @@ async def _init() -> None:
     Config.SUDO_USERS.clear()
     for user_d in sudousers:
         Config.SUDO_USERS.add(user_d)
+
+
+async def clear_sudo_list():
+    Config.SUDO_USERS.clear()
+    sql.del_collection("sudousers_list")
 
 
 def get_key(val):
@@ -71,41 +85,14 @@ async def chat_blacklist(event):
     sudousers = _sudousers_list()
     if input_str == "تفعيل":
         if gvarstatus("sudoenable") is not None:
-            return await edit_delete(event, "**- وضـع المطــور فـي وضـع التفعيـل مسبقــاً ✓**")
+            return await edit_or_reply(event, "**- وضـع المطــور فـي وضـع التفعيـل مسبقــاً ✓**")
         addgvar("sudoenable", "true")
-        text = "**✾╎تـم تفعـيل وضـع المطــور المسـاعـد .. بنجــاح✓**\n\n"
-        if len(sudousers) != 0:
-            text += (
-                "**✾╎يتم الان اعـادة تشغيـل بـوت ريبثون انتظـر 2-1 دقيقـه ▬▭ ...**"
-            )
-            msg = await edit_or_reply(
-                event,
-                text,
-            )
-            return await event.client.reload(msg)
-        text += "**- انت لـم تقـم برفـع احـد بعـد**"
-        return await edit_or_reply(
-            event,
-            text,
-        )
-    if gvarstatus("sudoenable") is not None:
+        return await edit_or_reply(event, "**⎉╎تـم تفعـيل وضـع المطــور المسـاعـد .. بنجــاح✓**\n**⎉╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر  ▬▭ ...**")
+    if input_str == "تعطيل":
+        if gvarstatus("sudoenable") is None:
+            return await edit_or_reply(event, "**- وضـع المطــور فـي وضـع التعطيـل مسبقــاً ✓**")
         delgvar("sudoenable")
-        text = "**✾╎تـم تعطيـل وضـع المطــور المسـاعـد .. بنجــاح✓**\n\n"
-        if len(sudousers) != 0:
-            text += (
-                "**✾╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**"
-            )
-            msg = await edit_or_reply(
-                event,
-                text,
-            )
-            return await event.client.reload(msg)
-        text += "**You haven't added any chat to blacklist yet.**"
-        return await edit_or_reply(
-            event,
-            text,
-        )
-    await edit_delete(event, "**- وضـع المطــور فـي وضـع التعطيـل مسبقــاً ✓**")
+        return await edit_or_reply(event, "**⎉╎تـم تعطيـل وضـع المطــور المسـاعـد .. بنجــاح✓**\n**⎉╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر  ▬▭ ...**")
 
 
 @zq_lo.rep_cmd(
@@ -122,11 +109,11 @@ async def add_sudo_user(event):
     if replied_user is None:
         return
     if replied_user.id == event.client.uid:
-        return await edit_delete(event, "** عـذراً .. لايمكـنـك رفـع نفسـك**")
+        return await edit_or_reply(event, "** عـذراً .. لايمكـنـك رفـع نفسـك**")
     if replied_user.id in _sudousers_list():
         return await edit_delete(
             event,
-            f"**✾╎المستخـدم**  {mentionuser(get_display_name(replied_user),replied_user.id)}  **موجـود بالفعـل فـي قائمـة مطـورين البـوت 🧑🏻‍💻...**",
+            f"**⎉╎المستخـدم**  {mentionuser(get_display_name(replied_user),replied_user.id)}  **موجـود بالفعـل فـي قائمـة مطـورين البـوت 🧑🏻‍💻...**",
         )
     date = str(datetime.now().strftime("%B %d, %Y"))
     userdata = {
@@ -140,10 +127,17 @@ async def add_sudo_user(event):
     except AttributeError:
         sudousers = {}
     sudousers[str(replied_user.id)] = userdata
+    addgvar("sudoenable", "true")
+    sudocmds = sudo_enabled_cmds()
+    loadcmds = CMD_INFO.keys()
+    if len(sudocmds) > 0:
+        sqllist.del_keyword_list("sudo_enabled_cmds")
+    for cmd in loadcmds:
+        sqllist.add_to_list("sudo_enabled_cmds", cmd)
     sql.del_collection("sudousers_list")
     sql.add_collection("sudousers_list", sudousers, {})
-    output = f"**✾╎تـم رفـع**  {mentionuser(userdata['chat_name'],userdata['chat_id'])}  **مطـور مسـاعـد معـك فـي البـوت 🧑🏻‍💻...**\n\n"
-    output += "**✾╎يتم الان اعـادة تشغيـل بـوت ريبثون انتظـر 2-1 دقيقـه ▬▭ ...**"
+    output = f"**⎉╎تـم رفـع**  {mentionuser(userdata['chat_name'],userdata['chat_id'])}  **مطـور مسـاعـد معـك فـي البـوت 🧑🏻‍💻...**\n\n"
+    output += "**⎉╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**"
     msg = await edit_or_reply(event, output)
     await event.client.reload(msg)
 
@@ -173,8 +167,8 @@ async def _(event):
     del sudousers[str(replied_user.id)]
     sql.del_collection("sudousers_list")
     sql.add_collection("sudousers_list", sudousers, {})
-    output = f"**✾╎تـم تنـزيـل**  {mentionuser(get_display_name(replied_user),replied_user.id)}  **مـن قـائمـة مطـورين البـوت 🧑🏻‍💻...**\n\n"
-    output += "**✾╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**"
+    output = f"**⎉╎تـم تنـزيـل**  {mentionuser(get_display_name(replied_user),replied_user.id)}  **مـن قـائمـة مطـورين البـوت 🧑🏻‍💻...**\n\n"
+    output += "**⎉╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**"
     msg = await edit_or_reply(event, output)
     await event.client.reload(msg)
 
@@ -205,6 +199,15 @@ async def _(event):
     await edit_or_reply(event, result)
 
 
+@zq_lo.rep_cmd(pattern="حذف_المطورين")
+async def _(event):
+    await clear_sudo_list()
+    output = f"**⎉╎تـم حـذف المطورين .. بنجـاح 🗑**\n"
+    output += "**⎉╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**"
+    msg = await edit_or_reply(event, output)
+    await event.client.reload(msg)
+
+
 @zq_lo.rep_cmd(
     pattern="تحكم(s)?(?:\s|$)([\s\S]*)",
     command=("تحكم", plugin_category),
@@ -216,8 +219,8 @@ async def _(event):
             "امر": "Will add all cmds from the given plugin names.",
         },
         "usage": [
-            "{tr}تحكم عام",
-            "{tr}تحكم الكل",
+            "{tr}تحكم آمن",
+            "{tr}تحكم كامل",
             "{tr}addscmd -p <plugin names>",
             "{tr}addscmd <commands>",
         ],
@@ -237,8 +240,8 @@ async def _(event):  # sourcery no-metrics
             event, "__Which command should i enable for sudo users . __"
         )
     input_str = input_str.split()
-    if input_str[0] == "عام":
-        zedevent = await edit_or_reply(event, "__Enabling all safe cmds for sudo....__")
+    if input_str[0] == "آمن":
+        zedevent = await edit_or_reply(event, "**⎉╎تـم تفعيـل التحكـم للمطـوريـن لـ الاوامـر الآمـنـه .. بنجـاح🧑🏻‍💻✅**")
         totalcmds = CMD_INFO.keys()
         flagcmds = (
             PLG_INFO["botcontrols"]
@@ -250,31 +253,30 @@ async def _(event):  # sourcery no-metrics
             + PLG_INFO["الحمايه"]
             + PLG_INFO["الاغاني"]
             + PLG_INFO["المجموعه"]
-            + PLG_INFO["اعاده تشغيل"]
-            + PLG_INFO["تحويل الصيغ"]
+            + PLG_INFO["النظام"]
+            + PLG_INFO["الفارات"]
             + PLG_INFO["المطور"]
-            + PLG_INFO["بوت الحمايه"]
             + ["gauth"]
             + ["greset"]
         )
         loadcmds = list(set(totalcmds) - set(flagcmds))
         if len(sudocmds) > 0:
             sqllist.del_keyword_list("sudo_enabled_cmds")
-    elif input_str[0] == "الكل":
+    elif input_str[0] == "كامل" or input_str[0] == "الكل":
         zedevent = await edit_or_reply(
-            event, "__Enabling compelete sudo for users....__"
+            event, "**⎉╎تـم تفعيـل التحكـم الكـامـل للمطـوريـن لـ جميـع الاوامـر .. بنجـاح🧑🏻‍💻✅**"
         )
         loadcmds = CMD_INFO.keys()
         if len(sudocmds) > 0:
             sqllist.del_keyword_list("sudo_enabled_cmds")
-    elif input_str[0] == "امر":
+    elif input_str[0] == "ملف":
         zedevent = event
-        input_str.remove("امر")
+        input_str.remove("ملف")
         loadcmds = []
         for plugin in input_str:
             if plugin not in PLG_INFO:
                 errors += (
-                    f"`{plugin}` __There is no such plugin in your ZThon__.\n"
+                    f"`{plugin}` __There is no such plugin in your Repthon__.\n"
                 )
             else:
                 loadcmds += PLG_INFO[plugin]
@@ -283,16 +285,16 @@ async def _(event):  # sourcery no-metrics
         loadcmds = []
         for cmd in input_str:
             if cmd not in CMD_INFO:
-                errors += f"`{cmd}` __There is no such command in your ZThon__.\n"
+                errors += f"**⎉╎عـذراً .. لايـوجـد امـر بـ اسـم** `{cmd}` **فـي السـورس**\n"
             elif cmd in sudocmds:
-                errors += f"`{cmd}` __Is already enabled for sudo users__.\n"
+                errors += f"**⎉╎تـم تفعيـل التحكـم بـ امـر** `{cmd}` \n**⎉╎لجميـع مطـوريـن البـوت .. بنجـاح🧑🏻‍💻✅**\n"
             else:
                 loadcmds.append(cmd)
     for cmd in loadcmds:
         sqllist.add_to_list("sudo_enabled_cmds", cmd)
-    result = f"**✾╎تـم تفعيـل التحكـم الكـامل لـ**  `{len(loadcmds)}` **امـر 🧑🏻‍💻✅**\n"
+    result = f"**⎉╎تـم تفعيـل التحكـم الكـامل لـ**  `{len(loadcmds)}` **امـر 🧑🏻‍💻✅**\n"
     output = (
-        result + "**✾╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**\n"
+        result + "**⎉╎يتم الان اعـادة تشغيـل بـوت زدثــون انتظـر 2-1 دقيقـه ▬▭ ...**\n"
     )
     if errors != "":
         output += "\n**- خطــأ :**\n" + errors
@@ -332,14 +334,14 @@ async def _(event):  # sourcery no-metrics
             event, "__Which command should I disable for sudo users . __"
         )
     input_str = input_str.split()
-    if input_str[0] == "الكل":
+    if input_str[0] == "كامل" or input_str[0] == "الكل":
         zedevent = await edit_or_reply(
-            event, "__Disabling all enabled cmds for sudo....__"
+            event, "**⎉╎تـم تعطيـل التحكـم الكـامـل للمطـوريـن لـ جميـع الاوامـر .. بنجـاح🧑🏻‍💻✅**"
         )
         flagcmds = sudocmds
-    elif input_str[0] == "-flag":
+    elif input_str[0] == "آمن":
         zedevent = await edit_or_reply(
-            event, "__Disabling all flagged cmds for sudo.....__"
+            event, "**⎉╎تـم تعطيـل التحكـم للمطـوريـن لـ الاوامـر الآمـنـه .. بنجـاح🧑🏻‍💻✅**"
         )
         flagcmds = (
             PLG_INFO["botcontrols"]
@@ -351,16 +353,15 @@ async def _(event):  # sourcery no-metrics
             + PLG_INFO["الحمايه"]
             + PLG_INFO["الاغاني"]
             + PLG_INFO["المجموعه"]
-            + PLG_INFO["اعاده تشغيل"]
-            + PLG_INFO["تحويل الصيغ"]
+            + PLG_INFO["النظام"]
+            + PLG_INFO["الفارات"]
             + PLG_INFO["المطور"]
-            + PLG_INFO["بوت الحمايه"]
             + ["gauth"]
             + ["greset"]
         )
-    elif input_str[0] == "امر":
+    elif input_str[0] == "ملف":
         zedevent = event
-        input_str.remove("امر")
+        input_str.remove("ملف")
         flagcmds = []
         for plugin in input_str:
             if plugin not in PLG_INFO:
@@ -374,9 +375,9 @@ async def _(event):  # sourcery no-metrics
         flagcmds = []
         for cmd in input_str:
             if cmd not in CMD_INFO:
-                errors += f"`{cmd}` __There is no such command in your ZThon__.\n"
+                errors += f"**⎉╎عـذراً .. لايـوجـد امـر بـ اسـم** `{cmd}` **فـي السـورس**\n"
             elif cmd not in sudocmds:
-                errors += f"`{cmd}` __Is already disabled for sudo users__.\n"
+                errors += f"**⎉╎تـم تعطيـل التحكـم بـ امـر** `{cmd}` \n**⎉╎لجميـع مطـوريـن البـوت .. بنجـاح🧑🏻‍💻✅**\n"
             else:
                 flagcmds.append(cmd)
     count = 0
@@ -384,9 +385,9 @@ async def _(event):  # sourcery no-metrics
         if sqllist.is_in_list("sudo_enabled_cmds", cmd):
             count += 1
             sqllist.rm_from_list("sudo_enabled_cmds", cmd)
-    result = f"**✾╎تـم تعطيـل التحكـم الكـامل لـ**  `{count}` **امـر 🧑🏻‍💻✅**\n"
+    result = f"**⎉╎تـم تعطيـل التحكـم الكـامل لـ**  `{count}` **امـر 🧑🏻‍💻✅**\n"
     output = (
-        result + "**✾╎يتم الان اعـادة تشغيـل بـوت ريبـــثون انتظـر 2-1 دقيقـه ▬▭ ...**\n"
+        result + "**⎉╎يتم الان اعـادة تشغيـل بـوت زدثــون انتظـر 2-1 دقيقـه ▬▭ ...**\n"
     )
     if errors != "":
         output += "\n**- خطــأ :**\n" + errors
@@ -395,15 +396,15 @@ async def _(event):  # sourcery no-metrics
 
 
 @zq_lo.rep_cmd(
-    pattern="vscmds( -d)?$",
-    command=("vscmds", plugin_category),
+    pattern="التحكم( المعطل)?$",
+    command=("التحكم", plugin_category),
     info={
         "header": "To show list of enabled cmds for sudo.",
         "description": "will show you the list of all enabled commands",
         "flags": {"-d": "To show disabled cmds instead of enabled cmds."},
         "الاستـخـدام": [
-            "{tr}vscmds",
-            "{tr}vscmds -d",
+            "{tr}التحكم",
+            "{tr}التحكم المعطل",
         ],
     },
 )
@@ -414,8 +415,8 @@ async def _(event):  # sourcery no-metrics
     clist = {}
     error = ""
     if not input_str:
-        text = "**The list of sudo enabled commands are :**"
-        result = "**SUDO ENABLED COMMANDS**"
+        text = "**•🧑🏻‍💻• قائمــة الاوامـر المسمـوحـه لـ المطـوريـن المـرفـوعيـن فـي البـوت الخـاص بـك 🏧:**"
+        result = "**- اوامـر تحكـم المطـوريـن 🛃**"
         if len(sudocmds) > 0:
             for cmd in sudocmds:
                 plugin = get_key(cmd)
@@ -424,11 +425,11 @@ async def _(event):  # sourcery no-metrics
                 else:
                     clist[plugin] = [cmd]
         else:
-            error += "__You haven't enabled any sudo cmd for sudo users.__"
+            error += "**⎉╎عـذراً .. لايـوجـد اي اوامـر تحكـم خاصـه بـ المطـوريـن**\n**⎉╎ارسـل (** `.المساعد` **) لـ تصفـح اوامـر التحكـم 🛂**"
         count = len(sudocmds)
     else:
-        text = "**The list of sudo disabled commands are :**"
-        result = "**SUDO DISABLED COMMANDS**"
+        text = "**•🧑🏻‍💻• قائمــة الاوامـر الغيـر مسمـوحـه 📵 لـ المطـوريـن المـرفـوعيـن فـي البـوت الخـاص بـك :**"
+        result = "**- اوامـر عـدم تحكـم المطـوريـن 🚸**"
         totalcmds = CMD_INFO.keys()
         cmdlist = list(set(totalcmds) - set(sudocmds))
         if cmdlist:
@@ -439,7 +440,7 @@ async def _(event):  # sourcery no-metrics
                 else:
                     clist[plugin] = [cmd]
         else:
-            error += "__You have enabled every cmd as sudo for sudo users.__"
+            error += "**⎉╎التحكـم كـامـل لـ كـل اوامـر البـوت لـ المطـورين**\n**⎉╎لايـوجـد اوامـر معطلـه لـوصـول المطـور لهـا**\n\n**⎉╎ارسـل (** `.المساعد` **) لـ تصفـح اوامـر ايقـاف التحكـم 🚷**"
         count = len(cmdlist)
     if error != "":
         return await edit_delete(event, error, 10)
@@ -454,7 +455,7 @@ async def _(event):  # sourcery no-metrics
         output += "\n\n"
     finalstr = (
         result
-        + f"\n\n**SUDO TRIGGER: **`{Config.SUDO_COMMAND_HAND_LER}`\n**Commands:** {count}\n\n"
+        + f"\n\n**⎉╎نقطـة اوامـر المطـوريـن هـي : ** `{Config.SUDO_COMMAND_HAND_LER}`\n**⎉╎عـدد الاوامـر :** {count}\n\n"
         + output
     )
     await edit_or_reply(event, finalstr, aslink=True, linktext=text)
@@ -464,9 +465,7 @@ zq_lo.loop.create_task(_init())
 
 
 
-# Copyright (C) 2022 Zed-Thon . All Rights Reserved
+# Copyright (C) 2022 RepthonArabic . All Rights Reserved
 @zq_lo.rep_cmd(pattern="المساعد")
 async def cmd(baqir):
     await edit_or_reply(baqir, BaqirDV_cmd)
-
-
