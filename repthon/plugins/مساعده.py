@@ -99,7 +99,7 @@ async def plugininfo(input_str, event, flag):
 
 
 async def grpinfo():
-    outstr = "**Plugins in ZThon are:**\n\n"
+    outstr = "**Plugins in Repthon are:**\n\n"
     outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
     category = ["الادمن", "البوت", "الترفيه", "الخدمات", "الادوات", "العروض", "البحث"]
     if OLDZED:
@@ -114,7 +114,7 @@ async def grpinfo():
 
 
 async def cmdlist():
-    outstr = "**Total list of Commands in your ZThon are :**\n\n"
+    outstr = "**Total list of Commands in your Repthon are :**\n\n"
     category = ["الادمن", "البوت", "الترفيه", "الخدمات", "الادوات", "العروض", "البحث"]
     if OLDZED:
         category.append("آخرى")
@@ -200,7 +200,7 @@ async def _(event):
     else:
         outstr = await cmdlist()
     await edit_or_reply(
-        event, outstr, aslink=True, linktext="Total Commands of ZThon are :"
+        event, outstr, aslink=True, linktext="Total Commands of Repthon are :"
     )
 
 
@@ -220,7 +220,7 @@ async def _(event):
         out = f"**I found {len(found)} command(s) for: **`{cmd}`\n\n{out_str}"
         out += f"\n\n__For more info check {cmdprefix}help -c <command>__"
     else:
-        out = f"I can't find any such command `{cmd}` in ZThon"
+        out = f"I can't find any such command `{cmd}` in Repthon"
     await edit_or_reply(event, out)
 
 
