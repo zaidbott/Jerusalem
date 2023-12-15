@@ -68,7 +68,7 @@ async def _(event):
         "**State changed from up to starting**",
         "**Stopping all processes with SIGTERM**",
         "**Process exited with** `status 143`",
-        "**Starting process with command** `python3 -m zthon`",
+        "**Starting process with command** `python3 -m repthon`",
         "**State changed from starting to up**",
         "__INFO:Userbot:Logged in as 557667062__",
         "__INFO:Userbot:Successfully loaded all plugins__",
@@ -315,7 +315,7 @@ Fun3_cmd = (
 "**للنســخ : ** __اضغط ع الامـر لنسخـه__"
 )
 
-# Copyright (C) 2022 Zedthon . All Rights Reserved
+# Copyright (C) 2022 RepthonArabic . All Rights Reserved
 @zq_lo.rep_cmd(pattern="تسليه3")
-async def cmd(zelzallll):
-    await edit_or_reply(zelzallll, Fun3_cmd)
+async def cmd(baqir):
+    await edit_or_reply(baqir, Fun3_cmd)
