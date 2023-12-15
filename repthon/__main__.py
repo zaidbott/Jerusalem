@@ -9,6 +9,7 @@ from .utils import (
     add_bot_to_logger_group,
     load_plugins,
     setup_bot,
+    saves,
     startupmessage,
     verifyLoggerGroup,
 )
@@ -47,6 +48,13 @@ try:
     LOGS.info("⌭ جـار تفعيـل وضـع الانـلاين ⌭")
     zq_lo.loop.run_until_complete(mybot())
     LOGS.info("✓ تـم تفعيـل الانـلاين .. بـنجـاح ✓")
+except Exception as e:
+    LOGS.error(f"- {e}")
+
+try:
+    LOGS.info("⌭ جـار تفعـيـل وضـع حمــاية الحـسـاب من الاختـراق ⌭")
+    zq_lo.loop.run_until_complete(saves())
+    LOGS.info("✓ تـم تفعـيل .. وضـع حـمايـة الحـسـاب بنجــاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
 
