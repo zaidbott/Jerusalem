@@ -102,7 +102,7 @@ async def zed_help(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المكالمـات والميـوزك 🎸](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المكالمـات وتشغيـل الاغـاني في المكالمـات (الميوزك) :**\n\n",
+            "[ᯓ JERUSALEM - اوامــر المكالمـات والميـوزك 🎸](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المكالمـات وتشغيـل الاغـاني في المكالمـات (الميوزك) :**\n\n",
             buttons=[
                 [
                     Button.inline("المكالمـات", data="zzcall"),
@@ -120,7 +120,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المكالمـات والميـوزك 🎸](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المكالمـات والميـوزك 🎸](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بدء مكالمه`
 **⪼** `.انهاء مكالمه`
@@ -153,7 +153,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المكالمـات والميـوزك 🎸](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المكالمـات والميـوزك 🎸](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.شغل` + رابـط او بالـرد ع مقطـع صوتـي
 **⪼** `.فيد` + رابـط او بالـرد ع مقطـع فيديـو
@@ -182,7 +182,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الذكـاء الاصطنـاعـي 🛸](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الذكـاء الاصطنـاعـي 🛸](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.س` + سـؤالك او بالـرد ع رسالـة
 
@@ -210,7 +210,7 @@ async def _(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البـوت المسـاعد :**\n\n",
+            "[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البـوت المسـاعد :**\n\n",
             buttons=[
                 [
                     Button.inline("تحديث", data="updatevr"),
@@ -250,7 +250,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - ادوات النظــام 🤖](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر نظـام البـوت المسـاعد :**\n\n",
+        "[ᯓ JERUSALEM - ادوات النظــام 🤖](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر نظـام البـوت المسـاعد :**\n\n",
         buttons=[
             [
                 Button.inline("النظـام", data="syszzz"),
@@ -269,7 +269,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.النظام`
 
@@ -293,7 +293,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.فرمته`
 
@@ -311,7 +311,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.السرعه`
 
@@ -329,7 +329,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.فاراتي`
 
@@ -347,7 +347,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تاريخ التنصيب`
 
@@ -366,7 +366,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تحديث`
 
@@ -391,7 +391,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اعاده تشغيل`
 
@@ -412,7 +412,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ايقاف البوت`
 
@@ -432,7 +432,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.فحص`
 
@@ -450,7 +450,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.سليب`
 **⪼** `.سليب_ميديا`
@@ -472,7 +472,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الانترنت`
 **⪼** `.الانترنت صورة`
@@ -491,7 +491,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.سورس`
 
@@ -509,7 +509,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ريبثون`
 
@@ -527,7 +527,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الاذاعه`
 
@@ -545,7 +545,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البـــوت 🦾🤖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.رفع مطور`
 **لـ رفـع شخـص مطـور مسـاعـد معـك بالبـوت**
@@ -603,7 +603,7 @@ async def _(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه :**\n\n",
+            "[ᯓ JERUSALEM - اوامــر المجمــوعــه 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه :**\n\n",
             buttons=[
                 [
                     Button.inline("اوامــر المجمــوعــه¹", data="group1vr"),
@@ -639,7 +639,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تحذير`
 **⪼** `.التحذيرات`
@@ -761,7 +761,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹ 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه¹ :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر المجمــوعــه¹ 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه¹ :**\n\n",
         buttons=[
             [
                 Button.inline("البوتات", data="botveiw"),
@@ -802,7 +802,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.البوتات`
 
@@ -820,7 +820,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل البوتات`
 `.فتح البوتات`
@@ -839,7 +839,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الاضافه`
 `.فتح الاضافه`
@@ -858,7 +858,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الدخول`
 `.فتح الدخول`
@@ -877,7 +877,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الميديا`
 **⪼** `.فتح الميديا`
@@ -896,7 +896,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل تعديل الميديا`
 **⪼** `.فتح تعديل الميديا`
@@ -915,7 +915,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الروابط`
 `.فتح الروابط`
@@ -934,7 +934,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل المعرفات`
 `.فتح المعرفات`
@@ -953,7 +953,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل التوجيه`
 `.فتح التوجيه`
@@ -972,7 +972,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الانلاين`
 `.فتح الانلاين`
@@ -991,7 +991,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الفارسيه`
 `.فتح الفارسيه`
@@ -1010,7 +1010,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الفشار`
 `.فتح الفشار`
@@ -1029,7 +1029,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قفل الكل`
 `.فتح الكل`
@@ -1048,7 +1048,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه¹](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه¹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الاعدادات`
 
@@ -1066,7 +1066,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قيد`
 
@@ -1089,7 +1089,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه² 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه² :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر المجمــوعــه² 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه² :**\n\n",
         buttons=[
             [
                 Button.inline("الرابط", data="urlveiw"),
@@ -1129,7 +1129,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الرابط`
 
@@ -1147,7 +1147,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تاك`
 `.all`
@@ -1171,7 +1171,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.رفع مشرف`
 `.تنزيل مشرف`
@@ -1190,7 +1190,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.رفع مالك`
 `.تنزيل مالك`
@@ -1209,7 +1209,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.رسائلي`
 **⪼** `.رسائله`
@@ -1230,7 +1230,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اسمي`
 **⪼** `.اسمه`
@@ -1255,7 +1255,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEMJERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.حذف رسائلي`
 **⪼** `.مسح`
@@ -1287,7 +1287,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الاحداث`
 `.الاحداث م`
@@ -1307,7 +1307,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.المعلومات`
 
@@ -1325,7 +1325,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الاعضاء`
 
@@ -1344,7 +1344,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.المشرفين`
 
@@ -1363,7 +1363,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.البوتات`
 
@@ -1382,7 +1382,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الصورة وضع`
 `.الصورة حذف`
@@ -1403,7 +1403,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تثبيت`
 `.الغاء تثبيت`
@@ -1424,7 +1424,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.المحذوفين`
 `.المحذوفين تنظيف`
@@ -1444,7 +1444,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه²](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه²](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.مسح المحظورين`
 
@@ -1462,7 +1462,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³ 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه³ :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر المجمــوعــه³ 🛗](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر المجمــوعــه³ :**\n\n",
         buttons=[
             [
                 Button.inline("كتم", data="mutevr"),
@@ -1486,7 +1486,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.كتم` + السبب بالـرد
 `.كتم` + معرف/ايدي + السبب
@@ -1519,7 +1519,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.حظر` + السبب بالـرد
 `.حظر` + معرف/ايدي + السبب
@@ -1553,7 +1553,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.طرد`
 
@@ -1572,7 +1572,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تقييد`
 
@@ -1591,7 +1591,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر مكـافح التكــرار 🛡](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر مكـافح التكــرار 🛡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ضع التكرار`
 
@@ -1613,7 +1613,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المنــع 🚫](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المنــع 🚫](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.منع`
 **⪼** `.الغاء منع`
@@ -1635,7 +1635,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الاضـافه والتفليـش 👾](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر الاضـافه والتفليـش :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر الاضـافه والتفليـش 👾](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر الاضـافه والتفليـش :**\n\n",
         buttons=[
             [
                 Button.inline("الاضافه", data="addvr"),
@@ -1659,7 +1659,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ضيف`
 **⪼** `.اضافه`
@@ -1690,7 +1690,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تفليش`
 `.تفليش بالطرد`
@@ -1711,7 +1711,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.حظر_الكل`
 
@@ -1732,7 +1732,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.طرد_الكل`
 
@@ -1753,7 +1753,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.كتم_الكل`
 
@@ -1774,7 +1774,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.غادر`
 `.مغادره`
@@ -1795,7 +1795,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.البوتات طرد`
 `.البوتات`
@@ -1815,7 +1815,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.المحذوفين`
 `.المحذوفين تنظيف`
@@ -1835,7 +1835,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المجمــوعــه³](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر المجمــوعــه³](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.مسح المحظورين`
 
@@ -1856,7 +1856,7 @@ async def _(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات 🧬](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر الفــارات :**\n\n",
+            "[ᯓ JERUSALEM - اوامــر الفــارات 🧬](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر الفــارات :**\n\n",
             buttons=[
                 [
                     Button.inline("فارات الفحص", data="alivevar"),
@@ -1875,7 +1875,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر فــارات الوقتــي 🕰](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات الوقتــي :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر فــارات الوقتــي 🕰](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات الوقتــي :**\n\n",
         buttons=[
             [
                 Button.inline("اسم المستخدم", data="nameprvr"),
@@ -1903,7 +1903,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر فــارات المنطقـه الزمنيـة 🌐](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات المنطقـه الزمنيـة :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر فــارات المنطقـه الزمنيـة 🌐](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات المنطقـه الزمنيـة :**\n\n",
         buttons=[
             [Button.inline("وقت اليمن", data="yemenvar")],
             [Button.inline("وقت مصر", data="msrvar")],
@@ -1918,7 +1918,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف رمز الوقتي`
 
@@ -1936,7 +1936,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف صورة الوقتي`
 
@@ -1954,7 +1954,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف البايو`
 
@@ -1972,7 +1972,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 
 **⪼** `.الوقتي 1`
@@ -2004,7 +2004,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف الاسم`
 
@@ -2022,7 +2022,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر فــارات حمايـة الخــاص 🛄](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات حمايـة الخــاص :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر فــارات حمايـة الخــاص 🛄](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات حمايـة الخــاص :**\n\n",
         buttons=[
             [
                 Button.inline("صورة الحماية", data="picpmvar"),
@@ -2040,7 +2040,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف عدد التحذيرات`
 
@@ -2058,7 +2058,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف كليشة الحماية`
 
@@ -2077,7 +2077,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف صورة الحماية`
 
@@ -2095,7 +2095,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر فــارات الفحـص 🏮](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات الفحـص :**\n\n",
+        "[ᯓ JERUSALEM - اوامــر فــارات الفحـص 🏮](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر فــارات الفحـص :**\n\n",
         buttons=[
             [
                 Button.inline("كليشة الفحص", data="kleshalive"),
@@ -2111,7 +2111,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف صورة الفحص`
 
@@ -2129,7 +2129,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف كليشة الفحص`
 
@@ -2147,7 +2147,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف رمز الفحص`
 
@@ -2165,7 +2165,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف صورة الكتم`
 
@@ -2184,7 +2184,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف صورة البوت`
 
@@ -2203,7 +2203,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف رمز ايدي`
 
@@ -2222,7 +2222,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف عنوان ايدي`
 
@@ -2241,7 +2241,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف خط ايدي`
 
@@ -2259,7 +2259,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.وقت مصر`
 
@@ -2277,7 +2277,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.وقت اليمن`
 
@@ -2295,7 +2295,7 @@ async def _(event):
 @check_owner
 async def _(event):
   await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.وقت سوريا`
 
@@ -2313,7 +2313,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 
 **⪼** `.وقتيه 1`
@@ -2352,7 +2352,7 @@ https://t.me/Repthon_vars/20""",
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الفــارات](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر الفــارات](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اضف نقطة الاوامر`
 
@@ -2373,7 +2373,7 @@ async def zed_help(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البحث والتحميـل من جميـع مواقـع الـ سوشـل ميديـا :**\n\n",
+            "[ᯓ JERUSALEM - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البحث والتحميـل من جميـع مواقـع الـ سوشـل ميديـا :**\n\n",
             buttons=[
                 [
                     Button.inline("فيديو", data="vedzed"),
@@ -2422,7 +2422,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[JERUSALEM - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بحث`
 **⪼** `.اغنيه`
@@ -2444,7 +2444,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[JERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.فيديو`
 
@@ -2465,7 +2465,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.يوت`
 
@@ -2497,7 +2497,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تحميل صوت`
 
@@ -2516,7 +2516,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تحميل فيديو`
 
@@ -2535,7 +2535,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ابحث`
 
@@ -2555,7 +2555,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.متحركه`
 
@@ -2573,7 +2573,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ملصقات`
 
@@ -2597,7 +2597,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.صور`
 
@@ -2621,7 +2621,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.يوتيوب`
 
@@ -2643,7 +2643,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ساوند`
 
@@ -2662,7 +2662,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.انستا`
 `.تحميل صوت`
@@ -2683,7 +2683,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓ JERUSALEM - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بنترست`
 
@@ -2701,7 +2701,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.لايكي`
 
@@ -2720,7 +2720,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تيك`
 
@@ -2739,7 +2739,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.فيس`
 
@@ -2757,7 +2757,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تويتر`
 
@@ -2776,7 +2776,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر البحـث والتحميــل 🛰](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.سناب`
 
@@ -2798,7 +2798,7 @@ async def _(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التسليـه والتحشيش 🏂🎃](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر التسليـه والتحشيش :**\n\n",
+            "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التسليـه والتحشيش 🏂🎃](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر التسليـه والتحشيش :**\n\n",
             buttons=[
                 [
                     Button.inline("اوامــر تسليـه متحركـه", data="fun1zed"),
@@ -2823,7 +2823,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التسليـه 🏂](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التسليـه 🏂](t.me/Repthon) .
 **⪼** `.تسليه1`
 **⪼** `.تسليه2`
 **⪼** `.تسليه3`
@@ -2852,7 +2852,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التسليـه ⛹🏻‍♀](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التسليـه ⛹🏻‍♀](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.حيوان`
 **⪼** `.زاحف`
@@ -2894,7 +2894,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التحشيش 🎃](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر التحشيش 🎃](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.رفع تاج`
 **⪼** `.رفع بقلبي`
@@ -2942,7 +2942,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الالـعــاب 🎮🎳](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الالـعــاب 🎮🎳](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بلاي`
 **العــاب الانـلايـن لســورس ريبـــثون 🕹**
@@ -2992,7 +2992,7 @@ async def zed_help(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات الاوامـر المتعلقـه بالحسـاب :**\n\n",
+            "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات الاوامـر المتعلقـه بالحسـاب :**\n\n",
             buttons=[
                 [
                     Button.inline("البايو الوقتي", data="biome"),
@@ -3022,7 +3022,7 @@ async def zed_help(event):
 @check_owner
 async def zed_help(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات الاوامـر المتعلقـه بالحسـاب :**\n\n",
+        "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات الاوامـر المتعلقـه بالحسـاب :**\n\n",
         buttons=[
             [
                 Button.inline("احصائياتي", data="infome"),
@@ -3047,7 +3047,7 @@ async def zed_help(event):
 @check_owner
 async def zed_help(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات الاوامـر المتعلقـه بالحسـاب :**\n\n",
+        "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات الاوامـر المتعلقـه بالحسـاب :**\n\n",
         buttons=[
             [
                 Button.inline("الازعاج", data="echozed"),
@@ -3070,7 +3070,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ازعاج`
 **⪼** `.الغاء ازعاج`
@@ -3096,7 +3096,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.انتحال`
 **⪼** `.اعاده`
@@ -3117,7 +3117,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.للكروبات`
 **⪼** `.للخاص`
@@ -3143,7 +3143,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الحاظرهم`
 
@@ -3161,7 +3161,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.احذف`
 
@@ -3179,7 +3179,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بايو وقتي`
 
@@ -3205,7 +3205,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اسم وقتي`
 
@@ -3232,7 +3232,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.صوره وقتيه`
 
@@ -3258,7 +3258,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.قنواتي ادمن`
 **⪼** `.قنواتي مالك`
@@ -3282,7 +3282,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.كروباتي ادمن`
 **⪼** `.كروباتي مالك`
@@ -3306,7 +3306,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البحث والتحميـل من جميـع مواقـع الـ سوشـل ميديـا :**\n\n",
+        "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البحث والتحميـل من جميـع مواقـع الـ سوشـل ميديـا :**\n\n",
         buttons=[
             [
                 Button.inline("اوامر حماية الخاص", data="pmcmd"),
@@ -3322,7 +3322,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر حمـايــة الخــاص 🛡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر حمـايــة الخــاص 🛡](t.me/Repthon) .
 **⪼** `.الحمايه تفعيل`
 **لـ تفعيـل حمايـة الخـاص لـ حسـابك**
 
@@ -3371,7 +3371,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - فــارات حمـايــة الخــاص 🛡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - فــارات حمـايــة الخــاص 🛡](t.me/Repthon) .
 **⪼** `.اضف عدد التحذيرات`
 **لـ تغييـر عدد تحذيرات امـر حماية الخاص التي يقوم البوت باعطائها للشخص الذي يراسلك خاص قبل حظـره**
 
@@ -3402,7 +3402,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.احصائياتي`
 
@@ -3420,7 +3420,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEMJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ايدي`
 **⪼** `.ا`
@@ -3464,7 +3464,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تخزين الخاص تعطيل`
 **⪼** `.تخزين الخاص تفعيل`
@@ -3492,7 +3492,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.كتم`
 **⪼** `.الغاء كتم`
@@ -3523,7 +3523,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.حظر`
 **⪼** `.الغاء حظر`
@@ -3555,7 +3555,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الحســاب 🚹](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.الاسماء`
 **⪼** `.كشف`
@@ -3579,7 +3579,7 @@ async def zed_help(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المـرفقــات 🖥](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر مرفقـات السـورس :**\n\n",
+            "[ᯓ JERUSALEM - اوامــر المـرفقــات 🖥](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر مرفقـات السـورس :**\n\n",
             buttons=[
                 [
                     Button.inline("الميديا والصيغ", data="meddia"),
@@ -3602,7 +3602,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المـرفقــات 🖥](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المـرفقــات 🖥](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.لملصق`
 ⦇ الامـر بالـرد ع صـوره ⦈ لـ تحويـل الصـوره لـ ملصـق
@@ -3646,7 +3646,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الستـوريـات 🎆🏖](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الستـوريـات 🎆🏖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.حالات واتس`
 **- اكثـر مـن 2000 فيديـو حالات واتسـاب قصيـرة 🎬**
@@ -3687,7 +3687,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الآفتـــارات والصــور 🎆🏖](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الآفتـــارات والصــور 🎆🏖](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بنات`
 **- آفتـارات بنـات تمبلـر 💅🎆**
@@ -3734,7 +3734,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المـرفقــات 🖥](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر المـرفقــات 🖥](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.ملصق`
 ⦇ .ملصق بالـرد ع صـوره او فيديـو ⦈  لـ صنـع ملصـق او ملصـق فيديـو متحـرك
@@ -3768,7 +3768,7 @@ async def zed_help(event):
     zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (.مساعده) في اي مجمـوعـه"
     try:
         await event.edit(
-            "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر ادوات السـورس :**\n\n",
+            "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر ادوات السـورس :**\n\n",
             buttons=[
                 [
                     Button.inline("الاشتـراك الاجبـاري", data="subszed"),
@@ -3797,7 +3797,7 @@ async def zed_help(event):
 @check_owner
 async def zed_help(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر ادوات السـورس :**\n\n",
+        "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر ادوات السـورس :**\n\n",
         buttons=[
             [
                 Button.inline("الماسـح الضوئـي", data="scanner"),
@@ -3821,7 +3821,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تفعيل الذاتيه`
 **⪼** `.تعطيل الذاتيه`
@@ -3854,7 +3854,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.سكانر`
 الامـر + اللغـه لنسـخ النص
@@ -3901,7 +3901,7 @@ https://ocr.space/OCRAPI
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.احسب`
 
@@ -3922,7 +3922,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.طقس`
 
@@ -3943,7 +3943,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تحويل ملكية`
 
@@ -3969,7 +3969,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.انشاء كروب`
 **⪼** `.انشاء قناه`
@@ -3996,7 +3996,7 @@ async def _(event):
 @check_owner
 async def zed_help(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - ادوات الروابــط 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر ادوات الروابــط :**\n\n",
+        "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - ادوات الروابــط 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر ادوات الروابــط :**\n\n",
         buttons=[
             [
                 Button.inline("اختصـار الروابـط", data="shorturl"),
@@ -4019,7 +4019,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اختصار`
 **⪼** `.الغاء اختصار`
@@ -4044,7 +4044,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.سكرين`
 **⪼** `.ss`
@@ -4063,7 +4063,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.عرض`
 
@@ -4081,7 +4081,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.دومين`
 
@@ -4102,7 +4102,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الادوات 💡](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.اخفاء`
 
@@ -4121,7 +4121,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الاشتــراك الاجبــاري 🛗](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الاشتــراك الاجبــاري 🛗](t.me/Repthon) .
 **- الامـر :**
 **- اولاً اوامـر اضافـة القنـاة المطلوبـه للفـارات :**
 
@@ -4167,7 +4167,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الصيـد & التشيكـر ❇️](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر الصيـد & التشيكـر ❇️](t.me/Repthon) .
 **⎉╎شـروحـات اوامـر تشيكـر صيـد معـرفات تيليجـرام :**
 
 **- النـوع :**
@@ -4216,7 +4216,7 @@ async def _(event):
 @check_owner
 async def zed_help(event):
     await event.edit(
-        "[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر تجميـع النقـاط 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر تجميـع النقـاط :**\n\n",
+        "[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر تجميـع النقـاط 💡](t.me/Repthon) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر تجميـع النقـاط :**\n\n",
         buttons=[
             [
                 Button.inline("نقـاط التمـويـل", data="tamzed"),
@@ -4232,7 +4232,7 @@ async def zed_help(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر تجميــع النقــاط 🛂](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر تجميــع النقــاط 🛂](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.المليار`
 **لـ تجميـع النقـاط مـن بـوت المليـار ( @zmmbot ) .. تلقـائيـاً ✓**
@@ -4278,7 +4278,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر تجميــع النقــاط 🛂](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر تجميــع النقــاط 🛂](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.بخشيش وعد`
 **⪼** `.راتب وعد`
@@ -4311,7 +4311,7 @@ async def _(event):
 @check_owner
 async def _(event):
     await event.edit(
-        """[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر النشــر التلقــائي 🌐](t.me/Repthon) .
+        """[ᯓJERUSALEM 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 - اوامــر النشــر التلقــائي 🌐](t.me/Repthon) .
 **- الامـر :**
 **⪼** `.تلقائي`
 **الامـر + (معـرف/ايـدي/رابـط) القنـاة المـراد النشـر التلقـائي منهـا .. استخـدم الامـر داخـل قناتك✓**

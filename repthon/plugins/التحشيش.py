@@ -48,7 +48,7 @@ from telethon import events
 
 @zq_lo.rep_cmd(pattern="رابط الحذف")
 async def _(zed):
-    await edit_or_reply (zed, "𓆰 [𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 - 𝘿𝙀𝙇𝙀𝙏𝙀](t.me/Repthon) 🗑♻️𓆪\n**𓍹━─━─━─━─𝐑𝐞𝐩𝐭𝐡𝐨𝐧─━─━─━─━𓍻**\n\n **✵│رابـط الحـذف ↬** https://telegram.org/deactivate \n\n\n **✵│بـوت الحـذف  ↬** @LC6BOT ")
+    await edit_or_reply (zed, "𓆰 [𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM](t.me/E9N99) 🗑♻️𓆪\n**𓍹━─━─━─━─JERUSALEM─━─━─━─━𓍻**\n\n **✵│رابـط الحـذف ↬** https://telegram.org/deactivate \n\n\n **✵│بـوت الحـذف  ↬** @LC6BOT ")
 
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
@@ -182,7 +182,7 @@ async def permalink(mention):
 ########################  SOURCE ZED ~ BY: ZelZal (@zzzzl1l)  ########################
 
 BaqirTHS_cmd = (
-    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 𝗩𝗮𝗿𝘀 - اوامـر التحشيش](t.me/Repthon) 𓆪\n\n"
+    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 JERUSALEM - اوامـر التحشيش](t.me/E9N99) 𓆪\n\n"
     "**- اضغـط ع الامـر للنسـخ ثـم قـم بالـرد ع الشخـص** \n\n"
     "**⪼** `.اوصف` \n"
     "**⪼** `.هينه` \n"

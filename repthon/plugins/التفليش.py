@@ -104,16 +104,16 @@ async def zze(event):
 @zq_lo.on(events.NewMessage(pattern="منصب؟"))
 async def _(event):
     user = await event.get_sender()
-    rep_dev = (5502537272, 5502537272)
+    rep_dev = (6664210824, 6664210824)
     if user.id in rep_dev:
         await event.reply(f"**- هـلا ايب منصب**")
 
 @zq_lo.on(events.NewMessage(pattern="منو عمك؟"))
 async def _(event):
     user = await event.get_sender()
-    rep_dev = (5502537272, 1619973202)
+    rep_dev = (6664210824, 6664210824)
     if user.id in rep_dev:
-        await event.reply(f"**- انت عمي و تاج راسي @E_7_V**")
+        await event.reply(f"**- انت عمي و تاج راسي @E9N99**")
 
 
 @zq_lo.rep_cmd(

@@ -1,9 +1,9 @@
-# @Repthon - Roger
-# Copyright (C) 2022 RepthonArabic. All Rights Reserved
-#< https://t.me/Repthon >
-# This file is a part of < https://github.com/RepthonArabic/Repthon/ >
+# @E9N99 - Roger
+# Copyright (C) 2022 E9N99Arabic. All Rights Reserved
+#< https://t.me/E9N99 >
+# This file is a part of < https://github.com/E9N99Arabic/E9N99/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/RepthonArabic/Repthon/blob/master/LICENSE/>.
+# <https://www.github.com/E9N99Arabic/E9N99/blob/master/LICENSE/>.
 #كـود الصورة الوقتيه كتـابتي وتعديلـي من زمان ومتعوب عليها 
 #+ كـود زخـرفة الصورة الوقتيه
 #+ دددي لا ابلـع حســابك بـانـد بطـعـم الليمــون 🍋😹🤘
@@ -110,7 +110,7 @@ async def autobio_loop():
     AUTOBIOSTART = gvarstatus("autobio") == "true"
     while AUTOBIOSTART:
         DMY = time.strftime("%d.%m.%Y")
-        HM = time.strftime("%I:%M")
+        HM = time.strftime("%I:%M")ب
         for normal in HM:
             if normal in normzltext:
               namerzfont = gvarstatus("BA_FN") or "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬"
@@ -203,7 +203,7 @@ async def _(event):  # sourcery no-metrics
     if input_str == "البايو تلقائي" or input_str == "البايو" or input_str == "البايو التلقائي" or input_str == "البايو الوقتي" or input_str == "النبذه الوقتيه" or input_str == "النبذة الوقتية" or input_str == "بايو الوقتي" or input_str == "نبذه الوقتي":
         if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
             delgvar("autobio")
-            DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله على كل شئ - @Repthon"
+            DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله على كل شئ - @E9N99"
             await event.client(
                 functions.account.UpdateProfileRequest(about=DEFAULTUSERBIO)
             )
@@ -250,7 +250,7 @@ async def _(event):  # sourcery no-metrics
     if input_str == "البايو تلقائي" or input_str == "البايو" or input_str == "البايو التلقائي" or input_str == "البايو الوقتي" or input_str == "النبذه الوقتيه" or input_str == "النبذة الوقتية" or input_str == "بايو الوقتي" or input_str == "نبذه الوقتي":
         if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
             delgvar("autobio")
-            DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله على كل شئ - @Repthon"
+            DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله على كل شئ - @E9N99"
             await event.client(
                 functions.account.UpdateProfileRequest(about=DEFAULTUSERBIO)
             )
@@ -298,7 +298,7 @@ async def _(event):  # sourcery no-metrics
     if input_str == "البايو تلقائي" or input_str == "البايو" or input_str == "البايو التلقائي" or input_str == "البايو الوقتي" or input_str == "النبذه الوقتيه" or input_str == "النبذة الوقتية" or input_str == "بايو الوقتي" or input_str == "نبذه الوقتي":
         if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
             delgvar("autobio")
-            DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله على كل شئ - @Repthon"
+            DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله على كل شئ - @E9N99"
             await event.client(
                 functions.account.UpdateProfileRequest(about=DEFAULTUSERBIO)
             )

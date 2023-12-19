@@ -86,17 +86,17 @@ async def update_bot(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    sandy = await event.edit(f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**•⎆┊تم التحـديث ⎌ بنجـاح**\n**•⎆┊جـارِ إعـادة تشغيـل بـوت ريبـــثون ⎋ **\n**•⎆┊انتظـࢪ مـن 2 - 1 دقيقـه . . .📟**")
+    sandy = await event.edit(f"JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**•⎆┊تم التحـديث ⎌ بنجـاح**\n**•⎆┊جـارِ إعـادة تشغيـل بـوت ريبـــثون ⎋ **\n**•⎆┊انتظـࢪ مـن 2 - 1 دقيقـه . . .📟**")
     await event.client.reload(sandy)
 
 
 async def deploy(event, repo, ups_rem, ac_br, txt):
     if HEROKU_API_KEY is None:
-        return await event.edit(f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n **•─────────────────•**\n** ⪼ لم تقـم بوضـع مربـع فـار HEROKU_API_KEY اثنـاء التنصيب وهـذا خطـأ .. قم بضبـط المتغيـر أولاً لتحديث بوت ريبـــثون ..؟!**", link_preview=False)
+        return await event.edit(f"JERUSALEM - تحـديثـات السـورس\n **•─────────────────•**\n** ⪼ لم تقـم بوضـع مربـع فـار HEROKU_API_KEY اثنـاء التنصيب وهـذا خطـأ .. قم بضبـط المتغيـر أولاً لتحديث بوت ريبـــثون ..؟!**", link_preview=False)
     heroku = heroku3.from_key(HEROKU_API_KEY)
     heroku_applications = heroku.apps()
     if HEROKU_APP_NAME is None:
-        await event.edit(f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n **•─────────────────•**\n** ⪼ لم تقـم بوضـع مربـع فـار HEROKU_APP_NAME اثنـاء التنصيب وهـذا خطـأ .. قم بضبـط المتغيـر أولاً لتحديث بوت ريبـــثون ..؟!**", link_preview=False)
+        await event.edit(f"JERUSALEM - تحـديثـات السـورس\n **•─────────────────•**\n** ⪼ لم تقـم بوضـع مربـع فـار HEROKU_APP_NAME اثنـاء التنصيب وهـذا خطـأ .. قم بضبـط المتغيـر أولاً لتحديث بوت ريبـــثون ..؟!**", link_preview=False)
         repo.__del__()
         return
     heroku_app = next(
@@ -109,7 +109,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             f"{txt}\n" "**- بيانات اعتماد هيروكو غير صالحة لتنصيب تحديث ريبـــثون**"
         )
         return repo.__del__()
-    sandy = await event.edit(f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**✾╎جـارِ . . تنصـيب التحـديث الجـذري ⎌**\n**✾╎يـرجى الانتظـار حتى تنتـهي العمليـة ⎋**\n**✾╎عادة ما يستغرق هـذا التحديث من 5 - 4 دقائـق 📟**")
+    sandy = await event.edit(f"JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**✾╎جـارِ . . تنصـيب التحـديث الجـذري ⎌**\n**✾╎يـرجى الانتظـار حتى تنتـهي العمليـة ⎋**\n**✾╎عادة ما يستغرق هـذا التحديث من 5 - 4 دقائـق 📟**")
     try:
         ulist = get_collectionlist_items()
         for i in ulist:
@@ -147,7 +147,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     except Exception as error:
         await event.edit(f"{txt}\n**Here is the error log:**\n`{error}`")
         return repo.__del__()
-    await event.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**•⎆┊انت منصب التحديث سابقـاً 🤷🏻‍♀\n•⎆┊لـذلك سـوف يتـم إعـادة التشغيـل فقـط 🌐 **")
+    await event.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**•⎆┊انت منصب التحديث سابقـاً 🤷🏻‍♀\n•⎆┊لـذلك سـوف يتـم إعـادة التشغيـل فقـط 🌐 **")
     with contextlib.suppress(CancelledError):
         await event.client.disconnect()
         if HEROKU_APP is not None:
@@ -167,8 +167,8 @@ async def upstream(event):
             event,
             f"I guess you are on selfhost. For self host you need to use `{cmdhd}تحديث الان`",
         )
-    event = await edit_or_reply(event, f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⪼ يتم تنصيب التحديث انتظر 🌐 ،**")
-    off_repo = "https://github.com/RepthonArabic/E_7_V"
+    event = await edit_or_reply(event, f"JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⪼ يتم تنصيب التحديث انتظر 🌐 ،**")
+    off_repo = "https://github.com/RepthonArabic/Palestine"
     os.chdir("/app")
     try:
         txt = (
@@ -192,27 +192,27 @@ async def upstream(event):
         repo.heads.lite.checkout(True)
     with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
-    bbb1 = await event.edit(f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**")
+    bbb1 = await event.edit(f"JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**")
     await asyncio.sleep(1)
-    bbb2 = await bbb1.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟷𝟶 ▬▭▭▭▭▭▭▭▭▭")
+    bbb2 = await bbb1.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟷𝟶 ▬▭▭▭▭▭▭▭▭▭")
     await asyncio.sleep(1)
-    bbb3 = await bbb2.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟸𝟶 ▬▬▭▭▭▭▭▭▭▭")
+    bbb3 = await bbb2.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟸𝟶 ▬▬▭▭▭▭▭▭▭▭")
     await asyncio.sleep(1)
-    bbb4 = await bbb3.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟹𝟶 ▬▬▬▭▭▭▭▭▭▭")
+    bbb4 = await bbb3.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟹𝟶 ▬▬▬▭▭▭▭▭▭▭")
     await asyncio.sleep(1)
-    bbb5 = await bbb4.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟺𝟶 ▬▬▬▬▭▭▭▭▭▭")
+    bbb5 = await bbb4.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟺𝟶 ▬▬▬▬▭▭▭▭▭▭")
     await asyncio.sleep(1)
-    bbb6 = await bbb5.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟻𝟶 ▬▬▬▬▬▭▭▭▭▭")
+    bbb6 = await bbb5.edit("JERUSALEMJERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟻𝟶 ▬▬▬▬▬▭▭▭▭▭")
     await asyncio.sleep(1)
-    bbb7 = await bbb6.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟼𝟶 ▬▬▬▬▬▬▭▭▭▭")
+    bbb7 = await bbb6.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟼𝟶 ▬▬▬▬▬▬▭▭▭▭")
     await asyncio.sleep(1)
-    bbb8 = await bbb7.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟽𝟶 ▬▬▬▬▬▬▬▭▭▭")
+    bbb8 = await bbb7.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟽𝟶 ▬▬▬▬▬▬▬▭▭▭")
     await asyncio.sleep(1)
-    bbb9 = await bbb8.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟾𝟶 ▬▬▬▬▬▬▬▬▭▭") 
+    bbb9 = await bbb8.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟾𝟶 ▬▬▬▬▬▬▬▬▭▭") 
     await asyncio.sleep(1)
-    bbbb10 = await bbb9.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟿𝟶 ▬▬▬▬▬▬▬▬▬▭") 
+    bbbb10 = await bbb9.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟿𝟶 ▬▬▬▬▬▬▬▬▬▭") 
     await asyncio.sleep(1)
-    bbbb11 = await bbbb10.edit("ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗥𝗘𝗣𝗧𝗛𝗢𝗡 - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟷𝟶𝟶 ▬▬▬▬▬▬▬▬▬▬💯") 
+    bbbb11 = await bbbb10.edit("JERUSALEM - تحـديثـات السـورس\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت ريبـــثون .. انتظـر . . .🌐**\n\n%𝟷𝟶𝟶 ▬▬▬▬▬▬▬▬▬▬💯") 
     ac_br = repo.active_branch.name
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)

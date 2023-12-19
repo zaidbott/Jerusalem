@@ -1,16 +1,4 @@
-# Repthon - Baqir
-# Copyright (C) 2023 RepthonArabic. All Rights Reserved
-#
-# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
-""" 
-OpenAi & ChatGpt for Repthon™ t.me/Repthon
-Write file by ZelZal, Roger t.me/E_7_V, t.me/zzzzl1l
-ها خماط بعدك تخمط مني .. ماتستحي ؟
-متى راح تصير مطور وانت مقضيها خمط تعب وحقوق الناس
-ههههههههههههههههههههههههههههههههههههههههههههههههههههههه
-"""
+
 
 import requests
 import asyncio
@@ -92,9 +80,6 @@ async def repthon_gpt(event):
             await borg.send_message(event.chat_id, f"**س/ {zelzal}\n\n{malath}**\n\n───────────────────\n𝗭𝗧𝗵𝗼𝗻 𝗨**ꜱᴇʀʙᴏᴛ** 𝗧**ᴏᴏʟꜱ**\n\t\t\t\t\t\t\t\tᶻᵉˡᶻᵃˡ • ᴼᵖᵉⁿᴬᴵ")
 
 
-# تخمــط اهينـــك Fuk-You
-
-# code by t.me/E_7_V
 @zq_lo.rep_cmd(pattern="س(?: |$)(.*)")
 async def zelzal_gpt(event):
     zilzal = event.pattern_match.group(1)

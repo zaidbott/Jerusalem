@@ -1,10 +1,3 @@
-# Repthon - @Repthon
-# Copyright (C) 2022 Repthon . All Rights Reserved
-#
-# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/RepthonArabic/RepthonAr/blob/main/LICENSE/>.
-#حقوق ريبـــثون ومتعوب عليها .. تخمط اذكر المصدر لو اهينك
 
 import random
 

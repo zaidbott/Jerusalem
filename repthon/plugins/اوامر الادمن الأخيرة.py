@@ -381,7 +381,7 @@ async def disable_emoji_blocker(event):
 
 
 is_Reham = False
-No_group_Repthon = "@Repthon_support"
+No_group_Repthon = "@E9N99"
 @zq_lo.on(events.NewMessage(incoming=True))
 async def reply_to_baqir(event):
     if not is_Reham:

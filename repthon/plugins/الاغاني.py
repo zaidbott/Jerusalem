@@ -110,7 +110,7 @@ async def _(event):
         for files in (catthumb, song_file):
             if files and os.path.exists(files):
                 os.remove(files)
-    except ChatSendMediaForbiddenError as err: # Code By T.me/E_7_V
+    except ChatSendMediaForbiddenError as err: 
         await repevent.edit("**- عـذراً .. الوسـائـط مغلقـه هنـا ؟!**")
         LOGS.error(str(err))
 

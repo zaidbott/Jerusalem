@@ -8,7 +8,7 @@ import requests
 
 from . import ALIVE_NAME, zq_lo, edit_or_reply
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REPTHON"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "E9N99"
 
 plugin_category = "البحث"
 

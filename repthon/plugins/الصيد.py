@@ -1,4 +1,3 @@
-# by: t.me/Dar4k  ~ t.me/R0R77 ~ t.me/E_7_V
 
 import random
 
@@ -108,7 +107,7 @@ def gen_user(choice):
 async def _(event):
     await event.edit(
         """
-**أوامـر الـصـيـد الخـاصة بــســورس ريبـــثون**: 
+**أوامـر الـصـيـد الخـاصة بــســورس الـــقدس**: 
 
 ٴ— — — — — — — — — —
 
@@ -127,7 +126,7 @@ async def _(event):
 الامر:  `.حالة التثبيت`
 • لمعرفة عدد المحاولات للصيد
 
-**@Repthon - channle userbot**
+**@E9N99 - channle userbot**
 
 """
     )
@@ -141,7 +140,7 @@ async def hunterusername(event):
         ch = await zq_lo(
             functions.channels.CreateChannelRequest(
                 title="REPTHON HUNTER - صيد ريبثون",
-                about="This channel to hunt username by - @Repthon",
+                about="This channel to hunt username by - ",
             )
         )
         ch = ch.updates[1].channel_id
@@ -170,19 +169,19 @@ async def hunterusername(event):
                 await event.client.send_file(
                     event.chat_id,
                     "https://t.me/Repthongif/2",
-                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Type: {}\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲ @Repthon - @E_7_V ❳ ".format(
+                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Type: {}\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲ @E9N99 ❳ ".format(
                         username, trys, choice
                     ),
                 )
                 await event.client.send_file(
                     ch,
                     "https://t.me/Repthongif/2",
-                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Type: {}\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲ @Repthon - @E_7_V ❳ ".format(
+                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Type: {}\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲ @E9N99 ❳ ".format(
                         username, trys, choice
                     ),
                 )
                 await event.client.send_message(
-                    "@E_7_V", f"- Done : @{username} !\n- By : @E_7_V - @Repthon !"
+                    "@E9N99", f"- Done : @{username} !\n- By :  - @E9N99 !"
                 )
                 sedmod = False
                 break
@@ -229,7 +228,7 @@ async def _(event):
             ch = await zq_lo(
                 functions.channels.CreateChannelRequest(
                     title="REPTHON HUNTER - تثبيت ريبثون",
-                    about="This channel to hunt username by - @Repthon",
+                    about="This channel to hunt username by - ",
                 )
             )
             ch = ch.updates[1].channel_id
@@ -255,20 +254,20 @@ async def _(event):
                 await event.client.send_file(
                     ch,
                     "https://t.me/Repthongif/2",
-                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲ @Repthon - @E_7_V ❳ ".format(
+                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲@E9N99 ❳ ".format(
                         username, trys2
                     ),
                 )
                 await event.client.send_file(
                     event.chat_id,
                     "https://t.me/Repthongif/2",
-                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲ @Repthon - @E_7_V ❳ ".format(
+                    caption="🐊 Repthon the best 🐊\n- - - - - - - - - - - - - - - - - - - - - - - -\n- UserName: ❲ @{} ❳\n- ClickS: ❲ {} ❳\n- Save: ❲ Chaneel ❳\n- - - - - - - - - - - - - - - - - - - - - - - -\nThE KiNgS ❲@E9N99 ❳ ".format(
                         username, trys2
                     ),
                 )
                 await event.client.send_message(
-                    "@E_7_V",
-                    f"- Done : @{username} !\n- By : @E_7_V - @Repthon!\n- Hunting Log {trys2}",
+                    "@E9N99",
+                    f"- Done : @{username} !\n- By : @E9N99 !\n- Hunting Log {trys2}",
                 )
                 swapmod = False
                 break
