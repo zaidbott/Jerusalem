@@ -1,5 +1,5 @@
-#𝙍𝙀𝙋𝙏𝙃𝙊𝙉 ®
-#الملـف حقـوق وكتابـة روجر ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
+#JERUSALEM ®
+#الملـف حقـوق وكتابـة روجر ⤶ @E_7_V خاص بسـورس ⤶ JERUSALEM
 #الملـف متعـوب عليه تخمـط اذكر المصـدر
 
 import os
@@ -108,7 +108,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  مطي زربه 🦓 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal, caption
     if x == 2:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -119,7 +119,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  جلب شوارع 🐕‍🦺 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal2, caption
     if x == 3:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -130,7 +130,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  قرد لزكـه 🐒 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal3, caption
     if x == 4:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -141,7 +141,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  صخل محترم 🐐 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal4, caption
     if x == 5:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -152,7 +152,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  طلي ابو البعرور الوصخ 🐑 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal5, caption
     if x == 6:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -163,7 +163,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  بزون ابوخالد 🐈 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal6, caption
     if x == 7:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -174,7 +174,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  الزاحف ابو بريص 🦎 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal7, caption
     if x == 8:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -185,7 +185,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  جريذي ابو المجاري 🐀 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal8, caption
     if x == 9:
        username = "@{}".format(username) if username else ("لايوجد معرف")
@@ -196,7 +196,7 @@ async def fetch_info(replied_user, event):
        caption += f"<b> • 🌚 | صـوره  ⇦ </b> {replied_user_profile_photos_count} </b>\n"
        caption += f"<b> • 🌚 | نــوعه   ⇦  هايشه 🐄 </b>\n"
        caption += f"<b> • 🌚 | نسبتـه  ⇦  {yoy} </b>\n\n\n"
-       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉 𓆪 </b> - @Repthon "
+       caption += f"<b> 𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM 𓆪 </b> - @E9N99 "
        return sts_animal9, caption
 
 

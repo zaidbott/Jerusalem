@@ -1,10 +1,3 @@
-# Repthon🔥
-# Repthon - Baqir
-# Copyright (C) 2023 RepthonArabic . All Rights Reserved
-#
-# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
 
 
 import requests

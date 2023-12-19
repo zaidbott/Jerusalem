@@ -19,7 +19,7 @@ repself = True
 POSC = gvarstatus("R_POSC") or "(مم|ذاتية|ذاتيه|جلب الوقتيه)"
 
 BaqirSelf_cmd = (
-    "𓆩 [ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/Repthon) 𓆪\n\n"
+    "𓆩 [JERUSALEM - حفـظ الذاتيـه 🧧](t.me/E9N99) 𓆪\n\n"
     "**⪼** `.تفعيل الذاتيه`\n"
     "**لـ تفعيـل الحفظ التلقائي للذاتيـه**\n"
     "**سوف يقوم حسابك بحفظ الذاتيه تلقائياً في حافظة حسابك عندما يرسل لك اي شخص ميديـا ذاتيـه**\n\n"
@@ -30,7 +30,7 @@ BaqirSelf_cmd = (
     "**⪼** `.اعلان`\n"
     "**الامـر + الوقت بالدقائق + الرسـاله**\n"
     "**امـر مفيـد لجماعـة التمويـل لـ عمـل إعـلان مـؤقت بالقنـوات**\n\n"
-    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](t.me/Repthon) 𓆪"
+    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 JERUSALEM](t.me/E9N99) 𓆪"
 )
 
 @zq_lo.rep_cmd(pattern="الذاتيه")
@@ -73,7 +73,7 @@ async def sddm(event):
         sender = await event.get_sender()
         chat = await event.get_chat()
         pic = await event.download_media()
-        await zq_lo.send_file("me", pic, caption=f"[ᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - حفـظ الذاتيـه 🧧](t.me/Repthon) .\n\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎مࢪحبـاً عـزيـزي المـالك 🫂\n⌔╎ تـم حفـظ الذاتيـة تلقائيـاً .. بنجـاح ☑️** ❝\n**⌔╎المـرسـل** {_format.mentionuser(sender.first_name , sender.id)} .")
+        await zq_lo.send_file("me", pic, caption=f"[JERUSALEM - حفـظ الذاتيـه 🧧](t.me/E9N99) .\n\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n**⌔╎مࢪحبـاً عـزيـزي المـالك 🫂\n⌔╎ تـم حفـظ الذاتيـة تلقائيـاً .. بنجـاح ☑️** ❝\n**⌔╎المـرسـل** {_format.mentionuser(sender.first_name , sender.id)} .")
 
 #Code For T.me/E_7_V
 @zq_lo.rep_cmd(pattern="اعلان (\d*) ([\s\S]*)")
